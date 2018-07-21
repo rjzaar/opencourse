@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - vartheme
+    - oc_theme
+id: oc_theme_breadcrumbs
+theme: oc_theme
+region: header
+weight: -4
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

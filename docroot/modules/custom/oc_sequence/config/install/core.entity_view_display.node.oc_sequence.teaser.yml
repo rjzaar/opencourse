@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.oc_sequence.body
+    - field.field.node.oc_sequence.field_content_visibility
+    - field.field.node.oc_sequence.field_oc_image
+    - field.field.node.oc_sequence.field_oc_level
+    - field.field.node.oc_sequence.field_oc_sequence_items
+    - field.field.node.oc_sequence.field_oc_topic
+    - node.type.oc_sequence
+  module:
+    - text
+    - user
+id: node.oc_sequence.teaser
+targetEntityType: node
+bundle: oc_sequence
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  flag_follow_content:
+    weight: 10
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_content_visibility: true
+  field_oc_image: true
+  field_oc_level: true
+  field_oc_sequence_items: true
+  field_oc_topic: true
+  langcode: true

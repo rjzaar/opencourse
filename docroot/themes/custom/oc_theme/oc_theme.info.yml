@@ -1,0 +1,105 @@
+core: 8.x
+type: theme
+base theme: vartheme
+
+name: 'oc_theme'
+description: 'Uses the Bootstrap framework LESS source files and must be compiled (not for beginners).'
+package: 'Varbase'
+
+regions:
+  navigation: 'Navigation'
+  navigation_collapsible: 'Navigation (Collapsible)'
+  header: 'Top Bar'
+  group: 'Group Navigation'
+  hero_slider: 'Media Hero Slider'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  content: 'Content'
+  sidebar_first: 'Primary'
+  sidebar_second: 'Secondary'
+  footer: 'Footer'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+
+libraries:
+# Bootstrap styles and scripts libraries.
+  - oc_theme/bootstrap-styles
+  - oc_theme/bootstrap-scripts
+  
+# oc_theme custom Vartheme styles and scripts libraries.
+  - oc_theme/vartheme-styles
+
+# oc_theme global styles and scripts libraries.
+  - oc_theme/global-styles
+  - oc_theme/global-scripts
+  
+# oc_theme Varbase Bootstrap Paragraphs colors theme.
+  - oc_theme/vbp-colors
+
+# oc_theme overriding vartheme edge2edge
+  - oc_theme/edge2edge
+
+# oc_theme fontawesome
+  - oc_theme/font-awesome
+# OPTIONALLY: You can choose to remove Vartheme base theme stylesheets and/or
+# Javascript files.
+libraries-override:
+
+# finish overriding vartheme/edge2edge
+  vartheme/edge2edge: false
+# Comment lines to keep using libraries from vartheme.
+  bootstrap_library/bootstrap-cdn: false
+  bootstrap_library/bootstrap: false
+  bootstrap_library/bootstrap-dev: false
+  vartheme/bootstrap-styles: false
+  vartheme/bootstrap-scripts: false
+  vartheme/global-styles: false
+  vartheme/global-scripts: false
+  
+# Comment lines to use (RTL) libraries from vartheme.
+  vartheme/bootstrap-styles-rtl: false
+  vartheme/global-styles-rtl: false
+  oc_theme/bootstrap-styles-rtl: false
+  oc_theme/vartheme-styles-rtl: false
+  oc_theme/global-styles-rtl: false
+
+# oc_theme Varbase Bootstrap Paragraphs colors theme.
+  varbase_bootstrap_paragraphs/vbp-colors: oc_theme/vbp-colors
+  vartheme/vbp-colors: oc_theme/vbp-colors
+  
+# Uncomment lines to replace, exclude css and js files from vartheme.
+# You will need to copy less/css files from Vartheme to use theme for the
+# overriden library.
+# ------------------------------------------------------------------------------
+#  vartheme/bs-callouts: oc_theme/bs-callouts
+#  vartheme/outside-in: oc_theme/outside-in
+
+#  vartheme/navbar-admin: oc_theme/navbar-admin
+# ------------------------------------------------------------------------------
+#  vartheme/ajax: oc_theme/ajax
+#  vartheme/alert: oc_theme/alert
+#  vartheme/field: oc_theme/field
+#  vartheme/file: oc_theme/file
+#  vartheme/filter: oc_theme/filter
+#  vartheme/form: oc_theme/form
+#  vartheme/icon: oc_theme/icon
+#  vartheme/navbar: oc_theme/navbar
+#  vartheme/node: oc_theme/node
+#  vartheme/panel: oc_theme/panel
+#  vartheme/progress-bar: oc_theme/progress-bar
+#  vartheme/table-drag: oc_theme/table-drag
+#  vartheme/tabs: oc_theme/tabs
+#  vartheme/toolbar: oc_theme/toolbar
+#  vartheme/autocomplete: oc_theme/autocomplete
+
+ckeditor_stylesheets:
+  - css/base/bootstrap.base.css
+  - css/base/vartheme.base.css
+  - css/base/oc_theme.base.css
+  - css/theme/content.theme.css
+  - css/component/alert.component.css
+  - css/component/icon.component.css
+  - css/component/node.component.css
+  - css/component/bs-callouts.component.css
+  - css/layout/edge2edge.layout.css
+

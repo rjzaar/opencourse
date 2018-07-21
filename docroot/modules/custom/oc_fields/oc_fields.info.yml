@@ -1,0 +1,34 @@
+name: 'Opencourse Setup'
+description: 'Only the storage fields for all oc content types.'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - block_class
+  - color_field
+  - ds
+  - embed
+  - entity_access_by_field
+  - entity_browser
+  - entity_embed
+  - field
+  - file
+  - focal_point
+  - image
+  - jquery_colorpicker
+  - link
+  - media_entity
+  - node
+  - options
+  - panelizer
+  - path
+  - superfish
+  - system
+  - taxonomy
+  - text
+  - user
+  - video_embed_field
+  - views
+  - viewsreference
+version: 8.x-0.2
+package: oc

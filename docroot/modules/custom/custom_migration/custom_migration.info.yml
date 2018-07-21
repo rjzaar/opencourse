@@ -1,0 +1,9 @@
+name: custom_migration
+type: module
+description: Migrate OC to D8
+core: 8.x
+package: Custom
+dependencies:
+  - migrate_drupal
+  - migrate_plus
+  - migrate_tools

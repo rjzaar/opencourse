@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oc_link
+    - node.type.oc_book
+  module:
+    - link
+id: node.oc_book.field_oc_link
+field_name: field_oc_link
+entity_type: node
+bundle: oc_book
+label: Link
+description: 'A link to where the book can be bought, usually Book Depository.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

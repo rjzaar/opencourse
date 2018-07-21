@@ -1,0 +1,96 @@
+uuid: 94099f16-de9b-43b3-a1d2-0d4418117dd6
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_node_formation_image
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+migration_group: migrate_drupal_7
+label: 'Nodes (Formation Image)'
+source:
+  plugin: d7_node
+  node_type: formation_image
+process:
+  type:
+    plugin: default_value
+    default_value: oc_image
+  nid: tnid
+  vid: vid
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: und
+  title: title
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  comment_node_formation_image/0/status: comment
+  'body/value': 'body/0/value'
+  'body/format':
+      plugin: default_value
+      default_value: 'full_html'
+  'body/summary': 'body/0/summary'
+  field_oc_topic:
+    plugin: iterator
+    source: field_topic
+    process:
+      target_id: tid
+  field_oc_level:
+    plugin: static_map
+    source: field_level
+    map:
+      111: 1
+      112: 2
+      113: 3
+      114: 4
+  field_oc_author_s_:
+    plugin: entity_generate
+    value_key: name
+    bundle_key: vid
+    bundle: oc_authors
+    entity_type: taxonomy_term
+    source: field_author_s_
+  field_oc_image:
+    plugin: iterator
+    source: field_basic_image_image
+    process:
+      target_id: fid
+      alt: alt
+      title: title
+      width: width
+      height: height
+  field_oc_publisher:
+    plugin: get
+    source: field_publisher
+  field_oc_year:
+    plugin: get
+    source: field_year
+  field_oc_licence:
+    plugin: field_link
+    source: field_licence
+  field_oc_link:
+    plugin: field_link
+    source: field_link
+  field_oc_background_color: field_background_color
+destination:
+  plugin: 'entity:node'
+  default_bundle: oc_image
+migration_dependencies:
+  required:
+    - upgrade_d7_user
+    - upgrade_d7_taxonomy_term_oc_authors
+    - upgrade_d7_taxonomy_term_formation_courses
+    - upgrade_d7_files
+#    - upgrade_d7_node_type
+  optional: {  }
+#  optional:
+#    - upgrade_d7_field_instance

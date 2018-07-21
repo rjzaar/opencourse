@@ -1,0 +1,8 @@
+{
+  "name": "drupal/oc_prod",
+  "type": "drupal-module",
+  "description": "enables all modules required by oc",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "require": { }
+}

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.oc_group_content
+id: taxonomy_term.oc_group_content
+target_entity_type_id: taxonomy_term
+target_bundle: oc_group_content
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,56 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.oc_image.body
+    - field.field.node.oc_image.field_content_visibility
+    - field.field.node.oc_image.field_oc_author_s_
+    - field.field.node.oc_image.field_oc_back_color
+    - field.field.node.oc_image.field_oc_image
+    - field.field.node.oc_image.field_oc_level
+    - field.field.node.oc_image.field_oc_licence
+    - field.field.node.oc_image.field_oc_link
+    - field.field.node.oc_image.field_oc_publisher
+    - field.field.node.oc_image.field_oc_topic
+    - field.field.node.oc_image.field_oc_year
+    - node.type.oc_image
+  module:
+    - image
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.oc_image.teaser
+targetEntityType: node
+bundle: oc_image
+mode: teaser
+content:
+  field_oc_image:
+    type: image_url
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: ''
+    third_party_settings: {  }
+  flag_follow_content:
+    weight: 10
+    region: content
+hidden:
+  body: true
+  field_content_visibility: true
+  field_oc_author_s_: true
+  field_oc_back_color: true
+  field_oc_level: true
+  field_oc_licence: true
+  field_oc_link: true
+  field_oc_publisher: true
+  field_oc_topic: true
+  field_oc_year: true
+  langcode: true
+  links: true

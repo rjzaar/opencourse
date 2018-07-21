@@ -1,0 +1,8 @@
+name: oc_content
+type: module
+description: Demo content for Opencatechesis
+core: 8.x
+package: Custom
+dependencies:
+  - oc_taxonomy
+  - drupal:hal (>=8.3.x)

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oc_year
+    - node.type.oc_book
+id: node.oc_book.field_oc_year
+field_name: field_oc_year
+entity_type: node
+bundle: oc_book
+label: Year
+description: 'What year was it published?'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

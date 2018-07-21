@@ -1,0 +1,5 @@
+name: Opencourse Blocks
+type: module
+description: Contains blocks for Opencourse
+core: 8.x
+package: Opencourse

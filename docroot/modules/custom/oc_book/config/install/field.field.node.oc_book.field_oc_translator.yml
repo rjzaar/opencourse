@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oc_translator
+    - node.type.oc_book
+id: node.oc_book.field_oc_translator
+field_name: field_oc_translator
+entity_type: node
+bundle: oc_book
+label: Translator
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

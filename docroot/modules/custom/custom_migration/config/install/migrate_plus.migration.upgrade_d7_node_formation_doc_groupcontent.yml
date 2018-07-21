@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_node_formation_doc_groupcontent
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+migration_group: migrate_drupal_7
+label: 'Group content (Formation Doc)'
+constants:
+  full_html: full_html
+source:
+  plugin: d7_node
+  node_type: formation_doc
+process:
+  type:
+    plugin: default_value
+    default_value: open-group_node-oc_doc
+  gid:
+    plugin: default_value
+    default_value: 1
+  entity_id:
+    plugin: migration
+    migration: upgrade_d7_node_formation_doc
+    no_stub: true
+    source: nid
+  label: title
+  uid: node_uid
+destination:
+  plugin: 'entity:group_content'
+migration_dependencies:
+  required:
+    - upgrade_d7_user
+    - upgrade_d7_taxonomy_term_oc_authors
+    - upgrade_d7_taxonomy_term_formation_courses
+    - upgrade_d7_files
+    - upgrade_d7_node_formation_doc
+#    - upgrade_d7_node_type
+  optional: {  }
+#  optional:
+#    - upgrade_d7_field_instance

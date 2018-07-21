@@ -1,0 +1,225 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.featured
+    - field.field.node.oc_image.body
+    - field.field.node.oc_image.field_content_visibility
+    - field.field.node.oc_image.field_oc_author_s_
+    - field.field.node.oc_image.field_oc_back_color
+    - field.field.node.oc_image.field_oc_image
+    - field.field.node.oc_image.field_oc_level
+    - field.field.node.oc_image.field_oc_licence
+    - field.field.node.oc_image.field_oc_link
+    - field.field.node.oc_image.field_oc_publisher
+    - field.field.node.oc_image.field_oc_topic
+    - field.field.node.oc_image.field_oc_year
+    - image.style.de2e
+    - node.type.oc_image
+  module:
+    - ds
+    - image
+    - link
+    - options
+    - panelizer
+    - smart_trim
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - langcode
+        - links
+        - body
+        - field_oc_author_s_
+        - field_oc_topic
+        - field_oc_link
+        - field_oc_background_color
+        - field_oc_image
+        - field_oc_licence
+        - field_oc_publisher
+        - field_oc_year
+        - field_content_visibility
+        - field_oc_level
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.oc_image.featured
+targetEntityType: node
+bundle: oc_image
+mode: featured
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 101
+    settings:
+      trim_length: '50'
+      trim_type: words
+      trim_suffix: ''
+      more_link: '1'
+      more_text: More
+      summary_handler: trim
+      trim_options:
+        text: 0
+      more_class: more-link
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: ds_content
+  field_content_visibility:
+    weight: 111
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: ds_content
+  field_oc_author_s_:
+    weight: 102
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
+            ow-el: ''
+            ow-cl: ''
+            ow-at: ''
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fi-el: ''
+            fi-cl: ''
+            fi-at: ''
+            suffix: ''
+            lbw: false
+            lb-col: false
+            ow: false
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
+            fis-def-at: false
+            fi: false
+            fi-def-at: false
+    type: entity_reference_entity_view
+    region: ds_content
+  field_oc_image:
+    weight: 107
+    label: hidden
+    settings:
+      image_style: de2e
+      image_link: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: image
+    region: ds_content
+  field_oc_level:
+    weight: 112
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: ds_content
+  field_oc_licence:
+    weight: 108
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: ds_content
+  field_oc_link:
+    weight: 105
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: ds_content
+  field_oc_publisher:
+    weight: 109
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: ds_content
+  field_oc_topic:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_oc_year:
+    weight: 110
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: ds_content
+  flag_follow_content:
+    weight: 10
+    region: content
+  langcode:
+    type: language
+    weight: 0
+    region: ds_content
+    label: above
+    settings:
+      link_to_entity: false
+      native_language: false
+    third_party_settings: {  }
+  links:
+    weight: 100
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_oc_back_color: true

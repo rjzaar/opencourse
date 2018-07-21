@@ -1,0 +1,43 @@
+name: 'Opencourse Groups'
+description: 'Opencourse Group settings.'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - block_class
+  - color_field
+  - content_moderation
+  - ctools
+  - ds
+  - entity_browser
+  - entity_browser_entity_form
+  - entity_reference_revisions
+  - field
+  - gnode
+  - group
+  - media_entity
+  - menu_block
+  - node
+  - oc_book
+  - oc_doc
+  - oc_fields
+  - oc_image
+  - oc_link
+  - oc_lp
+  - oc_sequence
+  - oc_taxonomy
+  - paragraphs
+  - paragraphs_previewer
+  - path
+  - pathauto
+  - system
+  - text
+  - user
+  - varbase_bootstrap_paragraphs
+  - varbase_landing
+  - varbase_media
+  - varbase_page
+  - views
+  - yoast_seo
+version: 8.x-0.1
+package: oc

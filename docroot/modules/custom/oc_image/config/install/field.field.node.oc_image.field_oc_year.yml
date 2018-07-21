@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oc_year
+    - node.type.oc_image
+id: node.oc_image.field_oc_year
+field_name: field_oc_year
+entity_type: node
+bundle: oc_image
+label: Year
+description: 'What year was this image published?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

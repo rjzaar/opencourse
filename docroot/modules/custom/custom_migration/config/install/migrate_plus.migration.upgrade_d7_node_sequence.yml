@@ -1,0 +1,93 @@
+uuid: 127b0a1f-62ee-46e0-b614-a7f7015e3cbb
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_node_sequence
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+migration_group: migrate_drupal_7
+label: 'Nodes (Sequence)'
+source:
+  plugin: d7_node
+  node_type: sequence
+process:
+  type:
+    plugin: default_value
+    default_value: oc_sequence
+  nid: tnid
+  vid: vid
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: und
+  title: title
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  comment_node_sequence/0/status: comment
+  'body/value': 'body/0/value'
+  'body/format':
+      plugin: default_value
+      default_value: 'full_html'
+  'body/summary': 'body/0/summary'
+#  field_oa_related: field_oa_related
+#  field_oa_media:
+#    plugin: iterator
+#    source: field_oa_media
+#    process:
+#      target_id: fid
+#      display: display
+#      description: description
+#  og_vocabulary:
+#    plugin: get
+#    source: og_vocabulary
+  field_oc_topic:
+    plugin: iterator
+    source: field_topic
+    process:
+      target_id: tid
+#  og_group_ref:
+#    plugin: get
+#    source: og_group_ref
+#  oa_section_ref:
+#    plugin: get
+#    source: oa_section_ref
+#  oa_other_spaces_ref:
+#    plugin: get
+#    source: oa_other_spaces_ref
+  field_oc_image:
+    plugin: iterator
+    source: field_basic_image_image
+    process:
+      target_id: fid
+      alt: alt
+      title: title
+      width: width
+      height: height
+  field_oc_sequence_items:
+    plugin: get
+    source: field_sequence_items
+destination:
+  plugin: 'entity:node'
+  default_bundle: oc_sequence
+migration_dependencies:
+  required:
+    - upgrade_d7_user
+    - upgrade_d7_node_type
+    - upgrade_d7_taxonomy_term_oc_authors
+    - upgrade_d7_taxonomy_term_formation_courses
+    - upgrade_d7_files
+    - upgrade_d7_node_formation_image
+    - upgrade_d7_node_formation_link
+    - upgrade_d7_node_formation_book
+    - upgrade_d7_node_formation_doc2
+  optional: {  }

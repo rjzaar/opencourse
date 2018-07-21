@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oc_publisher
+    - node.type.oc_book
+id: node.oc_book.field_oc_publisher
+field_name: field_oc_publisher
+entity_type: node
+bundle: oc_book
+label: Publisher
+description: 'Who published this resource?'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

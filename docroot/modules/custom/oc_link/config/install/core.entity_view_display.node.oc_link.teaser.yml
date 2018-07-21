@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.oc_link.body
+    - field.field.node.oc_link.field_content_visibility
+    - field.field.node.oc_link.field_oc_author_s_
+    - field.field.node.oc_link.field_oc_level
+    - field.field.node.oc_link.field_oc_link
+    - field.field.node.oc_link.field_oc_topic
+    - node.type.oc_link
+  module:
+    - text
+    - user
+id: node.oc_link.teaser
+targetEntityType: node
+bundle: oc_link
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  flag_follow_content:
+    weight: 10
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_content_visibility: true
+  field_oc_author_s_: true
+  field_oc_level: true
+  field_oc_link: true
+  field_oc_topic: true
+  langcode: true

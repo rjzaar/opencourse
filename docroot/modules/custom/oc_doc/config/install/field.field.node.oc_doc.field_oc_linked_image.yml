@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oc_linked_image
+    - node.type.oc_doc
+    - node.type.oc_image
+id: node.oc_doc.field_oc_linked_image
+field_name: field_oc_linked_image
+entity_type: node
+bundle: oc_doc
+label: 'Linked image'
+description: 'Choose an image to link to this resource.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      oc_image: oc_image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

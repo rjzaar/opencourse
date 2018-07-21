@@ -1,0 +1,10 @@
+bundle: oc
+excluded:
+  - field.storage.node.field_oc_edition
+  - field.storage.node.field_oc_external_links
+  - field.storage.node.field_oc_internal_links
+  - field.storage.node.field_oc_isbn
+  - field.storage.node.field_oc_place_published
+  - field.storage.node.field_oc_translator
+  - views.view.oc_books
+required: true

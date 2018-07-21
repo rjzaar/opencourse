@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oc_author_s_
+    - node.type.oc_link
+    - taxonomy.vocabulary.oc_authors
+id: node.oc_link.field_oc_author_s_
+field_name: field_oc_author_s_
+entity_type: node
+bundle: oc_link
+label: Author(s)
+description: 'Please add any authors to the link. Start typing and if the author does not become listed, then wait a moment and it will be automatically added. Then select.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      oc_authors: oc_authors
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

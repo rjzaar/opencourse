@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  theme:
+    - vartheme
+    - oc_theme
+id: oc_theme_local_actions
+theme: oc_theme
+region: header
+weight: -3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

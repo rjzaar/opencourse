@@ -1,0 +1,6 @@
+bundle: oc
+excluded:
+  - views.view.opencourse_images_tiled
+  - field.field.group.open.field_oc_grp_image
+  - field.storage.group.field_oc_grp_image
+required: true

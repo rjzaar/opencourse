@@ -1,0 +1,190 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.embeded
+    - field.field.node.oc_doc.body
+    - field.field.node.oc_doc.field_content_visibility
+    - field.field.node.oc_doc.field_lp_paragraphs
+    - field.field.node.oc_doc.field_oc_back_color
+    - field.field.node.oc_doc.field_oc_external_links
+    - field.field.node.oc_doc.field_oc_head_back_color
+    - field.field.node.oc_doc.field_oc_internal_links
+    - field.field.node.oc_doc.field_oc_level
+    - field.field.node.oc_doc.field_oc_linked_image
+    - field.field.node.oc_doc.field_oc_title_image
+    - field.field.node.oc_doc.field_oc_topic
+    - field.field.node.oc_doc.field_oc_video
+    - node.type.oc_doc
+  module:
+    - color_field
+    - ds
+    - entity_reference_revisions
+    - options
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - langcode
+        - links
+        - body
+        - field_oc_external_links
+        - field_oc_internal_links
+        - field_oc_topic
+        - field_oc_level
+        - field_oc_linked_image
+        - field_content_visibility
+        - field_oc_video
+        - field_oc_title_image
+        - field_oc_back_color
+        - field_oc_head_back_color
+        - field_lp_paragraphs
+id: node.oc_doc.embeded
+targetEntityType: node
+bundle: oc_doc
+mode: embeded
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: ds_content
+  field_content_visibility:
+    weight: 109
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: ds_content
+  field_lp_paragraphs:
+    weight: 115
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: ds_content
+  field_oc_back_color:
+    weight: 113
+    label: above
+    settings:
+      format: hex
+      opacity: '1'
+    third_party_settings: {  }
+    type: color_field_formatter_text
+    region: ds_content
+  field_oc_external_links:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_oc_head_back_color:
+    weight: 114
+    label: above
+    settings:
+      format: hex
+      opacity: '1'
+    third_party_settings: {  }
+    type: color_field_formatter_text
+    region: ds_content
+  field_oc_internal_links:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_oc_level:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: ds_content
+  field_oc_linked_image:
+    weight: 107
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_oc_title_image:
+    weight: 111
+    label: above
+    settings:
+      view_mode: title_image
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view
+    region: ds_content
+  field_oc_topic:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_oc_video:
+    weight: 110
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: ds_content
+  flag_follow_content:
+    weight: 10
+    region: content
+  langcode:
+    type: language
+    weight: 0
+    region: ds_content
+    label: above
+    settings:
+      link_to_entity: false
+      native_language: false
+    third_party_settings: {  }
+  links:
+    weight: 100
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

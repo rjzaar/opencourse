@@ -1,0 +1,172 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.featured
+    - field.field.node.oc_book.body
+    - field.field.node.oc_book.field_content_visibility
+    - field.field.node.oc_book.field_oc_author_s_
+    - field.field.node.oc_book.field_oc_book_image
+    - field.field.node.oc_book.field_oc_book_type
+    - field.field.node.oc_book.field_oc_edition
+    - field.field.node.oc_book.field_oc_external_links
+    - field.field.node.oc_book.field_oc_internal_links
+    - field.field.node.oc_book.field_oc_isbn
+    - field.field.node.oc_book.field_oc_level
+    - field.field.node.oc_book.field_oc_link
+    - field.field.node.oc_book.field_oc_place_published
+    - field.field.node.oc_book.field_oc_publisher
+    - field.field.node.oc_book.field_oc_topic
+    - field.field.node.oc_book.field_oc_translator
+    - field.field.node.oc_book.field_oc_year
+    - node.type.oc_book
+  module:
+    - image
+    - link
+    - options
+    - text
+    - user
+id: node.oc_book.featured
+targetEntityType: node
+bundle: oc_book
+mode: featured
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_content_visibility:
+    weight: 116
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_oc_author_s_:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_oc_book_image:
+    weight: 102
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_oc_book_type:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_oc_edition:
+    weight: 110
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_oc_external_links:
+    weight: 112
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_oc_internal_links:
+    weight: 113
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_oc_isbn:
+    weight: 111
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_oc_level:
+    weight: 114
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_oc_link:
+    weight: 103
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_oc_place_published:
+    weight: 108
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_oc_publisher:
+    weight: 107
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_oc_topic:
+    weight: 115
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_oc_translator:
+    weight: 106
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_oc_year:
+    weight: 109
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  flag_follow_content:
+    weight: 10
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

@@ -1,0 +1,187 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.oc_image.body
+    - field.field.node.oc_image.field_content_visibility
+    - field.field.node.oc_image.field_oc_author_s_
+    - field.field.node.oc_image.field_oc_back_color
+    - field.field.node.oc_image.field_oc_image
+    - field.field.node.oc_image.field_oc_level
+    - field.field.node.oc_image.field_oc_licence
+    - field.field.node.oc_image.field_oc_link
+    - field.field.node.oc_image.field_oc_publisher
+    - field.field.node.oc_image.field_oc_topic
+    - field.field.node.oc_image.field_oc_year
+    - image.style.de2e
+    - node.type.oc_image
+  module:
+    - color_field
+    - ds
+    - image
+    - link
+    - options
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - langcode
+        - links
+        - body
+        - field_oc_author_s_
+        - field_oc_topic
+        - field_oc_link
+        - field_oc_background_color
+        - field_oc_image
+        - field_oc_licence
+        - field_oc_publisher
+        - field_oc_year
+        - field_content_visibility
+        - field_oc_level
+id: node.oc_image.default
+targetEntityType: node
+bundle: oc_image
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: ds_content
+  field_content_visibility:
+    weight: 111
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: ds_content
+  field_oc_author_s_:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_oc_back_color:
+    weight: 113
+    label: above
+    settings:
+      format: hex
+      opacity: '1'
+    third_party_settings: {  }
+    type: color_field_formatter_text
+    region: content
+  field_oc_image:
+    weight: 107
+    label: above
+    settings:
+      image_style: de2e
+      image_link: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: image
+    region: ds_content
+  field_oc_level:
+    weight: 112
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: ds_content
+  field_oc_licence:
+    weight: 108
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: ds_content
+  field_oc_link:
+    weight: 105
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: ds_content
+  field_oc_publisher:
+    weight: 109
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: ds_content
+  field_oc_topic:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_oc_year:
+    weight: 110
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: ds_content
+  flag_follow_content:
+    weight: 10
+    region: content
+  langcode:
+    type: language
+    weight: 0
+    region: ds_content
+    label: above
+    settings:
+      link_to_entity: false
+      native_language: false
+    third_party_settings: {  }
+  links:
+    weight: 100
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,6 @@
+bundle: oc
+excluded:
+  - field.storage.node.field_oc_back_color
+  - core.entity_view_mode.node.summary
+  - core.entity_view_mode.node.tiled
+required: true

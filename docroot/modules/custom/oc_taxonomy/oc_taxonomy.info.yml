@@ -1,0 +1,21 @@
+name: 'Opencourse Taxonomy'
+description: 'Taxonomies for Opencourses, ie topics and authors.'
+type: module
+core: 8.x
+version: 8.x-0.2
+package: oc
+dependencies:
+  - block
+  - ds
+  - field
+  - language
+  - node
+  - oc_fields
+  - panelizer
+  - path
+  - rabbit_hole
+  - taxonomy
+  - text
+  - user
+  - views
+  - viewsreference

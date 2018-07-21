@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains oc_dev.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function oc_dev_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the oc_dev module.
+    case 'help.page.oc_dev':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('enables all modules required by oc dev environment') . '</p>';
+      return $output;
+
+    default:
+  }
+}

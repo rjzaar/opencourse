@@ -1,0 +1,90 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.title_image
+    - field.field.node.oc_image.body
+    - field.field.node.oc_image.field_content_visibility
+    - field.field.node.oc_image.field_oc_author_s_
+    - field.field.node.oc_image.field_oc_back_color
+    - field.field.node.oc_image.field_oc_image
+    - field.field.node.oc_image.field_oc_level
+    - field.field.node.oc_image.field_oc_licence
+    - field.field.node.oc_image.field_oc_link
+    - field.field.node.oc_image.field_oc_publisher
+    - field.field.node.oc_image.field_oc_topic
+    - field.field.node.oc_image.field_oc_year
+    - node.type.oc_image
+    - responsive_image.styles.de2e
+  module:
+    - ds
+    - panelizer
+    - responsive_image
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - links
+        - field_oc_background_color
+        - field_oc_image
+id: node.oc_image.title_image
+targetEntityType: node
+bundle: oc_image
+mode: title_image
+content:
+  field_oc_image:
+    weight: 2
+    label: hidden
+    settings:
+      responsive_image_style: de2e
+      image_link: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: responsive_image
+    region: ds_content
+  flag_follow_content:
+    weight: 10
+    region: content
+  links:
+    weight: 0
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_content_visibility: true
+  field_oc_author_s_: true
+  field_oc_back_color: true
+  field_oc_level: true
+  field_oc_licence: true
+  field_oc_link: true
+  field_oc_publisher: true
+  field_oc_topic: true
+  field_oc_year: true
+  langcode: true

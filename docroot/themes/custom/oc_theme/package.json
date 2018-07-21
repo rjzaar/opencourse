@@ -1,0 +1,28 @@
+{
+  "name": "oc_theme",
+  "version": "1.0.0",
+  "description": "Opencourse theme",
+  "main": "index.js",
+  "devDependencies": {
+    "browser-sync": "^2.23.5",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-less": "^3.4.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sourcemaps": "^2.6.3",
+    "gulp-watch": "^4.3.11"
+  },
+  "scripts": {
+    "postinstall": "find node_modules/ -name '*.info' -type f -delete"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "child_process": "^1.0.2",
+    "gulp-concat": "^2.6.1",
+    "livereload": "^0.6.3",
+    "npm": "^5.6.0",
+    "path": "^0.12.7"
+  }
+}

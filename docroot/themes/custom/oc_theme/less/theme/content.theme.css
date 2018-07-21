@@ -1,0 +1,358 @@
+.mayo_inject_sm {
+  padding-left: 5px;
+}
+.mayo_video_inject_sm {
+  padding-left: 5px;
+}
+.mayo_accordion_content_sm {
+  cursor: auto;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.mayo_accordian_container_sm {
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  display: none;
+}
+.mayoactive {
+  display: inline-block;
+}
+.mayo_btn_block_sm {
+  display: none;
+}
+.mayo_not_btn_sm {
+  display: inline-block;
+}
+.mayo_right_sm {
+  clear: right;
+  float: right;
+  width: 100%;
+  margin-left: 20px;
+}
+.mayo_inject {
+  padding-left: 5px;
+}
+@media (min-width: 768px) {
+  .mayo_inject {
+    padding-left: 5px;
+  }
+}
+@media (min-width: 992px) {
+  .mayo_inject {
+    padding-left: 15px;
+  }
+}
+@media (min-width: 1200px) {
+  .mayo_inject {
+    padding-left: 150px;
+  }
+}
+.mayo_video_inject {
+  padding-left: 0;
+}
+@media (min-width: 768px) {
+  .mayo_video_inject {
+    padding-left: 5px;
+  }
+}
+@media (min-width: 992px) {
+  .mayo_video_inject {
+    padding-left: 15px;
+  }
+}
+@media (min-width: 1200px) {
+  .mayo_video_inject {
+    padding-left: 150px;
+  }
+}
+.mayo_accordian_container {
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+}
+.mayo_left_align {
+  text-align: left!important;
+}
+.mayo_accordion_content a {
+  -webkit-transition: background-color 0.25s, color 0.15s, box-shadow 0.25s, opacity 0.25s, filter 0.25s, border 0.15s;
+  transition: background-color 0.25s, color 0.15s, box-shadow 0.15s, opacity 0.25s, filter 0.25s, border 0.15s;
+}
+.mayo_accordion_content {
+  cursor: auto;
+  display: none;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 768px) {
+  .mayo_accordion_content {
+    display: block;
+  }
+}
+@media (min-width: 992px) {
+  .mayo_accordion_content {
+    display: block;
+  }
+}
+@media (min-width: 1200px) {
+  .mayo_accordion_content {
+    display: block;
+  }
+}
+.mayo_btn_block {
+  display: inline-block;
+}
+@media (min-width: 768px) {
+  .mayo_btn_block {
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  .mayo_btn_block {
+    display: none;
+  }
+}
+@media (min-width: 1200px) {
+  .mayo_btn_block {
+    display: none;
+  }
+}
+.mayo_not_btn {
+  display: none;
+}
+.mayo_not_btn .new_two {
+  float: left;
+}
+@media (min-width: 768px) {
+  .mayo_not_btn {
+    display: inline-block;
+  }
+}
+@media (min-width: 992px) {
+  .mayo_not_btn {
+    display: inline-block;
+  }
+}
+@media (min-width: 1200px) {
+  .mayo_not_btn {
+    display: inline-block;
+  }
+}
+.mayo_show {
+  display: block!important;
+}
+.mayo_right {
+  clear: right;
+  float: right;
+  width: 100%;
+  margin-left: 20px;
+}
+@media (min-width: 768px) {
+  .mayo_right {
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .mayo_right {
+    width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  .mayo_right {
+    width: 40%;
+  }
+}
+.mayo_book_title {
+  font-style: italic;
+}
+.mayo_hider:hover .mayo_hidee {
+  display: block;
+}
+.mayo-hider:hover .mayo_hidee {
+  display: block;
+}
+.mayo_hidee {
+  display: none;
+}
+.mayo-row-class {
+  float: right;
+  position: relative;
+  width: 300px;
+}
+.mayo_row_class {
+  float: right;
+  position: relative;
+  width: 300px;
+}
+.mayo_fbt_body {
+  position: absolute;
+  top: 240px;
+  left: 30px;
+  width: 240px;
+}
+.mayo_fbt_body:hover {
+  display: none;
+}
+.mayo_fbt_title {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 240px;
+}
+.mayo_ftb_title:hover {
+  display: none;
+}
+.mayo_fbt_author {
+  position: absolute;
+  top: 210px;
+  left: 30px;
+  width: 240px;
+}
+div.mayo_row_class:hover + p.mayo_fbt_author {
+  display: block;
+}
+.mayo_fbt_author:hover {
+  display: block;
+}
+.mayo_image_fieldclass:hover img {
+  display: none;
+}
+.mayo_hidee_box {
+  position: absolute;
+  color: black;
+  top: 150px;
+  left: 15px;
+  width: 270px;
+  height: 220px;
+  background-color: #ffffff;
+  font-size: 14px !important;
+  padding: 10px 10px 10px 10px;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  /* For IE8 and earlier */
+}
+.mayo_panel_left {
+  padding-left: 15px;
+}
+.mayo_title {
+  color: #0071B3;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: .04em;
+  font-weight: bold;
+  background-image: none;
+  padding-top: 15px;
+}
+.mayo_comment {
+  padding-right: 30px;
+  width: 80%;
+}
+.mayo_page_title {
+  color: #ea4846;
+}
+.mayo_text p {
+  line-height: 1.5em;
+  color: #60616d;
+  background-color: white;
+  font-size: 18px;
+  width: 600px !important;
+}
+.mayo_summary_text {
+  line-height: 1.5em;
+  color: #60616d;
+  font-size: 18px;
+  width: 600px;
+}
+.mayo_teaser_text {
+  text-transform: none;
+  line-height: 1em;
+  color: #60616d;
+  font-size: 14px;
+  width: 100%;
+}
+.mayo_floatleft {
+  float: left;
+  padding-right: 30px;
+  padding-top: 15px;
+  line-height: 1.5em;
+  color: #60616d;
+  font-size: 18px;
+}
+.mayo_summary {
+  background-color: white;
+}
+.mayo_right50 {
+  clear: right;
+  float: right;
+  width: 50%;
+  margin-left: 20px;
+}
+iframe {
+  width: 400px;
+  height: 300px;
+}
+.mayored {
+  background-color: blue !important;
+}
+.edgy-1col.node-formation-doc {
+  background-color: white !important;
+  max-width: 100% !important;
+  padding-left: -30px !important;
+  padding-right: -30px !important;
+}
+#main-wrapper.oa-layout-fluid {
+  max-width: 100% !important;
+}
+.main.container.row {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.mayo-layout {
+  margin-left: 0;
+  margin-right: 0;
+}
+.mayo-item {
+  padding: 0 0 0 0 !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
+}
+.mayo1 {
+  height: 400px;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
+  background-size: 100%;
+}
+.mayo_image_featured_box {
+  position: absolute;
+  color: black;
+  bottom: 15px;
+  right: 15px;
+  max-width: 400px;
+  height: 180px;
+  background-color: #ffffff;
+  font-size: 14px !important;
+  padding: 10px 10px 10px 10px;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  /* For IE8 and earlier */
+}
+.mayo_container {
+  position: relative;
+  height: 400px;
+}
+.mayo_col_width {
+  max-width: 700px !important;
+}
+.mayo_edit {
+  display: none;
+}
+.mayo_item_title {
+  padding-top: 15px !important;
+  white-space: normal;
+}

@@ -1,0 +1,61 @@
+# modules/custom/my_custom_module/migrations/my_media_video.yml
+#langcode: en
+#status: true
+#dependencies: {  }
+id: upgrade_d7_youtube
+#class: Drupal\migrate\Plugin\Migration
+#field_plugin_method: null
+#cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+migration_group: migrate_drupal_7
+label: 'Files (Youtube videos)'
+source:
+  plugin: file_entity
+  type: video
+  # See output of SELECT DISTINCT(SUBSTRING_INDEX(uri, ':', 1))  FROM file_managed WHERE type = 'video';
+  scheme:
+    - "youtube"
+  constants:
+    bundle: 'video'
+
+process:
+  mid: fid
+  bundle: 'constants/bundle'
+
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "und"
+
+  name: filename
+
+  uid:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: uid
+    -
+      plugin: migration
+      migration: upgrade_d7_user
+
+  status: status
+  created: timestamp
+  changed: timestamp
+
+  # Embed field see media_entity.bundle.video.yml.
+  field_media_video_embed_field:
+    plugin: youtube
+    source: uri
+  # Title field.
+  field_title: field_video_title
+  # Transcript field.
+  field_transcript: field_transcript
+
+destination:
+  plugin: entity:media
+  migration_dependencies:
+  required:
+    - upgrade_d7_files
+    - upgrade_d7_user
+  optional: {  }

@@ -1,0 +1,30 @@
+name: 'Opencourse Image'
+description: 'Provides Opencourse Image content type and related configuration. A course image is a image that will be used within a book or other location.'
+type: module
+core: 8.x
+dependencies:
+  - color_field
+  - content_moderation
+  - ds
+  - entity_access_by_field
+  - field
+  - gnode
+  - group
+  - image
+  - jquery_colorpicker
+  - link
+  - menu_ui
+  - node
+  - oc_fields
+  - oc_taxonomy
+  - options
+  - panelizer
+  - path
+  - responsive_image
+  - smart_trim
+  - text
+  - user
+  - varbase_media
+  - views
+version: 8.x-0.1
+package: oc

@@ -1,27 +1,60 @@
 {
-  "name": "vardot/varbase-project",
-  "description": "Project template for Varbase distribution.",
+  "name": "rjzaar/opencourse",
+  "description": "Opencourse based on varbase-project.",
   "type": "project",
   "license": "GPL-2.0-or-later",
-  "authors": [
-    {
-      "name": "Vardot",
-      "homepage": "https://github.com/vardot",
-      "role": "Maintainer"
-    }
-  ],
-  "support": {
-    "issues": "http://drupal.org/project/issues/varbase",
-    "source": "http://cgit.drupalcode.org/varbase"
-  },
   "repositories": {
     "drupal": {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
-      },
+    },
     "assets": {
       "type": "composer",
       "url": "https://asset-packagist.org"
+    },
+    "jquery": {
+      "type": "package",
+      "package": {
+        "name": "jaypan/jquery_colorpicker",
+        "type": "drupal-library",
+        "version": "1.0.1",
+        "source": {
+          "url": "https://github.com/jaypan/jquery_colorpicker",
+          "type": "git",
+          "reference": "master"
+        }
+      }
+    },
+    "bgrins": {
+      "type": "package",
+      "package": {
+        "name": "bgrins-spectrum",
+        "type": "drupal-library",
+        "version": "1.8.0",
+        "source": {
+          "url": "https://github.com/bgrins/spectrum",
+          "type": "git",
+          "reference": "master"
+          }
+        }
+      },
+  "fontawesome":{
+    "type": "package",
+    "package": {
+      "name": "fortawesome/font-awesome",
+      "version": "v4.7.0",
+      "type": "drupal-library",
+      "extra": {
+        "installer-name": "fontawesome"
+        },
+        "dist": {
+          "url": "https://github.com/FortAwesome/Font-Awesome/archive/v4.7.0.zip",
+          "type": "zip"
+          },
+        "require": {
+        "composer/installers": "~1.0"
+        }
+      }
     }
   },
   "require": {
@@ -48,9 +81,49 @@
     "drupal/material_admin_support": "1.x-dev#96ce192c31643faf69d77aca3c68578f778be3bc",
     "drupal/type_style": "1.x-dev#486a8ec7c1c7dcd93790ee281c78cfa3dba90d78",
     "drupal/google_analytics_reports": "3.x-dev#2b6bb8efbc7f61ce3c1225638075aa6037b8db44",
+    "jaypan/jquery_colorpicker": "1.0.1",
+    "drupal/group": "^1.0@RC",
+    "drush/drush": "^8.1",
+    "drupal/jquery_colorpicker": "^1.3",
+    "drupal/quiz": "4.x-dev",
+    "drupal/h5p": "^1.0@RC",
+    "drupal/console": "~1.0",
+    "drupal/twig_field_value": "^1.1",
+    "mehrpadin/superfish": "^2.1",
+    "FortAwesome/Font-Awesome": "*",
+    "drupal/prepopulate": "^2.0@alpha",
+    "drupal/twig_tweak": "^1.9",
+    "drupal/site_settings": "^1.11",
+    "drupal/superfish": "^1.1",
     "drupal/login_destination": "1.x-dev#54be8b89fdc073ca40af6b9b2eeb050e0aeb7908",
-    "drupal/betterlogin": "1.x-dev#f7cf1c5c9ec5e80c6ac0ef04ed605e25495232cd"
+    "drupal/betterlogin": "1.x-dev#f7cf1c5c9ec5e80c6ac0ef04ed605e25495232cd",
+    "drupal/paragraphs_asymmetric_translation_widgets": "1.x-dev#e676e682fd30c123fff1e863716b6792516bb11a"
   },
+  "require-dev": {
+    "drupal/coder": "8.2.12",
+    "drupal/drupal-extension": "3.3.1",
+    "phing/phing": "2.16.0",
+    "behat/behat": "3.4.1",
+    "behat/mink": "1.7.1",
+    "behat/mink-goutte-driver": "1.2.1",
+    "behat/mink-zombie-driver": "1.4.0",
+    "behat/mink-selenium2-driver": "1.3.1",
+    "behatch/contexts": "2.7.1",
+    "emuse/behat-html-formatter": "0.1.0",
+    "drupal/migrate_manifest": "^1.6",
+    "drupal/migrate_plus": "^4.0",
+    "drupal/migrate_tools": "^4.0",
+    "drupal/migrate_upgrade": "^3.0",
+    "drupal/twig_xdebug": "^1.0",
+    "drupal/migrate_devel": "1.x-dev",
+    "drupal/devel": "^1.2",
+    "drupal/kint": "^1.2",
+    "drupal/default_content": "^1.0@alpha",
+    "drupal/search_kint": "^1.0",
+    "drupal/video_embed_field": "^2",
+    "rjzaar/docroot": "*"
+
+     },
   "config": {
     "bin-dir": "bin/",
     "secure-http": false,
@@ -87,14 +160,17 @@
       "docroot/profiles/{$name}": ["type:drupal-profile"],
       "docroot/modules/contrib/{$name}": ["type:drupal-module"],
       "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
-      "docroot/libraries/slick": ["npm-asset/slick-carousel"],
-      "docroot/libraries/ace": ["npm-asset/ace-builds"],
       "docroot/libraries/{$name}": [
         "type:drupal-library",
         "type:bower-asset",
         "type:npm-asset"
       ],
-      "drush/contrib/{$name}": ["type:drupal-drush"]
+      "docroot/modules/custom/{$name}": ["type:drupal-custom-module"],
+      "docroot/themes/custom/{$name}": ["type:drupal-custom-theme"],
+      "drush/contrib/{$name}": ["type:drupal-drush"],
+      "docroot": ["rjzaar/docroot"],
+      "docroot/libraries/slick": ["npm-asset/slick-carousel"],
+      "docroot/libraries/ace": ["npm-asset/ace-builds"]
     },
     "drupal-libraries": {
       "library-directory": "docroot/libraries",
@@ -106,6 +182,19 @@
       ]
     },
     "enable-patching": true,
-    "composer-exit-on-patch-failure": true
+    "patches": {
+      "drupal/migrate_plus": {
+        "Issue #2923824: Nested source for entity_lookup causes an error": "https://www.drupal.org/files/issues/nested-source-for-entity_lookup-causes-an-error-2923824-2.patch"
+      },
+      "drupal/panels": {
+      "Issue #2879001: Warning: array_unique() expects parameter 1 to be array, string given": "https://www.drupal.org/files/issues/panels-ipe-set-classes-arrays-2879001-5.patch"
+      },
+      "drupal/video_embed_field": {
+        "Issue #2953339-define_source_module": "https://raw.githubusercontent.com/rjzaar/opencourse/8.4.x/docroot/modules/custom/custom_migration/2953339-define_source_module.patch"
+      },
+      "drupal/core": {
+        "360057-Add-FollowSymLinks-to-htaccess": "https://www.drupal.org/files/issues/Add-FollowSymLinks-to-htaccess.patch"
+      }
+    }
   }
 }

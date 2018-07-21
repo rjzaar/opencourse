@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oc_level
+    - node.type.oc_link
+  module:
+    - options
+id: node.oc_link.field_oc_level
+field_name: field_oc_level
+entity_type: node
+bundle: oc_link
+label: Level
+description: 'What is the difficulty level for this link?'
+required: true
+translatable: true
+default_value:
+  -
+    value: '2'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

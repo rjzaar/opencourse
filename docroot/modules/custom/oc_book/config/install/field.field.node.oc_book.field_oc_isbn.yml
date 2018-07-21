@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oc_isbn
+    - node.type.oc_book
+id: node.oc_book.field_oc_isbn
+field_name: field_oc_isbn
+entity_type: node
+bundle: oc_book
+label: ISBN
+description: 'What is the ISBN for the resource (if it has one)?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

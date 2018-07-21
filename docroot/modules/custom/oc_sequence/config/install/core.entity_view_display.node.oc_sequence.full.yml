@@ -1,0 +1,62 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.oc_sequence.body
+    - field.field.node.oc_sequence.field_content_visibility
+    - field.field.node.oc_sequence.field_oc_image
+    - field.field.node.oc_sequence.field_oc_level
+    - field.field.node.oc_sequence.field_oc_sequence_items
+    - field.field.node.oc_sequence.field_oc_topic
+    - node.type.oc_sequence
+  module:
+    - ds
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.oc_sequence.full
+targetEntityType: node
+bundle: oc_sequence
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_oc_sequence_items:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: featured
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view
+    region: content
+  flag_follow_content:
+    weight: 10
+    region: content
+hidden:
+  field_content_visibility: true
+  field_oc_image: true
+  field_oc_level: true
+  field_oc_topic: true
+  langcode: true
+  links: true

@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_oc_book_type
+field_name: field_oc_book_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '100'
+      label: Book
+    -
+      value: '102'
+      label: 'Journal Article'
+    -
+      value: '107'
+      label: 'Web Article'
+    -
+      value: '108'
+      label: Twitter
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

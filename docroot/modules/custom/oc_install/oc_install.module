@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains oc_install.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function oc_install_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the oc_dev module.
+    case 'help.page.oc_install':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('enables all modules required to install from the old site') . '</p>';
+      return $output;
+
+    default:
+  }
+}

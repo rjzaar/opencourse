@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.oc_group_content.field_blocks
+    - field.field.taxonomy_term.oc_group_content.field_group_list
+    - taxonomy.vocabulary.oc_group_content
+  module:
+    - text
+    - viewsreference
+id: taxonomy_term.oc_group_content.default
+targetEntityType: taxonomy_term
+bundle: oc_group_content
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_blocks:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_group_list:
+    weight: 1
+    label: above
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    type: viewsreference_formatter
+    region: content
+hidden:
+  langcode: true

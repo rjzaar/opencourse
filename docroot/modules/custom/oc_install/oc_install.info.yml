@@ -1,0 +1,11 @@
+name: oc_dev
+type: module
+description: enables all modules required to install from the old site
+core: 8.x
+package: Custom
+dependencies:
+  - migrate_devel
+  - custom_migration
+  - default_content
+  - oc_content
+

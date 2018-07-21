@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_oc_grp_desc
+    - group.type.open
+  module:
+    - text
+id: group.open.field_oc_grp_desc
+field_name: field_oc_grp_desc
+entity_type: group
+bundle: open
+label: 'OC Group Description'
+description: 'What is this group about?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

@@ -1,0 +1,27 @@
+// Icon styles.
+// -----------------------------------------------------------------------------
+@import "../../bootstrap/less/variables.less";  // Bootstrap variables.
+@import "../../bootstrap/less/mixins.less";     // Bootstrap mixins.
+@import "../variables.less";                    // oc_theme variables.
+@import "../mixins.less";                       // oc_theme mixins.
+// -----------------------------------------------------------------------------
+
+a {
+  &.icon-before .glyphicon {
+    margin-right: .25em;
+  }
+  &.icon-after .glyphicon {
+    margin-left: .25em;
+  }
+}
+
+.btn {
+  &.icon-before .glyphicon {
+    margin-left: -.25em;
+    margin-right: .25em;
+  }
+  &.icon-after .glyphicon {
+    margin-left: .25em;
+    margin-right: -.25em;
+  }
+}

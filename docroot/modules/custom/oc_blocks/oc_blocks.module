@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * @file
+ * Contains oc_blocks.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function oc_blocks_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the oc_blocks module.
+    case 'help.page.oc_blocks':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Contains blocks for Opencourse') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+///**
+// * Implements hook_theme().
+// */
+//function oc_blocks_theme() {
+//  return [
+//    'oc_blocks' => [
+//      'render element' => 'children',
+//    ],
+//  ];
+//}
+
+/**
+ * Implements hook_theme().
+ */
+function oc_blocks_theme() {
+  return array(
+    'oc_blocks_block' => array(
+      'variables' => array('title' => NULL, 'link' => NULL),
+
+      'template' => 'node--teaser',
+//        'template' => 'block--ocblocks',
+    ),
+  );
+}

@@ -1,0 +1,103 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/234?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/oc_authors"
+        }
+    },
+    "tid": [
+        {
+            "value": 234
+        }
+    ],
+    "uuid": [
+        {
+            "value": "3053a9ec-1829-44b2-9e3d-bc55e8f6c155"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "oc_authors"
+        }
+    ],
+    "name": [
+        {
+            "value": "Anonymous",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "changed": [
+        {
+            "value": "2017-12-22T05:40:11+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "schema_web_site_type": "WebSite",
+                "title": "Anonymous | Opencourse",
+                "shortlink": "http:\/\/default\/%3Cnone%3E",
+                "og_site_name": "Opencourse",
+                "canonical_url": "http:\/\/default\/%3Cnone%3E",
+                "schema_web_site_name": "Opencourse",
+                "twitter_cards_type": "summary",
+                "twitter_cards_title": "| Opencourse",
+                "schema_web_site_url": "http:\/\/default\/",
+                "og_type": "website",
+                "og_url": "http:\/\/default\/%3Cnone%3E",
+                "google_plus_image": "http:\/\/default\/themes\/custom\/oc_theme\/share-logo.png",
+                "og_title": "| Opencourse",
+                "generator": "Varbase",
+                "referrer": "origin",
+                "rights": "\u00a92017 Opencourse. All rights reserved.",
+                "twitter_cards_page_url": "http:\/\/default\/%3Cnone%3E",
+                "twitter_cards_image": "http:\/\/default\/themes\/custom\/oc_theme\/share-logo.png",
+                "og_image": "http:\/\/default\/themes\/custom\/oc_theme\/share-logo.png",
+                "schema_web_site_publisher": {
+                    "@type": "Organization",
+                    "name": "Opencourse",
+                    "url": "http:\/\/default\/",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "http:\/\/default\/logo.png"
+                    }
+                },
+                "og_image_url": "http:\/\/default\/themes\/custom\/oc_theme\/share-logo.png",
+                "mobileoptimized": "width",
+                "handheldfriendly": "true",
+                "apple_mobile_web_app_capable": "yes"
+            }
+        }
+    ],
+    "rh_action": [
+        {
+            "value": "bundle_default"
+        }
+    ],
+    "rh_redirect_response": [
+        {
+            "value": 301
+        }
+    ]
+}

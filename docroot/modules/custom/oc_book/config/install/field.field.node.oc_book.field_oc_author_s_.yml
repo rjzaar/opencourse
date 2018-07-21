@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oc_author_s_
+    - node.type.oc_book
+id: node.oc_book.field_oc_author_s_
+field_name: field_oc_author_s_
+entity_type: node
+bundle: oc_book
+label: Author(s)
+description: 'First name, then last name.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      authors: authors
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

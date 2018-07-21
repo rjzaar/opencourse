@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_use_si_on_pages
+    - site_settings.site_setting_entity_type.site_head_back
+id: site_setting_entity.site_head_back.field_use_si_on_pages
+field_name: field_use_si_on_pages
+entity_type: site_setting_entity
+bundle: site_head_back
+label: 'Use image on pages'
+description: 'Do you want the site image to be used as an image for any page that does not have an image, ie it acts as a default image.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

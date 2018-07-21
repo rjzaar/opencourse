@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'OC Group Content'
+vid: oc_group_content
+description: 'Navigable content types'
+hierarchy: 0
+weight: 0

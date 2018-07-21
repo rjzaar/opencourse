@@ -1,0 +1,30 @@
+name: 'Opencourse Book'
+description: 'Provides Opencourse Book content type and related configuration. Is a reference to an actual book that is useful for this course.'
+type: module
+core: 8.x
+dependencies:
+  - content_moderation
+  - ds
+  - entity_access_by_field
+  - entity_browser
+  - entity_browser_entity_form
+  - field
+  - gnode
+  - group
+  - image
+  - link
+  - menu_ui
+  - node
+  - oc_fields
+  - oc_image
+  - oc_link
+  - oc_taxonomy
+  - options
+  - panelizer
+  - paragraphs
+  - path
+  - text
+  - user
+  - views
+version: 8.x-0.1
+package: oc

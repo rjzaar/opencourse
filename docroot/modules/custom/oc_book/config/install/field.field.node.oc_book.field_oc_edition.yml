@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oc_edition
+    - node.type.oc_book
+id: node.oc_book.field_oc_edition
+field_name: field_oc_edition
+entity_type: node
+bundle: oc_book
+label: Edition
+description: 'Does this resource have a particular edition?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,39 @@
+name: 'Opencourse doc'
+description: 'Provides Opencourse doc content type and related configuration. Opencourse documents contain primarily text. Documents can easily be linked in a hierarchical structure called a ''book''.'
+type: module
+core: 8.x
+dependencies:
+  - color_field
+  - content_moderation
+  - ds
+  - entity_access_by_field
+  - entity_browser
+  - entity_browser_entity_form
+  - entity_reference_revisions
+  - field
+  - field_group
+  - gnode
+  - group
+  - jquery_colorpicker
+  - media_entity
+  - menu_ui
+  - node
+  - oc_book
+  - oc_fields
+  - oc_image
+  - oc_link
+  - oc_taxonomy
+  - options
+  - panelizer
+  - paragraphs_previewer
+  - path
+  - smart_trim
+  - text
+  - user
+  - varbase_bootstrap_paragraphs
+  - varbase_landing
+  - varbase_media
+  - video_embed_field
+  - views
+version: 8.x-0.1
+package: oc

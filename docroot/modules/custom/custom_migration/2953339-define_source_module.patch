@@ -1,0 +1,30 @@
+diff --git a/src/Plugin/migrate/cckfield/EmvideoField.php b/src/Plugin/migrate/cckfield/EmvideoField.php
+index 3d8eae9..5774d85 100644
+--- a/src/Plugin/migrate/cckfield/EmvideoField.php
++++ b/src/Plugin/migrate/cckfield/EmvideoField.php
+@@ -11,7 +11,9 @@ use Drupal\migrate_drupal\Plugin\migrate\cckfield\CckFieldPluginBase;
+  *
+  * @MigrateCckField(
+  *   id = "emvideo",
+- *   core = {6}
++ *   core = {6},
++ *   source_module = "emfield",
++ *   destination_module = "video_embed_field",
+  * )
+  */
+ class EmvideoField extends CckFieldPluginBase {
+diff --git a/src/Plugin/migrate/cckfield/VideoEmbedField.php b/src/Plugin/migrate/cckfield/VideoEmbedField.php
+index 97572ad..67c4487 100644
+--- a/src/Plugin/migrate/cckfield/VideoEmbedField.php
++++ b/src/Plugin/migrate/cckfield/VideoEmbedField.php
+@@ -11,7 +11,9 @@ use Drupal\migrate_drupal\Plugin\migrate\cckfield\CckFieldPluginBase;
+  *
+  * @MigrateCckField(
+  *   id = "video_embed_field",
+- *   core = {7}
++ *   core = {7},
++ *   source_module = "video_embed_field",
++ *   destination_module = "video_embed_field",
+  * )
+  */
+ class VideoEmbedField extends CckFieldPluginBase {

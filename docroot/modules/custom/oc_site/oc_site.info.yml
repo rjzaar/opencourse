@@ -1,0 +1,17 @@
+name: 'Opencourse Site'
+description: 'Provides site components.'
+type: module
+core: 8.x
+dependencies:
+  - block_content
+  - content_translation
+  - field
+  - language
+  - media_entity
+  - site_settings
+  - system
+  - text
+  - user
+  - varbase_media
+version: 8.x-0.1
+package: oc

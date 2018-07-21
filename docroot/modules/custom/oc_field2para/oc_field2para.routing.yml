@@ -1,0 +1,7 @@
+oc_field2para.content:
+  path: '/field2para'
+  defaults:
+    _controller: '\Drupal\oc_field2para\Controller\oc_field2paraController::content'
+    _title: 'Hello World'
+  requirements:
+    _permission: 'access content'

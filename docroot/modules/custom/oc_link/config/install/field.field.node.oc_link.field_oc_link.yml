@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oc_link
+    - node.type.oc_link
+  module:
+    - link
+id: node.oc_link.field_oc_link
+field_name: field_oc_link
+entity_type: node
+bundle: oc_link
+label: Link
+description: 'The title and URL of the linked resource'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

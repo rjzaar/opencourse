@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oc_external_links
+    - node.type.oc_book
+    - node.type.oc_image
+    - node.type.oc_link
+id: node.oc_book.field_oc_external_links
+field_name: field_oc_external_links
+entity_type: node
+bundle: oc_book
+label: 'External Links'
+description: 'Does this book relate to other links or books?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      oc_image: oc_image
+      oc_link: oc_link
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: oc_image
+field_type: entity_reference

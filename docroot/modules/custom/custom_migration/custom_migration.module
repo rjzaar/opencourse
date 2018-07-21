@@ -1,0 +1,14 @@
+<?php
+
+
+/**
+ * @param $row
+ *
+ * @return null
+ */
+function prepareRow($row) {
+  if (empty($row)) {
+    $row = NULL;
+  }
+  return $row;
+}

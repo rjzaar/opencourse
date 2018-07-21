@@ -1,4 +1,31 @@
 # Ignore paths that contain user-generated content.
+.DS_Store
+/bin
+/docroot/core
+/docroot/modules/contrib
+/docroot/themes/contrib
+/docroot/libraries
+/docroot/profiles/varbase
+vendor/
+/docroot/themes/custom/oc_theme/node_modules/
+bower_components/
+.sass-cache/
+/themes/vartheme/css/variables.css
+/themes/vartheme/css/variables.css.map
+/themes/vartheme/css/theme/theme-variables.css
+/themes/vartheme/css/theme/theme-variables.css.map
+/themes/vartheme/VARTHEME_SUBTHEME/css/variables.css
+/themes/vartheme/VARTHEME_SUBTHEME/css/variables.css.map
+/themes/vartheme/css/mixins.css
+/themes/vartheme/css/mixins.css.map
+/themes/vartheme/js/script.min.js
+/themes/vartheme/VARTHEME_SUBTHEME/css/mixins.css
+/themes/vartheme/VARTHEME_SUBTHEME/css/mixins.css.map
+/themes/vartheme/VARTHEME_SUBTHEME/js/script.min.js
+/modules/varbase_features/varbase_tour/js/varbase_tour.scripts.min.js
+
+/docroot/sites/default/settings.local.php
+npm-debug.log
 docroot/*/settings.local.php
 docroot/files
 docroot/sites/*/files
@@ -35,4 +62,7 @@ ehthumbs.db
 .bashrc
 errors.log
 
-
+# some extras
+composer.lock
+config/*
+/docroot/themes/custom/oc_theme/node_modules/

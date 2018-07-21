@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["mixins.less"],"sourcesContent":["// oc_theme custom mixins.\n\n// Drop shadows.\n.box-shadow(@shadow) {\n  -webkit-box-shadow: @shadow;\n     -moz-box-shadow: @shadow;\n          box-shadow: @shadow;\n}\n"],"file":"mixins.css"}

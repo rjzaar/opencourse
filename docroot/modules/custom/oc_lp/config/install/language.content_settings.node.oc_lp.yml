@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.oc_lp
+id: node.oc_lp
+target_entity_type_id: node
+target_bundle: oc_lp
+default_langcode: site_default
+language_alterable: false

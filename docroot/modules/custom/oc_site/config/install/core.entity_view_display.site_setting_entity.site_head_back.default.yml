@@ -1,0 +1,98 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.site_head_back.field_site_image
+    - field.field.site_setting_entity.site_head_back.field_site_video
+    - field.field.site_setting_entity.site_head_back.field_use_si_in_sections
+    - field.field.site_setting_entity.site_head_back.field_use_si_on_pages
+    - field.field.site_setting_entity.site_head_back.field_use_sv_in_sections
+    - field.field.site_setting_entity.site_head_back.field_use_sv_on_pages
+    - site_settings.site_setting_entity_type.site_head_back
+  module:
+    - user
+id: site_setting_entity.site_head_back.default
+targetEntityType: site_setting_entity
+bundle: site_head_back
+mode: default
+content:
+  field_site_image:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_site_video:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_use_si_in_sections:
+    weight: 4
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_use_si_on_pages:
+    weight: 6
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_use_sv_in_sections:
+    weight: 5
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_use_sv_on_pages:
+    weight: 7
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  fieldset:
+    label: above
+    type: string
+    weight: -4
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  name:
+    label: above
+    type: string
+    weight: -4
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  user_id:
+    label: hidden
+    type: author
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

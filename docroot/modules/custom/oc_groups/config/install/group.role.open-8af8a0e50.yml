@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.open
+  enforced:
+    config:
+      - user.role.content_admin
+id: open-8af8a0e50
+label: 'Content Admin'
+weight: -7
+internal: true
+audience: outsider
+group_type: open
+permissions_ui: false
+permissions: {  }

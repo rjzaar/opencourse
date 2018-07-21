@@ -1,0 +1,121 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/group\/4?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/group\/open"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/group\/open\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 1
+        }
+    ],
+    "uuid": [
+        {
+            "value": "e21f5d80-137b-4308-887a-4278e0e5a6ba"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "open"
+        }
+    ],
+    "label": [
+        {
+            "value": "Formation",
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/group\/open\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "97e5c415-58a1-4d8a-b60f-22b67c055efd"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "created": [
+        {
+            "value": "2017-11-07T23:44:38+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2017-11-07T23:44:38+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "schema_web_site_type": "WebSite",
+                "title": "| Opencourse",
+                "shortlink": "http:\/\/default\/%3Cnone%3E",
+                "canonical_url": "http:\/\/default\/%3Cnone%3E",
+                "twitter_cards_type": "summary",
+                "schema_web_site_name": "Opencourse",
+                "og_site_name": "Opencourse",
+                "twitter_cards_title": "| Opencourse",
+                "schema_web_site_url": "http:\/\/default\/",
+                "og_type": "website",
+                "og_url": "http:\/\/default\/%3Cnone%3E",
+                "google_plus_image": "http:\/\/default\/profiles\/varbase\/themes\/vartheme\/share-logo.png",
+                "og_title": "| Opencourse",
+                "generator": "Varbase",
+                "rights": "\u00a92017 Opencourse. All rights reserved.",
+                "referrer": "origin",
+                "twitter_cards_page_url": "http:\/\/default\/%3Cnone%3E",
+                "twitter_cards_image": "http:\/\/default\/profiles\/varbase\/themes\/vartheme\/share-logo.png",
+                "og_image": "http:\/\/default\/profiles\/varbase\/themes\/vartheme\/share-logo.png",
+                "schema_web_site_publisher": {
+                    "@type": "Organization",
+                    "name": "Opencourse",
+                    "url": "http:\/\/default\/",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "http:\/\/default\/logo.png"
+                    }
+                },
+                "og_image_url": "http:\/\/default\/profiles\/varbase\/themes\/vartheme\/share-logo.png",
+                "mobileoptimized": "width",
+                "handheldfriendly": "true",
+                "apple_mobile_web_app_capable": "yes"
+            }
+        }
+    ]
+}

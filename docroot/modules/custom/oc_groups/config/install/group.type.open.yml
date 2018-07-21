@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+id: open
+label: 'Open group'
+description: 'Public group.'
+creator_membership: true
+creator_wizard: true
+creator_roles:
+  - open-admin

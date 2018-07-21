@@ -1,0 +1,8 @@
+{
+  "name": "drupal/oc_content",
+  "type": "drupal-module",
+  "description": "Demo content for Opencatechesis",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "require": { }
+}

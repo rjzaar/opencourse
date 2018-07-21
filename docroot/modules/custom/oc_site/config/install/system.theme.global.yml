@@ -1,0 +1,17 @@
+favicon:
+  mimetype: image/jpeg
+  path: 'private://hands1small.jpg'
+  url: ''
+  use_default: false
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true
+  logo: true
+  name: true
+  slogan: true
+logo:
+  path: 'private://oclogo.gif'
+  url: ''
+  use_default: false

@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains oc_prod.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function oc_prod_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the oc_prod module.
+    case 'help.page.oc_prod':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('enables all modules required by oc') . '</p>';
+      return $output;
+
+    default:
+  }
+}

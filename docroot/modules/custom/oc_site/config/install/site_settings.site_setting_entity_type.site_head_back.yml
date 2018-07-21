@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: site_head_back
+label: 'Site Heading Background'
+fieldset: ''
+multiple: false

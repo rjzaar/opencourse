@@ -1,0 +1,7 @@
+name: 'oc_field2para'
+type: module
+description: 'Takes oc_doc fields, creates paras and adds fields as embeded etc.'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - paragraphs

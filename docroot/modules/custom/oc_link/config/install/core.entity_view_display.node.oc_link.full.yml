@@ -1,0 +1,116 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.oc_link.body
+    - field.field.node.oc_link.field_content_visibility
+    - field.field.node.oc_link.field_oc_author_s_
+    - field.field.node.oc_link.field_oc_level
+    - field.field.node.oc_link.field_oc_link
+    - field.field.node.oc_link.field_oc_topic
+    - node.type.oc_link
+  module:
+    - ds
+    - link
+    - options
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_oc_link
+        - body
+        - field_oc_author_s_
+        - field_oc_level
+        - field_oc_topic
+        - links
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.oc_link.full
+targetEntityType: node
+bundle: oc_link
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: ds_content
+  field_oc_author_s_:
+    weight: 2
+    label: inline
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: ds_content
+  field_oc_level:
+    weight: 3
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: ds_content
+  field_oc_link:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: ds_content
+  field_oc_topic:
+    weight: 4
+    label: inline
+    settings:
+      view_mode: simple
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view
+    region: ds_content
+  flag_follow_content:
+    weight: 10
+    region: content
+  links:
+    weight: 5
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_content_visibility: true
+  langcode: true

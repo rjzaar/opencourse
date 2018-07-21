@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_use_sv_in_sections
+    - site_settings.site_setting_entity_type.site_head_back
+id: site_setting_entity.site_head_back.field_use_sv_in_sections
+field_name: field_use_sv_in_sections
+entity_type: site_setting_entity
+bundle: site_head_back
+label: 'Use video in sections'
+description: 'Do you want the site video to be used as a video for any section that does not have a video, ie it acts as a default video.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

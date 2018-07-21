@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oc_head_back_color
+    - node.type.oc_doc
+  module:
+    - color_field
+id: node.oc_doc.field_oc_head_back_color
+field_name: field_oc_head_back_color
+entity_type: node
+bundle: oc_doc
+label: 'OC heading  background color'
+description: 'What color should be used behind the document heading?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

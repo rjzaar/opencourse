@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Default theme implementation of the Superfish menus.
+ *
+ * Available variables:
+ * - id: Unique menu identifier.
+ * - menu_classes: Menu classes.
+ * - menu_items: Menu tree.
+ *
+ * @see template_preprocess_superfish()
+ *
+ * @ingroup themeable
+ */
+#}
+{# Don't allow the small width test menu to turn up.#}
+{% if not id == 'superfish-test' %}
+<ul id="{{ id }}" class="{{ menu_classes }}">
+  {{ menu_items }}
+</ul>
+{% endif %}
