@@ -66,3 +66,6 @@ errors.log
 composer.lock
 config/*
 /docroot/themes/custom/oc_theme/node_modules/
+
+#One file so it can be used for content_default
+!/docroot/sites/default/files/St-Anthony-seq.jpg

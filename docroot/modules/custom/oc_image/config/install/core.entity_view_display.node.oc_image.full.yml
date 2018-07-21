@@ -15,12 +15,13 @@ dependencies:
     - field.field.node.oc_image.field_oc_topic
     - field.field.node.oc_image.field_oc_year
     - node.type.oc_image
+    - responsive_image.styles.d05
   module:
     - ds
-    - image
     - link
     - options
     - panelizer
+    - responsive_image
     - text
     - user
 third_party_settings:
@@ -62,10 +63,17 @@ content:
     weight: 5
     label: hidden
     settings:
-      image_style: ''
+      responsive_image_style: d05
       image_link: ''
-    third_party_settings: {  }
-    type: image
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: responsive_image
     region: content
   field_oc_level:
     weight: 9

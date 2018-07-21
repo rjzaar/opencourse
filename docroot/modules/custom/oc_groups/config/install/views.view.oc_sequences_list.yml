@@ -1,14 +1,14 @@
 langcode: en
-status: false
+status: true
 dependencies:
   config:
-    - node.type.oc_image
+    - node.type.oc_sequence
   module:
     - gnode
     - group
     - node
-id: opencourse_images_tiled
-label: 'Opencourse images tiled'
+id: oc_sequences_list
+label: 'Opencourse sequences list'
 module: gnode
 description: 'Lists all of the nodes that have been added to a group.'
 tag: ''
@@ -25,7 +25,7 @@ display:
       access:
         type: group_permission
         options:
-          group_permission: 'access group_node overview'
+          group_permission: 'view group_node:landing_page entity'
       cache:
         type: tag
         options: {  }
@@ -811,7 +811,7 @@ display:
           admin_label: ''
           operator: in
           value:
-            oc_image: oc_image
+            oc_sequence: oc_sequence
           group: 1
           exposed: false
           expose:
@@ -858,7 +858,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: 'No links available.'
+          content: 'No sequences available.'
           plugin_id: text_custom
       relationships:
         group_content:
@@ -870,13 +870,16 @@ display:
           admin_label: 'Content relation'
           required: true
           group_content_plugins:
-            'group_node:oc_image': 'group_node:oc_image'
+            'group_node:oc_sequence': 'group_node:oc_sequence'
             'group_node:book': '0'
+            'group_node:gp_land_page': '0'
             'group_node:landing_page': '0'
+            'group_node:nlp': '0'
             'group_node:oc_book': '0'
             'group_node:oc_doc': '0'
+            'group_node:oc_image': '0'
             'group_node:oc_link': '0'
-            'group_node:oc_sequence': '0'
+            'group_node:oc_lp': '0'
             'group_node:page': '0'
           entity_type: node
           plugin_id: group_content_to_entity_reverse
@@ -888,16 +891,16 @@ display:
           relationship: group_content
           group_type: group
           admin_label: ''
-          default_action: 'access denied'
+          default_action: default
           exception:
             value: all
             title_enable: false
             title: All
           title_enable: true
-          title: '{{ arguments.gid|placeholder }} images'
+          title: '{{ arguments.gid|placeholder }} sequences'
           default_argument_type: fixed
           default_argument_options:
-            argument: ''
+            argument: '1'
           default_argument_skip_url: false
           summary_options:
             base_path: ''
@@ -919,7 +922,7 @@ display:
           entity_field: gid
           plugin_id: numeric
       display_extenders: {  }
-      title: Images
+      title: Sequences
     cache_metadata:
       max-age: -1
       contexts:
@@ -936,7 +939,9 @@ display:
     display_title: Block
     position: 2
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender: {  }
+      block_description: 'Group Sequences'
     cache_metadata:
       max-age: -1
       contexts:
@@ -947,25 +952,25 @@ display:
         - url.query_args
         - 'user.node_grants:view'
       tags: {  }
-  oc_images:
+  oc_sequences:
     display_plugin: page
-    id: oc_images
-    display_title: Images
+    id: oc_sequences
+    display_title: Sequences
     position: 1
     display_options:
       display_extenders:
         metatag_display_extender: {  }
-      path: group/%group/images
+      path: group/%group/sequences_list
       menu:
         type: none
-        title: Images
-        description: 'Opencourse images'
+        title: Sequences
+        description: 'Opencourse sequences'
         expanded: false
         parent: ''
-        weight: 30
+        weight: 45
         context: '0'
         menu_name: group
-      display_description: 'Opencourse images'
+      display_description: 'Opencourse links'
     cache_metadata:
       max-age: -1
       contexts:

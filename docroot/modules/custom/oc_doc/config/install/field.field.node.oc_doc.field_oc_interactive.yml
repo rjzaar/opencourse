@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oc_interactive
+    - node.type.oc_doc
+  module:
+    - h5p
+id: node.oc_doc.field_oc_interactive
+field_name: field_oc_interactive
+entity_type: node
+bundle: oc_doc
+label: Interactive
+description: 'Add an interactive component to test the doc content, eg a quiz.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: h5p

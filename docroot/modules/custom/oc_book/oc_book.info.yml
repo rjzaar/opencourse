@@ -9,6 +9,7 @@ dependencies:
   - entity_browser
   - entity_browser_entity_form
   - field
+  - focal_point
   - gnode
   - group
   - image
@@ -23,8 +24,12 @@ dependencies:
   - panelizer
   - paragraphs
   - path
+  - responsive_image
+  - smart_trim
+  - taxonomy
   - text
   - user
+  - varbase_media
   - views
 version: 8.x-0.1
 package: oc

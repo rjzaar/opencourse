@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.storage.node.field_oc_author_s_
     - node.type.oc_image
+    - taxonomy.vocabulary.oc_authors
 id: node.oc_image.field_oc_author_s_
 field_name: field_oc_author_s_
 entity_type: node
@@ -18,7 +19,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      authors: authors
+      oc_authors: oc_authors
     sort:
       field: _none
     auto_create: true

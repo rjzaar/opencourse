@@ -1,8 +1,13 @@
 name: oc_content
 type: module
-description: Demo content for Opencatechesis
+description: Demo content for Opencourse
 core: 8.x
 package: Custom
 dependencies:
   - oc_taxonomy
+  - oc_sequence
+  - oc_groups
   - drupal:hal (>=8.3.x)
+default_content:
+  file:
+    - 0150686a-37a3-4d99-88b6-da500a2b1990

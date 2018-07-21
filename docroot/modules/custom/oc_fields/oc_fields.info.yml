@@ -6,27 +6,35 @@ dependencies:
   - block
   - block_class
   - color_field
+  - content_moderation
   - ds
   - embed
   - entity_access_by_field
   - entity_browser
+  - entity_browser_entity_form
   - entity_embed
+  - entity_reference_revisions
   - field
   - file
   - focal_point
+  - h5p
+  - h5peditor
   - image
   - jquery_colorpicker
   - link
-  - media_entity
+  - media
   - node
+  - oc_doc
   - options
   - panelizer
+  - paragraphs_previewer
   - path
   - superfish
   - system
   - taxonomy
   - text
   - user
+  - varbase_media
   - video_embed_field
   - views
   - viewsreference

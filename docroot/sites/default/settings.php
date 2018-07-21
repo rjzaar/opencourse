@@ -297,7 +297,7 @@ $config_directories = array();
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = 'WzQWCQue4Me3whSbKD__Rqu6wcLkWilBf4IhxMgnpR6DvjyOEKmyDcTTZBTOilmvE00vygPGbQ';
+$settings['hash_salt'] = 'gH5A04ogs0eDhaXEHO1QoHbouImTUx9salyZEtCJ1IlcFwyLplxCYM_L0oYzxV16uXWObixUpA';
 
 /**
  * Deployment identifier.
@@ -788,14 +788,4 @@ $settings['entity_update_batch_size'] = 50;
  if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
        include $app_root . '/' . $site_path . '/settings.local.php';
     }
-$databases['default']['default'] = array (
-  'database' => 'opencourse',
-  'username' => 'opencourse',
-  'password' => 'opencourse',
-  'prefix' => '',
-  'host' => 'localhost',
-  'port' => '3306',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
-$settings['install_profile'] = 'varbase';
+

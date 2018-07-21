@@ -18,7 +18,9 @@ dependencies:
   - options
   - panelizer
   - path
+  - taxonomy
   - text
   - user
+  - views
 version: 8.x-0.1
 package: oc

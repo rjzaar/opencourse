@@ -263,7 +263,9 @@ content:
     type: list_default
     region: ds_content
   field_oc_link:
+    type: link
     weight: 0
+    region: ds_content
     label: hidden
     settings:
       trim_length: 80
@@ -272,8 +274,6 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
-    region: ds_content
   field_oc_topic:
     weight: 4
     label: inline

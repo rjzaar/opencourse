@@ -1,2 +1,4 @@
 bundle: oc
+excluded:
+  - views.view.oc_links_list
 required: true

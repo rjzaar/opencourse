@@ -94,16 +94,17 @@
 #}
 
 <div id="node-{{ node.id }}"
-     style= "background-color: #{{ oc_image_back_color }}; background-image: url('{{ file_url(field_oc_image|field_target_entity.uri.value) }}' )"
+     style= "background-color: #{{ oc_image_back_color }}; background-image: url('{{ field_oc_image|field_target_entity.uri.value | image_style('de2e') }}' )"
      {#style= "background-color: #{{ field_oc_background_color[0]['value'] }}; background-image: url('{{ field_oc_image|field_target_entity.tid.value }}' )"#}
 
          class="{{ classes }} oc_1 clearfix" {{ attributes }} role="article">
+
     <div class="oc_accordian_container">
 
         <div id="Doc_{{ node.id }}" class="oc_accordion_content">
             <div class="content oc_container"{{ content_attributes }}>
 
-                <div class="oc_image_featured_box">
+                <div class="oc-image-featured-box">
 
 <a href="{{ drupal_url('node/', {absolute: true}) }}/{{ node.id }}">{{ content['title'][0]['#context']['value'] }}</a>
                     by  <a href="{{ drupal_url('taxonomy/term/', {absolute: true}) }}{{ field_oc_author_s_|field_target_entity.tid.value}}">{{ field_oc_author_s_|field_target_entity.name.value}}</a>

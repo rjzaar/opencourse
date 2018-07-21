@@ -7,7 +7,7 @@ dependencies:
   - content_translation
   - field
   - language
-  - media_entity
+  - media
   - site_settings
   - system
   - text

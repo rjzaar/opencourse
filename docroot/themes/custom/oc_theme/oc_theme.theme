@@ -135,6 +135,22 @@ function oc_theme_preprocess_page(&$variables) {
           if (isset($fnode)) {
             $fnodeuri = $fnode->getFileUri();
             $variables['oc_head_image'] = file_create_url($fnodeuri);
+
+            $display_options = [
+              'label'    => 'hidden',
+              'type'     => 'responsive_image',
+              'settings' => [
+                'responsive_image_style' => 'de2e',
+              ],
+            ];
+
+            // Get image, apply display options.
+            $image = $node->get('field_oc_book_image')->view($display_options);
+
+            // Render.
+            $variables['oc_resp_image'] = render($image);
+
+
           }
 
         }
@@ -174,6 +190,7 @@ function oc_theme_preprocess_page(&$variables) {
             }
           }
         }
+
       }
       foreach (\Drupal\group\Entity\GroupContent::loadByEntity($variables['node']) as $group_content) {
         $oc_group = $group_content->getGroup()->id();
@@ -291,8 +308,7 @@ function oc_theme_preprocess_node(&$variables) {
 
 //if there is an author, pass the author on
   $node = $variables['node'];
-  $variables['uuid'] = "John";
-  $variables['auth']="Fred";
+
   if ($node->hasField('field_oc_author_s_')) {
     $auth = $node->get('field_oc_author_s_')[0]->get('target_id')->getValue();
     $term = Drupal\taxonomy\Entity\Term::load($auth);
@@ -310,8 +326,6 @@ function oc_theme_preprocess_node(&$variables) {
     $variables['link_lic_title']= $node->field_oc_licence[0]->get('title')->getValue();
     $variables['link_lic_url']= $node->field_oc_licence[0]->get('uri')->getValue();
   }
-
-
 }
 
 
@@ -320,6 +334,7 @@ function oc_theme_preprocess_node(&$variables) {
  */
 function oc_theme_preprocess_template(&$variables) {
   $variables['uuid'] = "John";
+
 
 }
 
@@ -375,6 +390,7 @@ function oc_theme_preprocess_block(&$variables) {
     }
   }
 }
+
 /**
  * @param $variables
  */
@@ -419,17 +435,16 @@ function oc_theme_preprocess_menu_local_task(&$variables)
  */
 function oc_theme_preprocess_ds_1col(&$variables) {
 
-
-
-
   $node = \Drupal::routeMatch()->getParameter('node');
   if (isset($node)) {
 
     //if there is an author, pass the author on
     if ($node->hasField('field_oc_author_s_')) {
-      $auth = $node->get('field_oc_author_s_')[0]->get('target_id')->getValue();
-      $term = Drupal\taxonomy\Entity\Term::load($auth);
-      $variables['auth']=$term->getName();
+       if (!is_null($node->get('field_oc_author_s_')[0])) {
+        $auth = $node->get('field_oc_author_s_')[0]->get('target_id')->getValue();
+        $term = Drupal\taxonomy\Entity\Term::load($auth);
+        $variables['auth']=$term->getName();
+      }
     }
     $variables['created'] =format_date($node->created->value);
     $variables['modified'] =format_date($node->changed->value);
@@ -441,6 +456,8 @@ function oc_theme_preprocess_ds_1col(&$variables) {
       $variables['link_lic_title']= $node->field_oc_licence[0]->get('title')->getValue();
       $variables['link_lic_url']= $node->field_oc_licence[0]->get('uri')->getValue();
     }
+
+
 
 
 
@@ -481,6 +498,14 @@ function oc_theme_preprocess_ds_1col(&$variables) {
 //      $fnodeuri = $fnode->getFileUri();
 //      $variables['oc_image'] = file_create_url($fnodeuri);
     }
+
+
+//    if ($node->hasField('field_oc_image')){
+//      $style = \Drupal::entityTypeManager()->getStorage('image_style')->load('de2e');
+//      $variables['oc_image'] = "Johsn";
+//      //  $variables['oc_respimage'] = $style->buildUrl('private://2018-07/bigbang.jpg');
+//    }
+
   }
 }
 
@@ -492,6 +517,7 @@ function oc_theme_preprocess_field(&$variables) {
 //  $variables['varnid'] = "apple";
 //  $variables['nid'] = $context['#object']['x-default'];
 //  $variables['object']= $context['element']['#object']['x-default'];
+
 }
 
 //function oc_theme_menu() {

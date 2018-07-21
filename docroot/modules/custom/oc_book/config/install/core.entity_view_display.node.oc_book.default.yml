@@ -20,10 +20,10 @@ dependencies:
     - field.field.node.oc_book.field_oc_year
     - node.type.oc_book
   module:
-    - image
     - link
     - options
     - panelizer
+    - responsive_image
     - text
     - user
 third_party_settings:
@@ -63,10 +63,10 @@ content:
     weight: 102
     label: above
     settings:
-      image_style: ''
       image_link: ''
+      responsive_image_style: ''
     third_party_settings: {  }
-    type: image
+    type: responsive_image
     region: content
   field_oc_book_type:
     weight: 104

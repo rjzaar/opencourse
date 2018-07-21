@@ -53,13 +53,13 @@ third_party_settings:
         - field_oc_author_s_
         - field_oc_topic
         - field_oc_link
-        - field_oc_background_color
         - field_oc_image
         - field_oc_licence
         - field_oc_publisher
         - field_oc_year
         - field_content_visibility
         - field_oc_level
+        - field_oc_back_color
 id: node.oc_image.default
 targetEntityType: node
 bundle: oc_image
@@ -95,7 +95,7 @@ content:
       opacity: '1'
     third_party_settings: {  }
     type: color_field_formatter_text
-    region: content
+    region: ds_content
   field_oc_image:
     weight: 107
     label: above

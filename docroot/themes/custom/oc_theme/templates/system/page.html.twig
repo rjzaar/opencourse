@@ -117,6 +117,7 @@
 <div class="oc_title_image_wrapper oc_head_bgc">
 
 <img class="oc_title_image img-responsive" src="{{ oc_head_image }}"  >
+
 </div>
 {%  endif %}
     <!-- Page Header -->
@@ -133,7 +134,7 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           <div class="post-heading oc_heading">
 
-            <h1 class="oc_heading">{{ node.label }}</h1>
+            <h1 class="oc_heading oc_vinject">{{ node.label }}</h1>
               {#{%  if node.field_oc_title_image %}#}
                     {#{{ oc_title_image }}#}
              {#{% else %}#}
@@ -278,6 +279,31 @@
                         {% endif %}
                     </ul>
 
+                </li>  {% if node.type.value[0]['target_id']=="oc_sequence" or node.type.value[0]['target_id']=="oc_doc"  %} <li class="sf-depth-1 menuparent oc_pointer" onclick="showquiz()">
+                     <span class="fa-stack fa-lg ">
+                  <i class="fa fa-circle fa-stack-2x oc_icon_back"></i>
+                  <i class="fa fa-question-circle fa-stack-2x fa-inverse"></i>
+                        </span>
+                    <ul class="sf-hidden oc_ani_text" >
+                        <li class="sf-depth-2 sf-no-children">
+                            Interactives
+                        </li>
+
+                    </ul>
+                    <script>
+function showquiz() {
+var x = document.getElementsByClassName("oc_quiz");
+for(var i = 0; i < x.length; i++) {
+if (x[i].style.display == "none") {
+x[i].style.display = "block";
+} else {
+x[i].style.display = "none";
+}
+}
+
+}
+                    </script>{% endif %}
+
                 </li>
             </ul>
             {#<a href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/docs" class="group_nav_text"><span class="fa-stack fa-lg">#}
@@ -299,6 +325,7 @@
         </div>
     </div>
 {% endif %}
+
 {#{% if page.group %}#}
     {#{% block group %}#}
         {#<div class="group_nav">#}

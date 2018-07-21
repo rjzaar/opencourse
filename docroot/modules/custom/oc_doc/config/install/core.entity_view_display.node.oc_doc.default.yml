@@ -8,6 +8,8 @@ dependencies:
     - field.field.node.oc_doc.field_oc_back_color
     - field.field.node.oc_doc.field_oc_external_links
     - field.field.node.oc_doc.field_oc_head_back_color
+    - field.field.node.oc_doc.field_oc_importance
+    - field.field.node.oc_doc.field_oc_interactive
     - field.field.node.oc_doc.field_oc_internal_links
     - field.field.node.oc_doc.field_oc_level
     - field.field.node.oc_doc.field_oc_linked_image
@@ -19,6 +21,7 @@ dependencies:
     - color_field
     - ds
     - entity_reference_revisions
+    - h5p
     - options
     - panelizer
     - text
@@ -68,19 +71,19 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     region: ds_content
   field_content_visibility:
-    weight: 109
+    weight: 8
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: ds_content
   field_lp_paragraphs:
-    weight: 115
+    weight: 13
     label: hidden
     settings:
       view_mode: default
@@ -89,7 +92,7 @@ content:
     type: entity_reference_revisions_entity_view
     region: ds_content
   field_oc_back_color:
-    weight: 113
+    weight: 11
     label: above
     settings:
       format: hex
@@ -98,7 +101,7 @@ content:
     type: color_field_formatter_text
     region: ds_content
   field_oc_external_links:
-    weight: 103
+    weight: 3
     label: above
     settings:
       link: true
@@ -106,7 +109,7 @@ content:
     type: entity_reference_label
     region: ds_content
   field_oc_head_back_color:
-    weight: 114
+    weight: 12
     label: above
     settings:
       format: hex
@@ -114,8 +117,24 @@ content:
     third_party_settings: {  }
     type: color_field_formatter_text
     region: ds_content
+  field_oc_importance:
+    weight: 14
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_oc_interactive:
+    weight: 15
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: h5p_default
+    region: content
   field_oc_internal_links:
-    weight: 104
+    weight: 4
     label: above
     settings:
       link: true
@@ -123,14 +142,14 @@ content:
     type: entity_reference_label
     region: ds_content
   field_oc_level:
-    weight: 106
+    weight: 6
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: ds_content
   field_oc_linked_image:
-    weight: 107
+    weight: 7
     label: above
     settings:
       link: true
@@ -138,7 +157,7 @@ content:
     type: entity_reference_label
     region: ds_content
   field_oc_title_image:
-    weight: 111
+    weight: 10
     label: above
     settings:
       view_mode: title_image
@@ -154,7 +173,7 @@ content:
     type: entity_reference_entity_view
     region: ds_content
   field_oc_topic:
-    weight: 105
+    weight: 5
     label: above
     settings:
       link: true
@@ -162,7 +181,7 @@ content:
     type: entity_reference_label
     region: ds_content
   field_oc_video:
-    weight: 110
+    weight: 9
     label: above
     settings:
       link: true
@@ -182,7 +201,7 @@ content:
       native_language: false
     third_party_settings: {  }
   links:
-    weight: 100
+    weight: 1
     region: ds_content
     settings: {  }
     third_party_settings: {  }

@@ -3,6 +3,7 @@ description: 'Provides Opencourse doc content type and related configuration. Op
 type: module
 core: 8.x
 dependencies:
+  - book
   - color_field
   - content_moderation
   - ds
@@ -14,8 +15,10 @@ dependencies:
   - field_group
   - gnode
   - group
+  - h5p
+  - h5peditor
   - jquery_colorpicker
-  - media_entity
+  - media
   - menu_ui
   - node
   - oc_book

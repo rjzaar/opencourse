@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.storage.site_setting_entity.field_site_image
-    - media_entity.bundle.image
+    - media.type.image
     - site_settings.site_setting_entity_type.site_head_back
 id: site_setting_entity.site_head_back.field_site_image
 field_name: field_site_image

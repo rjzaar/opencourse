@@ -18,7 +18,7 @@ dependencies:
   module:
     - color_field
     - content_moderation
-    - image
+    - focal_point
     - link
     - path
     - text
@@ -70,8 +70,10 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+      preview_link: true
+      offsets: '50,50'
     third_party_settings: {  }
-    type: image_image
+    type: image_focal_point
     region: content
   field_oc_level:
     weight: 9
@@ -180,4 +182,6 @@ content:
   url_redirects:
     weight: 50
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }

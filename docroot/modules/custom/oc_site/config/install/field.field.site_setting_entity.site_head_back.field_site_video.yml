@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.storage.site_setting_entity.field_site_video
-    - media_entity.bundle.video
+    - media.type.video
     - site_settings.site_setting_entity_type.site_head_back
 id: site_setting_entity.site_head_back.field_site_video
 field_name: field_site_video

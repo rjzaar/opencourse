@@ -29,3 +29,6 @@ dependencies:
   - superfish
   - field_ui
   - layout_discovery
+  - views_field_view
+  - h5p
+  - h5peditor

@@ -1,0 +1,98 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/rob\/user\/1?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+        }
+    },
+    "uid": [
+        {
+            "value": 1
+        }
+    ],
+    "uuid": [
+        {
+            "value": "a46a4a23-a852-43fb-a9c9-5377271634c2"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "name": [
+        {
+            "value": "admin"
+        }
+    ],
+    "created": [
+        {
+            "value": "2014-11-10T03:53:25+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-07-10T06:45:20+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "schema_web_site_type": "WebSite",
+                "title": "admin | opencourse",
+                "shortlink": "http:\/\/rob\/node",
+                "canonical_url": "http:\/\/rob\/node",
+                "twitter_cards_type": "summary",
+                "schema_web_site_name": "opencourse",
+                "og_site_name": "opencourse",
+                "twitter_cards_title": "Homepage | opencourse",
+                "schema_web_site_url": "http:\/\/rob\/",
+                "og_type": "profile",
+                "og_url": "http:\/\/rob\/node",
+                "google_plus_image": "http:\/\/rob\/themes\/custom\/oc_theme\/share-image.png",
+                "og_title": "Homepage | opencourse",
+                "generator": "Varbase",
+                "rights": "\u00a92018 opencourse. All rights reserved.",
+                "referrer": "origin",
+                "twitter_cards_page_url": "http:\/\/rob\/node",
+                "twitter_cards_image": "http:\/\/rob\/themes\/custom\/oc_theme\/share-image.png",
+                "og_image": "http:\/\/rob\/themes\/custom\/oc_theme\/share-image.png",
+                "schema_web_site_publisher": {
+                    "@type": "Organization",
+                    "name": "opencourse",
+                    "url": "http:\/\/rob\/",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "http:\/\/rob\/\/logo.png"
+                    }
+                },
+                "og_image_url": "http:\/\/rob\/themes\/custom\/oc_theme\/share-image.png",
+                "mobileoptimized": "width",
+                "handheldfriendly": "true",
+                "apple_mobile_web_app_capable": "yes"
+            }
+        }
+    ],
+    "field_last_password_reset": [
+        {
+            "value": "2018-07-10T06:34:08"
+        }
+    ],
+    "field_password_expiration": [
+        {
+            "value": false
+        }
+    ]
+}

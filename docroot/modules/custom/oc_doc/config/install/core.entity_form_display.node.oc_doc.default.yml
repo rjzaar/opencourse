@@ -9,6 +9,8 @@ dependencies:
     - field.field.node.oc_doc.field_oc_back_color
     - field.field.node.oc_doc.field_oc_external_links
     - field.field.node.oc_doc.field_oc_head_back_color
+    - field.field.node.oc_doc.field_oc_importance
+    - field.field.node.oc_doc.field_oc_interactive
     - field.field.node.oc_doc.field_oc_internal_links
     - field.field.node.oc_doc.field_oc_level
     - field.field.node.oc_doc.field_oc_linked_image
@@ -20,6 +22,7 @@ dependencies:
     - color_field
     - content_moderation
     - entity_browser
+    - h5peditor
     - paragraphs_previewer
     - path
     - text
@@ -60,6 +63,9 @@ content:
       add_mode: modal
       form_display_mode: default
       default_paragraph_type: _none
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
     third_party_settings: {  }
     type: entity_reference_paragraphs_previewer
     region: content
@@ -87,6 +93,19 @@ content:
       placeholder_opacity: ''
     third_party_settings: {  }
     type: color_field_widget_default
+    region: content
+  field_oc_importance:
+    weight: 26
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_oc_interactive:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: h5p_editor
     region: content
   field_oc_internal_links:
     weight: 5
@@ -141,6 +160,7 @@ content:
       selection_mode: selection_append
       field_widget_display_settings:
         view_mode: field_preview
+      field_widget_replace: false
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content

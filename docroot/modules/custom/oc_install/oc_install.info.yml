@@ -1,4 +1,4 @@
-name: oc_dev
+name: oc_install
 type: module
 description: enables all modules required to install from the old site
 core: 8.x

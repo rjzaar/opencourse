@@ -5,6 +5,7 @@ core: 8.x
 dependencies:
   - block
   - block_class
+  - book
   - color_field
   - content_moderation
   - ctools
@@ -15,7 +16,9 @@ dependencies:
   - field
   - gnode
   - group
-  - media_entity
+  - image
+  - link
+  - media
   - menu_block
   - node
   - oc_book
@@ -30,7 +33,10 @@ dependencies:
   - paragraphs_previewer
   - path
   - pathauto
+  - responsive_image
+  - smart_trim
   - system
+  - taxonomy
   - text
   - user
   - varbase_bootstrap_paragraphs
@@ -38,6 +44,8 @@ dependencies:
   - varbase_media
   - varbase_page
   - views
+  - views_field_view
+  - viewsreference
   - yoast_seo
 version: 8.x-0.1
 package: oc

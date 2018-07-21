@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oc_linked_image
+    - node.type.oc_image
+    - node.type.oc_sequence
+  content:
+    - 'node:oc_image:5b4f9be7-9507-42f0-89e4-0bafff16dc29'
+id: node.oc_sequence.field_oc_linked_image
+field_name: field_oc_linked_image
+entity_type: node
+bundle: oc_sequence
+label: 'Linked image'
+description: 'Choose an image to associate with this sequence.'
+required: false
+translatable: true
+default_value:
+  -
+    target_uuid: 5b4f9be7-9507-42f0-89e4-0bafff16dc29
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      oc_image: oc_image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

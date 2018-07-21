@@ -34,8 +34,18 @@ widgets:
       entity_type: media
       bundle: video
       form_mode: default
-      submit_text: 'Save video'
+      submit_text: 'Save video file'
     uuid: 95b92e95-7fc0-4c9c-a395-8e17d95f416c
     weight: 2
-    label: 'Import a video'
+    label: 'Import a video file'
+    id: entity_form
+  4b858e6c-d6c1-43e4-abab-2a62e2b38070:
+    settings:
+      entity_type: media
+      bundle: video_embed
+      form_mode: default
+      submit_text: 'Save web video'
+    uuid: 4b858e6c-d6c1-43e4-abab-2a62e2b38070
+    weight: 3
+    label: 'Import a web video (eg youtube)'
     id: entity_form

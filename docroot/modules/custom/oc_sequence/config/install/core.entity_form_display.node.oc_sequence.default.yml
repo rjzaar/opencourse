@@ -4,15 +4,14 @@ dependencies:
   config:
     - field.field.node.oc_sequence.body
     - field.field.node.oc_sequence.field_content_visibility
-    - field.field.node.oc_sequence.field_oc_image
+    - field.field.node.oc_sequence.field_oc_importance
     - field.field.node.oc_sequence.field_oc_level
+    - field.field.node.oc_sequence.field_oc_linked_image
     - field.field.node.oc_sequence.field_oc_sequence_items
     - field.field.node.oc_sequence.field_oc_topic
-    - image.style.thumbnail
     - node.type.oc_sequence
   module:
     - content_moderation
-    - image
     - path
     - text
 id: node.oc_sequence.default
@@ -41,19 +40,27 @@ content:
     third_party_settings: {  }
     type: options_buttons
     region: content
-  field_oc_image:
-    weight: 1
+  field_oc_importance:
+    weight: 122
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      placeholder: ''
     third_party_settings: {  }
-    type: image_image
+    type: number
     region: content
   field_oc_level:
     weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
+  field_oc_linked_image:
+    weight: 121
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   field_oc_sequence_items:
     weight: 3

@@ -20,12 +20,13 @@ dependencies:
     - field.field.node.oc_book.field_oc_translator
     - field.field.node.oc_book.field_oc_year
     - node.type.oc_book
+    - responsive_image.styles.d05
   module:
     - ds
-    - image
     - link
     - options
     - panelizer
+    - responsive_image
     - text
     - user
 third_party_settings:
@@ -92,10 +93,17 @@ content:
     weight: 3
     label: hidden
     settings:
-      image_style: ''
+      responsive_image_style: d05
       image_link: ''
-    third_party_settings: {  }
-    type: image
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: responsive_image
     region: ds_content
   field_oc_book_type:
     weight: 5

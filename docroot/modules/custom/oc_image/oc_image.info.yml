@@ -8,6 +8,7 @@ dependencies:
   - ds
   - entity_access_by_field
   - field
+  - focal_point
   - gnode
   - group
   - image

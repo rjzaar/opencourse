@@ -5,7 +5,6 @@ dependencies:
     - core.entity_view_mode.node.full
     - field.field.node.oc_sequence.body
     - field.field.node.oc_sequence.field_content_visibility
-    - field.field.node.oc_sequence.field_oc_image
     - field.field.node.oc_sequence.field_oc_level
     - field.field.node.oc_sequence.field_oc_sequence_items
     - field.field.node.oc_sequence.field_oc_topic
@@ -55,7 +54,6 @@ content:
     region: content
 hidden:
   field_content_visibility: true
-  field_oc_image: true
   field_oc_level: true
   field_oc_topic: true
   langcode: true
