@@ -32,3 +32,5 @@ dependencies:
   - views_field_view
   - h5p
   - h5peditor
+  - tour_builder
+  - tour_ui

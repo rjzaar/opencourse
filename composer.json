@@ -97,7 +97,8 @@
     "drupal/superfish": "^1.1",
     "drupal/login_destination": "1.x-dev#54be8b89fdc073ca40af6b9b2eeb050e0aeb7908",
     "drupal/betterlogin": "1.x-dev#f7cf1c5c9ec5e80c6ac0ef04ed605e25495232cd",
-    "drupal/views_field_view": "^1.0@beta"
+    "drupal/views_field_view": "^1.0@beta",
+    "drupal/config_readonly": "^1.0@beta"
   },
   "require-dev": {
     "drupal/coder": "8.2.12",
@@ -188,9 +189,6 @@
       },
       "drupal/panels": {
       "Issue #2879001: Warning: array_unique() expects parameter 1 to be array, string given": "https://www.drupal.org/files/issues/panels-ipe-set-classes-arrays-2879001-5.patch"
-      },
-      "drupal/video_embed_field": {
-        "Issue #2953339-define_source_module": "https://raw.githubusercontent.com/rjzaar/opencourse/8.4.x/docroot/modules/custom/custom_migration/2953339-define_source_module.patch"
       },
       "drupal/core": {
         "360057-Add-FollowSymLinks-to-htaccess": "https://www.drupal.org/files/issues/Add-FollowSymLinks-to-htaccess.patch"

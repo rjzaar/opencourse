@@ -16,7 +16,6 @@ dependencies:
   - metatag
   - node
   - oc_fields
-  - panelizer
   - paragraphs_previewer
   - path
   - rabbit_hole
