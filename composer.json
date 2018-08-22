@@ -98,7 +98,8 @@
     "drupal/login_destination": "1.x-dev#54be8b89fdc073ca40af6b9b2eeb050e0aeb7908",
     "drupal/betterlogin": "1.x-dev#f7cf1c5c9ec5e80c6ac0ef04ed605e25495232cd",
     "drupal/views_field_view": "^1.0@beta",
-    "drupal/config_readonly": "^1.0@beta"
+    "drupal/config_readonly": "^1.0@beta",
+    "drupal/legal": "^1.0@beta"
   },
   "require-dev": {
     "drupal/coder": "8.2.12",
@@ -192,6 +193,9 @@
       },
       "drupal/core": {
         "360057-Add-FollowSymLinks-to-htaccess": "https://www.drupal.org/files/issues/Add-FollowSymLinks-to-htaccess.patch"
+      },
+      "drupal/legal": {
+        "2988875-4-languageconfig.patch": "https://www.drupal.org/files/issues/2018-08-09/2988875-4-languageconfig.patch"
       }
     }
   }

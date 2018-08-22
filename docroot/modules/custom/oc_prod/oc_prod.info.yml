@@ -34,3 +34,4 @@ dependencies:
   - h5peditor
   - tour_builder
   - tour_ui
+  - legal
