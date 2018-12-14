@@ -18,5 +18,3 @@ gulp
 
 Some css may need to be changed to - instead of _
 
-
-The docs view page is sorted according to the importance field.
