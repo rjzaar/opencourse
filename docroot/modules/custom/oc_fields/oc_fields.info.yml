@@ -26,7 +26,6 @@ dependencies:
   - node
   - oc_doc
   - options
-  - panelizer
   - paragraphs_previewer
   - path
   - superfish

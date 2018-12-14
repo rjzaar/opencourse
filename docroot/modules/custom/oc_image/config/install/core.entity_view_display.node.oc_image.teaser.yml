@@ -17,14 +17,7 @@ dependencies:
     - node.type.oc_image
   module:
     - image
-    - panelizer
     - user
-third_party_settings:
-  panelizer:
-    enable: false
-    custom: false
-    allow: false
-    default: default
 id: node.oc_image.teaser
 targetEntityType: node
 bundle: oc_image

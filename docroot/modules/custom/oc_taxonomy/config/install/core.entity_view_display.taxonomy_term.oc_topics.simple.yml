@@ -6,7 +6,6 @@ dependencies:
     - taxonomy.vocabulary.oc_topics
   module:
     - ds
-    - panelizer
 third_party_settings:
   ds:
     layout:
@@ -42,11 +41,6 @@ third_party_settings:
             lb: ''
             lb-col: false
             classes: {  }
-  panelizer:
-    enable: false
-    custom: false
-    allow: false
-    default: default
 id: taxonomy_term.oc_topics.simple
 targetEntityType: taxonomy_term
 bundle: oc_topics

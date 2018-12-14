@@ -18,15 +18,9 @@ dependencies:
     - responsive_image.styles.de2e
   module:
     - ds
-    - panelizer
     - responsive_image
     - user
 third_party_settings:
-  panelizer:
-    enable: false
-    custom: false
-    allow: false
-    default: default
   ds:
     layout:
       id: ds_1col

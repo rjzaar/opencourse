@@ -21,7 +21,6 @@ dependencies:
   - oc_link
   - oc_taxonomy
   - options
-  - panelizer
   - paragraphs
   - path
   - responsive_image

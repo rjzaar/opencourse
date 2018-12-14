@@ -13,7 +13,6 @@ dependencies:
   module:
     - ds
     - link
-    - panelizer
     - text
     - user
 third_party_settings:
@@ -36,11 +35,6 @@ third_party_settings:
       ds_content:
         - field_oc_link
         - body
-  panelizer:
-    enable: false
-    custom: false
-    allow: false
-    default: default
 id: node.oc_link.featured
 targetEntityType: node
 bundle: oc_link

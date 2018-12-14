@@ -18,7 +18,6 @@ dependencies:
   - oc_image
   - oc_taxonomy
   - options
-  - panelizer
   - path
   - smart_trim
   - taxonomy

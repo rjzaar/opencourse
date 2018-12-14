@@ -14,18 +14,19 @@ dependencies:
   - image
   - jquery_colorpicker
   - link
+  - media
   - menu_ui
   - node
   - oc_fields
   - oc_taxonomy
   - options
-  - panelizer
   - path
   - responsive_image
   - smart_trim
   - text
   - user
   - varbase_media
+  - video_embed_field
   - views
 version: 8.x-0.1
 package: oc

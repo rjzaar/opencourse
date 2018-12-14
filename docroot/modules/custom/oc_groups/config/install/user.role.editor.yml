@@ -2,6 +2,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: editor
-label: editor
-weight: 2
+label: Editor
+weight: -8
 is_admin: null

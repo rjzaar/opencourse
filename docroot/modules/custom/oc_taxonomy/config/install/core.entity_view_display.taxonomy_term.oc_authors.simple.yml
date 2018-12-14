@@ -6,7 +6,6 @@ dependencies:
     - taxonomy.vocabulary.oc_authors
   module:
     - ds
-    - panelizer
 third_party_settings:
   ds:
     layout:
@@ -63,11 +62,6 @@ third_party_settings:
             fis-def-at: false
             fi: false
             fi-def-at: false
-  panelizer:
-    enable: false
-    custom: false
-    allow: false
-    default: default
 id: taxonomy_term.oc_authors.simple
 targetEntityType: taxonomy_term
 bundle: oc_authors

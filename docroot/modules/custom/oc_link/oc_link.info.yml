@@ -16,7 +16,6 @@ dependencies:
   - oc_fields
   - oc_taxonomy
   - options
-  - panelizer
   - path
   - taxonomy
   - text

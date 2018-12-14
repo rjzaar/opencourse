@@ -5,7 +5,6 @@ dependencies:
     - taxonomy.vocabulary.oc_authors
   module:
     - ds
-    - panelizer
 third_party_settings:
   ds:
     layout:
@@ -41,11 +40,6 @@ third_party_settings:
             lb: ''
             lb-col: false
             classes: {  }
-  panelizer:
-    enable: false
-    custom: false
-    allow: false
-    default: default
 id: taxonomy_term.oc_authors.default
 targetEntityType: taxonomy_term
 bundle: oc_authors

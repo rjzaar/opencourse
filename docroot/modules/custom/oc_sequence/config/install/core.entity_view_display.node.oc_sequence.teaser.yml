@@ -5,7 +5,9 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.oc_sequence.body
     - field.field.node.oc_sequence.field_content_visibility
+    - field.field.node.oc_sequence.field_oc_importance
     - field.field.node.oc_sequence.field_oc_level
+    - field.field.node.oc_sequence.field_oc_linked_image
     - field.field.node.oc_sequence.field_oc_sequence_items
     - field.field.node.oc_sequence.field_oc_topic
     - node.type.oc_sequence
@@ -31,9 +33,13 @@ content:
   links:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_content_visibility: true
+  field_oc_importance: true
   field_oc_level: true
+  field_oc_linked_image: true
   field_oc_sequence_items: true
   field_oc_topic: true
   langcode: true

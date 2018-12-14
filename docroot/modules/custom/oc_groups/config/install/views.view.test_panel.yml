@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - group.type.open
     - node.type.oc_sequence
   module:
     - group

@@ -20,16 +20,9 @@ dependencies:
     - ds
     - link
     - options
-    - panelizer
     - responsive_image
     - text
     - user
-third_party_settings:
-  panelizer:
-    enable: false
-    custom: false
-    allow: false
-    default: default
 id: node.oc_image.full
 targetEntityType: node
 bundle: oc_image

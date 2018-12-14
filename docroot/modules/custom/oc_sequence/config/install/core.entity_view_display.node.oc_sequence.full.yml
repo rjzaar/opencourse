@@ -5,21 +5,16 @@ dependencies:
     - core.entity_view_mode.node.full
     - field.field.node.oc_sequence.body
     - field.field.node.oc_sequence.field_content_visibility
+    - field.field.node.oc_sequence.field_oc_importance
     - field.field.node.oc_sequence.field_oc_level
+    - field.field.node.oc_sequence.field_oc_linked_image
     - field.field.node.oc_sequence.field_oc_sequence_items
     - field.field.node.oc_sequence.field_oc_topic
     - node.type.oc_sequence
   module:
     - ds
-    - panelizer
     - text
     - user
-third_party_settings:
-  panelizer:
-    enable: false
-    custom: false
-    allow: false
-    default: default
 id: node.oc_sequence.full
 targetEntityType: node
 bundle: oc_sequence
@@ -54,7 +49,9 @@ content:
     region: content
 hidden:
   field_content_visibility: true
+  field_oc_importance: true
   field_oc_level: true
+  field_oc_linked_image: true
   field_oc_topic: true
   langcode: true
   links: true

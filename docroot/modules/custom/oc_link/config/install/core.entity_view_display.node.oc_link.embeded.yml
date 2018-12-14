@@ -15,7 +15,6 @@ dependencies:
     - ds
     - link
     - options
-    - panelizer
     - user
 third_party_settings:
   ds:
@@ -41,11 +40,6 @@ third_party_settings:
         - field_oc_level
         - field_oc_topic
         - links
-  panelizer:
-    enable: false
-    custom: false
-    allow: false
-    default: default
 id: node.oc_link.embeded
 targetEntityType: node
 bundle: oc_link

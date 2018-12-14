@@ -27,7 +27,6 @@ dependencies:
   - oc_link
   - oc_taxonomy
   - options
-  - panelizer
   - paragraphs_previewer
   - path
   - smart_trim

@@ -4,13 +4,9 @@ dependencies:
   config:
     - system.menu.test
   module:
-    - block_class
     - superfish
   theme:
     - oc_theme
-third_party_settings:
-  block_class:
-    classes: ''
 id: test
 theme: oc_theme
 region: header

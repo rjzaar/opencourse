@@ -25,7 +25,6 @@ dependencies:
     - ds
     - link
     - options
-    - panelizer
     - responsive_image
     - text
     - user
@@ -64,11 +63,6 @@ third_party_settings:
         - field_oc_internal_links
         - field_oc_level
         - field_oc_topic
-  panelizer:
-    enable: false
-    custom: false
-    allow: false
-    default: default
 id: node.oc_book.full
 targetEntityType: node
 bundle: oc_book
