@@ -35,3 +35,4 @@ dependencies:
   - tour_builder
   - tour_ui
   - legal
+  - workbench

@@ -111,6 +111,10 @@ function oc_theme_preprocess_page(&$variables) {
 // Next try to get the head image from a node while adding other node variables
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     if (isset($node)) {
+      // If loading a revision, node will be a string. Need to extract an array.
+      if (is_string($node)) {
+        $node = \Drupal\node\Entity\Node::load($node);
+      }
       // Add head image if it has one.
       if ($node->hasField('field_oc_image')) {
         if (isset($node->get('field_oc_image')[0])) {
@@ -192,7 +196,13 @@ function oc_theme_preprocess_page(&$variables) {
         }
 
       }
-      foreach (\Drupal\group\Entity\GroupContent::loadByEntity($variables['node']) as $group_content) {
+      //The following check is needed to deal with viewing revisions.
+      $gnode=$variables['node'];
+      if (is_string($gnode)) {
+        $variables['node'] = \Drupal\node\Entity\Node::load($gnode);
+        $gnode=$variables['node'];
+      }
+      foreach (\Drupal\group\Entity\GroupContent::loadByEntity($gnode) as $group_content) {
         $oc_group = $group_content->getGroup()->id();
         $variables['oc_group'] = $oc_group;
       }
@@ -381,6 +391,10 @@ function oc_theme_preprocess_block(&$variables) {
 
 
   $node = \Drupal::request()->attributes->get('node');
+  // If loading a revision, node will be a string. Need to extract an array.
+  if (is_string($node)) {
+    $node = \Drupal\node\Entity\Node::load($node);
+  }
   if ($node) {
     foreach (\Drupal\group\Entity\GroupContent::loadByEntity($node) as $group_content) {
       $oc_group = $group_content->getGroup()->id();
@@ -425,6 +439,12 @@ function oc_theme_preprocess_menu_local_task(&$variables)
     $variables['oc_icon'] = "fa-users";
   } elseif ($title == "Nodes") {
     $variables['oc_icon'] = "fa-square-o";
+  } elseif ($title == "Revisions") {
+    $variables['oc_icon'] = "fa-code-fork";
+  } elseif ($title == "View Revision") {
+    $variables['oc_icon'] = "fa-file-text-o";
+  } elseif ($title == "Latest version") {
+    $variables['oc_icon'] = "fa-clock-o";
   } else {
     $variables['oc_icon'] = "fa-question-circle";
   }
@@ -437,7 +457,11 @@ function oc_theme_preprocess_ds_1col(&$variables) {
 
   $node = \Drupal::routeMatch()->getParameter('node');
   if (isset($node)) {
-
+    // If loading a revision, node will be a string. Need to extract an array.
+    if (is_string($node)) {
+      //$node = $variables['content']['#node'];
+      $node = \Drupal\node\Entity\Node::load($node);
+    }
     //if there is an author, pass the author on
     if ($node->hasField('field_oc_author_s_')) {
        if (!is_null($node->get('field_oc_author_s_')[0])) {
@@ -456,6 +480,7 @@ function oc_theme_preprocess_ds_1col(&$variables) {
       $variables['link_lic_title']= $node->field_oc_licence[0]->get('title')->getValue();
       $variables['link_lic_url']= $node->field_oc_licence[0]->get('uri')->getValue();
     }
+    $variables['finteractive']=$node->get('field_oc_interactive');
 
 
 

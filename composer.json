@@ -94,7 +94,9 @@
     "drupal/betterlogin": "1.x-dev#f7cf1c5c9ec5e80c6ac0ef04ed605e25495232cd",
     "drupal/views_field_view": "^1.0@beta",
     "drupal/config_readonly": "^1.0@beta",
-    "drupal/legal": "^1.0@beta"
+    "drupal/video_embed_field": "^2",
+    "drupal/legal": "^1.0@beta",
+    "drupal/workbench": "^1.1"
   },
   "require-dev": {
     "drupal/coder": "8.2.12",
@@ -117,7 +119,6 @@
     "drupal/kint": "^1.2",
     "drupal/default_content": "^1.0@alpha",
     "drupal/search_kint": "^1.0",
-    "drupal/video_embed_field": "^2",
     "rjzaar/docroot": "*"
 
      },
@@ -190,7 +191,9 @@
       "Issue #2879001: Warning: array_unique() expects parameter 1 to be array, string given": "https://www.drupal.org/files/issues/panels-ipe-set-classes-arrays-2879001-5.patch"
       },
       "drupal/core": {
-        "360057-Add-FollowSymLinks-to-htaccess": "https://www.drupal.org/files/issues/Add-FollowSymLinks-to-htaccess.patch"
+        "360057-Add-FollowSymLinks-to-htaccess": "https://www.drupal.org/files/issues/Add-FollowSymLinks-to-htaccess.patch",
+        "node_revision_route_object-2730631-D8-77.patch": "https://www.drupal.org/files/issues/2018-12-03/node_revision_route_object-2730631-D8-77.patch",
+        "node-revisions-missing-local-tasks-2885278-11.patch": "https://www.drupal.org/files/issues/2018-04-19/node-revisions-missing-local-tasks-2885278-11.patch"
       },
       "drupal/legal": {
         "2988875-4-languageconfig.patch": "https://www.drupal.org/files/issues/2018-08-09/2988875-4-languageconfig.patch"
