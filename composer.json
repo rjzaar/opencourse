@@ -141,7 +141,10 @@
       "Varbase\\composer\\ScriptHandler::createRequiredFiles",
       "Varbase\\composer\\ScriptHandler::removeGitDirectories"
     ],
-    "post-drupal-scaffold-cmd": ["Varbase\\composer\\ScriptHandler::postDrupalScaffoldProcedure"]
+    "post-drupal-scaffold-cmd": [
+      "Varbase\\composer\\ScriptHandler::postDrupalScaffoldProcedure",
+      "cd docroot && patch -p1 <../scripts/Add-FollowSymLinks-to-htaccess.patch"
+    ]
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
@@ -191,7 +194,6 @@
       "Issue #2879001: Warning: array_unique() expects parameter 1 to be array, string given": "https://www.drupal.org/files/issues/panels-ipe-set-classes-arrays-2879001-5.patch"
       },
       "drupal/core": {
-        "360057-Add-FollowSymLinks-to-htaccess": "https://www.drupal.org/files/issues/Add-FollowSymLinks-to-htaccess.patch",
         "node_revision_route_object-2730631-D8-77.patch": "https://www.drupal.org/files/issues/2018-12-03/node_revision_route_object-2730631-D8-77.patch",
         "node-revisions-missing-local-tasks-2885278-11.patch": "https://www.drupal.org/files/issues/2018-04-19/node-revisions-missing-local-tasks-2885278-11.patch"
       },

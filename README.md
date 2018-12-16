@@ -18,3 +18,7 @@ gulp
 
 Some css may need to be changed to - instead of _
 
+Apache Environment Presumed
+
+There is a post install script applied to add "+Options +FollowSymLinks"
+to .htaccess which is needed for Apache since a composer install strips it out.
