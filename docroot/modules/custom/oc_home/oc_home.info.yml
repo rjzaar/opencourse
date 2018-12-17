@@ -1,0 +1,18 @@
+name: 'Opencourse Home'
+description: 'User home page with workbench'
+type: module
+core: 8.x
+dependencies:
+  - content_moderation
+  - node
+  - oc_book
+  - oc_doc
+  - oc_image
+  - oc_link
+  - oc_lp
+  - oc_sequence
+  - user
+  - views
+  - workflows
+version: 8.x-0.1
+package: oc

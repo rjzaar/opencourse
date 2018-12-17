@@ -2,6 +2,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: content_admin
-label: 'Content Admin'
-weight: -7
+label: Pedagog
+weight: -6
 is_admin: null
