@@ -1,4 +1,2 @@
 bundle: oc
-excluded:
-  - views.view.test_panel
 required: true

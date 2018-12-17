@@ -37,3 +37,5 @@ dependencies:
   - legal
   - user_default_page
   - menu_item_role_access
+  - riddler
+  - oc_home
