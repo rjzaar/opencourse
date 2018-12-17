@@ -36,3 +36,5 @@ dependencies:
   - tour_ui
   - legal
   - workbench
+  - user_default_page
+  - menu_item_role_access

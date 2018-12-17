@@ -96,7 +96,10 @@
     "drupal/config_readonly": "^1.0@beta",
     "drupal/video_embed_field": "^2",
     "drupal/legal": "^1.0@beta",
-    "drupal/workbench": "^1.1"
+    "drupal/workbench": "^1.1",
+    "drupal/menu_item_role_access": "^1.0",
+    "drupal/user_default_page": "^1.0",
+    "drupal/riddler": "^1.1"
   },
   "require-dev": {
     "drupal/coder": "8.2.12",
