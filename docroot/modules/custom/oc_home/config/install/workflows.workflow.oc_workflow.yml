@@ -19,32 +19,32 @@ type_settings:
       label: Draft
       published: false
       default_revision: false
-      weight: 0
+      weight: -3
     final_check:
       published: false
       default_revision: false
       label: 'Final Check'
-      weight: 5
+      weight: 1
     published:
       label: Published
       published: true
       default_revision: true
-      weight: 1
+      weight: 2
     review_accuracy:
       published: false
       default_revision: false
       label: 'Review Accuracy'
-      weight: 2
+      weight: -2
     review_english:
       published: false
       default_revision: false
       label: 'Review Eloquence'
-      weight: 4
+      weight: 0
     review_pedagogy:
       published: false
       default_revision: false
       label: 'Review Pedagogy'
-      weight: 3
+      weight: -1
   transitions:
     check_accuracy:
       label: 'Check Accuracy'
