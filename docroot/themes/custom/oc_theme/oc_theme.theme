@@ -336,6 +336,15 @@ function oc_theme_preprocess_node(&$variables) {
     $variables['link_lic_title']= $node->field_oc_licence[0]->get('title')->getValue();
     $variables['link_lic_url']= $node->field_oc_licence[0]->get('uri')->getValue();
   }
+
+  // For oc_task
+  $variables['title']=$node->getTitle();
+  if ($node->hasField('field_oc_assigned')){
+    $variables['assigned']= $node->field_oc_assigned[0]->get('target_id')->getValue();
+  }
+  if ($node->hasField('field_oc_content')){
+    $variables['thecontent']= $node->field_oc_content[0]->get('target_id')->getValue();
+  }
 }
 
 
