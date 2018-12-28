@@ -8,6 +8,4 @@ excluded:
   - field.storage.node.field_oc_translator
   - views.view.oc_books
   - views.view.oc_books_list
-  - views.view.oc_moderate_content
-  - workflows.workflow.oc_workflow
 required: true

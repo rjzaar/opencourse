@@ -1,5 +1,0 @@
-bundle: oc
-excluded:
-  - metatag.metatag_defaults.node__landing_page
-  - metatag.metatag_defaults.node__page
-required: true

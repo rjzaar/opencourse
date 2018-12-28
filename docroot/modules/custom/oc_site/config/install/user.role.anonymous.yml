@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 id: anonymous
 label: 'anonymous user'
-weight: -10
+weight: 0
 is_admin: false

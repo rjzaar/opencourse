@@ -7,7 +7,7 @@ dependencies:
     config:
       - user.role.leader
 id: open-b1d891bd8
-label: Theologian
+label: leader
 weight: 6
 internal: true
 audience: outsider

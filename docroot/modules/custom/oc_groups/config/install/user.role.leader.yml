@@ -2,6 +2,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: leader
-label: Theologian
-weight: -7
+label: leader
+weight: 6
 is_admin: null

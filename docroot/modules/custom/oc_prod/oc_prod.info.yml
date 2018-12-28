@@ -35,7 +35,7 @@ dependencies:
   - tour_builder
   - tour_ui
   - legal
-  - user_default_page
-  - menu_item_role_access
   - riddler
-  - oc_home
+  - menu_item_role_access
+  - user_default_page
+  - prepopulate

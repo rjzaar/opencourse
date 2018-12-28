@@ -30,6 +30,5 @@ dependencies:
   - user
   - varbase_media
   - views
-  - workflows
 version: 8.x-0.1
 package: oc

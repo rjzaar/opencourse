@@ -7,7 +7,7 @@ dependencies:
     config:
       - user.role.content_admin
 id: open-8af8a0e50
-label: Pedagog
+label: 'Content Admin'
 weight: -7
 internal: true
 audience: outsider

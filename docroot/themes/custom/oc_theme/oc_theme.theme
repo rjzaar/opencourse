@@ -327,6 +327,7 @@ function oc_theme_preprocess_node(&$variables) {
   $variables['created'] =format_date($node->created->value);
   $variables['modified'] =format_date($node->changed->value);
   if ($node->hasField('field_oc_link')){
+    // I think the next line should be $node->filed_oc_link[0]
     if (!is_null($node->hasField('field_oc_link')[0])) {
       $variables['link_title'] = $node->field_oc_link[0]->get('title')->getValue();
       $variables['link_url'] = $node->field_oc_link[0]->get('uri')->getValue();
@@ -339,8 +340,14 @@ function oc_theme_preprocess_node(&$variables) {
 
   // For oc_task
   $variables['title']=$node->getTitle();
-  if ($node->hasField('field_oc_assigned')){
-    $variables['assigned']= $node->field_oc_assigned[0]->get('target_id')->getValue();
+  if ($node->hasField('field_oc_assigned')) {
+    if (!is_null($node->field_oc_assigned[0])) {
+      $variables['assigned'] = "/user/".$node->field_oc_assigned[0]->get('target_id')->getValue();
+    } else
+    {
+      //Set up option for user to accept
+      $variables['assigned'] = "";
+    }
   }
   if ($node->hasField('field_oc_content')){
     $variables['thecontent']= $node->field_oc_content[0]->get('target_id')->getValue();
@@ -473,7 +480,7 @@ function oc_theme_preprocess_ds_1col(&$variables) {
     }
     //if there is an author, pass the author on
     if ($node->hasField('field_oc_author_s_')) {
-       if (!is_null($node->get('field_oc_author_s_')[0])) {
+      if (!is_null($node->get('field_oc_author_s_')[0])) {
         $auth = $node->get('field_oc_author_s_')[0]->get('target_id')->getValue();
         $term = Drupal\taxonomy\Entity\Term::load($auth);
         $variables['auth']=$term->getName();
@@ -489,7 +496,9 @@ function oc_theme_preprocess_ds_1col(&$variables) {
       $variables['link_lic_title']= $node->field_oc_licence[0]->get('title')->getValue();
       $variables['link_lic_url']= $node->field_oc_licence[0]->get('uri')->getValue();
     }
-    $variables['finteractive']=$node->get('field_oc_interactive');
+    if ($node->hasField('field_oc_interactive')) {
+      $variables['finteractive'] = $node->get('field_oc_interactive');
+    }
 
 
 
