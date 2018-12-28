@@ -1,5 +1,7 @@
 
+
 # Opencourse
+
 
 This is the opencourse project
 
@@ -14,6 +16,7 @@ npm install
 npm install gulp-less
 chmod -R u+x node_modules/
 gulp
+
 
 
 Some css may need to be changed to - instead of _

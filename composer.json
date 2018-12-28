@@ -38,7 +38,7 @@
           }
         }
       },
-  "fontawesome":{
+  "fontawesome": {
     "type": "package",
     "package": {
       "name": "fortawesome/font-awesome",
@@ -46,26 +46,32 @@
       "type": "drupal-library",
       "extra": {
         "installer-name": "fontawesome"
-        },
-        "dist": {
-          "url": "https://github.com/FortAwesome/Font-Awesome/archive/v4.7.0.zip",
-          "type": "zip"
-          },
-        "require": {
+      },
+      "dist": {
+        "url": "https://github.com/FortAwesome/Font-Awesome/archive/v4.7.0.zip",
+        "type": "zip"
+      },
+      "require": {
         "composer/installers": "~1.0"
-        }
       }
     }
   },
+
+    "composer-patches": {
+      "type": "vcs",
+      "url": "https://github.com/vardot/composer-patches"
+    }
+  },
   "require": {
-    "composer/installers": "~1",
-    "oomphinc/composer-installers-extender": "~1",
-    "cweagans/composer-patches": "~1",
-    "drupal-composer/drupal-scaffold": "~2",
+    "composer/installers": "~1.0",
+    "oomphinc/composer-installers-extender": "~1.0",
+    "cweagans/composer-patches": "~1.0",
+    "drupal-composer/drupal-scaffold": "~2.0",
     "drupal/drupal-library-installer-plugin": "^0.3",
-    "webflo/drupal-finder": "~1",
-    "webmozart/path-util": "~2",
+    "webflo/drupal-finder": "~1.0",
+    "webmozart/path-util": "~2.0",
     "vardot/varbase": "8.6.x-dev",
+    "vardot/varbase-updater": "~1.0",
     "drupal/image_resize_filter": "1.x-dev#c3f4b23b02005859092aaff746b9f21b794adc58",
     "drupal/entity_clone": "1.x-dev#6d0ce053605e9aaf8412927a9b0ea8da7a9a06e5",
     "drupal/tour_builder": "1.x-dev#d70e898949b7ec4095efb391a0dbec56d0117558",
@@ -155,6 +161,16 @@
     "drupal/drupal": "*"
   },
   "extra": {
+    "_readme": [
+      "NOTICE: We're now using composer patches from Vardot repository to suggest",
+      "several fixes and better handling of patches in your Drupal project.",
+      "You'll notice that we have included (https://github.com/vardot/composer-patches)",
+      "in this composer.json repositories. This will replace the original",
+      "library (cweagans/composer-patches) with our own from (vardot/composer-patches).",
+      "See https://github.com/cweagans/composer-patches/pull/243 and more details",
+      "on our changes on the composer-patches package. Once our changes get merged,",
+      "we will revert to using (cweagans/composer-patches) without this override."
+    ],
     "branch-alias": {
       "dev-8.x-6.x": "8.6.x-dev"
     },
@@ -194,7 +210,7 @@
         "Issue #2923824: Nested source for entity_lookup causes an error": "https://www.drupal.org/files/issues/nested-source-for-entity_lookup-causes-an-error-2923824-2.patch"
       },
       "drupal/panels": {
-      "Issue #2879001: Warning: array_unique() expects parameter 1 to be array, string given": "https://www.drupal.org/files/issues/panels-ipe-set-classes-arrays-2879001-5.patch"
+        "Issue #2879001: Warning: array_unique() expects parameter 1 to be array, string given": "https://www.drupal.org/files/issues/panels-ipe-set-classes-arrays-2879001-5.patch"
       },
       "drupal/core": {
         "node_revision_route_object-2730631-D8-77.patch": "https://www.drupal.org/files/issues/2018-12-03/node_revision_route_object-2730631-D8-77.patch",
@@ -206,6 +222,9 @@
       "drupal/prepopulate": {
         "prepopulate-entity_reference-2847371-2.patch": "https://www.drupal.org/files/issues/prepopulate-entity_reference-2847371-2.patch"
       }
+    },
+    "patchLevel": {
+       "drupal/core": "-p2"
     }
   }
 }
