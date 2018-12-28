@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.open
+id: open-outsider
+label: Outsider
+weight: -101
+internal: true
+audience: outsider
+group_type: open
+permissions_ui: true
+permissions:
+  0: 'join group'
+  1: 'view group_membership content'
+  2: 'view group'
+  3: 'update own group_node:landing_page entity'
+  4: 'view group_node:landing_page entity'
+  5: 'update own group_node:oc_sequence entity'
+  6: 'view group_node:oc_sequence entity'
+  7: 'update own group_node:oc_book entity'
+  8: 'view group_node:oc_book entity'
+  9: 'update own group_node:oc_doc entity'
+  10: 'view group_node:oc_doc entity'
+  11: 'update own group_node:oc_image entity'
+  12: 'view group_node:oc_image entity'
+  13: 'update own group_node:oc_link entity'
+  14: 'view group_node:oc_link entity'
+  20: 'update own group_node:oc_lp entity'
+  21: 'view group_node:oc_lp entity'

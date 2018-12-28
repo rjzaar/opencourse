@@ -1,0 +1,55 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group.open.field_oc_grp_desc
+    - field.field.group.open.field_oc_grp_image
+    - field.field.group.open.field_oc_grp_para
+    - field.field.group.open.field_oc_seo
+    - group.type.open
+  module:
+    - entity_reference_revisions
+    - text
+id: group.open.default
+targetEntityType: group
+bundle: open
+mode: default
+content:
+  field_oc_grp_desc:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_oc_grp_image:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_oc_grp_para:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  label:
+    label: hidden
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  changed: true
+  created: true
+  field_oc_seo: true
+  langcode: true
+  uid: true

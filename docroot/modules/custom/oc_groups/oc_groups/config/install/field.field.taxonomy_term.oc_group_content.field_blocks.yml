@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_blocks
+    - taxonomy.vocabulary.oc_group_content
+id: taxonomy_term.oc_group_content.field_blocks
+field_name: field_blocks
+entity_type: taxonomy_term
+bundle: oc_group_content
+label: blocks
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:block'
+  handler_settings: {  }
+field_type: entity_reference

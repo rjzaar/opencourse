@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.open
+  enforced:
+    config:
+      - user.role.site_admin
+id: open-bf4b46c3a
+label: 'Site Admin'
+weight: -5
+internal: true
+audience: outsider
+group_type: open
+permissions_ui: false
+permissions: {  }

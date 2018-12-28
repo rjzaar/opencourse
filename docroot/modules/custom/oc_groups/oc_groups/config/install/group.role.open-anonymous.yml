@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.open
+id: open-anonymous
+label: Anonymous
+weight: -102
+internal: true
+audience: anonymous
+group_type: open
+permissions_ui: true
+permissions:
+  0: 'view group_node:landing_page entity'
+  1: 'view group_node:oc_sequence entity'
+  2: 'view group_node:oc_book entity'
+  3: 'view group_node:oc_doc entity'
+  4: 'view group_node:oc_image entity'
+  5: 'view group_node:oc_link entity'
+  6: 'view group'
+  9: 'view group_node:oc_lp entity'

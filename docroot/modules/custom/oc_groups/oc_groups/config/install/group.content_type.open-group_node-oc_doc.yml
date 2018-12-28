@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.open
+    - node.type.oc_doc
+  module:
+    - gnode
+    - node
+id: open-group_node-oc_doc
+label: 'Open group: Group node (Opencourse doc)'
+description: 'Adds <em class="placeholder">Opencourse doc</em> content to groups both publicly and privately.'
+group_type: open
+content_plugin: 'group_node:oc_doc'
+plugin_config:
+  group_cardinality: 1
+  entity_cardinality: 1
+  use_creation_wizard: false

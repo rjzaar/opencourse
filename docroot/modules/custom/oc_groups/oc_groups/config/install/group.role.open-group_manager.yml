@@ -1,0 +1,59 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.open
+id: open-group_manager
+label: 'Group Manager'
+weight: -10
+internal: false
+audience: member
+group_type: open
+permissions_ui: true
+permissions:
+  0: 'access content overview'
+  1: 'delete group'
+  2: 'edit group'
+  3: 'administer members'
+  4: 'update own group_membership content'
+  5: 'leave group'
+  6: 'view group_membership content'
+  7: 'view group'
+  8: 'access group_node overview'
+  9: 'create group_node:landing_page entity'
+  10: 'delete any group_node:landing_page entity'
+  11: 'delete own group_node:landing_page entity'
+  12: 'update own group_node:landing_page entity'
+  13: 'view group_node:landing_page entity'
+  14: 'create group_node:oc_sequence entity'
+  15: 'delete any group_node:oc_sequence entity'
+  16: 'delete own group_node:oc_sequence entity'
+  17: 'update own group_node:oc_sequence entity'
+  18: 'view group_node:oc_sequence entity'
+  19: 'create group_node:oc_book entity'
+  20: 'delete any group_node:oc_book entity'
+  21: 'delete own group_node:oc_book entity'
+  22: 'update own group_node:oc_book entity'
+  23: 'view group_node:oc_book entity'
+  24: 'create group_node:oc_doc entity'
+  25: 'delete any group_node:oc_doc entity'
+  26: 'delete own group_node:oc_doc entity'
+  27: 'update own group_node:oc_doc entity'
+  28: 'view group_node:oc_doc entity'
+  29: 'create group_node:oc_image entity'
+  30: 'delete any group_node:oc_image entity'
+  31: 'delete own group_node:oc_image entity'
+  32: 'update own group_node:oc_image entity'
+  33: 'view group_node:oc_image entity'
+  34: 'create group_node:oc_link entity'
+  35: 'delete any group_node:oc_link entity'
+  36: 'delete own group_node:oc_link entity'
+  37: 'update own group_node:oc_link entity'
+  38: 'view group_node:oc_link entity'
+  53: 'create group_node:oc_lp entity'
+  54: 'delete any group_node:oc_lp entity'
+  55: 'delete own group_node:oc_lp entity'
+  56: 'update any group_node:oc_lp entity'
+  57: 'update own group_node:oc_lp entity'
+  58: 'view group_node:oc_lp entity'
+  59: 'view unpublished group_node:oc_lp entity'

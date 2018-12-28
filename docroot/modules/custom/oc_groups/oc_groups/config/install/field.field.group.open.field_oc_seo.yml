@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_oc_seo
+    - group.type.open
+  module:
+    - yoast_seo
+id: group.open.field_oc_seo
+field_name: field_oc_seo
+entity_type: group
+bundle: open
+label: 'OC SEO'
+description: 'Put in keywords about this group.'
+required: false
+translatable: false
+default_value:
+  -
+    yoast_seo:
+      focus_keyword: ''
+      status: ''
+    status: ''
+    focus_keyword: ''
+default_value_callback: ''
+settings: {  }
+field_type: yoast_seo

@@ -1,0 +1,78 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_group_list
+    - taxonomy.vocabulary.oc_group_content
+  module:
+    - viewsreference
+id: taxonomy_term.oc_group_content.field_group_list
+field_name: field_group_list
+entity_type: taxonomy_term
+bundle: oc_group_content
+label: 'group list'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    options:
+      title: 0
+      pager: some
+      limit: ''
+    display_id: block_1
+    data: 'a:5:{s:5:"title";i:0;s:8:"argument";N;s:5:"pager";s:4:"some";s:6:"offset";N;s:5:"limit";s:0:"";}'
+    target_uuid: 977b361b-cde5-40e7-874a-60ac72c0a42e
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: 0
+  plugin_types:
+    block: block
+    page: page
+    default: 0
+    entity_browser: 0
+    feed: 0
+    attachment: 0
+  preselect_views:
+    oc_books: oc_books
+    oc_docs: oc_docs
+    oc_images: oc_images
+    oc_links: oc_links
+    oc_lp: oc_lp
+    oc_sequences: oc_sequences
+    block_content: 0
+    browser: 0
+    content: 0
+    content_recent: 0
+    control_content: 0
+    control_content_panes: 0
+    control_terms: 0
+    control_users: 0
+    control_users_panes: 0
+    files: 0
+    frontpage: 0
+    group_members: 0
+    group_nodes: 0
+    locked_content: 0
+    media: 0
+    oc_groups: 0
+    oc_video_browser: 0
+    redirect: 0
+    redirect_404: 0
+    taxonomy_term: 0
+    test_panel: 0
+    user_admin_people: 0
+    varbase_google_analytics_summary: 0
+    watchdog: 0
+    who_s_new: 0
+    who_s_online: 0
+  enabled_settings:
+    title: title
+    pager: pager
+    limit: limit
+    argument: 0
+    offset: 0
+field_type: viewsreference

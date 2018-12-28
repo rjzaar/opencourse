@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.open
+    - node.type.oc_lp
+  module:
+    - gnode
+    - node
+id: open-group_node-oc_lp
+label: 'Open group: Group node (Opencourse Landing Page)'
+description: 'Adds <em class="placeholder">Opencourse Landing Page</em> content to groups both publicly and privately.'
+group_type: open
+content_plugin: 'group_node:oc_lp'
+plugin_config:
+  group_cardinality: 1
+  entity_cardinality: 1
+  use_creation_wizard: false

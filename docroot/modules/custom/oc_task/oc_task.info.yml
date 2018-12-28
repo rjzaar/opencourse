@@ -1,0 +1,24 @@
+name: 'Opencourse Task'
+description: 'Provides Opencourse Task content type and related configuration. A task to be completed on Opencourse'
+type: module
+core: 8.x
+dependencies:
+  - ds
+  - field
+  - language
+  - menu_ui
+  - node
+  - oc_book
+  - oc_doc
+  - oc_fields
+  - oc_image
+  - oc_link
+  - oc_lp
+  - oc_sequence
+  - options
+  - path
+  - scheduler
+  - text
+  - user
+version: 8.x-0.1
+package: oc
