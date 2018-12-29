@@ -17,8 +17,9 @@ dependencies:
   - oc_sequence
   - options
   - path
-  - scheduler
+  - taxonomy
   - text
   - user
-version: 8.x-0.1
+  - views
+version: 8.x-0.3
 package: oc

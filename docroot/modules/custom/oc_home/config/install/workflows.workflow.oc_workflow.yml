@@ -15,6 +15,11 @@ label: oc_workflow
 type: content_moderation
 type_settings:
   states:
+    approved:
+      published: true
+      default_revision: false
+      label: Approved
+      weight: 2
     draft:
       label: Draft
       published: false
@@ -29,7 +34,7 @@ type_settings:
       label: Published
       published: true
       default_revision: true
-      weight: 2
+      weight: -4
     review_accuracy:
       published: false
       default_revision: false
@@ -46,6 +51,17 @@ type_settings:
       label: 'Review Pedagogy'
       weight: -1
   transitions:
+    approve:
+      label: Approve
+      from:
+        - draft
+        - final_check
+        - published
+        - review_accuracy
+        - review_english
+        - review_pedagogy
+      to: approved
+      weight: 10
     check_accuracy:
       label: 'Check Accuracy'
       from:

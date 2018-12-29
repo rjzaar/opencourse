@@ -16,7 +16,7 @@ var sourcemaps = require('gulp-sourcemaps');
 gulp.task('browser-sync', ['scripts'], function() {
     browserSync.init({
         // Change as required, also remember to set in theme settings
-        proxy: "o.c",
+        proxy: "o.c/oc-userhome",
         port: 3000
     });
 });

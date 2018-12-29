@@ -4,8 +4,8 @@ dependencies:
   module:
     - node
     - user
-id: oc_theologian_workbench
-label: 'OC Theologian Workbench'
+id: oc_eloquence_review
+label: 'OC Eloquence Review'
 module: views
 description: ''
 tag: ''
@@ -22,7 +22,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'view all revisions'
+          perm: 'use oc_workflow transition final_check'
       cache:
         type: tag
         options: {  }
@@ -490,7 +490,7 @@ display:
           group_type: group
           admin_label: ''
           operator: contains
-          value: review_accuracy
+          value: review_english
           group: 1
           exposed: false
           expose:
@@ -602,7 +602,7 @@ display:
       arguments: {  }
       display_extenders:
         metatag_display_extender: {  }
-      title: 'Theological Review (review accuracy)'
+      title: '<h3>Eloquence Review (power of language/spell/grammar check)</h3>'
     cache_metadata:
       max-age: -1
       contexts:
@@ -618,7 +618,8 @@ display:
     display_title: Block
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender: {  }
     cache_metadata:
       max-age: -1
       contexts:

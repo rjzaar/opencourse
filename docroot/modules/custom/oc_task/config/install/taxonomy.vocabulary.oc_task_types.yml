@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Opencourse Task Types'
+vid: oc_task_types
+description: 'Types of tasks that can be assigned to producers.'
+hierarchy: 0
+weight: 0

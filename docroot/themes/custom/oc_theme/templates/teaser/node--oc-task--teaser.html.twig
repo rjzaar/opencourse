@@ -73,6 +73,7 @@
   not node.isPublished() ? 'is-unpublished',
   view_mode ? view_mode|clean_class,
   'clearfix',
+  'oc_task_teaser',
 ]
 %}
 <article{{ attributes.addClass(classes) }}>
@@ -85,15 +86,7 @@
   {% endif %}
   {{ title_suffix }}
 
-  {% if display_submitted %}
-    <footer>
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('author') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
+
 
   <div{{ content_attributes.addClass('content') }}>
     {% if not assigned %}
@@ -102,8 +95,18 @@
     <a href="{{ assigned }}">{{ content.field_oc_assigned[0]['#title'] }}</a> to
 {% endif %}{{ title }}
     <a href="/node/{{ thecontent }}">{{ content.field_oc_content[0]['#title'] }}</a>{% if not assigned %}? <a href="{{ url }}/edit?edit[field_oc_status]=Assigned&edit[field_oc_assigned]={{ user.id }}">Accept Mission</a>{% else %}.{% endif %}
-    Status: {{ content.field_oc_status[0]['#markup'] }}
+    {#Status: {{ content.field_oc_status[0]['#markup'] }}#}
+    &nbsp;&nbsp;&nbsp;<a href="{{ url }}">More info</a>
   </div>
 
+  {#{% if display_submitted %}#}
+    {#<footer>#}
+      {#{{ author_picture }}#}
+      {#<div{{ author_attributes.addClass('author') }}>#}
+        {#{% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}#}
+        {#{{ metadata }}#}
+      {#</div>#}
+    {#</footer>#}
+  {#{% endif %}#}
 
 </article>

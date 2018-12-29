@@ -47,5 +47,5 @@ dependencies:
   - views_field_view
   - viewsreference
   - yoast_seo
-version: 8.x-0.1
+version: 8.x-0.2
 package: oc

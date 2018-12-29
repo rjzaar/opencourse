@@ -5,22 +5,48 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.oc_task.field_oc_assigned
     - field.field.node.oc_task.field_oc_content
+    - field.field.node.oc_task.field_oc_description
     - field.field.node.oc_task.field_oc_status
     - node.type.oc_task
   module:
+    - options
+    - text
     - user
 id: node.oc_task.teaser
 targetEntityType: node
 bundle: oc_task
 mode: teaser
 content:
-  links:
-    weight: 100
+  field_oc_assigned:
+    type: entity_reference_label
+    weight: 1
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_oc_content:
+    type: entity_reference_label
+    weight: 3
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_oc_description:
+    type: text_default
+    weight: 2
+    region: content
+    label: above
     settings: {  }
     third_party_settings: {  }
+  field_oc_status:
+    type: list_default
+    weight: 0
     region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
 hidden:
-  field_oc_assigned: true
-  field_oc_content: true
-  field_oc_status: true
   langcode: true
+  links: true
