@@ -25,7 +25,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'view all revisions'
+          perm: 'use oc_workflow transition approve'
       cache:
         type: tag
         options: {  }

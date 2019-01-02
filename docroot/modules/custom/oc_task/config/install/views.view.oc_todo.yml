@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - node.type.oc_task
+    - node.type.oc_tasks
   module:
     - node
     - options
@@ -26,7 +26,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'access content'
+          perm: 'edit any oc_book content'
       cache:
         type: tag
         options: {  }
@@ -144,8 +144,39 @@ display:
           id: type
           table: node_field_data
           field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
           value:
-            oc_task: oc_task
+            oc_tasks: oc_tasks
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
           entity_type: node
           entity_field: type
           plugin_id: bundle
@@ -184,7 +215,7 @@ display:
             reduce: false
           is_grouped: true
           group_info:
-            label: 'Choose types of tasks:'
+            label: 'Choose task Status:'
             description: ''
             identifier: field_oc_status_value
             optional: true
@@ -211,6 +242,70 @@ display:
                   Completed: Completed
           reduce_duplicates: false
           plugin_id: list_field
+        field_oc_task_type_value:
+          id: field_oc_task_type_value
+          table: node__field_oc_task_type
+          field: field_oc_task_type_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_oc_task_type_value_op
+            label: 'Task Type (field_oc_task_type)'
+            description: null
+            use_operator: false
+            operator: field_oc_task_type_value_op
+            identifier: field_oc_task_type_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: true
+          group_info:
+            label: 'Choose type of task:'
+            description: ''
+            identifier: field_oc_task_type_value
+            optional: true
+            widget: radios
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple:
+              1: 1
+            group_items:
+              1:
+                title: Summarise
+                operator: or
+                value:
+                  1: '1'
+              2:
+                title: Fix
+                operator: or
+                value:
+                  2: '2'
+              3:
+                title: Improve
+                operator: or
+                value:
+                  3: '3'
+              4:
+                title: Write
+                operator: or
+                value:
+                  4: '4'
+              5:
+                title: Other
+                operator: or
+                value:
+                  10: '10'
+          reduce_duplicates: false
+          plugin_id: list_field
       sorts:
         created:
           id: created
@@ -230,7 +325,17 @@ display:
       title: '<h3>OC Tasks</h3>'
       header: {  }
       footer: {  }
-      empty: {  }
+      empty:
+        title:
+          id: title
+          table: views
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          title: 'There are currently no tasks to be completed'
+          plugin_id: title
       relationships: {  }
       arguments: {  }
       display_extenders: {  }

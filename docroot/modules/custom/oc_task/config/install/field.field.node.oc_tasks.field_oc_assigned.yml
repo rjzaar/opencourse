@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oc_assigned
+    - node.type.oc_tasks
+id: node.oc_tasks.field_oc_assigned
+field_name: field_oc_assigned
+entity_type: node
+bundle: oc_tasks
+label: 'Assigned to'
+description: 'Assign this task to one or more members'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: name
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

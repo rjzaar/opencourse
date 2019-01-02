@@ -3,17 +3,17 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_oc_status
-    - node.type.oc_task
+    - node.type.oc_tasks
   module:
     - options
-id: node.oc_task.field_oc_status
+id: node.oc_tasks.field_oc_status
 field_name: field_oc_status
 entity_type: node
-bundle: oc_task
+bundle: oc_tasks
 label: Status
-description: 'What stage is this task?'
+description: 'How complete is the task?'
 required: true
-translatable: false
+translatable: true
 default_value:
   -
     value: Unassigned

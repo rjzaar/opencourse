@@ -4,4 +4,5 @@ excluded:
   - field.field.taxonomy_term.oc_group_content.field_group_list
   - field.storage.taxonomy_term.field_blocks
   - field.storage.taxonomy_term.field_group_list
+  - rabbit_hole.behavior_settings.taxonomy_vocabulary_oc_task_types
 required: true

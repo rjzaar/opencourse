@@ -9,15 +9,15 @@ dependencies:
     - node.type.oc_link
     - node.type.oc_lp
     - node.type.oc_sequence
-    - node.type.oc_task
-id: node.oc_task.field_oc_content
+    - node.type.oc_tasks
+id: node.oc_tasks.field_oc_content
 field_name: field_oc_content
 entity_type: node
-bundle: oc_task
+bundle: oc_tasks
 label: Content
-description: 'Choose the content to be assigned'
+description: 'What content is this task related to?'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

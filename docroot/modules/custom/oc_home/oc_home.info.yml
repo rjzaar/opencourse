@@ -14,5 +14,5 @@ dependencies:
   - user
   - views
   - workflows
-version: 8.x-0.4
+version: 8.x-0.5
 package: oc

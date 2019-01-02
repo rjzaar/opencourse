@@ -2,12 +2,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - node.type.oc_task
-id: node.oc_task.status
-field_name: status
+    - node.type.oc_tasks
+id: node.oc_tasks.promote
+field_name: promote
 entity_type: node
-bundle: oc_task
-label: Published
+bundle: oc_tasks
+label: 'Promoted to front page'
 description: ''
 required: false
 translatable: true

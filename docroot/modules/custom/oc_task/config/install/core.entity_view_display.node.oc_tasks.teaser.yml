@@ -3,20 +3,29 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.oc_task.field_oc_assigned
-    - field.field.node.oc_task.field_oc_content
-    - field.field.node.oc_task.field_oc_description
-    - field.field.node.oc_task.field_oc_status
-    - node.type.oc_task
+    - field.field.node.oc_tasks.body
+    - field.field.node.oc_tasks.field_oc_assigned
+    - field.field.node.oc_tasks.field_oc_content
+    - field.field.node.oc_tasks.field_oc_status
+    - field.field.node.oc_tasks.field_oc_task_type
+    - node.type.oc_tasks
   module:
     - options
     - text
     - user
-id: node.oc_task.teaser
+id: node.oc_tasks.teaser
 targetEntityType: node
-bundle: oc_task
+bundle: oc_tasks
 mode: teaser
 content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 0
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
   field_oc_assigned:
     type: entity_reference_label
     weight: 1
@@ -33,20 +42,24 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-  field_oc_description:
-    type: text_default
+  field_oc_status:
+    type: list_default
+    weight: 4
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_oc_task_type:
+    type: list_default
     weight: 2
     region: content
     label: above
     settings: {  }
     third_party_settings: {  }
-  field_oc_status:
-    type: list_default
-    weight: 0
+  links:
+    weight: 5
     region: content
-    label: above
     settings: {  }
     third_party_settings: {  }
 hidden:
   langcode: true
-  links: true

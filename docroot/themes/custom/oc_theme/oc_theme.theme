@@ -349,8 +349,18 @@ function oc_theme_preprocess_node(&$variables) {
       $variables['assigned'] = "";
     }
   }
-  if ($node->hasField('field_oc_content')){
-    $variables['thecontent']= $node->field_oc_content[0]->get('target_id')->getValue();
+  if ($node->hasField('field_oc_task_type')){
+    if (!is_null($node->field_oc_task_type[0])) {
+      $variables['usetitle'] = TRUE;
+      if ($node->field_oc_task_type[0]->getValue()['value']=="1") {
+        $variables['usetitle'] = FALSE;
+      }
+    }
+  }
+  if ($node->hasField('field_oc_content')) {
+    if (!is_null($node->field_oc_content[0])) {
+      $variables['thecontent'] = $node->field_oc_content[0]->get('target_id')->getValue();
+    }
   }
 }
 

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oc_task_type
+    - node.type.oc_tasks
+  module:
+    - options
+id: node.oc_tasks.field_oc_task_type
+field_name: field_oc_task_type
+entity_type: node
+bundle: oc_tasks
+label: 'Task Type'
+description: 'What type of task is it?'
+required: true
+translatable: true
+default_value:
+  -
+    value: '1'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

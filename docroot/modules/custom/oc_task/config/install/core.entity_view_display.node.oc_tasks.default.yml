@@ -2,22 +2,30 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.oc_task.field_oc_assigned
-    - field.field.node.oc_task.field_oc_content
-    - field.field.node.oc_task.field_oc_description
-    - field.field.node.oc_task.field_oc_status
-    - node.type.oc_task
+    - field.field.node.oc_tasks.body
+    - field.field.node.oc_tasks.field_oc_assigned
+    - field.field.node.oc_tasks.field_oc_content
+    - field.field.node.oc_tasks.field_oc_status
+    - field.field.node.oc_tasks.field_oc_task_type
+    - node.type.oc_tasks
   module:
     - options
     - text
     - user
-id: node.oc_task.default
+id: node.oc_tasks.default
 targetEntityType: node
-bundle: oc_task
+bundle: oc_tasks
 mode: default
 content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_oc_assigned:
-    weight: 0
+    weight: 102
     label: above
     settings:
       link: true
@@ -25,27 +33,31 @@ content:
     type: entity_reference_label
     region: content
   field_oc_content:
-    weight: 2
+    weight: 105
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_oc_description:
-    weight: 4
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_oc_status:
-    weight: 3
+    weight: 103
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
+  field_oc_task_type:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   langcode: true
-  links: true

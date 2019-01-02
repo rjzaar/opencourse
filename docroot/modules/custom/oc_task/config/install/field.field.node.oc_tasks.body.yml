@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.oc_tasks
+  module:
+    - text
+id: node.oc_tasks.body
+field_name: body
+entity_type: node
+bundle: oc_tasks
+label: Description
+description: 'Provide extra information about the task.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

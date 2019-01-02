@@ -2,9 +2,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - node.type.oc_task
-id: node.oc_task
+    - node.type.oc_tasks
+id: node.oc_tasks
 target_entity_type_id: node
-target_bundle: oc_task
+target_bundle: oc_tasks
 default_langcode: site_default
 language_alterable: false

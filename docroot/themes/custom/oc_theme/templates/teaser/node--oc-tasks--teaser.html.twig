@@ -87,14 +87,16 @@
   {{ title_suffix }}
 
 
-
   <div{{ content_attributes.addClass('content') }}>
     {% if not assigned %}
       Will you
     {% else %}
     <a href="{{ assigned }}">{{ content.field_oc_assigned[0]['#title'] }}</a> to
-{% endif %}{{ title }}
-    <a href="/node/{{ thecontent }}">{{ content.field_oc_content[0]['#title'] }}</a>{% if not assigned %}? <a href="{{ url }}/edit?edit[field_oc_status]=Assigned&edit[field_oc_assigned]={{ user.id }}">Accept Mission</a>{% else %}.{% endif %}
+{% endif %}
+    {% if usetitle %}
+        {{ title }}{% else %}
+        {{ content.field_oc_task_type[0]['#markup'] }}
+    <a href="/node/{{ thecontent }}">{{ content.field_oc_content[0]['#title'] }}</a>{% endif %}{% if not assigned %}? <a href="{{ url }}/edit?edit[field_oc_status]=Assigned&edit[field_oc_assigned]={{ user.id }}">Accept Mission</a>{% else %}.{% endif %}
     {#Status: {{ content.field_oc_status[0]['#markup'] }}#}
     &nbsp;&nbsp;&nbsp;<a href="{{ url }}">More info</a>
   </div>

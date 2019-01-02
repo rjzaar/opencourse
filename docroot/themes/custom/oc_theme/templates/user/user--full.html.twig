@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present all user data.
+ *
+ * This template is used when viewing a registered user's page,
+ * e.g., example.com/user/123. 123 being the user's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ *
+ * @see template_preprocess_user()
+ *
+ * @ingroup themeable
+ */
+#}
+<article{{ attributes }}>
+  {% if content %}
+
+    <div class="oc_user_row">
+      <div class="oc_user_column oc_user_left">
+        {{- content -}}
+        {{ drupal_view('oc_current_user', 'block_1') }}
+        <h3>My Tasks</h3>
+        {{ drupal_view('oc_my_tasks', 'block_1') }}
+      </div>
+      <div class="oc_user_column oc_user_right">
+        {{ drupal_view('oc_edits_by_user', 'block_1') }}
+        <h3>Tasks Todo</h3>
+        {{ drupal_view('oc_todo', 'block_1') }}
+      </div>
+    </div>
+
+    <h3>Moderate Content</h3>
+    {{ drupal_view('oc_moderate_content', 'block_1') }}
+    <h3>Draft Review</h3>
+    {{ drupal_view('oc_draft_review', 'block_1') }}
+    <h3>Theology Review</h3>
+    {{ drupal_view('oc_theology_review', 'block_1') }}
+    <h3>Pedagogy Review</h3>
+    {{ drupal_view('oc_pedagogy_review', 'block_1') }}
+    <h3>Eloquence Review</h3>
+    {{ drupal_view('oc_eloquence_review', 'block_1') }}
+    <h3>Final Review</h3>
+    {{ drupal_view('oc_final_review', 'block_1') }}
+  {% endif %}
+</article>
