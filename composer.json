@@ -221,6 +221,9 @@
       },
       "drupal/prepopulate": {
         "prepopulate-entity_reference-2847371-2.patch": "https://www.drupal.org/files/issues/prepopulate-entity_reference-2847371-2.patch"
+      },
+      "drupal/tour_ui": {
+        "tour-ui-2978327-7.patch": "https://www.drupal.org/files/issues/2018-11-03/tour-ui-2978327-7.patch"
       }
     },
     "patchLevel": {

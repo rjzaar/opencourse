@@ -409,6 +409,7 @@ x[i].style.display = "none";
           {# Content #}
           {% block content %}
             <a id="main-content"></a>
+              {{ route_name }}
               {{ page.content }}
           {% endblock %}
       </section>
