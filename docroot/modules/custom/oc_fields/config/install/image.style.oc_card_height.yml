@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: oc_card_height
+label: 'OC card height'
+effects:
+  29eccf7b-9776-40cc-97bd-88907a3bf784:
+    uuid: 29eccf7b-9776-40cc-97bd-88907a3bf784
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 200
+      crop_type: focal_point
+pipeline: ''

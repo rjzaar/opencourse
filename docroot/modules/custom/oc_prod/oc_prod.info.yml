@@ -37,7 +37,8 @@ dependencies:
   - legal
   - riddler
   - menu_item_role_access
-  - user_default_page
   - prepopulate
   - oc_task
   - oc_home
+  - login_destination
+

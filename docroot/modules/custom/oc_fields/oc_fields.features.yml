@@ -6,7 +6,6 @@ excluded:
   - field.field.node.oc_doc.field_oc_interactive
   - core.entity_form_display.taxonomy_term.oc_group_content.default
   - core.entity_view_display.taxonomy_term.oc_group_content.default
-  - core.entity_view_display.node.book.teaser
   - field.storage.taxonomy_term.field_blocks
   - field.storage.taxonomy_term.field_group_list
 required: true

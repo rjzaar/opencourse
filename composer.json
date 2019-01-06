@@ -103,7 +103,6 @@
     "drupal/legal": "^1.0@beta",
     "drupal/riddler": "^1.1",
     "drupal/menu_item_role_access": "^1.0",
-    "drupal/user_default_page": "^1.0",
     "drupal/video_embed_field": "^2",
     "drupal/varbase_blog": "^6.1"
   },
