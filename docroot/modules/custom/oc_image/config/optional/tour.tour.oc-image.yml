@@ -1,0 +1,140 @@
+uuid: 6a3fbb84-3f4e-48c0-8a10-9797f6e7cedb
+langcode: en
+status: true
+dependencies:
+  module:
+    - oc_image
+id: oc-image
+label: 'OC Image'
+module: oc_image
+routes:
+  -
+    route_name: node.add
+    route_params:
+      node_type: oc_image
+tips:
+  introduction:
+    id: introduction
+    plugin: text
+    label: Introduction
+    weight: -100
+    attributes: {  }
+    body: "When choosing an image, it must be public domain, either CC0 or just \"public domain\". \r\nWhen using google use the Advanced search and use the \"commercially\" option (<a href=\"https://www.lifewire.com/reusable-public-domain-images-google-1616816\">more info</a>). \r\nIf you want to use a particular image, you need to find out if it is public domain then this <a href=\"https://whatpixel.com/original-source-image-search-tools/\">link</a> will help. \r\n<a href=\"https://pxhere.com/\">pxhere.com</a> has only public domain images."
+    location: top
+  title-image:
+    id: title-image
+    plugin: text
+    label: 'Image Title'
+    weight: -99
+    attributes:
+      data-id: edit-title-0-value
+    body: 'Use the title of the image or the filename without the ending if there is no image title.'
+    location: right
+  image-file:
+    id: image-file
+    plugin: text
+    label: 'Image file'
+    weight: -98
+    attributes:
+      data-class: image-widget-data
+    body: 'You will need to first download the image. The ideal image size is 1920 x 1080. If it was a choice between larger or smaller go larger. The site will resize the image for the browser so download will be quicker. '
+    location: right
+  image-description:
+    id: image-description
+    plugin: text
+    label: 'Image description'
+    weight: -97
+    attributes:
+      data-class: form-item-body-0-value
+    body: 'Some images come with a description. If you use the description from a website you must indicate that you are quoting them by putting the information in quotation marks and putting their name in brackets ideally linked to their profile or the site. When making up your own description you should try to create a description that highlights the religious significance of the image so the reader appreciates the true, the good and in this case the beautiful. Try to inspire the reader. You may like to pray to be guided.'
+    location: right
+  image-url:
+    id: image-url
+    plugin: text
+    label: 'Image URL'
+    weight: -96
+    attributes:
+      data-id: edit-field-oc-link-0-uri
+    body: 'Most likely you found an image on the internet. This is where you put the image link. Try to find the most original source of the image. There was information about how to do this at the start of the tour. Put the URL part here - that''s the part in the address bar in the browser. Just copy it from the address bar and paste it into the text box.'
+    location: right
+  author-s-:
+    id: author-s-
+    plugin: text
+    label: Author(s)
+    weight: -95
+    attributes:
+      data-id: edit-field-oc-author-s-0-target-id
+    body: 'If you have been able to find the author of the image, then start typing their name and wait. The system will see if the author is already on the system and come up with the name used. If it doesn''t find the author, then type out the whole name so the new author can be added to the system. If anonymous, then start typing anon, and you should see "Anonymous" come up. If there is another author then click "Add another item" and you will be able to add the next author.'
+    location: right
+  publisher:
+    id: publisher
+    plugin: text
+    label: Publisher
+    weight: -94
+    attributes:
+      data-id: edit-field-oc-publisher-0-value
+    body: 'The Publisher will normally be the website where the image is from, eg pxhere.com.'
+    location: right
+  year:
+    id: year
+    plugin: text
+    label: Year
+    weight: -93
+    attributes:
+      data-id: edit-field-oc-year-0-value
+    body: 'Year of Publication may be provided. If not, then choose the year you have accessed the image. A reverse tineye search for earliest image can help.'
+    location: right
+  licence:
+    id: licence
+    plugin: text
+    label: LIcence
+    weight: -92
+    attributes:
+      data-id: edit-field-oc-licence-0-uri
+    body: 'We only use public domain images, either public domain or CCO public domain. There may be other licences that are equivalent to public domain that can be used. If unsure use <a href="/form/contact">this message system</a> to start a query. Try to find the details of the licence. There should be a link to the licence which you copy and paste into the URL part. The title of the licence you paste into the Link text part.'
+    location: right
+  level:
+    id: level
+    plugin: text
+    label: Level
+    weight: -91
+    attributes:
+      data-id: edit-field-oc-level
+    body: 'Leave this as beginner.'
+    location: right
+  topic-s-:
+    id: topic-s-
+    plugin: text
+    label: Topic(s)
+    weight: -90
+    attributes:
+      data-id: edit-field-oc-topic-0-target-id
+    body: 'Choose some appropriate topic(s) for this image.  They must be all lowercase. Type in the first topic and the system might suggest some topics to choose from. If it is appropriate, choose one listed. If you need to add more terms click ''Add another item''.'
+    location: right
+  visibility:
+    id: visibility
+    plugin: text
+    label: Visibility
+    weight: -89
+    attributes:
+      data-id: edit-field-content-visibility-public
+    body: 'Leave this as public.'
+    location: right
+  oc-background-color:
+    id: oc-background-color
+    plugin: text
+    label: 'OC Background Color'
+    weight: -88
+    attributes:
+      data-id: edit-field-oc-back-color-0-color
+    body: 'Normally you would leave this as white. If the image does not fit fully in the space given it, then the rest of the area is filled with this colour. If the image has a black background then black should be chosen as the background colour. If you know how to do it, you can use photoshop or gimp to extract the background color and use the right one, otherwise just choose an appropriate colour such as white.'
+    location: right
+  save-as:
+    id: save-as
+    plugin: text
+    label: 'Save As'
+    weight: -87
+    attributes:
+      data-id: edit-moderation-state-0-state
+    body: 'Since you have completed all the information it should be ready to be checked which means you save as "Review Accuracy" so it can progress through the checking process. If you still need to work on it, then save it as Draft.'
+    location: top

@@ -1,0 +1,194 @@
+uuid: df64bc30-b6dc-47b7-ba17-e938ef06b846
+langcode: en
+status: true
+dependencies:
+  module:
+    - oc_book
+id: oc-book
+label: 'OC Book'
+module: oc_book
+routes:
+  -
+    route_name: node.add
+    route_params:
+      node_type: oc_book
+tips:
+  introduction:
+    id: introduction
+    plugin: text
+    label: Introduction
+    weight: -100
+    attributes: {  }
+    body: 'Choose an appropriate book. We only want the best books to develop a good theological synthesis. You can add the book, the first stage and the final check will determine if it is appropriate for the site.'
+    location: top
+  title-image:
+    id: title-image
+    plugin: text
+    label: Title
+    weight: -99
+    attributes:
+      data-id: edit-title-0-value
+    body: 'Use the title of the book.'
+    location: right
+  image-file:
+    id: image-file
+    plugin: text
+    label: 'Book image file'
+    weight: -98
+    attributes:
+      data-class: image-widget-data
+    body: 'You will need to first download the image. The ideal image size is 1920 x 1080. If it was a choice between larger or smaller go larger. The site will resize the image for the browser so download will be quicker. To find the largest book image first find the image on a site like bookdepository and then use Tineye to search for the largest version of the image and use that one.'
+    location: right
+  image-description:
+    id: image-description
+    plugin: text
+    label: Description
+    weight: -97
+    attributes:
+      data-class: form-item-body-0-value
+    body: 'Some books come with a description. If you use the description from a website you must indicate that you are quoting them by putting the information in quotation marks and putting their name in brackets ideally linked to their profile or the site. When making up your own description you should try to create a description that highlights something of worth of the book.'
+    location: right
+  image-url:
+    id: image-url
+    plugin: text
+    label: 'Book''s Bookstore URL'
+    weight: -96
+    attributes:
+      data-id: edit-field-oc-link-0-uri
+    body: 'A link to where the book can be bought, usually <a href="https://www.bookdepository.com">bookdepository.com</a>. '
+    location: right
+  resource-type:
+    id: resource-type
+    plugin: text
+    label: 'Resource Type'
+    weight: -95
+    attributes:
+      data-id: edit-field-oc-book-type
+    body: 'This will usually be a book. If the type is not listed then send a <a href="/form/contact">message</a> for a new type to be added.'
+    location: right
+  author-s-:
+    id: author-s-
+    plugin: text
+    label: Author(s)
+    weight: -94
+    attributes:
+      data-id: edit-field-oc-author-s-0-target-id
+    body: 'Type in the Book''s author, first name first. The system will see if the author is already on the system and come up with the name used. If it doesn''t find the author, then type out the whole name so the new author can be added to the system. If anonymous, then start typing anon, and you should see "Anonymous" come up. If there is another author then click "Add another item" and you will be able to add the next author.'
+    location: right
+  translator:
+    id: translator
+    plugin: text
+    label: Translator
+    weight: -93
+    attributes:
+      data-id: edit-field-oc-translator-0-value
+    body: 'If the resource has one.'
+    location: right
+  place-published:
+    id: place-published
+    plugin: text
+    label: 'Place Published'
+    weight: -92
+    attributes:
+      data-id: edit-field-oc-place-published-0-value
+    body: 'Bookdepository should list this, otherwise Amazon might have that information.'
+    location: right
+  publisher:
+    id: publisher
+    plugin: text
+    label: Publisher
+    weight: -91
+    attributes:
+      data-id: edit-field-oc-publisher-0-value
+    body: 'This should be listed on Bookdepository or on Amazon.'
+    location: right
+  year:
+    id: year
+    plugin: text
+    label: Year
+    weight: -90
+    attributes:
+      data-id: edit-field-oc-year-0-value
+    body: 'Again from Bookdepository or Amazon.'
+    location: right
+  edition:
+    id: edition
+    plugin: text
+    label: Edition
+    weight: -89
+    attributes:
+      data-id: edit-field-oc-edition-0-value
+    body: 'Some books have multiple editions. Otherwise leave blank.'
+    location: right
+  isbn:
+    id: isbn
+    plugin: text
+    label: ISBN
+    weight: -88
+    attributes:
+      data-id: edit-field-oc-isbn-0-value
+    body: 'Use the correct ISBN of the book. You can get it from book depository, or amazon.'
+    location: right
+  external-links:
+    id: external-links
+    plugin: text
+    label: 'External Links'
+    weight: -86
+    attributes:
+      data-id: edit-field-oc-external-links-0-target-id
+    body: 'Add here links to external articles about the book. This is different to a resource type of link which is ''internal'' since these are just about the book itself, whereas the internal link is about a concept and needs to be checked.'
+    location: right
+  internal-links:
+    id: internal-links
+    plugin: text
+    label: 'Internal Links'
+    weight: -85
+    attributes:
+      data-id: edit-field-oc-internal-links-0-target-id
+    body: 'This is to any internal resources such as a doc, sequence, link or another book.'
+    location: right
+  level:
+    id: level
+    plugin: text
+    label: Level
+    weight: -84
+    attributes:
+      data-id: edit-field-oc-level
+    body: 'Leave this as beginner.'
+    location: right
+  topic-s-:
+    id: topic-s-
+    plugin: text
+    label: Topic(s)
+    weight: -83
+    attributes:
+      data-id: edit-field-oc-topic-0-target-id
+    body: 'Choose some appropriate topic(s) for this image.  They must be all lowercase. Type in the first topic and the system might suggest some topics to choose from. If it is appropriate, choose one listed. If you need to add more terms click ''Add another item''.'
+    location: right
+  visibility:
+    id: visibility
+    plugin: text
+    label: Visibility
+    weight: -82
+    attributes:
+      data-id: edit-field-content-visibility-public
+    body: 'Leave this as public.'
+    location: right
+  oc-background-color:
+    id: oc-background-color
+    plugin: text
+    label: 'OC Background Color'
+    weight: -81
+    attributes:
+      data-id: edit-field-oc-back-color-0-color
+    body: 'Normally you would leave this as white. If the image does not fit fully in the space given it, then the rest of the area is filled with this colour. If the image has a black background then black should be chosen as the background colour. If you know how to do it, you can use photoshop or gimp to extract the background color and use the right one, otherwise just choose an appropriate colour such as white.'
+    location: right
+  save-as:
+    id: save-as
+    plugin: text
+    label: 'Save As'
+    weight: -80
+    attributes:
+      data-id: edit-moderation-state-0-state
+    body: 'Since you have completed all the information it should be ready to be checked which means you save as "Review Accuracy" so it can progress through the checking process. If you still need to work on it, then save it as Draft.'
+    location: top
