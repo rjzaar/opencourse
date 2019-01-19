@@ -5,7 +5,6 @@ dependencies:
     - core.entity_view_mode.node.summary
     - field.field.node.oc_doc.body
     - field.field.node.oc_doc.field_content_visibility
-    - field.field.node.oc_doc.field_lp_paragraphs
     - field.field.node.oc_doc.field_oc_back_color
     - field.field.node.oc_doc.field_oc_external_links
     - field.field.node.oc_doc.field_oc_head_back_color
@@ -65,6 +64,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: ds_content
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_content_visibility:
     weight: 109
     label: above
@@ -138,7 +142,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_lp_paragraphs: true
   field_oc_back_color: true
   field_oc_head_back_color: true
   field_oc_importance: true

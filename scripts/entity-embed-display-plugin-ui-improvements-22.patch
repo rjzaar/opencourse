@@ -1,0 +1,183 @@
+diff --git a/src/Form/EntityEmbedDialog.php b/src/Form/EntityEmbedDialog.php
+index d4fb7d4..f870fba 100644
+--- a/src/Form/EntityEmbedDialog.php
++++ b/src/Form/EntityEmbedDialog.php
+@@ -810,12 +810,19 @@ class EntityEmbedDialog extends FormBase {
+    *   List of allowed Entity Embed Display plugins.
+    */
+   public function getDisplayPluginOptions(EmbedButtonInterface $embed_button, EntityInterface $entity) {
+-    $plugins = $this->entityEmbedDisplayManager->getDefinitionOptionsForEntity($entity);
++
++    $plugins = $embed_button
++      ->getTypePlugin()
++      ->getDisplayPluginOptions($entity->getEntityTypeId());
+ 
+     if ($allowed_plugins = $embed_button->getTypeSetting('display_plugins')) {
+       $plugins = array_intersect_key($plugins, array_flip($allowed_plugins));
+     }
+ 
++    $plugins = array_map(function ($item) {
++      return $item['type'] . ': ' . $item['label'];
++    }, $plugins);
++
+     natsort($plugins);
+     return $plugins;
+   }
+diff --git a/src/Plugin/Derivative/FieldFormatterDeriver.php b/src/Plugin/Derivative/FieldFormatterDeriver.php
+index 4852155..eb04e2f 100644
+--- a/src/Plugin/Derivative/FieldFormatterDeriver.php
++++ b/src/Plugin/Derivative/FieldFormatterDeriver.php
+@@ -5,6 +5,7 @@ namespace Drupal\entity_embed\Plugin\Derivative;
+ use Drupal\Component\Plugin\Derivative\DeriverBase;
+ use Drupal\Core\Config\ConfigFactoryInterface;
+ use Drupal\Core\Plugin\Discovery\ContainerDeriverInterface;
++use Drupal\Core\StringTranslation\StringTranslationTrait;
+ use Symfony\Component\DependencyInjection\ContainerInterface;
+ use Drupal\Core\Field\FormatterPluginManager;
+ 
+@@ -15,6 +16,8 @@ use Drupal\Core\Field\FormatterPluginManager;
+  */
+ class FieldFormatterDeriver extends DeriverBase implements ContainerDeriverInterface {
+ 
++  use StringTranslationTrait;
++
+   /**
+    * The manager for formatter plugins.
+    *
+@@ -69,6 +72,7 @@ class FieldFormatterDeriver extends DeriverBase implements ContainerDeriverInter
+     foreach ($this->formatterManager->getOptions($base_plugin_definition['field_type']) as $formatter => $label) {
+       $this->derivatives[$formatter] = $base_plugin_definition;
+       $this->derivatives[$formatter]['label'] = $label;
++      $this->derivatives[$formatter]['type_label'] = $base_plugin_definition['label'];
+       // Don't show entity_reference_entity_view in the UI if the rendered
+       // entity mode is FALSE. In that case we show view modes from
+       // ViewModeDeriver, entity_reference_entity_view is kept for backwards
+diff --git a/src/Plugin/Derivative/ViewModeDeriver.php b/src/Plugin/Derivative/ViewModeDeriver.php
+index f23d70e..3f6a729 100644
+--- a/src/Plugin/Derivative/ViewModeDeriver.php
++++ b/src/Plugin/Derivative/ViewModeDeriver.php
+@@ -6,6 +6,7 @@ use Drupal\Component\Plugin\Derivative\DeriverBase;
+ use Drupal\Core\Config\ConfigFactoryInterface;
+ use Drupal\Core\Entity\EntityDisplayRepositoryInterface;
+ use Drupal\Core\Plugin\Discovery\ContainerDeriverInterface;
++use Drupal\Core\StringTranslation\StringTranslationTrait;
+ use Symfony\Component\DependencyInjection\ContainerInterface;
+ 
+ /**
+@@ -15,6 +16,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
+  */
+ class ViewModeDeriver extends DeriverBase implements ContainerDeriverInterface {
+ 
++  use StringTranslationTrait;
++
+   /**
+    * The entity display repository.
+    *
+@@ -60,6 +63,7 @@ class ViewModeDeriver extends DeriverBase implements ContainerDeriverInterface {
+     foreach ($this->entityDisplayRepository->getAllViewModes() as $view_modes) {
+       foreach ($view_modes as $view_mode => $definition) {
+         $this->derivatives[$definition['id']] = $base_plugin_definition;
++        $this->derivatives[$definition['id']]['type_label'] = $base_plugin_definition['label'];
+         $this->derivatives[$definition['id']]['label'] = $definition['label'];
+         $this->derivatives[$definition['id']]['view_mode'] = $view_mode;
+         $this->derivatives[$definition['id']]['entity_types'] = $definition['targetEntityType'];
+diff --git a/src/Plugin/EmbedType/Entity.php b/src/Plugin/EmbedType/Entity.php
+index 142d4b0..16b9ffb 100644
+--- a/src/Plugin/EmbedType/Entity.php
++++ b/src/Plugin/EmbedType/Entity.php
+@@ -141,15 +141,26 @@ class Entity extends EmbedTypeBase implements ContainerFactoryPluginInterface {
+       ];
+       $form['bundles']['#access'] = !empty($form['bundles']['#options']);
+ 
+-      // Allow option to limit Entity Embed Display plugins.
++      $display_plugin_options = $this->getDisplayPluginOptions($entity_type_id);
++
++      $form['display_plugins_intro'] = [
++        '#type' => 'markup',
++        '#markup' => '<p><strong>' . $this->t('Allowed Entity Embed Display plugins') . '</strong></p>',
++      ];
++      $form['display_plugins_intro']['#markup'] .= '<p>' . $this->t('If none are selected, all are allowed. Note that these are the plugins which are allowed for this entity type, all of these might not be available for the selected entity.') . '</p>';
++
+       $form['display_plugins'] = [
+-        '#type' => 'checkboxes',
+-        '#title' => $this->t('Allowed Entity Embed Display plugins'),
+-        '#options' => $this->displayPluginManager->getDefinitionOptionsForEntityType($entity_type_id),
+-        '#default_value' => $this->getConfigurationValue('display_plugins'),
+-        '#description' => $this->t('If none are selected, all are allowed. Note that these are the plugins which are allowed for this entity type, all of these might not be available for the selected entity.'),
++        '#type' => 'tableselect',
++        '#multiple' => TRUE,
++        '#header' => [
++          'label' => $this->t('Plugin'),
++          'type' => $this->t('Display PLugin Type'),
++        ],
++        '#options' => $display_plugin_options,
++        '#empty' => $this->t('No Display Plugins found.'),
++        '#js_select' => FALSE,
++        '#default_value' => $this->getDefaultDisplayPlugins($entity_type_id, $display_plugin_options),
+       ];
+-      $form['display_plugins']['#access'] = !empty($form['display_plugins']['#options']);
+ 
+       /** @var \Drupal\entity_browser\EntityBrowserInterface[] $browsers */
+       if ($this->entityTypeManager->hasDefinition('entity_browser') && ($browsers = $this->entityTypeManager->getStorage('entity_browser')->loadMultiple())) {
+@@ -199,6 +210,61 @@ class Entity extends EmbedTypeBase implements ContainerFactoryPluginInterface {
+     return $form;
+   }
+ 
++  /**
++   * Get plugin display options.
++   *
++   * @param string $entity_type_id
++   *   Entity type id.
++   *
++   * @return array
++   *   Array of display plugin options.
++   */
++  public function getDisplayPluginOptions($entity_type_id) {
++    $definitions = $this->displayPluginManager->getDefinitionsForContexts(['entity_type' => $entity_type_id]);
++    $definitions = array_filter($definitions, function ($definition) {
++      return empty($definition['no_ui']);
++    });
++
++    $options = array_map(function ($definition) {
++      return [
++        'label' => (string) $definition['label'],
++        'type' => $definition['type_label'],
++      ];
++    }, $definitions);
++
++    return $options;
++  }
++
++  /**
++   * Get default display plugin id.
++   *
++   * @param string $entity_type_id
++   *   Entity type id.
++   * @param array $options
++   *   Array of display plugin options.
++   *
++   * @return array
++   *   Default options when creating new embed buttons.
++   */
++  protected function getDefaultDisplayPlugins($entity_type_id, array $options) {
++
++    if ($config_values = $this->getConfigurationValue('display_plugins')) {
++      return array_combine($config_values, $config_values);
++    }
++    elseif (!empty($options["view_mode:$entity_type_id.embed"])) {
++      return [
++        "view_mode:$entity_type_id.embed" => "view_mode:$entity_type_id.embed",
++      ];
++    }
++    elseif (!empty($options["view_mode:$entity_type_id.default"])) {
++      return [
++        "view_mode:$entity_type_id.default" => "view_mode:$entity_type_id.default",
++      ];
++    }
++
++    return [];
++  }
++
+   /**
+    * {@inheritdoc}
+    */

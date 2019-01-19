@@ -223,6 +223,9 @@
       },
       "drupal/tour_ui": {
         "tour-ui-2978327-7.patch": "https://www.drupal.org/files/issues/2018-11-03/tour-ui-2978327-7.patch"
+      },
+      "drupal/entity_embed": {
+        "entity-embed-display-plugin-ui-improvements-22.patch": "https://www.drupal.org/files/issues/2018-12-23/entity-embed-display-plugin-ui-improvements-22.patch"
       }
     },
     "patchLevel": {

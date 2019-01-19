@@ -20,6 +20,7 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
+      oc_sequence: oc_sequence
       oc_book: oc_book
       oc_doc: oc_doc
     sort:

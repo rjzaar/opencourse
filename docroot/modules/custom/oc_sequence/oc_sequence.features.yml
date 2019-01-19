@@ -1,6 +1,5 @@
 bundle: oc
 excluded:
   - views.view.oc_sequences_list
-  - views.view.test_panel
   - views.view.oc_sequences_tiled
 required: true
