@@ -3,8 +3,10 @@ description: 'Provides site components.'
 type: module
 core: 8.x
 dependencies:
+  - block
   - block_content
   - content_translation
+  - ctools
   - field
   - language
   - media

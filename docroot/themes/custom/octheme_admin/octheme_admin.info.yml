@@ -1,0 +1,23 @@
+name: "OC Theme Admin"
+type: theme
+description: This is the OC Theme Admin sub theme of Vartheme_admin
+core: 8.x
+# Defines the base theme
+base theme: vartheme_admin
+screenshot: screenshot.png
+# Defines libraries group in which we can add css/js.
+libraries:
+  - octheme_admin/global-styling
+# Regions
+regions:
+  header: 'Header'
+  pre_content: 'Pre-content'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  sidebar_first: 'First sidebar'
+regions_hidden:
+  - sidebar_first

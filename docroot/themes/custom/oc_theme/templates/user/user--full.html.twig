@@ -25,6 +25,8 @@
       <div class="oc_user_column oc_user_left">
         {{- content -}}
         {{ drupal_view('oc_current_user', 'block_1') }}
+        <h3>Help</h3>
+        {{ drupal_entity('block_content', '3') }}
         <h3>My Tasks</h3>
         {{ drupal_view('oc_my_tasks', 'block_1') }}
       </div>

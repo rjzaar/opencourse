@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 id: authenticated
 label: 'authenticated user'
-weight: 1
+weight: -9
 is_admin: false

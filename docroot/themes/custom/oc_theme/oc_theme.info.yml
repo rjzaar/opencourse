@@ -4,7 +4,7 @@ base theme: vartheme
 
 name: 'oc_theme'
 description: 'Uses the Bootstrap framework LESS source files and must be compiled (not for beginners).'
-package: 'Varbase'
+#package: 'Varbase'
 
 regions:
   navigation: 'Navigation'
