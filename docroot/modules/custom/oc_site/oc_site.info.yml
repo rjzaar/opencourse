@@ -13,7 +13,9 @@ dependencies:
   - site_settings
   - system
   - text
+  - tour
+  - tour_ui
   - user
   - varbase_media
-version: 8.x-0.1
+version: 8.x-0.2
 package: oc

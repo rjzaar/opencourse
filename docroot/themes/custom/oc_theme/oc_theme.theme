@@ -61,7 +61,7 @@ function oc_theme_preprocess_page(&$variables) {
 //  }
 
 // ### For finding the route for tours ###
-//  $variables['route_name'] = \Drupal::routeMatch()->getRouteName();
+  $variables['route_name'] = \Drupal::routeMatch()->getRouteName();
 
 
   // Load the site name out of configuration.

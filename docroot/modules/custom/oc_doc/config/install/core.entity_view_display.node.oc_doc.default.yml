@@ -193,4 +193,5 @@ content:
     region: ds_content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_lp_paragraphs: true

@@ -48,6 +48,7 @@ content:
     third_party_settings: {  }
 hidden:
   field_content_visibility: true
+  field_lp_paragraphs: true
   field_oc_back_color: true
   field_oc_external_links: true
   field_oc_head_back_color: true

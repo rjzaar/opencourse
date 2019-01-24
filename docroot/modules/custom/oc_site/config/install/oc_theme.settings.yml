@@ -2,8 +2,16 @@ foo_example: 'blue bikeshed'
 favicon:
   mimetype: image/vnd.microsoft.icon
   path: ''
-  url: 'http://o.c/profiles/varbase/themes/vartheme/favicon.ico'
+  url: 'http://rob/themes/custom/oc_theme/favicon.ico'
   use_default: true
+logo:
+  path: ''
+  url: 'http://rob/themes/custom/oc_theme/logo.svg'
+  use_default: true
+schemas:
+  bootstrap: 8000
+  vartheme: 8000
+  oc_theme: 8000
 features:
   comment_user_picture: true
   comment_user_verification: true
@@ -12,11 +20,19 @@ features:
   logo: true
   name: true
   slogan: true
-logo:
-  path: ''
-  url: ''
-  use_default: true
-schemas:
-  bootstrap: 8000
-  vartheme: 8000
-  oc_theme: 8000
+region_wells:
+  navigation: ''
+  navigation_collapsible: ''
+  header: ''
+  group: ''
+  hero_slider: ''
+  highlighted: ''
+  help: ''
+  content: ''
+  sidebar_first: ''
+  sidebar_second: well
+  footer: ''
+table_responsive: '-1'
+table: ''
+header_container: 0
+oc_head_image: null

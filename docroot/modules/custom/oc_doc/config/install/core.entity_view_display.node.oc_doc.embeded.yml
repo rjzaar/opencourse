@@ -178,5 +178,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_lp_paragraphs: true
   field_oc_importance: true
   field_oc_interactive: true

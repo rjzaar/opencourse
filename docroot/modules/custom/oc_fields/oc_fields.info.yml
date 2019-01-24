@@ -24,7 +24,12 @@ dependencies:
   - link
   - media
   - node
+  - oc_book
   - oc_doc
+  - oc_image
+  - oc_link
+  - oc_lp
+  - oc_sequence
   - options
   - paragraphs_previewer
   - path
@@ -37,5 +42,5 @@ dependencies:
   - video_embed_field
   - views
   - viewsreference
-version: 8.x-0.3
+version: 8.x-0.4
 package: oc

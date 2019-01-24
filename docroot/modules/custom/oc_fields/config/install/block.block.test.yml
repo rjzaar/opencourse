@@ -17,7 +17,7 @@ settings:
   id: 'superfish:test'
   label: test
   provider: superfish
-  label_display: visible
+  label_display: '0'
   level: '1'
   depth: '0'
   menu_type: vertical
@@ -51,7 +51,7 @@ settings:
   smallich: ''
   smallamt: ''
   smallabt: '1'
-  supersubs: 0
+  supersubs: 1
   minwidth: '12'
   maxwidth: '27'
   multicolumn: 0

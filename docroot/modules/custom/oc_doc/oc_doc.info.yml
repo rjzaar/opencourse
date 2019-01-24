@@ -37,5 +37,5 @@ dependencies:
   - varbase_media
   - video_embed_field
   - views
-version: 8.x-0.1
+version: 8.x-0.3
 package: oc

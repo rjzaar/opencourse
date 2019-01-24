@@ -223,4 +223,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_lp_paragraphs: true
   langcode: true

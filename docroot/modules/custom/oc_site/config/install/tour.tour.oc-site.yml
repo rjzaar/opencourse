@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - tour_ui
+id: oc-site
+label: 'OC Site'
+module: tour_ui
+routes:
+  -
+    route_name: entity.node.canonical
+    route_params:
+      node: '2'
+tips: {  }
