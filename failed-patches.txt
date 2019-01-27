@@ -29,3 +29,17 @@ Patch: https://www.drupal.org/files/issues/2018-12-23/entity-embed-display-plugi
 	 Package Path: docroot/modules/contrib/entity_embed
 
 
+Patch: https://www.drupal.org/files/issues/2018-12-23/entity-embed-display-plugin-ui-improvements-22.patch
+	 Reason: Failed to apply patch
+	 Description: entity-embed-display-plugin-ui-improvements-22.patch
+	 Package Name: drupal/entity_embed
+	 Package Path: docroot/modules/contrib/entity_embed
+
+
+Patch: https://www.drupal.org/files/issues/2018-12-23/entity-embed-display-plugin-ui-improvements-22.patch
+	 Reason: Failed to apply patch
+	 Description: entity-embed-display-plugin-ui-improvements-22.patch
+	 Package Name: drupal/entity_embed
+	 Package Path: docroot/modules/contrib/entity_embed
+
+

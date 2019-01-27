@@ -4,14 +4,17 @@ dependencies:
   config:
     - field.field.node.oc_sequence.body
     - field.field.node.oc_sequence.field_content_visibility
+    - field.field.node.oc_sequence.field_meta_tags
     - field.field.node.oc_sequence.field_oc_importance
     - field.field.node.oc_sequence.field_oc_level
     - field.field.node.oc_sequence.field_oc_linked_image
     - field.field.node.oc_sequence.field_oc_sequence_items
     - field.field.node.oc_sequence.field_oc_topic
+    - field.field.node.oc_sequence.field_yoast_seo
     - node.type.oc_sequence
   module:
     - ds
+    - metatag
     - options
     - text
     - user
@@ -27,12 +30,24 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_content_visibility:
     weight: 106
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
+    region: content
+  field_meta_tags:
+    weight: 109
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
     region: content
   field_oc_importance:
     weight: 108
@@ -82,6 +97,14 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_yoast_seo:
+    weight: 110
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   flag_follow_content:
     weight: 10

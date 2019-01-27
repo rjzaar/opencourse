@@ -20,6 +20,7 @@ dependencies:
   - jquery_colorpicker
   - media
   - menu_ui
+  - metatag
   - node
   - oc_book
   - oc_fields
@@ -37,5 +38,6 @@ dependencies:
   - varbase_media
   - video_embed_field
   - views
-version: 8.x-0.3
+  - yoast_seo
+version: 8.x-0.4
 package: oc

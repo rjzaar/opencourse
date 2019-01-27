@@ -11,6 +11,7 @@ dependencies:
   - group
   - image
   - menu_ui
+  - metatag
   - node
   - oc_book
   - oc_doc
@@ -24,5 +25,6 @@ dependencies:
   - text
   - user
   - views
-version: 8.x-0.1
+  - yoast_seo
+version: 8.x-0.2
 package: oc

@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.field.node.oc_image.body
     - field.field.node.oc_image.field_content_visibility
+    - field.field.node.oc_image.field_meta_tags
     - field.field.node.oc_image.field_oc_author_s_
     - field.field.node.oc_image.field_oc_back_color
     - field.field.node.oc_image.field_oc_image
@@ -13,6 +14,7 @@ dependencies:
     - field.field.node.oc_image.field_oc_publisher
     - field.field.node.oc_image.field_oc_topic
     - field.field.node.oc_image.field_oc_year
+    - field.field.node.oc_image.field_yoast_seo
     - image.style.thumbnail
     - node.type.oc_image
   module:
@@ -20,8 +22,10 @@ dependencies:
     - content_moderation
     - focal_point
     - link
+    - metatag
     - path
     - text
+    - yoast_seo
 id: node.oc_image.default
 targetEntityType: node
 bundle: oc_image
@@ -47,6 +51,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
+    region: content
+  field_meta_tags:
+    weight: 122
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
     region: content
   field_oc_author_s_:
     weight: 5
@@ -121,6 +131,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_yoast_seo:
+    weight: 123
+    settings:
+      body: body
+    third_party_settings: {  }
+    type: yoast_seo_widget
     region: content
   langcode:
     type: language_select

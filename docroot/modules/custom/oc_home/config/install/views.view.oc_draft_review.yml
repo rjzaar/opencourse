@@ -5,7 +5,7 @@ dependencies:
     - node
     - user
 id: oc_draft_review
-label: 'OC Draft Review'
+label: 'OC Move Old Published content'
 module: views
 description: ''
 tag: ''
@@ -490,7 +490,7 @@ display:
           group_type: group
           admin_label: ''
           operator: contains
-          value: draft
+          value: published
           group: 1
           exposed: false
           expose:
@@ -574,9 +574,35 @@ display:
           entity_type: node
           entity_field: changed
           plugin_id: date
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "<h3>Start the process: Move 'Published' content to Check Accuracy</h3>\r\n"
+            format: code_html
+          plugin_id: text
       footer: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: '<h3>No more published content to be moved!</h3>'
+            format: full_html
+          plugin_id: text
       relationships:
         moderation_state:
           id: moderation_state
@@ -602,7 +628,7 @@ display:
       arguments: {  }
       display_extenders:
         metatag_display_extender: {  }
-      title: '<h3>Draft Review (start the process)</h3>'
+      title: '<h3>Start the process: Move ''Published'' content to Check Accuracy</h3>'
     cache_metadata:
       max-age: -1
       contexts:

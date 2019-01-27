@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.field.node.oc_book.body
     - field.field.node.oc_book.field_content_visibility
+    - field.field.node.oc_book.field_meta_tags
     - field.field.node.oc_book.field_oc_author_s_
     - field.field.node.oc_book.field_oc_book_image
     - field.field.node.oc_book.field_oc_book_type
@@ -18,14 +19,17 @@ dependencies:
     - field.field.node.oc_book.field_oc_topic
     - field.field.node.oc_book.field_oc_translator
     - field.field.node.oc_book.field_oc_year
+    - field.field.node.oc_book.field_yoast_seo
     - image.style.thumbnail
     - node.type.oc_book
   module:
     - content_moderation
     - focal_point
     - link
+    - metatag
     - path
     - text
+    - yoast_seo
 id: node.oc_book.default
 targetEntityType: node
 bundle: oc_book
@@ -51,6 +55,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
+    region: content
+  field_meta_tags:
+    weight: 121
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
     region: content
   field_oc_author_s_:
     weight: 5
@@ -165,6 +175,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_yoast_seo:
+    weight: 122
+    settings:
+      body: body
+    third_party_settings: {  }
+    type: yoast_seo_widget
     region: content
   langcode:
     type: language_select

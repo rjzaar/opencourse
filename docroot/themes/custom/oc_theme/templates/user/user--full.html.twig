@@ -37,17 +37,18 @@
       </div>
     </div>
 
-    <h3>Moderate Content</h3>
-    {{ drupal_view('oc_moderate_content', 'block_1') }}
-    <h3>Draft Review</h3>
+    {#<h3>Moderate Content</h3>#}
+    {#{{ drupal_view('oc_moderate_content', 'block_1') }}#}
+    <h3>Reviews</h3>
+
     {{ drupal_view('oc_draft_review', 'block_1') }}
-    <h3>Theology Review</h3>
+
     {{ drupal_view('oc_theology_review', 'block_1') }}
-    <h3>Pedagogy Review</h3>
+
     {{ drupal_view('oc_pedagogy_review', 'block_1') }}
-    <h3>Eloquence Review</h3>
+
     {{ drupal_view('oc_eloquence_review', 'block_1') }}
-    <h3>Final Review</h3>
+
     {{ drupal_view('oc_final_review', 'block_1') }}
   {% endif %}
 </article>

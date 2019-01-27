@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.field.node.oc_image.body
     - field.field.node.oc_image.field_content_visibility
+    - field.field.node.oc_image.field_meta_tags
     - field.field.node.oc_image.field_oc_author_s_
     - field.field.node.oc_image.field_oc_back_color
     - field.field.node.oc_image.field_oc_image
@@ -13,6 +14,7 @@ dependencies:
     - field.field.node.oc_image.field_oc_publisher
     - field.field.node.oc_image.field_oc_topic
     - field.field.node.oc_image.field_oc_year
+    - field.field.node.oc_image.field_yoast_seo
     - image.style.de2e
     - node.type.oc_image
   module:
@@ -20,6 +22,7 @@ dependencies:
     - ds
     - image
     - link
+    - metatag
     - options
     - text
     - user
@@ -66,6 +69,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: ds_content
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_content_visibility:
     weight: 111
     label: above
@@ -73,6 +81,13 @@ content:
     third_party_settings: {  }
     type: list_default
     region: ds_content
+  field_meta_tags:
+    weight: 114
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
   field_oc_author_s_:
     weight: 102
     label: above
@@ -161,6 +176,14 @@ content:
     third_party_settings: {  }
     type: string
     region: ds_content
+  field_yoast_seo:
+    weight: 115
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   flag_follow_content:
     weight: 10
     region: content

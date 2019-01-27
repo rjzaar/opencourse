@@ -15,6 +15,7 @@ dependencies:
   - image
   - link
   - menu_ui
+  - metatag
   - node
   - oc_fields
   - oc_image
@@ -30,5 +31,6 @@ dependencies:
   - user
   - varbase_media
   - views
-version: 8.x-0.1
+  - yoast_seo
+version: 8.x-0.2
 package: oc

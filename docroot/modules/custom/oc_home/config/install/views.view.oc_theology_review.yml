@@ -574,9 +574,35 @@ display:
           entity_type: node
           entity_field: changed
           plugin_id: date
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: '<h3>Theology Review (review accuracy)</h3>'
+            format: full_html
+          plugin_id: text
       footer: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: '<h3>No resources need to be Theologically Reviewed</h3>'
+            format: full_html
+          plugin_id: text
       relationships:
         moderation_state:
           id: moderation_state
