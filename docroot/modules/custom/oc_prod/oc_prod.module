@@ -22,3 +22,15 @@ function oc_prod_help($route_name, RouteMatchInterface $route_match) {
     default:
   }
 }
+
+/**
+ * Implements hook_theme().
+ */
+function oc_prod_theme() {
+  return array(
+    'ochelpblock' => array(
+      'variables' => array('title' => NULL, 'description' => NULL),
+      'template' => 'block--ochelpblock',
+    ),
+  );
+}

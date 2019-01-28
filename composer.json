@@ -102,7 +102,8 @@
     "drupal/riddler": "^1.1",
     "drupal/menu_item_role_access": "^1.0",
     "drupal/video_embed_field": "^2",
-    "drupal/varbase_blog": "^6.1"
+    "drupal/varbase_blog": "^6.1",
+    "drupal/simple_block": "^1.0@beta"
   },
   "require-dev": {
     "drupal/coder": "8.2.12",
