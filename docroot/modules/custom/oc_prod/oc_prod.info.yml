@@ -41,5 +41,5 @@ dependencies:
   - oc_task
   - oc_home
   - login_destination
-  - octheme_admin
+
 

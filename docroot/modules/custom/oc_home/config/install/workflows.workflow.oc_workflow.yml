@@ -54,6 +54,7 @@ type_settings:
     approve:
       label: Approve
       from:
+        - approved
         - draft
         - final_check
         - published
