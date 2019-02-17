@@ -3,6 +3,7 @@ description: 'Opencourse Group settings.'
 type: module
 core: 8.x
 dependencies:
+  - blazy
   - block
   - block_class
   - book
@@ -47,5 +48,5 @@ dependencies:
   - views_field_view
   - viewsreference
   - yoast_seo
-version: 8.x-0.2
+version: 8.x-0.3
 package: oc

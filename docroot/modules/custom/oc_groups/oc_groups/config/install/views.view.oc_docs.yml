@@ -5,6 +5,7 @@ dependencies:
     - field.storage.node.body
     - node.type.oc_doc
   module:
+    - blazy
     - book
     - gnode
     - group
@@ -73,18 +74,19 @@ display:
             offset_label: Offset
           quantity: 9
       style:
-        type: default
+        type: blazy
         options:
-          grouping: {  }
-          row_class: 'oc-row-class '
-          default_row_class: true
+          style: column
+          grid: 6
+          grid_medium: 3
+          grid_small: 1
       row:
         type: fields
         options:
+          default_field_elements: false
           inline: {  }
           separator: ''
           hide_empty: false
-          default_field_elements: true
       fields:
         title:
           id: title
@@ -529,8 +531,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '<div>{{body}} <a href="/node/{{nid}}>More</a></div>'
             make_link: false
             path: ''
             absolute: false
@@ -551,12 +553,12 @@ display:
             more_link: false
             more_link_text: ''
             more_link_path: ''
-            strip_tags: false
+            strip_tags: true
             trim: false
-            preserve_tags: ''
+            preserve_tags: '<a><div>'
             html: false
-          element_type: div
-          element_class: oc-doc-view
+          element_type: '0'
+          element_class: ''
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -575,10 +577,10 @@ display:
             trim_suffix: ''
             wrap_output: false
             wrap_class: trimmed
-            more_link: true
+            more_link: false
             more_text: More
-            more_class: more-link
-            summary_handler: ignore
+            more_class: ''
+            summary_handler: trim
             trim_options:
               text: false
               trim_zero: false
@@ -873,6 +875,7 @@ display:
       display_extenders: {  }
       title: Docs
       show_admin_links: true
+      css_class: oc_docviewcontainer
     cache_metadata:
       max-age: -1
       contexts:
