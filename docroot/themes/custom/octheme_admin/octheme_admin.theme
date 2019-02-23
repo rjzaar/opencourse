@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * oc_theme.
+ *
+ * Have custom alteration over the theme layer.
+ */
+
+use Drupal\image\Entity\ImageStyle;
+/**
+* Implements hook_form_alter().
+*/
+//use Drupal\image\Entity\ImageStyle;
+//function octheme_admin_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+//
+////
+////  //See if the URL is a group URL and if so add the group menus.
+////  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+////    $variables['node'] = $node;
+////  }
+//
+//// ### For finding the route for tours ###
+//  $form['route_name1'] = "fred";
+//  $form['route_name'] = \Drupal::routeMatch()->getRouteName();
+//if ($form['route_name']=="") {
+//  $form['route_name']="John";
+//}
+//}

@@ -26,5 +26,5 @@ dependencies:
   - user
   - views
   - yoast_seo
-version: 8.x-0.2
+version: 8.x-0.3
 package: oc

@@ -11,13 +11,17 @@ routes:
     route_name: node.add
     route_params:
       node_type: oc_book
+  -
+    route_name: entity.group_content.create_form
+    route_params:
+      plugin_id: 'group_node:oc_book'
 tips:
   introduction:
     id: introduction
     plugin: text
     label: Introduction
     weight: -100
-    attributes: {  }
+    attributes: null
     body: 'Choose an appropriate book. We only want the best books to develop a good theological synthesis. You can add the book, the first stage and the final check will determine if it is appropriate for the site.'
     location: top
   title-image:

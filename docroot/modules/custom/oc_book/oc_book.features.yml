@@ -8,4 +8,5 @@ excluded:
   - field.storage.node.field_oc_translator
   - views.view.oc_books
   - views.view.oc_books_list
+  - tour.tour.oc-book
 required: true

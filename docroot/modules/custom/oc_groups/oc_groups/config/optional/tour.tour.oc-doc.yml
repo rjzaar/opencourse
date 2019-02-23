@@ -11,13 +11,17 @@ routes:
     route_name: node.add
     route_params:
       node_type: oc_doc
+  -
+    route_name: entity.group_content.create_form
+    route_params:
+      plugin_id: 'group_node:oc_doc'
 tips:
   introduction:
     id: introduction
     plugin: text
     label: Introduction
     weight: -100
-    attributes: {  }
+    attributes: null
     body: 'An Opencat doc explores a particular topic. It is the basic building block of content on this site. The doc contains a ''body'' which explains the topic and then has multiple links to other content such as internal and external links. There should be an image associated with the doc.'
     location: top
   title-image:

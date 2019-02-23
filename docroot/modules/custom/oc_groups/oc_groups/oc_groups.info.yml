@@ -39,6 +39,8 @@ dependencies:
   - system
   - taxonomy
   - text
+  - tour
+  - tour_ui
   - user
   - varbase_bootstrap_paragraphs
   - varbase_landing
@@ -48,5 +50,5 @@ dependencies:
   - views_field_view
   - viewsreference
   - yoast_seo
-version: 8.x-0.3
+version: 8.x-0.4
 package: oc

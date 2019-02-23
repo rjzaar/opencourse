@@ -11,13 +11,17 @@ routes:
     route_name: node.add
     route_params:
       node_type: oc_link
+  -
+    route_name: entity.group_content.create_form
+    route_params:
+      plugin_id: 'group_node:oc_link'
 tips:
   introduction:
     id: introduction
     plugin: text
     label: Introduction
     weight: -100
-    attributes: {  }
+    attributes: null
     body: 'Links are links to any external resources, usually articles.'
     location: top
   title-image:

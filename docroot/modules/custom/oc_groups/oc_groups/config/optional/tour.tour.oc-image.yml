@@ -11,13 +11,17 @@ routes:
     route_name: node.add
     route_params:
       node_type: oc_image
+  -
+    route_name: entity.group_content.create_form
+    route_params:
+      plugin_id: 'group_node:oc_image'
 tips:
   introduction:
     id: introduction
     plugin: text
     label: Introduction
     weight: -100
-    attributes: {  }
+    attributes: null
     body: "When choosing an image, it must be public domain, either CC0 or just \"public domain\". \r\nWhen using google use the Advanced search and use the \"commercially\" option (<a href=\"https://www.lifewire.com/reusable-public-domain-images-google-1616816\">more info</a>). \r\nIf you want to use a particular image, you need to find out if it is public domain then this <a href=\"https://whatpixel.com/original-source-image-search-tools/\">link</a> will help. \r\n<a href=\"https://pxhere.com/\">pxhere.com</a> has only public domain images."
     location: top
   title-image:
