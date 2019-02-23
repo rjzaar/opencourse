@@ -99,3 +99,24 @@ Patch: https://www.drupal.org/files/issues/2018-12-23/entity-embed-display-plugi
 	 Package Path: docroot/modules/contrib/entity_embed
 
 
+Patch: https://www.drupal.org/files/issues/2018-05-10/rabbit_hole-instance_of_check-2961738-5.patch
+	 Reason: Patch already applied
+	 Description: Issue #2961738: Ensure getOperation method exists on form
+	 Package Name: drupal/rabbit_hole
+	 Package Path: docroot/modules/contrib/rabbit_hole
+
+
+Patch: https://www.drupal.org/files/issues/2018-05-10/rabbit_hole-instance_of_check-2961738-5.patch
+	 Reason: Patch already applied
+	 Description: Issue #2961738: Ensure getOperation method exists on form
+	 Package Name: drupal/rabbit_hole
+	 Package Path: docroot/modules/contrib/rabbit_hole
+
+
+Patch: https://www.drupal.org/files/issues/2018-05-10/rabbit_hole-instance_of_check-2961738-5.patch
+	 Reason: Patch already applied
+	 Description: Issue #2961738: Ensure getOperation method exists on form
+	 Package Name: drupal/rabbit_hole
+	 Package Path: docroot/modules/contrib/rabbit_hole
+
+
