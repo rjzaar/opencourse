@@ -1,4 +1,4 @@
-name: 'Opencourse Home'
+name: 'Opencourse Review'
 description: 'User home page with workbench'
 type: module
 core: 8.x
@@ -14,6 +14,7 @@ dependencies:
   - oc_sequence
   - user
   - views
+  - views_infinite_scroll
   - workflows
-version: 8.x-0.11
+version: 8.x-0.12
 package: oc

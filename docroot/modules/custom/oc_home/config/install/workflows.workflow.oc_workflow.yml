@@ -17,7 +17,7 @@ type_settings:
   states:
     approved:
       published: true
-      default_revision: false
+      default_revision: true
       label: Approved
       weight: 2
     draft:
