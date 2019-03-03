@@ -221,6 +221,12 @@
       },
       "drupal/tour_ui": {
         "tour-ui-2978327-7.patch": "https://www.drupal.org/files/issues/2018-11-03/tour-ui-2978327-7.patch"
+      },
+      "drupal/pathologic": {
+        "3037093-tour-links-are-stripped-out.patch": "https://www.drupal.org/files/issues/2019-03-03/3037093-tour-links-are-stripped-out.patch"
+      },
+      "drupal/group": {
+        "2853001-10.patch": "https://www.drupal.org/files/issues/2018-07-16/2853001-10.patch"
       }
     },
     "patchLevel": {
