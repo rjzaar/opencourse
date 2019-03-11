@@ -228,6 +228,9 @@
       },
       "drupal/group": {
         "2853001-10.patch": "https://www.drupal.org/files/issues/2018-07-16/2853001-10.patch"
+      },
+      "drupal/login_destination": {
+        "login_destination-set-options-on-null-error-2947616-43.patch": "https://www.drupal.org/files/issues/2018-10-31/login_destination-set-options-on-null-error-2947616-43.patch"
       }
     },
     "patchLevel": {
