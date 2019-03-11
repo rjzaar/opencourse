@@ -10,8 +10,3 @@ parameters:
 services:
   cache.backend.null:
     class: Drupal\Core\Cache\NullBackendFactory
-
-#see https://dev.acquia.com/blog/debugging-twig-templates-in-drupal-8-with-phpstorm-and-xdebug/25/08/2016/16586
-# for template debugging. ie set it up so
-#    auto_reload: true
-#    cache: true
