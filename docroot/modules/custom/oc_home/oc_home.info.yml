@@ -3,6 +3,7 @@ description: 'User home page with workbench'
 type: module
 core: 8.x
 dependencies:
+  - book
   - content_moderation
   - login_destination
   - node
@@ -16,5 +17,5 @@ dependencies:
   - views
   - views_infinite_scroll
   - workflows
-version: 8.x-0.13
+version: 8.x-0.14
 package: oc
