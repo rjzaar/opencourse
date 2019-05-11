@@ -71,7 +71,6 @@
     "webflo/drupal-finder": "~1.0",
     "webmozart/path-util": "~2.0",
     "vardot/varbase": "8.6.x-dev",
-    "vardot/varbase-updater": "8.1.x-dev",
     "drupal/image_resize_filter": "1.x-dev#c3f4b23b02005859092aaff746b9f21b794adc58",
     "drupal/tour_builder": "1.x-dev#d70e898949b7ec4095efb391a0dbec56d0117558",
     "drupal/l10n_client": "1.x-dev#9bf8d597732870bdca301512c71b6e5d74d48db2",
@@ -102,7 +101,11 @@
     "drupal/riddler": "^1.1",
     "drupal/menu_item_role_access": "^1.0",
     "drupal/video_embed_field": "^2",
-    "drupal/varbase_blog": "^6.1"
+    "drupal/varbase_blog": "^6.1",
+    "vardot/varbase-updater": "1.x-dev"
+  },
+  "replace": {
+    "ajaxorg/ace-builds": "*"
   },
   "require-dev": {
     "drupal/coder": "8.2.12",
