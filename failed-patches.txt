@@ -176,3 +176,10 @@ Patch: https://www.drupal.org/files/issues/2018-12-03/node_revision_route_object
 	 Package Path: docroot/core
 
 
+Patch: https://www.drupal.org/files/issues/2018-12-03/node_revision_route_object-2730631-D8-77.patch
+	 Reason: Failed to apply patch
+	 Description: node_revision_route_object-2730631-D8-77.patch
+	 Package Name: drupal/core
+	 Package Path: docroot/core
+
+
