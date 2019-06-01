@@ -70,6 +70,7 @@
     "drupal/drupal-library-installer-plugin": "^0.3",
     "webflo/drupal-finder": "~1.0",
     "webmozart/path-util": "~2.0",
+<<<<<<< HEAD
     "vardot/varbase": "8.6.x-dev",
     "drupal/image_resize_filter": "1.x-dev#c3f4b23b02005859092aaff746b9f21b794adc58",
     "drupal/tour_builder": "1.x-dev#d70e898949b7ec4095efb391a0dbec56d0117558",
@@ -102,6 +103,9 @@
     "drupal/menu_item_role_access": "^1.0",
     "drupal/video_embed_field": "^2",
     "drupal/varbase_blog": "^6.1",
+=======
+    "vardot/varbase": "8.7.x-dev",
+>>>>>>> upstream/8.7.x
     "vardot/varbase-updater": "1.x-dev"
   },
   "replace": {
@@ -172,7 +176,7 @@
       "we will revert to using (cweagans/composer-patches) without this override."
     ],
     "branch-alias": {
-      "dev-8.x-6.x": "8.6.x-dev"
+      "dev-8.x-7.x": "8.7.x-dev"
     },
     "installer-types": [
       "bower-asset",
