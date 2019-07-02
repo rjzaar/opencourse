@@ -1,6 +1,5 @@
 bundle: oc
 required:
-  - login_destination.settings
   - views.view.moderated_content
   - views.view.oc_content_child
   - views.view.oc_content_status

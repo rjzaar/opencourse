@@ -4,5 +4,4 @@ dependencies: {  }
 name: 'Opencourse Authors'
 vid: oc_authors
 description: 'Resource authors'
-hierarchy: 0
 weight: 0

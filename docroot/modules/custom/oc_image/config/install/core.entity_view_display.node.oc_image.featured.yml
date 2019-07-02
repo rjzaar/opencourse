@@ -5,6 +5,7 @@ dependencies:
     - core.entity_view_mode.node.featured
     - field.field.node.oc_image.body
     - field.field.node.oc_image.field_content_visibility
+    - field.field.node.oc_image.field_meta_tags
     - field.field.node.oc_image.field_oc_author_s_
     - field.field.node.oc_image.field_oc_back_color
     - field.field.node.oc_image.field_oc_image
@@ -14,6 +15,7 @@ dependencies:
     - field.field.node.oc_image.field_oc_publisher
     - field.field.node.oc_image.field_oc_topic
     - field.field.node.oc_image.field_oc_year
+    - field.field.node.oc_image.field_yoast_seo
     - node.type.oc_image
   module:
     - ds
@@ -82,6 +84,11 @@ content:
             lb-col: false
             classes: {  }
     region: ds_content
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_content_visibility:
     weight: 111
     label: above
@@ -216,4 +223,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_meta_tags: true
   field_oc_back_color: true
+  field_yoast_seo: true

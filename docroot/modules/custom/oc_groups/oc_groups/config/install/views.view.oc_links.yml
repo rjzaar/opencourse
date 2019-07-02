@@ -745,13 +745,14 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - group_membership.roles.permissions
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - url.query_args
-        - user
-        - 'user.node_grants:view'
+        1: 'languages:language_content'
+        2: 'languages:language_interface'
+        3: url
+        4: url.query_args
+        5: user
+        6: 'user.node_grants:view'
+        7: route.group
+        8: user.group_permissions
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_oc_link'
@@ -765,13 +766,14 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - group_membership.roles.permissions
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - url.query_args
-        - user
-        - 'user.node_grants:view'
+        1: 'languages:language_content'
+        2: 'languages:language_interface'
+        3: url
+        4: url.query_args
+        5: user
+        6: 'user.node_grants:view'
+        7: route.group
+        8: user.group_permissions
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_oc_link'
@@ -797,13 +799,14 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - group_membership.roles.permissions
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - url.query_args
-        - user
-        - 'user.node_grants:view'
+        1: 'languages:language_content'
+        2: 'languages:language_interface'
+        3: url
+        4: url.query_args
+        5: user
+        6: 'user.node_grants:view'
+        7: route.group
+        8: user.group_permissions
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_oc_link'

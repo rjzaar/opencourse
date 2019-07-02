@@ -145,6 +145,8 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
+        - route.group
+        - user.group_permissions
       tags: {  }
   groups:
     display_plugin: page
@@ -161,4 +163,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
+        - route.group
+        - user.group_permissions
       tags: {  }

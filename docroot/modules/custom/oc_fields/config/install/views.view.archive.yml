@@ -177,6 +177,8 @@ display:
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
+        - route.group
+        - user.group_permissions
       max-age: -1
       tags: {  }
   block_1:
@@ -216,6 +218,8 @@ display:
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
+        - route.group
+        - user.group_permissions
       max-age: -1
       tags: {  }
   page_1:
@@ -236,5 +240,7 @@ display:
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
+        - route.group
+        - user.group_permissions
       max-age: -1
       tags: {  }

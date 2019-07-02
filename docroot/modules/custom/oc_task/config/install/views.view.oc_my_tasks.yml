@@ -270,6 +270,8 @@ display:
         - user
         - 'user.node_grants:view'
         - user.permissions
+        - route.group
+        - user.group_permissions
       tags: {  }
   block_1:
     display_plugin: block
@@ -289,4 +291,6 @@ display:
         - user
         - 'user.node_grants:view'
         - user.permissions
+        - route.group
+        - user.group_permissions
       tags: {  }

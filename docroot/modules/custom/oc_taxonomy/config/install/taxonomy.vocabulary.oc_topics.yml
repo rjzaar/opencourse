@@ -4,5 +4,4 @@ dependencies: {  }
 name: 'Opencourse topics'
 vid: oc_topics
 description: 'tags for course content'
-hierarchy: 0
 weight: 0

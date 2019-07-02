@@ -17,5 +17,5 @@ dependencies:
   - views
   - views_infinite_scroll
   - workflows
-version: 8.x-0.14
+version: 8.x-0.15
 package: oc
