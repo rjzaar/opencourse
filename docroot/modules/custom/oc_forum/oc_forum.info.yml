@@ -1,0 +1,14 @@
+name: 'Opencourse Forum'
+type: module
+core: 8.x
+dependencies:
+  - comment
+  - field
+  - language
+  - node
+  - oc_doc
+  - text
+  - user
+  - views
+version: 8.x-0.1
+package: oc

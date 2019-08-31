@@ -40,5 +40,6 @@ dependencies:
   - prepopulate
   - oc_task
   - oc_home
+  - comment
 
 
