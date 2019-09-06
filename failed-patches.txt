@@ -260,3 +260,17 @@ Patch: https://www.drupal.org/files/issues/2018-12-03/node_revision_route_object
 	 Package Path: docroot/core
 
 
+Patch: https://www.drupal.org/files/issues/2019-06-24/group-3061321-30.patch
+	 Reason: Failed to apply patch
+	 Description: group-3061321-30.patch
+	 Package Name: drupal/group
+	 Package Path: docroot/modules/contrib/group
+
+
+Patch: https://www.drupal.org/files/issues/2019-06-24/group-3061321-30.patch
+	 Reason: Failed to apply patch
+	 Description: group-3061321-30.patch
+	 Package Name: drupal/group
+	 Package Path: docroot/modules/contrib/group
+
+
