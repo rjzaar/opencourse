@@ -219,7 +219,6 @@
         "Issue #2879001: Warning: array_unique() expects parameter 1 to be array, string given": "https://www.drupal.org/files/issues/panels-ipe-set-classes-arrays-2879001-5.patch"
       },
       "drupal/core": {
-        //"node_revision_route_object-2730631-D8-77.patch": "https://www.drupal.org/files/issues/2018-12-03/node_revision_route_object-2730631-D8-77.patch",
         "node-revisions-missing-local-tasks-2885278-11.patch": "https://www.drupal.org/files/issues/2018-04-19/node-revisions-missing-local-tasks-2885278-11.patch",
         "drupal-views-comment-count-2801929-12.patch": "https://www.drupal.org/files/issues/2018-07-10/drupal-views-comment-count-2801929-12.patch"
       },
