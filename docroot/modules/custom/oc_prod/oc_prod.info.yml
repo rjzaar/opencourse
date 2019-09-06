@@ -41,5 +41,6 @@ dependencies:
   - oc_task
   - oc_home
   - comment
+  - oc_forum
 
 
