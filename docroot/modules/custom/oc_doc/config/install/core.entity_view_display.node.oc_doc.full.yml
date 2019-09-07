@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment_forum.default
     - core.entity_view_mode.node.full
     - field.field.node.oc_doc.body
     - field.field.node.oc_doc.comment_forum
