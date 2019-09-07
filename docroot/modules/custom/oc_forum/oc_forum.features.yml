@@ -2,4 +2,5 @@ bundle: oc
 excluded:
   - metatag.metatag_defaults.node__landing_page
   - metatag.metatag_defaults.node__page
+  - comment.type.node_comment
 required: true

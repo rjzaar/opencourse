@@ -3,10 +3,14 @@ description: 'Media resources'
 type: module
 core: 8.x
 dependencies:
+  - content_translation
+  - ds
   - embed
   - entity_browser
   - entity_browser_entity_form
   - entity_embed
+  - image
+  - language
   - media
   - node
   - oc_book
@@ -16,7 +20,9 @@ dependencies:
   - oc_link
   - oc_lp
   - oc_sequence
+  - path
   - user
   - views
 version: 8.x-0.1
 package: oc
+core_incompatible: false

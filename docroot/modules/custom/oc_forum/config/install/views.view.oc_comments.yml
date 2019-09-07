@@ -156,6 +156,7 @@ display:
       footer: {  }
       empty: {  }
       arguments: {  }
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:

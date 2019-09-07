@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.node.oc_doc.body
+    - field.field.node.oc_doc.comment_forum
     - field.field.node.oc_doc.field_content_visibility
     - field.field.node.oc_doc.field_lp_paragraphs
     - field.field.node.oc_doc.field_meta_tags
@@ -19,8 +20,10 @@ dependencies:
     - field.field.node.oc_doc.field_oc_video
     - field.field.node.oc_doc.field_yoast_seo
     - node.type.oc_doc
+    - workflows.workflow.oc_workflow
   module:
     - color_field
+    - comment
     - content_moderation
     - h5peditor
     - metatag
@@ -40,6 +43,12 @@ content:
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
+    region: content
+  comment_forum:
+    weight: 28
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
     region: content
   created:
     type: datetime_timestamp

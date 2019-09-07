@@ -5,6 +5,7 @@ core: 8.x
 dependencies:
   - book
   - color_field
+  - comment
   - content_moderation
   - ds
   - entity_access_by_field
@@ -24,10 +25,13 @@ dependencies:
   - node
   - oc_book
   - oc_fields
+  - oc_forum
+  - oc_home
   - oc_image
   - oc_link
   - oc_taxonomy
   - options
+  - paragraphs
   - paragraphs_previewer
   - path
   - smart_trim
@@ -39,5 +43,6 @@ dependencies:
   - video_embed_field
   - views
   - yoast_seo
-version: 8.x-0.6
+version: 8.x-0.7
 package: oc
+core_incompatible: false

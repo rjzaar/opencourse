@@ -19,3 +19,4 @@ dependencies:
   - varbase_media
 version: 8.x-0.5
 package: oc
+core_incompatible: false

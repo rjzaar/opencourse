@@ -7,8 +7,10 @@ dependencies:
   - language
   - node
   - oc_doc
+  - smart_trim
   - text
   - user
   - views
-version: 8.x-0.1
+version: 8.x-0.2
 package: oc
+core_incompatible: false

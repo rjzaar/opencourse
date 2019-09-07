@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: node_comment
-label: node_comment
-target_entity_type_id: node
-description: 'Comments on any type of node.'

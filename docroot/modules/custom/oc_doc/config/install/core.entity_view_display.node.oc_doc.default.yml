@@ -2,7 +2,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment_forum.default
     - field.field.node.oc_doc.body
+    - field.field.node.oc_doc.comment_forum
     - field.field.node.oc_doc.field_content_visibility
     - field.field.node.oc_doc.field_lp_paragraphs
     - field.field.node.oc_doc.field_meta_tags
@@ -21,12 +23,15 @@ dependencies:
     - node.type.oc_doc
   module:
     - color_field
+    - comment
     - ds
     - h5p
     - metatag
     - options
+    - paragraphs
     - text
     - user
+    - yoast_seo
 third_party_settings:
   ds:
     layout:
@@ -45,7 +50,9 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
+        - content_moderation_control
         - langcode
+        - field_lp_paragraphs
         - links
         - body
         - field_oc_external_links
@@ -58,7 +65,11 @@ third_party_settings:
         - field_oc_title_image
         - field_oc_back_color
         - field_oc_head_back_color
-        - field_lp_paragraphs
+        - field_oc_importance
+        - field_oc_interactive
+        - field_meta_tags
+        - field_yoast_seo
+        - comment_forum
 id: node.oc_doc.default
 targetEntityType: node
 bundle: oc_doc
@@ -71,11 +82,20 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: ds_content
+  comment_forum:
+    weight: 18
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: ds_content
   content_moderation_control:
     weight: -20
+    region: ds_content
     settings: {  }
     third_party_settings: {  }
-    region: content
   field_content_visibility:
     weight: 8
     label: above
@@ -83,13 +103,20 @@ content:
     third_party_settings: {  }
     type: list_default
     region: ds_content
+  field_lp_paragraphs:
+    type: paragraph_summary
+    weight: 0
+    region: ds_content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
   field_meta_tags:
     weight: 16
     label: above
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
-    region: content
+    region: ds_content
   field_oc_back_color:
     weight: 11
     label: above
@@ -124,14 +151,14 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
-    region: content
+    region: ds_content
   field_oc_interactive:
     weight: 15
     label: above
     settings: {  }
     third_party_settings: {  }
     type: h5p_default
-    region: content
+    region: ds_content
   field_oc_internal_links:
     weight: 4
     label: above
@@ -190,11 +217,10 @@ content:
   field_yoast_seo:
     weight: 17
     label: above
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
-    type: string
-    region: content
+    type: yoastseo_formatter
+    region: ds_content
   flag_follow_content:
     weight: 10
     region: content
@@ -212,5 +238,4 @@ content:
     region: ds_content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  field_lp_paragraphs: true
+hidden: {  }

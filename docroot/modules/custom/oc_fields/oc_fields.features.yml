@@ -10,5 +10,10 @@ excluded:
   - field.storage.taxonomy_term.field_group_list
   - embed.button.node
   - views.view.oc_video_browser
+  - views.view.archive
+  - views.view.control_content
+  - views.view.frontpage
   - entity_browser.browser.oc_video_browser
+  - core.entity_view_mode.node.full
+  - core.entity_view_mode.node.teaser
 required: true
