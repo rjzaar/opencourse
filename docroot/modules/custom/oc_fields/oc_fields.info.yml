@@ -26,9 +26,6 @@ dependencies:
   - media
   - metatag
   - node
-  - oc_doc
-  - oc_forum
-  - oc_home
   - options
   - paragraphs
   - paragraphs_previewer
@@ -43,6 +40,6 @@ dependencies:
   - views
   - viewsreference
   - yoast_seo
-version: 8.x-0.5
+version: 8.x-0.6
 package: oc
 core_incompatible: false
