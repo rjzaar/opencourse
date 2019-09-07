@@ -316,3 +316,10 @@ Patch: https://www.drupal.org/files/issues/2019-06-24/group-3061321-30.patch
 	 Package Path: docroot/modules/contrib/group
 
 
+Patch: https://www.drupal.org/files/issues/2019-06-24/group-3061321-30.patch
+	 Reason: Failed to apply patch
+	 Description: group-3061321-30.patch
+	 Package Name: drupal/group
+	 Package Path: docroot/modules/contrib/group
+
+
