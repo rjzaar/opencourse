@@ -38,3 +38,4 @@ dependencies:
   - viewsreference
 version: 8.x-0.4
 package: oc
+core_incompatible: false
