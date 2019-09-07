@@ -9,4 +9,5 @@ excluded:
   - views.view.oc_docs_list
   - views.view.oc_video_browser
   - tour.tour.oc-doc
+  - field.field.node.forum.comment_forum
 required: true

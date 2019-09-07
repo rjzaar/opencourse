@@ -43,6 +43,6 @@ dependencies:
   - video_embed_field
   - views
   - yoast_seo
-version: 8.x-0.7
+version: 8.x-0.8
 package: oc
 core_incompatible: false

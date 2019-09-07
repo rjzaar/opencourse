@@ -6,6 +6,7 @@ dependencies:
   - block
   - block_class
   - color_field
+  - comment
   - content_moderation
   - ds
   - embed
@@ -23,8 +24,13 @@ dependencies:
   - jquery_colorpicker
   - link
   - media
+  - metatag
   - node
+  - oc_doc
+  - oc_forum
+  - oc_home
   - options
+  - paragraphs
   - paragraphs_previewer
   - path
   - superfish
@@ -36,6 +42,7 @@ dependencies:
   - video_embed_field
   - views
   - viewsreference
-version: 8.x-0.4
+  - yoast_seo
+version: 8.x-0.5
 package: oc
 core_incompatible: false

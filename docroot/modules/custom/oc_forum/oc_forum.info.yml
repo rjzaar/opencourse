@@ -11,6 +11,6 @@ dependencies:
   - text
   - user
   - views
-version: 8.x-0.2
+version: 8.x-0.3
 package: oc
 core_incompatible: false
