@@ -5,6 +5,7 @@ core: 8.x
 dependencies:
   - color_field
   - content_moderation
+  - crop
   - ds
   - entity_access_by_field
   - field
@@ -28,7 +29,9 @@ dependencies:
   - user
   - varbase_media
   - video_embed_field
+  - video_embed_media
   - views
   - yoast_seo
-version: 8.x-0.3
+version: 8.x-0.4
 package: oc
+core_incompatible: false
