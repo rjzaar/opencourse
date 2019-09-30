@@ -1,0 +1,15 @@
+bundle: oc
+excluded:
+  - field.storage.node.field_oc_back_color
+  - field.storage.node.field_oc_importance
+  - field.storage.comment.comment_body
+  - field.storage.node.comment_forum
+  - core.entity_view_mode.node.summary
+  - core.entity_view_mode.node.tiled
+  - core.entity_view_mode.comment.full
+  - entity_browser.browser.oc_video_browser
+  - views.view.oc_docs_children
+  - views.view.oc_docs_list
+  - views.view.oc_video_browser
+  - login_destination.settings
+required: true

@@ -1,5 +1,0 @@
-bundle: oc
-excluded:
-  - views.view.oc_sequences_list
-  - views.view.oc_sequences_tiled
-required: true

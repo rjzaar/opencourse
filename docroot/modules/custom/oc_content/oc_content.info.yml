@@ -5,7 +5,7 @@ core: 8.x
 package: Custom
 dependencies:
   - oc_taxonomy
-  - oc_sequence
+  - oc_works
   - oc_groups
   - drupal:hal (>=8.3.x)
 default_content:

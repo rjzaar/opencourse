@@ -23,13 +23,12 @@ dependencies:
   - menu_block
   - node
   - oc_book
-  - oc_doc
   - oc_fields
   - oc_image
   - oc_link
   - oc_lp
-  - oc_sequence
   - oc_taxonomy
+  - oc_works
   - paragraphs
   - paragraphs_previewer
   - path
@@ -50,5 +49,6 @@ dependencies:
   - views_field_view
   - viewsreference
   - yoast_seo
-version: 8.x-0.4
+version: 8.x-0.5
 package: oc
+core_incompatible: false

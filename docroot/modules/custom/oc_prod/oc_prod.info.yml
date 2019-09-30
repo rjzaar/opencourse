@@ -13,8 +13,7 @@ dependencies:
   - oc_link
   - oc_image
   - oc_book
-  - oc_doc
-  - oc_sequence
+  - oc_works
   - oc_groups
   - oc_lp
   - oc_blocks
@@ -39,8 +38,7 @@ dependencies:
   - menu_item_role_access
   - prepopulate
   - oc_task
-  - oc_home
   - comment
-  - oc_forum
+  - forum
 
 

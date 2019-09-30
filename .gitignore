@@ -35,6 +35,9 @@ docroot/*/settings.local.php
 acquia-file
 /log
 
+/private
+/cmi
+
 
 # Ignore vim swp files and gedit temp files
 *.swp

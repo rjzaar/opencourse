@@ -18,3 +18,4 @@ dependencies:
   - user
   - views
   - viewsreference
+core_incompatible: false

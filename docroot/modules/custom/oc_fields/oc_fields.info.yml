@@ -6,8 +6,9 @@ dependencies:
   - block
   - block_class
   - color_field
-  - comment
   - content_moderation
+  - content_translation
+  - crop
   - ds
   - embed
   - entity_access_by_field
@@ -22,12 +23,11 @@ dependencies:
   - h5peditor
   - image
   - jquery_colorpicker
+  - language
   - link
   - media
-  - metatag
   - node
   - options
-  - paragraphs
   - paragraphs_previewer
   - path
   - superfish
@@ -37,9 +37,9 @@ dependencies:
   - user
   - varbase_media
   - video_embed_field
+  - video_embed_media
   - views
   - viewsreference
-  - yoast_seo
-version: 8.x-0.6
+version: 8.x-0.5
 package: oc
 core_incompatible: false

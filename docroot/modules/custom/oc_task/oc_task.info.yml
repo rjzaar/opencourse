@@ -10,12 +10,11 @@ dependencies:
   - menu_ui
   - node
   - oc_book
-  - oc_doc
   - oc_fields
   - oc_image
   - oc_link
   - oc_lp
-  - oc_sequence
+  - oc_works
   - options
   - path
   - rabbit_hole
@@ -25,3 +24,4 @@ dependencies:
   - views
 version: 8.x-0.5
 package: oc
+core_incompatible: false

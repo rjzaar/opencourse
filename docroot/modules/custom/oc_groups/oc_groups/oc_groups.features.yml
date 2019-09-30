@@ -1,2 +1,10 @@
 bundle: oc
+excluded:
+  - group.settings
+  - field.storage.group_content.group_roles
+  - pathauto.pattern.group_content
+  - user.role.content_admin
+  - user.role.editor
+  - views.view.group_members
+  - views.view.group_nodes
 required: true

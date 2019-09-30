@@ -34,3 +34,4 @@ dependencies:
   - yoast_seo
 version: 8.x-0.3
 package: oc
+core_incompatible: false

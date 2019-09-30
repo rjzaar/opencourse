@@ -17,6 +17,6 @@ dependencies:
   - tour_ui
   - user
   - varbase_media
-version: 8.x-0.5
+version: 8.x-0.6
 package: oc
 core_incompatible: false
