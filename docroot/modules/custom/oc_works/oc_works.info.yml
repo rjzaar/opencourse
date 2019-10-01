@@ -14,7 +14,6 @@ dependencies:
   - h5p
   - h5peditor
   - language
-  - login_destination
   - menu_ui
   - metatag
   - node

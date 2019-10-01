@@ -27,7 +27,6 @@ dependencies:
   - link
   - media
   - node
-  - oc_content
   - options
   - paragraphs_previewer
   - path
