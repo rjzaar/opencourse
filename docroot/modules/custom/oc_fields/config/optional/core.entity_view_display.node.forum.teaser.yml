@@ -10,7 +10,6 @@ dependencies:
   module:
     - text
     - user
-    - forum
 id: node.forum.teaser
 targetEntityType: node
 bundle: forum
