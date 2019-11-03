@@ -12,4 +12,11 @@ excluded:
   - views.view.oc_docs_list
   - views.view.oc_video_browser
   - login_destination.settings
+  - comment.type.comment_forum
+  - core.entity_form_display.comment.comment_forum.default
+  - core.entity_form_display.node.forum.default
+  - core.entity_view_display.comment.comment_forum.default
+  - core.entity_view_display.node.forum.default
+  - field.field.comment.comment_forum.comment_body
+  - field.field.node.forum.comment_forum
 required: true
