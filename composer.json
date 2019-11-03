@@ -1,7 +1,5 @@
 {
     "name": "rjzaar/opencourse",
-    "version": "8.7.9999999.9999999-dev",
-    "version_normalized": "8.7.9999999.9999999-dev",
     "require": {
         "composer/installers": "~1.0",
         "cweagans/composer-patches": "~1.0",
