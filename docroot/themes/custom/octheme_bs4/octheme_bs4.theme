@@ -12,6 +12,7 @@ use Drupal\image\Entity\ImageStyle;
 
 /**
  * Implements hook_theme_registry_alter().
+ * Original bs4
  */
 function octheme_bs4_theme_registry_alter(&$theme_registry) {
   // octheme_bs4 path.
@@ -28,6 +29,31 @@ function octheme_bs4_theme_registry_alter(&$theme_registry) {
   foreach ($pages as $key => $template) {
     $theme_registry[$key]['path'] = $octheme_bs4_path . '/templates/betterlogin';
   }
+}
+
+function octheme_bs4_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id = NULL) {
+  // Work-around for a core bug affecting admin themes. See issue #943212.
+  if (isset($form_id)) {
+    return;
+  }
+
+  $form['foo_example'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('OC Theme settings'),
+    '#default_value' => theme_get_setting('foo_example'),
+    '#description'   => t("Place this text in the widget spot on your site."),
+  );
+  $form['oc_head_image'] = array(
+    '#type' => 'entity_autocomplete',
+    '#title'         => t('OC Theme heading background image'),
+    '#description'   => t("Choose the background image."),
+    '#target_type' => 'node',
+//    '#tags' => TRUE,
+//    '#selection_handler' => 'default', // Optional. The default selection handler is pre-populated to 'default'.
+    '#selection_settings' => array(
+      'target_bundles' => array('oc_image')
+    ),
+  );
 }
 
 /**
@@ -59,10 +85,593 @@ function octheme_bs4_preprocess_html(&$variables) {
  */
 function octheme_bs4_preprocess_page(&$variables) {
   $variables['logo_print'] = \Drupal::request()->getBaseUrl() . '/' . drupal_get_path('theme', 'octheme_bs4') . '/logo-print.png';
+
+//
+//  //See if the URL is a group URL and if so add the group menus.
+//  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+//    $variables['node'] = $node;
+//  }
+
+// ### For finding the route for tours ###
+//  $variables['route_name'] = \Drupal::routeMatch()->getRouteName();
+
+
+  // Load the site name out of configuration.
+  $config = \Drupal::config('system.site');
+  $variables['site_name'] = $config->get('name');
+  $variables['site_slogan'] = $config->get('slogan');
+
+
+
+//  $node = \Drupal::routeMatch()->getParameter('node');
+//  if (isset($node)) {
+//    if ($node->hasField('field_oc_title_image')) {
+//      $im_id = $node->get('field_oc_title_image')->getValue()[0]['target_id'];
+////    $variables['a_imid']=$im_id;
+//      $inode = \Drupal\node\Entity\Node::load($im_id);
+////      $fnodeid = $inode->get('field_oc_image')->getValue()[0]['target_id'];
+//////    $variables['a_fileid']=$fnodeid;
+////      $fnode = \Drupal\file\Entity\File::load($fnodeid);
+//////    $variables['a_fnode']=$fnode;
+////      $fnodeuri = $fnode->getFileUri();
+////      $variables['oc_title_image'] = file_create_url($fnodeuri);
+//      $variables['oc_title_image'] = "Fred";
+//    }
+//  }
+
+
+//  } else {
+//    $variables['a_img']="not working";
+//  }
+
+  //  $hug = 1;
+//  $node = \Drupal::routeMatch()->getParameter('node');
+//  if ($node && is_string($node)) {
+//    $node = Node::load($node);
+//  }
+
+  //First try to get the head image from site settings.
+  $imid= theme_get_setting('oc_head_image');
+  if (is_numeric($imid)) {
+    $imnode = \Drupal\node\Entity\Node::load($imid);
+//    $variables['oc_head_image'] =$imnode ;
+    $fnodeid = $imnode->get('field_oc_image')->getValue()[0]['target_id'];
+//    $variables['oc_head_image'] =$fnodeid ;
+    $fnode = \Drupal\file\Entity\File::load($fnodeid);
+    $variables['oc_image_uri'] =$fnode->getFileUri();
+    $fnodeuri = $fnode->getFileUri();
+    $variables['oc_head_image'] = file_create_url($fnodeuri);
+
+  }
+// Next try to get the head image from a node while adding other node variables
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    if (isset($node)) {
+      // If loading a revision, node will be a string. Need to extract an array.
+      if (is_string($node)) {
+        $node = \Drupal\node\Entity\Node::load($node);
+      }
+      // Add head image if it has one.
+      if ($node->hasField('field_oc_image')) {
+        if (isset($node->get('field_oc_image')[0])) {
+          $fnodeid = $node->get('field_oc_image')->getValue()[0]['target_id'];
+//    $variables['oc_head_image'] =$fnodeid ;
+          $fnode = \Drupal\file\Entity\File::load($fnodeid);
+          $variables['oc_image_uri'] =$fnode->getFileUri();
+          if (isset($fnode)) {
+            $fnodeuri = $fnode->getFileUri();
+            $variables['oc_head_image'] = file_create_url($fnodeuri);
+          }
+
+        }
+      }
+
+      if ($node->hasField('field_oc_book_image')) {
+        if (isset($node->get('field_oc_book_image')[0])) {
+          $fnodeid = $node->get('field_oc_book_image')->getValue()[0]['target_id'];
+//    $variables['oc_head_image'] =$fnodeid ;
+          $fnode = \Drupal\file\Entity\File::load($fnodeid);
+          $variables['oc_image_uri'] =$fnode->getFileUri();
+          if (isset($fnode)) {
+            $fnodeuri = $fnode->getFileUri();
+            $variables['oc_head_image'] = file_create_url($fnodeuri);
+
+            $display_options = [
+              'label'    => 'hidden',
+              'type'     => 'responsive_image',
+              'settings' => [
+                'responsive_image_style' => 'de2e',
+              ],
+            ];
+
+            // Get image, apply display options.
+            $image = $node->get('field_oc_book_image')->view($display_options);
+
+            // Render.
+            $variables['oc_resp_image'] = render($image);
+
+
+          }
+
+        }
+      }
+
+      //get OC doc title image if it has one.
+      if ($node->hasField('field_oc_title_image')) {
+        if (isset($node->get('field_oc_title_image')[0])) {
+//          $lnodeid = $node->get('field_oc_linked_image')->getValue()[0];
+          $lnodeid = $node->get('field_oc_title_image')->getValue()[0]['target_id'];
+          if (is_numeric($lnodeid)) {
+            $imnode = \Drupal\node\Entity\Node::load($lnodeid);
+            $fnodeid = $imnode->get('field_oc_image')->getValue()[0]['target_id'];
+            $fnode = \Drupal\file\Entity\File::load($fnodeid);
+            $variables['oc_image_uri'] =$fnode->getFileUri();
+            if (isset($fnode)) {
+              $fnodeuri = $fnode->getFileUri();
+              $variables['oc_head_image'] = file_create_url($fnodeuri);
+            }
+          }
+        } else {
+          //get OC doc linked image if it has one but only if there is no title image
+          if ($node->hasField('field_oc_linked_image')) {
+            if (isset($node->get('field_oc_linked_image')[0])) {
+//          $lnodeid = $node->get('field_oc_linked_image')->getValue()[0];
+              $lnodeid = $node->get('field_oc_linked_image')->getValue()[0]['target_id'];
+              if (is_numeric($lnodeid)) {
+                $imnode = \Drupal\node\Entity\Node::load($lnodeid);
+                $fnodeid = $imnode->get('field_oc_image')->getValue()[0]['target_id'];
+                $fnode = \Drupal\file\Entity\File::load($fnodeid);
+                $variables['oc_image_uri'] =$fnode->getFileUri();
+                if (isset($fnode)) {
+                  $fnodeuri = $fnode->getFileUri();
+                  $variables['oc_head_image'] = file_create_url($fnodeuri);
+                }
+              }
+            }
+          }
+        }
+
+      }
+      //The following check is needed to deal with viewing revisions.
+      $gnode=$variables['node'];
+      if (is_string($gnode)) {
+        $variables['node'] = \Drupal\node\Entity\Node::load($gnode);
+        $gnode=$variables['node'];
+      }
+      foreach (\Drupal\group\Entity\GroupContent::loadByEntity($gnode) as $group_content) {
+        $oc_group = $group_content->getGroup()->id();
+        $variables['oc_group'] = $oc_group;
+      }
+      $variables['oc_group'] = 1;
+    }
+  }
+
+//  // Now set the image style for oc_head_image
+  $style = \Drupal::entityTypeManager()->getStorage('image_style')->load('de2e_standard');
+  $variables['oc_style']=$style;
+  if (isset($variables['oc_head_image'])) {
+//    $variables['oc_head_image1'] = ImageStyle::load($style)->buildUrl($variables['oc_head_image']);
+    $variables['oc_head_image'] = $style->buildUrl($variables['oc_image_uri']);
+  }
+// Another way to get the group number
+  if (!isset($oc_group)) {
+    $oc_url = \Drupal::service('path.current')->getPath();
+    // Also works but see: https://www.drupal.org/node/2046643
+    //$variables['oc_url1'] = \Drupal::request()->getRequestUri();
+    $variables['oc_url'] = $oc_url;
+    //needs to be 1 and not /group 0 since 0 is considered false.
+    if (strpos($oc_url,'group') == 1) {
+      preg_match('/\d+/',$oc_url,$match);
+      if(is_array($match)){
+        $match=$match[0];
+      }
+      $variables['oc_group']=$match;
+
+    }
+  }
+
+  // Leaving this for when to work out how to get entityTypeManager without 'This'.
+  // some of the needed code: opencourse/docroot/modules/contrib/group/src/Entity/Controller/GroupContentController.php
+  // Start of building views and left buttons for the group
+
+  // Get all content types for that group
+//  $bundles = [];
+//  $create_mode = FALSE;
+//  $entityTypeManager = $this->getEntityTypeManager();
+//  /** @var \Drupal\group\Entity\Storage\GroupContentTypeStorageInterface $storage */
+//  $storage = $this->entityTypeManager->getStorage('group_content_type');
+//  foreach ($storage->loadByGroupType($variables['oc_group']->getGroupType()) as $bundle => $group_content_type) {
+//    // Skip the bundle if we are listing bundles that allow you to create an
+//    // entity in the group and the bundle's plugin does not support that.
+//    if ($create_mode && !$group_content_type->getContentPlugin()->definesEntityAccess()) {
+//      continue;
+//    }
+//
+//    $bundles[$group_content_type->getContentPluginId()] = $bundle;
+//  }
+//  $variables['oc_contents']= $bundles;
+
+  // For each content type work out the code, name and icon.
+
+  // Add the built array to variables.
+
+//  $build = [];
+//
+//  $node = \Drupal::request()->attributes->get('node');
+//  if ($node) {
+//    foreach (\Drupal\group\Entity\GroupContent::loadByEntity($node) as $group_content) {
+//      $oc_group = $group_content->getGroup()->id();
+//      $build['oc_group'] = $oc_group;
+//    }
+//  }
+//  $build['oc_node'] = $node;
+//  $oc_viewid = $this->configuration['content_type'];
+//  $build['oc_view']=$oc_viewid;
+//  if($oc_viewid) {
+//    $view_B = \Drupal\views\Views::getView($oc_viewid);
+//
+//    if ($view_B) {
+//      $view_B->setArguments(array($oc_group));
+//      $view_B->execute();
+//      $view_B->preview();
+//      $values = $view_B->result;
+//      $build['oc_values'] = $values;
+//      foreach ($values as $result_node) {
+//        $id = $result_node->_entity->id();
+//        $node = \Drupal\node\Entity\Node::load($id);
+//        if (isset($node)) {
+//        }
+//        if (!isset($oc_head_image)){
+//          $oc_head_image="";
+//        }
+//        $oc_nodes[] = array('id' => $id, 'type' => $node->getType(), 'oc_head_image' => $oc_head_image, 'title' => $node->getTitle(), 'url' => $node->url());
+//      }
+//    }
+//  }
+//  if(isset($oc_nodes)) {
+//    $build['oc_items'] = $oc_nodes;
+//  }
+  // End of building views and left buttons for the group
+
+}
+
+
+/**
+ * @param $variables
+ */
+function octheme_bs4_preprocess_node(&$variables) {
+
+  if ( isset($variables['elements']['content']['#block_content'])) {
+    //$block_content = $variables['elements']['content']['#block_content'];
+    $variables['uuid'] = $variables['elements']['content']['#block_content']->uuid();
+  }
+  $uuid_service = \Drupal::service('uuid');
+  $uuid = $uuid_service->generate();
+
+//if there is an author, pass the author on
+  $node = $variables['node'];
+
+  if ($node->hasField('field_oc_author_s_')) {
+    $auth = $node->get('field_oc_author_s_')[0]->get('target_id')->getValue();
+    $term = Drupal\taxonomy\Entity\Term::load($auth);
+    $variables['auth']=$term->getName();
+  }
+  $variables['created'] =format_date($node->created->value);
+  $variables['modified'] =format_date($node->changed->value);
+  if ($node->hasField('field_oc_link')){
+    // I think the next line should be $node->filed_oc_link[0]
+    if (!is_null($node->hasField('field_oc_link')[0])) {
+      $variables['link_title'] = $node->field_oc_link[0]->get('title')->getValue();
+      $variables['link_url'] = $node->field_oc_link[0]->get('uri')->getValue();
+    }
+  }
+  if ($node->hasField('field_oc_licence')){
+    $variables['link_lic_title']= $node->field_oc_licence[0]->get('title')->getValue();
+    $variables['link_lic_url']= $node->field_oc_licence[0]->get('uri')->getValue();
+  }
+
+  // For oc_task
+  $variables['title']=$node->getTitle();
+  if ($node->hasField('field_oc_assigned')) {
+    if (!is_null($node->field_oc_assigned[0])) {
+      $variables['assigned'] = "/user/".$node->field_oc_assigned[0]->get('target_id')->getValue();
+    } else
+    {
+      //Set up option for user to accept
+      $variables['assigned'] = "";
+    }
+  }
+  if ($node->hasField('field_oc_task_type')){
+    if (!is_null($node->field_oc_task_type[0])) {
+      $variables['usetitle'] = TRUE;
+      if ($node->field_oc_task_type[0]->getValue()['value']=="1") {
+        $variables['usetitle'] = FALSE;
+      }
+    }
+  }
+  if ($node->hasField('field_oc_content')) {
+    if (!is_null($node->field_oc_content[0])) {
+      $variables['thecontent'] = $node->field_oc_content[0]->get('target_id')->getValue();
+    }
+  }
+}
+
+
+/**
+ * @param $variables
+ */
+function octheme_bs4_preprocess_template(&$variables) {
+ // $variables['uuid'] = "John";
+
+
 }
 
 /**
+ * @param $variables
+ */
+function octheme_bs4_preprocess_block(&$variables) {
+  //This commented section is the start of trying to migrate videos etc into a single text field.
+//  $videoinfo = [];
+//  $nids = \Drupal::entityQuery('node')
+//    ->condition('type', 'oc_doc')
+//    ->execute();
+//
+// $variables['nids']=$variables['attributes'];
+// if ( $variables['attributes']['id']= "block-oc-theme-content") {
+//   $variables['nids']="yes";
+//   //OK can get it to work here!
+//   $nids = \Drupal::entityQuery('node')
+//     ->condition('type', 'oc_doc')
+//     ->execute();
+//
+//   $nid = 890;
+//   $node      = \Drupal\node\Entity\NODE::load($nid);
+//   $videos = $node->field_oc_video->getValue();
+//   foreach ($videos as $video) {
+//
+//     $vnode = \Drupal\media_entity\Entity\Media::load($video['target_id']);
+//     $videosarr[]  = $vnode;
+//     $videoinfo[] = array('thumbnail' => $vnode->get('thumbnail'),'url' => $vnode->get('field_media_video_embed_field')->value);
+////     ,'url' => $vnode->url()
+////        $paragraph = Paragraph::create([
+////          'title'          => $q,
+////          'type'           => 'bp_simple',
+////          'bp_text' => $q,
+////        ]);
+////        $paragraph->save();
+////        $node->field_lp_paragraphs[] = $paragraph->id();
+////        $node->paragraph_field_referenced->appendItem($paragraph);
+//   }
+//   $variables['videosarr']=$videosarr;
+//   $variables['videos']=$videoinfo;
+//
+// }
+
+
+  $node = \Drupal::request()->attributes->get('node');
+  // If loading a revision, node will be a string. Need to extract an array.
+  if (is_string($node)) {
+    $node = \Drupal\node\Entity\Node::load($node);
+  }
+  if ($node) {
+    foreach (\Drupal\group\Entity\GroupContent::loadByEntity($node) as $group_content) {
+      $oc_group = $group_content->getGroup()->id();
+
+      $variables['oc_group'] = $oc_group;
+      $variables['oc_node'] = $node;
+    }
+  }
+}
+
+/**
+ * @param $variables
+ */
+function octheme_bs4_preprocess_menu_local_task(&$variables)
+{
+  $title = $variables['link']['#title'];
+  if (!is_string($title)) {
+    // OK, probably not the proper way to deal with a translatable array, but it works.
+    $title = $title->getArguments()['@local-task-title'];
+  }
+
+  $variables['oc_title'] = $title;
+  $variables['oc_url'] = $variables['link']['#url']->toString();
+
+  if ($title == "View") {
+    $variables['oc_icon'] = "fa-eye";
+  } elseif ($title == "Edit") {
+    $variables['oc_icon'] = "fa-pencil-square-o";
+  } elseif ($title == "Outline") {
+    $variables['oc_icon'] = "fa-list";
+  } elseif ($title == "Delete") {
+    $variables['oc_icon'] = "fa-trash";
+  } elseif ($title == "Manage display") {
+    $variables['oc_icon'] = "fa-th";
+  } elseif ($title == "Devel") {
+    $variables['oc_icon'] = "fa-terminal";
+  } elseif ($title == "Clone") {
+    $variables['oc_icon'] = "fa-clone";
+  } elseif ($title == "Related entities") {
+    $variables['oc_icon'] = "fa-exchange";
+  } elseif ($title == "Members") {
+    $variables['oc_icon'] = "fa-users";
+  } elseif ($title == "Nodes") {
+    $variables['oc_icon'] = "fa-square-o";
+  } elseif ($title == "Revisions") {
+    $variables['oc_icon'] = "fa-code-fork";
+  } elseif ($title == "View Revision") {
+    $variables['oc_icon'] = "fa-file-text-o";
+  } elseif ($title == "Latest version") {
+    $variables['oc_icon'] = "fa-clock-o";
+  } else {
+    $variables['oc_icon'] = "fa-question-circle";
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function octheme_bs4_preprocess_ds_1col(&$variables) {
+
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if (isset($node)) {
+    // If loading a revision, node will be a string. Need to extract an array.
+    if (is_string($node)) {
+      //$node = $variables['content']['#node'];
+      $node = \Drupal\node\Entity\Node::load($node);
+    }
+    //if there is an author, pass the author on
+    if ($node->hasField('field_oc_author_s_')) {
+      if (!is_null($node->get('field_oc_author_s_')[0])) {
+        $auth = $node->get('field_oc_author_s_')[0]->get('target_id')->getValue();
+        $term = Drupal\taxonomy\Entity\Term::load($auth);
+        $variables['auth']=$term->getName();
+      }
+    }
+    $variables['created'] =format_date($node->created->value);
+    $variables['modified'] =format_date($node->changed->value);
+    if ($node->hasField('field_oc_link')){
+      $variables['link_title']= $node->field_oc_link[0]->get('title')->getValue();
+      $variables['link_url']= $node->field_oc_link[0]->get('uri')->getValue();
+    }
+    if ($node->hasField('field_oc_licence')){
+      $variables['link_lic_title']= $node->field_oc_licence[0]->get('title')->getValue();
+      $variables['link_lic_url']= $node->field_oc_licence[0]->get('uri')->getValue();
+    }
+    if ($node->hasField('field_oc_interactive')) {
+      $variables['finteractive'] = $node->get('field_oc_interactive');
+    }
+
+
+
+
+
+    // Check for nodes that have a title image
+    if ($node->hasField('field_oc_title_image')) {
+      // Get image node id
+//      $im_id = $node->get('field_oc_title_image')->getValue()[0]['target_id'];
+//    $variables['a_imid']=$im_id;
+      // Get the image node
+//      $inode = \Drupal\node\Entity\Node::load($im_id);
+      // Get the image file ID
+//      if(isset($inode->hasField('field_oc_image'))) {
+//        $variables['oc_author'] = "Fred";
+//        $variables['oc_image_back_color']="000000";
+//        if (isset($inode->get('field_oc_image'))) {
+//          $fnodeid = $inode->get('field_oc_image')->getValue()[0]['target_id'];
+//          // Get the background color of the image
+//          $variables['oc_image_back_color'] = $inode->get('field_oc_background_color')->getValue()[0]['value'];
+//
+//          //
+//          $variables['Fred'] = "a";
+//          if ($node->hasField('field_oc_author_s_')) {
+//            $variables['Fred'] = "b";
+//            $anodeid = $node->get('field_oc_author_s_')->getValue()[0]['#taxonomy_term'];
+//            $variables['Fred'] = $anodeid;
+////        $context['content'][/Drupal\node\Entity\Node::load($anodeid);
+//              $variables['oc_author'] = $anode;
+//            }
+//          }
+//        }
+//      }
+//      ->get('field_oc_image')->getValue()[0]['target_id']
+//        $inode->get('field_oc_background_color');
+//    $variables['a_fileid']=$fnodeid;
+      //   $fnode = \Drupal\file\Entity\File::load($fnodeid);
+
+//    $variables['a_fnode']=$fnode;
+//      $fnodeuri = $fnode->getFileUri();
+//      $variables['oc_image'] = file_create_url($fnodeuri);
+    }
+
+
+//    if ($node->hasField('field_oc_image')){
+//      $style = \Drupal::entityTypeManager()->getStorage('image_style')->load('de2e');
+//      $variables['oc_image'] = "Johsn";
+//      //  $variables['oc_respimage'] = $style->buildUrl('private://2018-07/bigbang.jpg');
+//    }
+
+  }
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function octheme_bs4_preprocess_field(&$variables) {
+//  $context = $variables['context'];
+//  $variables['varnid'] = "apple";
+//  $variables['nid'] = $context['#object']['x-default'];
+//  $variables['object']= $context['element']['#object']['x-default'];
+
+}
+
+//function oc_theme_menu() {
+//  $items['examples/vertical_tabs'] = array(
+//    'title' => 'Vertical tabs example',
+//    'description' => 'Shows how vertical tabs can best be supported by a custom module',
+//    'page callback' => '_vertical_tabs_example_explanation',
+//    'access callback' => TRUE,
+//  );
+//  return $items;
+//}
+
+/**
+ * Bootstrap theme for Quicktabs NavList style tabset.
+ */
+function octheme_bs4_qt_quicktabs_tabset(&$vars) {
+  // Return default for non navlist style.
+  if ($vars['tabset']['#options']['style'] != 'navlist') {
+    return theme_qt_quicktabs_tabset($vars);
+  }
+
+  $variables = array(
+    'attributes' => array(
+      'class' => 'quicktabs-tabs nav nav-pills nav-stacked col-md-3',
+    ),
+    'items' => array(),
+  );
+  foreach (element_children($vars['tabset']['tablinks']) as $key) {
+    $item = array();
+    if (is_array($vars['tabset']['tablinks'][$key])) {
+      $tab = $vars['tabset']['tablinks'][$key];
+
+      $item['class'] = array('tab-pane');
+      if ($key == $vars['tabset']['#options']['active']) {
+        $item['class'][] = 'active';
+      }
+      $item['data'] = drupal_render($tab);
+      $variables['items'][] = $item;
+    }
+  }
+  return theme('item_list', $variables);
+}
+
+/**
+ * Bootstrap theme for Quicktabs NavList style tabs.
+ */
+function octheme_bs4_qt_quicktabs(&$vars) {
+  // Return default for non navlist style.
+  if ($vars['element']['tabs']['#options']['style'] != 'navlist') {
+    return theme_qt_quicktabs($vars);
+  }
+
+  $element = $vars['element'];
+
+  // Next is hard-coded, so only str_replace:
+  $element['container']['#prefix'] = str_replace('quicktabs-style-navlist', 'tab-content col-md-9', $element['container']['#prefix']);
+
+  $output = '<div '. drupal_attributes($element['#options']['attributes']) .'>';
+  $output .= drupal_render($element['tabs']);
+
+  $output .= drupal_render($element['container']);
+
+  $output .= '</div>';
+  return $output;
+}
+
+
+/**
  * Implements hook_preprocess_paragraph().
+ * original bs4
  */
 function octheme_bs4_preprocess_paragraph(&$variables) {
   $file_path = NULL;

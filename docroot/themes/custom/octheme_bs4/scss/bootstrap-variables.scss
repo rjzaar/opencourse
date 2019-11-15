@@ -4,6 +4,7 @@
 // All variables which are used in the default bootstrap library.
 // You can change them in octheme_bs4 in the bootstrap-variables.sass
 //
+@import "../node_modules/bootstrap/scss/functions";  // Bootstrap functions.
 
 // Variables
 //
@@ -176,7 +177,7 @@ $body-color:                $gray-900 !default;
 //
 // Style anchor elements.
 
-$link-color:                              theme-color("primary") !default;
+$link-color:                              map-get($theme-colors, "primary") !default;
 $link-decoration:                         none !default;
 $link-hover-color:                        darken($link-color, 15%) !default;
 $link-hover-decoration:                   underline !default;

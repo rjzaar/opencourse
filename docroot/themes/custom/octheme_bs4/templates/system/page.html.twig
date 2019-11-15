@@ -66,6 +66,8 @@
         'mb-4',
         'border-bottom',
         'shadow-sm',
+        'oc_head_bgc',
+        'oc_navbar',
       ]
     %}
     <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
@@ -94,6 +96,59 @@
   {% endblock %}
 {% endif %}
 
+{# octheme start 1#}
+{% if oc_head_image %}
+  <div class="oc_title_image_wrapper oc_head_bgc">
+
+    <img class="oc_title_image img-responsive" src="{{ oc_head_image }}"  >
+
+  </div>
+{%  endif %}
+<!-- Page Header -->
+
+<!-- Set your background image for this header on the line below. -->
+{#oc_title_image#}
+<div class="oc_header oc_head_bgc {% if oc_head_image %}oc_head_imageh{% else %}oc_head_noimageh{% endif %}">
+  {#style="background-image: url('{{ oc_title_image}}')"#}
+
+  {#{{ node.field_oc_title_image }}#}
+  <div class="container">
+    <div class="row">
+      {% if node %}
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div class="post-heading oc_heading">
+
+            <h1 class="oc_heading oc_vinject">{{ node.label }}</h1>
+            {#{%  if node.field_oc_title_image %}#}
+            {#{{ oc_title_image }}#}
+            {#{% else %}#}
+            {#no title image#}
+            {#{% endif %}#}
+            {% if display_submitted %}
+              <span class="meta">
+                {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+              </span>
+            {% endif %}
+          </div>
+        </div>
+      {% else %}
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div class="site-heading">
+            <h1>{% if node.label %} {{ node.label }} {% else %} {{ site_name }} {% endif %}</h1>
+            {% if site_slogan %}
+              <hr class="small">
+              <span class="subheading">
+                {{ site_slogan }}
+              </span>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{# octheme end 1#}
+
 {# Header print #}
 <div class="d-none d-print-block header-print page-header mt-4 mb-3">
   <div class="{{ container }}">
@@ -107,6 +162,166 @@
     </div>
   </div>
 </div>
+
+{# octheme start 2 #}
+{# group navigation #}
+{% if oc_group %}
+  <div class="group_nav_wrapper block-superfish block-superfishtest">
+    <div class="group_nav">
+      {{ oc_contents }}
+      <ul id="superfish-test" class="sf-vertical sf-test sf-style-white sf-js-enabled sf-shadow">
+        {#{% for id in content.oc_items|slice(0, 5) %}#}
+        {#<li>{{ id['id'] }} {{ id['type'] }} </li>#}
+        {% embed "page-lbutton.html.twig" %}
+          {%- block oc_icon -%}columns{%- endblock -%}
+          {%- block oc_type -%}lp{%- endblock -%}
+          {%- block oc_name -%}Landing Page{%- endblock -%}
+        {% endembed %}
+
+        {#{% endfor %}#}
+        <li class="sf-depth-1 menuparent">
+          <a  href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/sequences" target="_self" class="is-active sf-depth-1 menuparent ">
+                        <span class="fa-stack fa-lg ">
+                  <i class="fa fa-square fa-stack-2x oc_icon_back"></i>
+                  <i class="fa fa-leanpub fa-stack-1x fa-inverse"></i>
+                        </span></a>
+          <ul class="sf-hidden oc_ani_text">
+            <li class="sf-depth-2 sf-no-children">
+              <a class="group_nav_text is-active sf-depth-2" target="_self" href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/sequences" >Sequences</a>
+            </li>
+            {% if is_admin %}
+              <li class="sf-depth-2 sf-no-children">
+                <a class="group_nav_text is-active sf-depth-2" target="_self" href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/content/create/group_node%3Aoc_sequence" > Add Sequence</a>
+              </li>
+            {% endif %}
+          </ul>
+
+        </li>
+
+        <li class="sf-depth-1 menuparent">
+          <a  href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/docs" target="_self" class="is-active sf-depth-1 menuparent ">
+                        <span class="fa-stack fa-lg ">
+                  <i class="fa fa-square fa-stack-2x oc_icon_back"></i>
+                  <i class="fa fa-file fa-stack-1x fa-inverse"></i>
+                        </span></a>
+          <ul class="sf-hidden oc_ani_text">
+            <li class="sf-depth-2 sf-no-children">
+              <a class="group_nav_text is-active sf-depth-2" target="_self" href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/docs" >Docs</a>
+            </li>
+            {% if is_admin %}
+              <li class="sf-depth-2 sf-no-children">
+                <a class="group_nav_text is-active sf-depth-2" target="_self" href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/content/create/group_node%3Aoc_doc" > Add Doc</a>
+              </li>
+            {% endif %}
+          </ul>
+
+        </li>
+        <li class="sf-depth-1 menuparent">
+          <a  href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/books" target="_self" class="is-active sf-depth-1 menuparent ">
+                        <span class="fa-stack fa-lg ">
+                  <i class="fa fa-square fa-stack-2x oc_icon_back"></i>
+                  <i class="fa fa-book fa-stack-1x fa-inverse"></i>
+                        </span></a>
+          <ul class="sf-hidden oc_ani_text">
+            <li class="sf-depth-2 sf-no-children">
+              <a class="group_nav_text is-active sf-depth-2" target="_self" href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/books" >Books</a>
+            </li>
+            {% if is_admin %}
+              <li class="sf-depth-2 sf-no-children">
+                <a class="group_nav_text is-active sf-depth-2" target="_self" href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/content/create/group_node%3Aoc_book" > Add Book</a>
+              </li>
+            {% endif %}
+          </ul>
+
+        </li>                <li class="sf-depth-1 menuparent">
+          <a  href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/links" target="_self" class="is-active sf-depth-1 menuparent ">
+                        <span class="fa-stack fa-lg ">
+                  <i class="fa fa-square fa-stack-2x oc_icon_back"></i>
+                  <i class="fa fa-link fa-stack-1x fa-inverse"></i>
+                        </span></a>
+          <ul class="sf-hidden oc_ani_text">
+            <li class="sf-depth-2 sf-no-children">
+              <a class="group_nav_text is-active sf-depth-2" target="_self" href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/links" >Links</a>
+            </li>
+            {% if is_admin %}
+              <li class="sf-depth-2 sf-no-children">
+                <a class="group_nav_text is-active sf-depth-2" target="_self" href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/content/create/group_node%3Aoc_link" > Add Link</a>
+              </li>
+            {% endif %}
+          </ul>
+
+        </li>                <li class="sf-depth-1 menuparent">
+          <a  href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/images" target="_self" class="is-active sf-depth-1 menuparent ">
+                        <span class="fa-stack fa-lg ">
+                  <i class="fa fa-square fa-stack-2x oc_icon_back"></i>
+                  <i class="fa fa-image fa-stack-1x fa-inverse"></i>
+                        </span></a>
+          <ul class="sf-hidden oc_ani_text">
+            <li class="sf-depth-2 sf-no-children">
+              <a class="group_nav_text is-active sf-depth-2" target="_self" href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/images" >Images</a>
+            </li>
+            {% if is_admin %}
+              <li class="sf-depth-2 sf-no-children">
+                <a class="group_nav_text is-active sf-depth-2" target="_self" href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/content/create/group_node%3Aoc_image" > Add Image</a>
+              </li>
+            {% endif %}
+          </ul>
+
+        </li>  {% if node.type.value[0]['target_id']=="oc_sequence" or node.type.value[0]['target_id']=="oc_doc"  %} <li class="sf-depth-1 menuparent oc_pointer" onclick="showquiz()">
+                     <span class="fa-stack fa-lg ">
+                  <i class="fa fa-circle fa-stack-2x oc_icon_back"></i>
+                  <i class="fa fa-question-circle fa-stack-2x fa-inverse"></i>
+                        </span>
+          <ul class="sf-hidden oc_ani_text" >
+            <li class="sf-depth-2 sf-no-children">
+              Interactives
+            </li>
+
+          </ul>
+          <script>
+              function showquiz() {
+                  var x = document.getElementsByClassName("oc_quiz");
+                  for(var i = 0; i < x.length; i++) {
+                      if (x[i].style.display == "none") {
+                          x[i].style.display = "block";
+                      } else {
+                          x[i].style.display = "none";
+                      }
+                  }
+
+              }
+          </script>{% endif %}
+
+        </li>
+      </ul>
+      {#<a href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/docs" class="group_nav_text"><span class="fa-stack fa-lg">#}
+      {#<i class="fa fa-square fa-stack-2x oc_icon_back"></i>#}
+      {#<i class="fa fa-file fa-stack-1x fa-inverse"></i>#}
+      {#</span>Docs</a>#}
+      {#<a href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/books" class="group_nav_text"><span class="fa-stack fa-lg">#}
+      {#<i class="fa fa-square fa-stack-2x oc_icon_back"></i>#}
+      {#<i class="fa fa-book fa-stack-1x fa-inverse"></i>#}
+      {#</span>Books</a>#}
+      {#<a href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/links" class="group_nav_text" ><span class="fa-stack fa-lg">#}
+      {#<i class="fa fa-square fa-stack-2x oc_icon_back"></i>#}
+      {#<i class="fa fa-link fa-stack-1x fa-inverse"></i>#}
+      {#</span>Links</a>#}
+      {#<a href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/images" class="group_nav_text"><span class="fa-stack fa-lg">#}
+      {#<i class="fa fa-square fa-stack-2x oc_icon_back"></i>#}
+      {#<i class="fa fa-image fa-stack-1x fa-inverse"></i>#}
+      {#</span>Images</a>#}
+    </div>
+  </div>
+{% endif %}
+
+{#{% if page.group %}#}
+    {#{% block group %}#}
+        {#<div class="group_nav">#}
+            {#{{ page.group }}#}
+        {#</div>#}
+    {#{% endblock %}#}
+{#{% endif %}#}
+{# octheme end 2 #}
 
 {# hero_slider #}
 {% if page.hero_slider %}

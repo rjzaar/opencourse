@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ * Theme override for a local task link.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper element.
+ * - is_active: Whether the task item is an active tab.
+ * - link: A rendered link element.
+ *
+ * Note: This template renders the content for each task item in
+ * menu-local-tasks.html.twig.
+ *
+ * @ingroup templates
+ *
+ * @see template_preprocess_menu_local_task()
+ */
+#}
+{#{% set classes = [#}
+  {#is_active ? 'active',#}
+{#] %}#}
+
+{#<div style="z-index:1000;float:right;">#}
+{#<div style="position:relative; left:50px;">#}
+  {#<li class="sf-depth-1 menuparent">#}
+      <li>
+      {#{{ dd(attributes) }}#}
+      {#<div style="position:fixed;bottom:20px;right:5px;">#}
+    {#<a  href="{{ oc_url }}" target="_self" rel class="is-active sf-depth-1 menuparent">#}
+          <a  href="{{ oc_url }}" >
+                        <span class="fa-stack fa-lg ">
+                  <i class="fa fa-square fa-stack-2x oc_icon_back"></i>
+                  <i class="fa {{ oc_icon }} fa-stack-1x fa-inverse oc_icon_front"></i>
+                        </span>
+    </a>
+      {#</div>#}
+
+    {#<ul class="sf-hidden" style="float: left; width: 4em; ">#}
+        <ul>
+      {#<li class="sf-depth-2 sf-no-children">#}
+          <li>
+        <a class="group_nav_text is-active" target="_self" rel href="{{ oc_url }}" style="text-align:right !important;" >{{ oc_title }}</a>
+      </li>
+    </ul>
+
+  </li>
+{#</div>#}
+{#<li{{ attributes.addClass(classes) }}>#}
+{#{{ dd(oc_url) }}#}
+    {#link['#title']#}
+    {#{% trans %}#}
+    {#{{ link['#title'] }}#}
+    {#{% endtrans %}#}
+    {#{{ link }}</li>#}
+{#</div>#}
+
