@@ -19,8 +19,11 @@
         "drupal/l10n_client": "1.x-dev#9bf8d597732870bdca301512c71b6e5d74d48db2",
         "drupal/legal": "^1.0@beta",
         "drupal/mail_edit": "1.x-dev#bcd0041830d8581b36e6211f0c8eabd8caf9652b",
+        "drupal/material_admin": "^1.0-alpha6",
         "drupal/menu_item_role_access": "^1.0",
         "drupal/node_edit_protection": "1.x-dev#902339c08222f838030c07aaea23bdc51ababebd",
+        "drupal/panels": "^4.4",
+        "drupal/pathologic": "^1.0-alpha1",
         "drupal/prepopulate": "2.x-dev#96d7b48dac02d5d126602775f684f89f50412ffd",
         "drupal/quiz": "4.x-dev",
         "drupal/riddler": "^1.1",
@@ -30,7 +33,7 @@
         "drupal/taxonomy_menu": "^3.4",
         "drupal/tour_builder": "1.x-dev#d70e898949b7ec4095efb391a0dbec56d0117558",
         "drupal/twig_field_value": "^1.1",
-        "drupal/twig_tweak": "^1.9",
+        "drupal/twig_tweak": "^2.4",
         "drupal/varbase_blog": "7.x-dev",
         "drupal/video_embed_field": "^2",
         "drupal/views_field_view": "^1.0@beta",
@@ -39,11 +42,11 @@
         "jaypan/jquery_colorpicker": "1.0.1",
         "mehrpadin/superfish": "^2.1",
         "oomphinc/composer-installers-extender": "~1.0",
-        "vardot/varbase": "8.7.x-dev",
-        "vardot/varbase-updater": "1.x-dev",
+        "vardot/varbase": "~8.7.2",
+        "vardot/varbase-updater": "~1.0",
         "webflo/drupal-finder": "~1.0",
         "webmozart/path-util": "~2.0",
-        "drupal/responsive_favicons": "^1.5"
+        "drupal/vartheme_bs4": "^6.2"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -106,11 +109,6 @@
             "docroot/themes/contrib/{$name}": [
                 "type:drupal-theme"
             ],
-            "docroot/libraries/{$name}": [
-                "type:drupal-library",
-                "type:bower-asset",
-                "type:npm-asset"
-            ],
             "docroot/modules/custom/{$name}": [
                 "type:drupal-custom-module"
             ],
@@ -131,6 +129,11 @@
             ],
             "docroot/libraries/masonry": [
                 "npm-asset/masonry-layout"
+            ],
+            "docroot/libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
             ]
         },
         "drupal-libraries": {
@@ -178,7 +181,7 @@
                 }
             ]
         },
-        "enable-patching": true,
+        "enable-patching": "1",
         "patches": {
             "drupal/migrate_plus": {
                 "Issue #2923824: Nested source for entity_lookup causes an error": "https://www.drupal.org/files/issues/nested-source-for-entity_lookup-causes-an-error-2923824-2.patch"
@@ -210,7 +213,8 @@
         },
         "patchLevel": {
             "drupal/core": "-p2"
-        }
+        },
+        "composer-exit-on-patch-failure": false
     },
     "scripts": {
         "drupal-scaffold": [
