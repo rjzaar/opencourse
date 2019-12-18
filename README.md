@@ -15,8 +15,6 @@ npm install gulp-less
 chmod -R u+x node_modules/
 gulp
 
-
-
 Some css may need to be changed to - instead of _
 
         "group-3061321-30.patch": "https://www.drupal.org/files/issues/2019-06-24/group-3061321-30.patch",
