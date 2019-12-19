@@ -82,7 +82,6 @@
     "drupal/config_readonly": "^1.0@beta",
     "drupal/console": "~1.0",
     "drupal/devel_entity_updates": "^1.0",
-    "drupal/drupal-library-installer-plugin": "^0.3",
     "drupal/google_analytics_reports": "3.x-dev#2b6bb8efbc7f61ce3c1225638075aa6037b8db44",
     "drupal/group": "^1.0@RC",
     "drupal/h5p": "^1.0@RC",
@@ -106,14 +105,12 @@
     "drupal/tour_builder": "1.x-dev#d70e898949b7ec4095efb391a0dbec56d0117558",
     "drupal/twig_field_value": "^1.1",
     "drupal/twig_tweak": "^2.4",
-    "drupal/varbase_blog": "7.x-dev",
     "drupal/video_embed_field": "^2",
     "drupal/views_field_view": "^1.0@beta",
     "drush/drush": "~9.0",
     "fortawesome/font-awesome": "*",
     "jaypan/jquery_colorpicker": "1.0.1",
     "mehrpadin/superfish": "^2.1",
-    "oomphinc/composer-installers-extender": "~1.0",
     "drupal/vartheme_bs4": "^6.2"
   },
   "require-dev": {

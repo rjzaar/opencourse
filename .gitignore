@@ -78,3 +78,5 @@ failed-patches.txt
 
 #One file so it can be used for content_default
 !/docroot/sites/default/files/St-Anthony-seq.jpg
+.editorconfig
+.gitattributes
