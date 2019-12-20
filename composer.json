@@ -1,7 +1,10 @@
 {
     "name": "rjzaar/opencourse",
     "version": "8.7.9999999.9999999-dev",
+    "version_normalized": "8.7.9999999.9999999-dev",
     "require": {
+        "composer/installers": "~1.0",
+        "cweagans/composer-patches": "~1.0",
         "drupal-composer/drupal-scaffold": "~2.0",
         "drupal/betterlogin": "1.x-dev#f7cf1c5c9ec5e80c6ac0ef04ed605e25495232cd",
         "drupal/config_readonly": "^1.0@beta",
@@ -39,51 +42,18 @@
         "jaypan/jquery_colorpicker": "1.0.1",
         "mehrpadin/superfish": "^2.1",
         "oomphinc/composer-installers-extender": "~1.0",
+        "vardot/varbase": "~8.7.2",
+        "vardot/varbase-updater": "~1.0",
+        "webflo/drupal-finder": "~1.0",
+        "webmozart/path-util": "~2.0",
         "drupal/vartheme_bs4": "^6.2"
     },
-    "composer-patches": {
-      "type": "vcs",
-      "url": "https://github.com/vardot/composer-patches"
-  },
-  "require": {
-    "composer/installers": "~1.0",
-    "oomphinc/composer-installers-extender": "~1.0",
-    "cweagans/composer-patches": "~1.0",
-    "drupal/core-composer-scaffold": "^8.8.0",
-    "drupal/core-project-message": "^8.8.0",
-    "drupal/drupal-library-installer-plugin": "^0.3",
-    "webflo/drupal-finder": "~1.0",
-    "webmozart/path-util": "~2.0",
-    "vardot/varbase": "8.8.x-dev",
-    "vardot/varbase-updater": "1.x-dev"
-  },
-  "replace": {
-    "ajaxorg/ace-builds": "*"
-  },
-  "config": {
-    "bin-dir": "bin/",
-    "secure-http": false,
-    "optimize-autoloader": true,
-    "preferred-install": {
-      "drupal/core": "dist"
-    }
-  },
-  "scripts": {
-    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-    "post-install-cmd": [
-      "Varbase\\composer\\ScriptHandler::createRequiredFiles",
-      "Varbase\\composer\\ScriptHandler::removeGitDirectories",
-      "@composer drupal-scaffold"
-    ],
-    "post-update-cmd": [
-      "Varbase\\composer\\ScriptHandler::createRequiredFiles",
-      "Varbase\\composer\\ScriptHandler::removeGitDirectories"
-    ],
-    "post-drupal-scaffold-cmd": ["Varbase\\composer\\ScriptHandler::postDrupalScaffoldProcedure"]
-  },
-  "conflict": {
-    "drupal/drupal": "*"
-  },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "replace": {
+        "ajaxorg/ace-builds": "*"
+    },
     "require-dev": {
         "behat/behat": "3.4.1",
         "behat/mink": "1.7.1",
@@ -108,6 +78,144 @@
         "rjzaar/docroot": "*"
     },
     "type": "project",
+    "extra": {
+        "_readme": [
+            "NOTICE: We're now using composer patches from Vardot repository to suggest",
+            "several fixes and better handling of patches in your Drupal project.",
+            "You'll notice that we have included (https://github.com/vardot/composer-patches)",
+            "in this composer.json repositories. This will replace the original",
+            "library (cweagans/composer-patches) with our own from (vardot/composer-patches).",
+            "See https://github.com/cweagans/composer-patches/pull/243 and more details",
+            "on our changes on the composer-patches package. Once our changes get merged,",
+            "we will revert to using (cweagans/composer-patches) without this override."
+        ],
+        "branch-alias": {
+            "dev-8.x-7.x": "8.7.x-dev"
+        },
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ],
+        "installer-paths": {
+            "docroot/core": [
+                "type:drupal-core"
+            ],
+            "docroot/profiles/{$name}": [
+                "type:drupal-profile"
+            ],
+            "docroot/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "docroot/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "docroot/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "docroot/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ],
+            "drush/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "docroot": [
+                "rjzaar/docroot"
+            ],
+            "docroot/libraries/slick": [
+                "npm-asset/slick-carousel"
+            ],
+            "docroot/libraries/ace": [
+                "npm-asset/ace-builds"
+            ],
+            "docroot/libraries/masonry": [
+                "npm-asset/masonry-layout"
+            ],
+            "docroot/libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
+            ]
+        },
+        "drupal-libraries": {
+            "library-directory": "docroot/libraries",
+            "libraries": [
+                {
+                    "name": "dropzone",
+                    "package": "npm-asset/dropzone"
+                },
+                {
+                    "name": "blazy",
+                    "package": "npm-asset/blazy"
+                },
+                {
+                    "name": "slick",
+                    "package": "npm-asset/slick-carousel"
+                },
+                {
+                    "name": "ace",
+                    "package": "npm-asset/ace-builds"
+                },
+                {
+                    "name": "chartjs",
+                    "package": "bower-asset/chartjs"
+                },
+                {
+                    "name": "c3",
+                    "package": "bower-asset/c3"
+                },
+                {
+                    "name": "d3",
+                    "package": "bower-asset/d3"
+                },
+                {
+                    "name": "masonry",
+                    "package": "npm-asset/masonry-layout"
+                },
+                {
+                    "name": "imagesloaded",
+                    "package": "npm-asset/imagesloaded"
+                },
+                {
+                    "name": "swagger-ui",
+                    "package": "swagger-api/swagger-ui"
+                }
+            ]
+        },
+        "enable-patching": "1",
+        "patches": {
+            "drupal/migrate_plus": {
+                "Issue #2923824: Nested source for entity_lookup causes an error": "https://www.drupal.org/files/issues/nested-source-for-entity_lookup-causes-an-error-2923824-2.patch"
+            },
+            "drupal/panels": {
+                "Issue #2879001: Warning: array_unique() expects parameter 1 to be array, string given": "https://www.drupal.org/files/issues/panels-ipe-set-classes-arrays-2879001-5.patch"
+            },
+            "drupal/core": {
+                "node-revisions-missing-local-tasks-2885278-11.patch": "https://www.drupal.org/files/issues/2018-04-19/node-revisions-missing-local-tasks-2885278-11.patch",
+                "drupal-views-comment-count-2801929-12.patch": "https://www.drupal.org/files/issues/2018-07-10/drupal-views-comment-count-2801929-12.patch",
+                "comment-action_exist-2915728-13.patch": "https://www.drupal.org/files/issues/comment-action_exist-2915728-13.patch"
+            },
+            "drupal/legal": {
+                "2988875-4-languageconfig.patch": "https://www.drupal.org/files/issues/2018-08-09/2988875-4-languageconfig.patch"
+            },
+            "drupal/prepopulate": {
+                "prepopulate-entity_reference-2847371-2.patch": "https://www.drupal.org/files/issues/prepopulate-entity_reference-2847371-2.patch"
+            },
+            "drupal/tour_ui": {
+                "tour-ui-2978327-7.patch": "https://www.drupal.org/files/issues/2018-11-03/tour-ui-2978327-7.patch"
+            },
+            "drupal/pathologic": {
+                "3037093-tour-links-are-stripped-out.patch": "https://www.drupal.org/files/issues/2019-03-03/3037093-tour-links-are-stripped-out.patch"
+            },
+            "drupal/group": {
+                "2853001-10.patch": "https://www.drupal.org/files/issues/2018-07-16/2853001-10.patch",
+                "3061321-23.patch": "https://www.drupal.org/files/issues/2019-06-21/3061321-23.patch"
+            }
+        },
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
+        "composer-exit-on-patch-failure": false
+    },
     "scripts": {
         "drupal-scaffold": [
             "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
@@ -194,116 +302,5 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-  "extra": {
-    "drupal-scaffold": {
-      "locations": {
-        "web-root": "docroot/"
-      }
-    },
-    "drupal-core-project-message": {
-        "include-keys": ["homepage", "support"],
-        "post-create-project-cmd-message": [
-            "<bg=blue;fg=white>                                                         </>",
-            "<bg=blue;fg=white>  Congratulations, you’ve installed the Varbase codebase </>",
-            "<bg=blue;fg=white>  from the vardot/varbase-project template!              </>",
-            "<bg=blue;fg=white>                                                         </>",
-            "",
-            "<bg=yellow;fg=black>Next steps</>:",
-
-            "  * Install the site: https://www.drupal.org/docs/8/install",
-            "  * Read the user guide: https://docs.varbase.vardot.com",
-            "  * Get support: https://www.vardot.com/en/form/get-support-varbase",
-            "  * Join Our Slack Team for Feedback and Support:",
-            "      http://slack.varbase.vardot.com",
-            "  * Remove the plugin that prints this message:",
-            "      composer remove drupal/core-project-message"
-        ]
-    },
-      "_readme": [
-          "NOTICE: We're now using composer patches from Vardot repository to suggest",
-          "several fixes and better handling of patches in your Drupal project.",
-          "You'll notice that we have included (https://github.com/vardot/composer-patches)",
-          "in this composer.json repositories. This will replace the original",
-          "library (cweagans/composer-patches) with our own from (vardot/composer-patches).",
-          "See https://github.com/cweagans/composer-patches/pull/243 and more details",
-          "on our changes on the composer-patches package. Once our changes get merged,",
-          "we will revert to using (cweagans/composer-patches) without this override."
-      ],
-    "branch-alias": {
-      "dev-8.x-8.x": "8.8.x-dev"
-    },
-      "installer-types": [
-          "bower-asset",
-          "npm-asset"
-      ],
-      "installer-paths": {
-          "docroot/core": ["type:drupal-core"],
-          "docroot/profiles/{$name}": ["type:drupal-profile"],
-          "docroot/modules/contrib/{$name}": ["type:drupal-module"],
-          "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
-          "docroot/libraries/slick": ["npm-asset/slick-carousel"],
-          "docroot/libraries/ace": ["npm-asset/ace-builds"],
-          "docroot/libraries/masonry": ["npm-asset/masonry-layout"],
-          "docroot/libraries/{$name}": [
-              "type:drupal-library",
-              "type:bower-asset",
-              "type:npm-asset"
-          ],
-          "docroot/modules/custom/{$name}": ["type:drupal-custom-module"],
-          "docroot/themes/custom/{$name}": ["type:drupal-custom-theme"],
-          "drush/contrib/{$name}": ["type:drupal-drush"],
-          "docroot": ["rjzaar/docroot"]
-      },
-       "drupal-libraries": {
-            "library-directory": "docroot/libraries",
-            "libraries": [
-                {"name": "dropzone","package": "npm-asset/dropzone"},
-                {"name": "blazy", "package": "npm-asset/blazy"},
-                {"name": "slick", "package": "npm-asset/slick-carousel"},
-                {"name": "ace", "package": "npm-asset/ace-builds"},
-                {"name": "chartjs", "package": "bower-asset/chartjs"},
-                {"name": "c3","package": "bower-asset/c3"},
-                {"name": "d3", "package": "bower-asset/d3"},
-                {"name": "masonry", "package": "npm-asset/masonry-layout"},
-                {"name": "imagesloaded", "package": "npm-asset/imagesloaded"},
-                {"name": "swagger-ui", "package": "swagger-api/swagger-ui"}
-            ]
-        },
-        "enable-patching": "1",
-        "patches": {
-            "drupal/migrate_plus": {
-                "Issue #2923824: Nested source for entity_lookup causes an error": "https://www.drupal.org/files/issues/nested-source-for-entity_lookup-causes-an-error-2923824-2.patch"
-            },
-            "drupal/panels": {
-                "Issue #2879001: Warning: array_unique() expects parameter 1 to be array, string given": "https://www.drupal.org/files/issues/panels-ipe-set-classes-arrays-2879001-5.patch"
-            },
-            "drupal/core": {
-                "node-revisions-missing-local-tasks-2885278-11.patch": "https://www.drupal.org/files/issues/2018-04-19/node-revisions-missing-local-tasks-2885278-11.patch",
-                "drupal-views-comment-count-2801929-12.patch": "https://www.drupal.org/files/issues/2018-07-10/drupal-views-comment-count-2801929-12.patch",
-                "comment-action_exist-2915728-13.patch": "https://www.drupal.org/files/issues/comment-action_exist-2915728-13.patch"
-            },
-            "drupal/legal": {
-                "2988875-4-languageconfig.patch": "https://www.drupal.org/files/issues/2018-08-09/2988875-4-languageconfig.patch"
-            },
-            "drupal/prepopulate": {
-                "prepopulate-entity_reference-2847371-2.patch": "https://www.drupal.org/files/issues/prepopulate-entity_reference-2847371-2.patch"
-            },
-            "drupal/tour_ui": {
-                "tour-ui-2978327-7.patch": "https://www.drupal.org/files/issues/2018-11-03/tour-ui-2978327-7.patch"
-            },
-            "drupal/pathologic": {
-                "3037093-tour-links-are-stripped-out.patch": "https://www.drupal.org/files/issues/2019-03-03/3037093-tour-links-are-stripped-out.patch"
-            },
-            "drupal/group": {
-                "2853001-10.patch": "https://www.drupal.org/files/issues/2018-07-16/2853001-10.patch",
-                "3061321-23.patch": "https://www.drupal.org/files/issues/2019-06-21/3061321-23.patch"
-            }
-        },
-        "patchLevel": {
-            "drupal/core": "-p2"
-        },
-        "composer-exit-on-patch-failure": false
-    }
-
+    "prefer-stable": true
 }
