@@ -1,0 +1,6 @@
+<span{{ attributes }}>
+  {#{%- for item in items -%}#}
+      {#{{ item.content }}#}
+  {#{%- endfor -%}#}
+    {% if title  %}<h1 class="title oc_page_title oc_inject" id="page-title">{{ title }}</h1>{% endif %}
+</span>

@@ -1,0 +1,557 @@
+
+//Superfish
+ul {
+  list-style-type: none;
+  padding-left: 5px;
+  padding-top: 9px;
+}
+
+ul.sf-menu.sf-style-white {
+  float: left;
+  margin-bottom: 1em;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul.sf-style-white {
+  float: left;
+  margin-bottom: 1em;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul.sf-menu.sf-style-white.sf-navbar {
+  width: 100%;
+}
+
+ul.sf-menu.sf-style-white ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul.sf-menu.sf-style-white a,
+ul.sf-menu.sf-style-white a:visited,
+ul.sf-menu.sf-style-white span.nolink {
+  border: 0 none;
+  color: #005bb7;
+  padding: 0.75em 1em;
+}
+
+ul.sf-menu.sf-style-white a.sf-with-ul,
+ul.sf-menu.sf-style-white span.nolink.sf-with-ul {
+  padding-right: 2.25em;
+}
+
+ul.sf-menu.sf-style-white.rtl a.sf-with-ul,
+ul.sf-menu.sf-style-white.rtl span.nolink.sf-with-ul {
+  padding-left: 2.25em;
+  padding-right: 1em;
+}
+
+ul.sf-menu.sf-style-white span.sf-description {
+  color: #aaa;
+  display: block;
+  font-size: smaller;
+  line-height: 1.5;
+  margin: 0.25em 0 0 0;
+  padding: 0;
+}
+
+ul.sf-menu.sf-style-white li,
+ul.sf-menu.sf-style-white.sf-navbar {
+  //background: #fafafa;
+}
+
+ul.sf-menu.sf-style-white li li,
+ul.sf-menu.sf-style-white.sf-navbar > li > ul {
+  //background: #f7f7f7;
+}
+
+ul.sf-menu.sf-style-white li li li {
+  //background: #f4f4f4;
+}
+
+ul.sf-menu.sf-style-white li:hover,
+ul.sf-menu.sf-style-white li.sfHover,
+ul.sf-menu.sf-style-white a:focus,
+ul.sf-menu.sf-style-white a:hover,
+ul.sf-menu.sf-style-white span.nolink:hover {
+  //background: #f0f0f0;
+  outline: 0;
+}
+
+.sf-menu.sf-style-white.sf-navbar li ul {
+  //background: #f7f7f7;
+}
+
+.sf-menu.sf-style-white.sf-navbar li ul li ul {
+  background: transparent;
+}
+
+div.sf-accordion-toggle.sf-style-white a {
+  background: #210c02;
+  border: 1px solid #381301;
+  color: #fff;
+  display: inline-block;
+  font-weight: bold;
+  padding: 1em 3em 1em 1em;
+  position: relative;
+}
+
+div.sf-accordion-toggle.sf-style-white > a:after {
+  content: "≡";
+  font-size: 2em;
+  position: absolute;
+  right: 0.5em;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  speak: none;
+}
+
+div.sf-accordion-toggle.sf-style-white a.sf-expanded,
+ul.sf-menu.sf-style-white.sf-accordion li.sf-expanded {
+  background: #52250f;
+}
+
+div.sf-accordion-toggle.sf-style-white a.sf-expanded,
+ul.sf-menu.sf-style-white.sf-accordion li.sf-expanded > a,
+ul.sf-menu.sf-style-white.sf-accordion li.sf-expanded > span.nolink {
+  font-weight: bold;
+}
+
+ul.sf-menu.sf-style-white.sf-accordion li a.sf-accordion-button {
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 499;
+}
+
+ul.sf-menu.sf-style-white.sf-accordion li li a,
+ul.sf-menu.sf-style-white.sf-accordion li li span.nolink {
+  padding-left: 2em;
+}
+
+ul.sf-menu.sf-style-white.sf-accordion li li li a,
+ul.sf-menu.sf-style-white.sf-accordion li li li span.nolink {
+  padding-left: 3em;
+}
+
+ul.sf-menu.sf-style-white.sf-accordion li li li li a,
+ul.sf-menu.sf-style-white.sf-accordion li li li li span.nolink {
+  padding-left: 4em;
+}
+
+ul.sf-menu.sf-style-white.sf-accordion li li li li li a,
+ul.sf-menu.sf-style-white.sf-accordion li li li li li span.nolink {
+  padding-left: 5em;
+}
+
+ul.sf-menu.sf-style-white.rtl.sf-accordion li li a,
+ul.sf-menu.sf-style-white.rtl.sf-accordion li li span.nolink {
+  padding-left: auto;
+  padding-right: 2em;
+}
+
+ul.sf-menu.sf-style-white.rtl.sf-accordion li li li a,
+ul.sf-menu.sf-style-white.rtl.sf-accordion li li li span.nolink {
+  padding-left: auto;
+  padding-right: 3em;
+}
+
+ul.sf-menu.sf-style-white.rtl.sf-accordion li li li li a,
+ul.sf-menu.sf-style-white.rtl.sf-accordion li li li li span.nolink {
+  padding-left: auto;
+  padding-right: 4em;
+}
+
+ul.sf-menu.sf-style-white.rtl.sf-accordion li li li li li a,
+ul.sf-menu.sf-style-white.rtl.sf-accordion li li li li li span.nolink {
+  padding-left: auto;
+  padding-right: 5em;
+}
+
+ul.sf-menu.sf-style-white li.sf-multicolumn-wrapper ol,
+ul.sf-menu.sf-style-white li.sf-multicolumn-wrapper ol li {
+  margin: 0;
+  padding: 0;
+}
+
+ul.sf-menu.sf-style-white li.sf-multicolumn-wrapper a.menuparent,
+ul.sf-menu.sf-style-white li.sf-multicolumn-wrapper span.nolink.menuparent {
+  font-weight: bold;
+}
+
+// //3#
+
+
+// right tabs
+/*** ESSENTIAL STYLES ***/
+.sfr-menu, .sfr-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: $primary;
+}
+
+.sfr-menu li {
+  position: relative;
+}
+
+.sfr-menu ul {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
+  z-index: 99;
+}
+
+.sfr-menu > li {
+  float: left;
+}
+
+.sfr-menu li:hover > ul, .sfr-menu li.sfrHover > ul {
+  display: block;
+}
+
+.sfr-menu a {
+  display: block;
+  position: relative;
+}
+
+.sfr-menu ul ul {
+  top: 0;
+  left: 100%;
+}
+
+/*** DEMO SKIN ***/
+.sfr-menu {
+  float: left;
+  margin-bottom: 1em;
+}
+
+.sfr-menu ul {
+  //box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  min-width: 15em; /* allow long menu items to determine submenu width */
+  *width: 15em; /* no auto sub width for IE7, see white-space comment below */
+  padding-top: 9px; /* OC move the text down a bit relative to icons */
+  padding-right: 6px;
+}
+
+.sfr-menu a {
+  /*border-left: 1px solid #fff;*/
+  //border-top: 1px solid #dFeEFF; /* fallback colour must use full shorthand */
+  //border-top: 1px solid rgba(255,255,255,0.5);
+  //padding: .75em 1em;
+  text-decoration: none;
+  zoom: 1; /* IE7 */
+}
+
+.sfr-menu a {
+  //color: #13a;
+}
+
+.sfr-menu li {
+  //background: #BDD2FF;
+  white-space: nowrap; /* no need for Supersubs plugin */
+  *white-space: normal; /* ...unless you support IE7 (let it wrap) */
+  -webkit-transition: background .2s;
+  transition: background .2s;
+}
+
+.sfr-menu ul li {
+  //background: #AABDE6;
+}
+
+.sfr-menu ul ul li {
+  //background: #9AAEDB;
+}
+
+.sfr-menu li:hover, .sfr-menu li.sfrHover {
+  //background: #CFDEFF;
+  /* only transition out, not in */
+  -webkit-transition: none;
+  transition: none;
+}
+
+/*** arrows (for all except IE7) **/
+.sfr-arrows .sfr-with-ul {
+  padding-right: 2.5em;
+  *padding-right: 1em; /* no CSS arrows for IE7 (lack pseudo-elements) */
+}
+
+/* styling for both css and generated arrows */
+.sfr-arrows .sfr-with-ul:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 2px; /* MY EDIT: PLACES ARROWS AT MOST LEFT, IT WORKS OK */
+  margin-top: -3px;
+  height: 0;
+  width: 0;
+  /* order of following 3 rules important for fallbacks to work */
+  //border: 5px solid transparent;
+  //border-top-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+  //border-top-color: rgba(255,255,255,0.5);
+}
+
+.sfr-arrows > li > .sfr-with-ul:focus:after,
+.sfr-arrows > li:hover > .sfr-with-ul:after,
+.sfr-arrows > .sfrHover > .sfr-with-ul:after {
+  //border-top-color: white; /* IE8 fallback colour */
+}
+
+/* styling for right-facing arrows */
+.sfr-arrows ul .sfr-with-ul:after {
+  margin-top: -5px;
+  margin-right: -3px;
+  border-color: transparent;
+  //border-left-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+  //border-left-color: rgba(255,255,255,0.5);
+}
+
+.sfr-arrows ul li > .sfr-with-ul:focus:after,
+.sfr-arrows ul li:hover > .sfr-with-ul:after,
+.sfr-arrows ul .sfrHover > .sfr-with-ul:after {
+  //border-left-color: white;
+}
+
+/* adding sf-vertical class in addition to sf-menu creates a vertical menu */
+/* eg. <ul class="sf-menu sf-vertical"> ... */
+.sfr-vertical {
+  width: 75px;
+  /* If you want the width of the closed menu to expand to its
+  widest top-level menu item (like its "Supersubs" submenus do),
+  replace the width rule above with the following two rules. */
+
+  /*
+  min-width: 12em;
+  *width: 12em;
+  */
+}
+
+.sfr-vertical ul {
+  left: -100%; /* MY EDIT: THIS WORKS OK AT 2nd LEVEL */
+  top: 0;
+}
+
+.sfr-vertical > li {
+  float: none;
+}
+
+.sfr-vertical li {
+  width: 100%;
+}
+
+.sfr-vertical ul ul {
+  left: -100%; /* MY EDIT: THIS WORKS OK AT 3rd LEVEL BUT SHADOW IS MISPLACED */
+  top: 0;
+}
+
+/*** alter arrow directions ***/
+.sfr-vertical.sfr-arrows > li > .sfr-with-ul:after {
+  margin-top: -5px;
+  margin-right: -3px;
+  border-color: transparent;
+  //border-left-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+  //border-left-color: rgba(255,255,255,0.5);
+}
+
+.sfr-vertical.sfr-arrows li > .sfr-with-ul:focus:after,
+.sfr-vertical.sfr-arrows li:hover > .sfr-with-ul:after,
+.sfr-vertical.sfr-arrows .sfrHover > .sfr-with-ul:after {
+  //border-left-color: white;
+}
+
+
+
+//Superfish
+ul {
+  list-style-type: none;
+  padding-left: 5px;
+  padding-top: 9px;
+}
+
+ul.sf-menu.sf-style-white {
+  float: left;
+  margin-bottom: 1em;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul.sf-style-white {
+  float: left;
+  margin-bottom: 1em;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul.sf-menu.sf-style-white.sf-navbar {
+  width: 100%;
+}
+
+ul.sf-menu.sf-style-white ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul.sf-menu.sf-style-white a,
+ul.sf-menu.sf-style-white a:visited,
+ul.sf-menu.sf-style-white span.nolink {
+  border: 0 none;
+  color: #005bb7;
+  padding: 0.75em 1em;
+}
+
+ul.sf-menu.sf-style-white a.sf-with-ul,
+ul.sf-menu.sf-style-white span.nolink.sf-with-ul {
+  padding-right: 2.25em;
+}
+
+ul.sf-menu.sf-style-white.rtl a.sf-with-ul,
+ul.sf-menu.sf-style-white.rtl span.nolink.sf-with-ul {
+  padding-left: 2.25em;
+  padding-right: 1em;
+}
+
+ul.sf-menu.sf-style-white span.sf-description {
+  color: #aaa;
+  display: block;
+  font-size: smaller;
+  line-height: 1.5;
+  margin: 0.25em 0 0 0;
+  padding: 0;
+}
+
+ul.sf-menu.sf-style-white li,
+ul.sf-menu.sf-style-white.sf-navbar {
+  //background: #fafafa;
+}
+
+ul.sf-menu.sf-style-white li li,
+ul.sf-menu.sf-style-white.sf-navbar > li > ul {
+  //background: #f7f7f7;
+}
+
+ul.sf-menu.sf-style-white li li li {
+  //background: #f4f4f4;
+}
+
+ul.sf-menu.sf-style-white li:hover,
+ul.sf-menu.sf-style-white li.sfHover,
+ul.sf-menu.sf-style-white a:focus,
+ul.sf-menu.sf-style-white a:hover,
+ul.sf-menu.sf-style-white span.nolink:hover {
+  //background: #f0f0f0;
+  outline: 0;
+}
+
+.sf-menu.sf-style-white.sf-navbar li ul {
+  //background: #f7f7f7;
+}
+
+.sf-menu.sf-style-white.sf-navbar li ul li ul {
+  background: transparent;
+}
+
+div.sf-accordion-toggle.sf-style-white a {
+  background: #210c02;
+  border: 1px solid #381301;
+  color: #fff;
+  display: inline-block;
+  font-weight: bold;
+  padding: 1em 3em 1em 1em;
+  position: relative;
+}
+
+div.sf-accordion-toggle.sf-style-white > a:after {
+  content: "≡";
+  font-size: 2em;
+  position: absolute;
+  right: 0.5em;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  speak: none;
+}
+
+div.sf-accordion-toggle.sf-style-white a.sf-expanded,
+ul.sf-menu.sf-style-white.sf-accordion li.sf-expanded {
+  background: #52250f;
+}
+
+div.sf-accordion-toggle.sf-style-white a.sf-expanded,
+ul.sf-menu.sf-style-white.sf-accordion li.sf-expanded > a,
+ul.sf-menu.sf-style-white.sf-accordion li.sf-expanded > span.nolink {
+  font-weight: bold;
+}
+
+ul.sf-menu.sf-style-white.sf-accordion li a.sf-accordion-button {
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 499;
+}
+
+ul.sf-menu.sf-style-white.sf-accordion li li a,
+ul.sf-menu.sf-style-white.sf-accordion li li span.nolink {
+  padding-left: 2em;
+}
+
+ul.sf-menu.sf-style-white.sf-accordion li li li a,
+ul.sf-menu.sf-style-white.sf-accordion li li li span.nolink {
+  padding-left: 3em;
+}
+
+ul.sf-menu.sf-style-white.sf-accordion li li li li a,
+ul.sf-menu.sf-style-white.sf-accordion li li li li span.nolink {
+  padding-left: 4em;
+}
+
+ul.sf-menu.sf-style-white.sf-accordion li li li li li a,
+ul.sf-menu.sf-style-white.sf-accordion li li li li li span.nolink {
+  padding-left: 5em;
+}
+
+ul.sf-menu.sf-style-white.rtl.sf-accordion li li a,
+ul.sf-menu.sf-style-white.rtl.sf-accordion li li span.nolink {
+  padding-left: auto;
+  padding-right: 2em;
+}
+
+ul.sf-menu.sf-style-white.rtl.sf-accordion li li li a,
+ul.sf-menu.sf-style-white.rtl.sf-accordion li li li span.nolink {
+  padding-left: auto;
+  padding-right: 3em;
+}
+
+ul.sf-menu.sf-style-white.rtl.sf-accordion li li li li a,
+ul.sf-menu.sf-style-white.rtl.sf-accordion li li li li span.nolink {
+  padding-left: auto;
+  padding-right: 4em;
+}
+
+ul.sf-menu.sf-style-white.rtl.sf-accordion li li li li li a,
+ul.sf-menu.sf-style-white.rtl.sf-accordion li li li li li span.nolink {
+  padding-left: auto;
+  padding-right: 5em;
+}
+
+ul.sf-menu.sf-style-white li.sf-multicolumn-wrapper ol,
+ul.sf-menu.sf-style-white li.sf-multicolumn-wrapper ol li {
+  margin: 0;
+  padding: 0;
+}
+
+ul.sf-menu.sf-style-white li.sf-multicolumn-wrapper a.menuparent,
+ul.sf-menu.sf-style-white li.sf-multicolumn-wrapper span.nolink.menuparent {
+  font-weight: bold;
+}

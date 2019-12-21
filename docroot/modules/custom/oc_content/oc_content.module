@@ -16,7 +16,7 @@ function occontent_help($route_name, RouteMatchInterface $route_match) {
     case 'help.page.oc_content':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Demo content for Opencatechesis') . '</p>';
+      $output .= '<p>' . t('Demo content for Opencat') . '</p>';
       return $output;
 
     default:
