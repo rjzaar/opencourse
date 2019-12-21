@@ -18,12 +18,18 @@ $superfish-1-background-color-level-third: #d0d0d0;
 $superfish-1-background-color-level-fourth: #c0c0c0;
 
 //For page.html.twig
+// This is the container for the header.
+.container {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  max-width: none !important;
+}
 //Logo and text across the top
 .oc_navbar {
   margin-bottom: 0 !important;
   border-radius: 0;
 }
-
 .oc_head_bgc {
   background-color: rgba(87, 87, 87, .25);
 }
@@ -128,6 +134,17 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
     font-size: 400% !important;
   }
 }
+.site-heading {
+  color: white;
+}
+
+// used in page.html.twig and the maintenance page.
+// For the 'Header print' part.
+.page-header {
+  padding-bottom: 0;
+  border-bottom-width: 0;
+  margin-bottom: 0;
+}
 
 //the left and right vertical set of buttons uses superfish
 // The superfish css is at /docroot/libraries/superfish/css
@@ -227,99 +244,41 @@ ul {
   z-index: 1500;
 }
 
-
-
-//Not checked yet
-.new {
-  height: 0;
-}
-
-.oc_testsd {
-  float: right;
-  paddling: 20px;
-}
-
+// For user--full.html.twig
 .oc_user_column {
   float: left;
   padding: 10px;
 }
-
 .oc_user_left {
   width: 25%;
 }
-
 .oc_user_right {
   width: 75%;
 }
 
-///* Clear floats after the columns */
-//.oc_user_row:after {
-//  content: "";
-//  display: table;
-//  clear: both;
-//}
 
-
+// for: node--oc-tasks--teaser.html.twig
 .oc_task_teaser {
   height: 20px !important;
 }
 
-.container {
-  margin-left: 0;
-  margin-right: 0;
-  width: 100%;
-  max-width: none !important;
-}
-
-.oc-link {
-  padding-left: 30px;
-  padding-bottom: 15px;
-  font-size: large;
-}
-
+// javascript in page.html.twig
+// The pointer is changed since the 'hyperlink' is activated by code and so
+// the pointer is changed to indicate that it is an active link.
+// used in: ds-1col--node-oc-doc-featured.html.twig
+// and: ds-1col--node-oc-doc-full.html.twig
 .oc_quiz {
   cursor: default;
 }
-
 .oc_pointer {
   cursor: pointer;
 }
 
-.node--type-oc-link.node--view-mode-full {
-  left: 40px;
-}
-
-.media--view-mode-small {
-  float: right;
-  width: 300px;
-  height: 169px;
-  margin: 10px;
-}
-
-
-.page-header {
-
-  padding-bottom: 0;
-  border-bottom-width: 0;
-  margin-bottom: 0;
-
-}
-
+// used in: ds-1col--node-oc-doc-full.html.twig
 .oc_branding_logo {
   width: 210px;
   //background-color: lighten(@brand-primary, 20%)
 }
-
-
-
-.oc_auth_title {
-
-  margin-top: 0;
-
-}
-
-
-
 @media screen and (min-width: 768px) {
   .oc_branding_logo {
     width: 420px;
@@ -330,18 +289,32 @@ ul {
   }
 }
 
-
-.site-heading {
-  color: white;
+// used: ds-1col--node-oc-book-full.html.twig
+// and: ds-1col--node-oc-book-teaser.html.twig
+.oc_auth_title {
+  margin-top: 0;
 }
+
+
+//Not checked yet
+.new {
+  height: 0;
+}
+
+
+
+
+///* Clear floats after the columns */
+//.oc_user_row:after {
+//  content: "";
+//  display: table;
+//  clear: both;
+//}
+
 
 .oc_fixed {
   position: relative;
   top: -200px;
-}
-
-.oc_node_title {
-
 }
 
 .oc_main {
