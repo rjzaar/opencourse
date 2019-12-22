@@ -167,97 +167,10 @@ ul {
   color: #007bff !important;
 }
 
-.oc_tabs_wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 0;
-}
-
-.oc_tabs {
-  width: 40px;
-  /* Set a width if you like */
-  position: fixed;
-  right: 0;
-  bottom: 20px;
-  z-index: 1500;
-}
-
-.oc_user_column {
-  float: left;
-  padding: 10px;
-}
-
-.oc_user_left {
-  width: 25%;
-}
-
-.oc_user_right {
-  width: 75%;
-}
-
-.oc_task_teaser {
-  height: 20px !important;
-}
-
-.oc_quiz {
-  cursor: default;
-}
-
-.oc_pointer {
-  cursor: pointer;
-}
-
-.oc_branding_logo {
-  width: 210px;
-}
-
-@media screen and (min-width: 768px) {
-  .oc_branding_logo {
-    width: 420px;
-  }
-  body {
-    margin-top: 0;
-  }
-}
-
-.oc_auth_title {
-  margin-top: 0;
-}
-
-.new {
-  height: 0;
-}
-
-.oc_fixed {
-  position: relative;
-  top: -200px;
-}
-
-.oc_main {
-  width: 100%;
-  top: 0;
-  left: 0;
-  position: relative;
-  -o-object-fit: inherit;
-     object-fit: inherit;
-  background-color: white;
-}
-
-.quicktabs-style-navlist ul.quicktabs-tabs li {
-  display: inherit;
-  background: inherit;
-  list-style-type: inherit;
-  padding: inherit;
-  white-space: inherit;
-}
-
 /* adding sf-vertical class in addition to sf-menu creates a vertical menu */
 /* eg. <ul class="sf-menu sf-vertical"> ... */
-.sf-verticalr {
-  width: 150px;
+.sfr-vertical {
+  width: 75px;
   /* If you want the width of the closed menu to expand to its
   widest top-level menu item (like its "Supersubs" submenus do),
   replace the width rule above with the following two rules. */
@@ -267,50 +180,31 @@ ul {
   */
 }
 
-.sf-verticalr ul {
+.sfr-vertical ul {
   left: -100%;
   /* MY EDIT: THIS WORKS OK AT 2nd LEVEL */
   top: 0;
 }
 
-.sf-verticalr > li {
+.sfr-vertical > li {
   float: none;
 }
 
-.sf-verticalr li {
+.sfr-vertical li {
   width: 100%;
 }
 
-.sf-verticalr ul ul li {
-  left: -200%;
+.sfr-vertical ul ul {
+  left: -100%;
   /* MY EDIT: THIS WORKS OK AT 3rd LEVEL BUT SHADOW IS MISPLACED */
   top: 0;
 }
 
 /*** alter arrow directions ***/
-.sf-verticalr.sf-arrows > li > .sf-with-ul:after {
+.sfr-vertical.sfr-arrows > li > .sfr-with-ul:after {
   margin-top: -5px;
   margin-right: -3px;
   border-color: transparent;
-  border-left-color: #dFeEFF;
-  /* edit this to suit design (no rgba in IE8) */
-  border-left-color: rgba(255, 255, 255, 0.5);
-}
-
-.sf-verticalr.sf-arrows li > .sf-with-ul:focus:after,
-.sf-verticalr.sf-arrows li:hover > .sf-with-ul:after,
-.sf-verticalr.sf-arrows .sfHover > .sf-with-ul:after {
-  border-left-color: white;
-}
-
-.sfHoverR {
-  right: 0;
-  top: 0;
-}
-
-.sfHover {
-  left: 0;
-  top: 0;
 }
 
 /*** ESSENTIAL STYLES ***/
@@ -391,113 +285,22 @@ ul {
   transition: none;
 }
 
-/*** arrows (for all except IE7) **/
-.sfr-arrows .sfr-with-ul {
-  padding-right: 2.5em;
-  *padding-right: 1em;
-  /* no CSS arrows for IE7 (lack pseudo-elements) */
-}
-
-/* styling for both css and generated arrows */
-.sfr-arrows .sfr-with-ul:after {
-  content: '';
+.oc_tabs_wrapper {
   position: absolute;
-  top: 50%;
-  left: 2px;
-  /* MY EDIT: PLACES ARROWS AT MOST LEFT, IT WORKS OK */
-  margin-top: -3px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   height: 0;
-  width: 0;
-  /* order of following 3 rules important for fallbacks to work */
 }
 
-/* styling for right-facing arrows */
-.sfr-arrows ul .sfr-with-ul:after {
-  margin-top: -5px;
-  margin-right: -3px;
-  border-color: transparent;
-}
-
-/* adding sf-vertical class in addition to sf-menu creates a vertical menu */
-/* eg. <ul class="sf-menu sf-vertical"> ... */
-.sfr-vertical {
-  width: 75px;
-  /* If you want the width of the closed menu to expand to its
-  widest top-level menu item (like its "Supersubs" submenus do),
-  replace the width rule above with the following two rules. */
-  /*
-  min-width: 12em;
-  *width: 12em;
-  */
-}
-
-.sfr-vertical ul {
-  left: -100%;
-  /* MY EDIT: THIS WORKS OK AT 2nd LEVEL */
-  top: 0;
-}
-
-.sfr-vertical > li {
-  float: none;
-}
-
-.sfr-vertical li {
-  width: 100%;
-}
-
-.sfr-vertical ul ul {
-  left: -100%;
-  /* MY EDIT: THIS WORKS OK AT 3rd LEVEL BUT SHADOW IS MISPLACED */
-  top: 0;
-}
-
-/*** alter arrow directions ***/
-.sfr-vertical.sfr-arrows > li > .sfr-with-ul:after {
-  margin-top: -5px;
-  margin-right: -3px;
-  border-color: transparent;
-}
-
-.oc_inject_sm {
-  padding-left: 5px;
-}
-
-.oc_video_inject_sm {
-  padding-left: 5px;
-}
-
-.oc_accordion_content_sm {
-  cursor: auto;
-  position: relative;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.oc_accordian_container_sm {
-  width: 100%;
-  cursor: pointer;
-  position: relative;
-  display: none;
-}
-
-.oc_active {
-  display: inline-block;
-}
-
-.oc_btn_block_sm {
-  display: none;
-}
-
-.oc_not_btn_sm {
-  display: inline-block;
-}
-
-.oc_right_sm {
-  clear: right;
-  float: right;
-  width: 100%;
-  margin-left: 20px;
+.oc_tabs {
+  width: 40px;
+  /* Set a width if you like */
+  position: fixed;
+  right: 0;
+  bottom: 20px;
+  z-index: 1500;
 }
 
 .oc_inject {
@@ -523,36 +326,91 @@ ul {
   }
 }
 
-.oc_video_inject {
-  padding-left: 0;
+.oc_col_width {
+  max-width: 700px !important;
+}
+
+.oc_item {
+  padding: 0 0 0 0 !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
+}
+
+.oc_right {
+  clear: right;
+  float: right;
+  width: 100%;
+  margin-left: 20px;
 }
 
 @media screen and (max-width: 576px) {
-  .oc_video_inject {
-    padding-left: 5px;
+  .oc_right {
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .oc_video_inject {
-    padding-left: 15px;
+  .oc_right {
+    width: 50%;
   }
 }
 
 @media screen and (max-width: 992px) {
-  .oc_video_inject {
-    padding-left: 150px;
+  .oc_right {
+    width: 40%;
   }
+}
+
+.oc_text {
+  line-height: 1.5em;
+  color: #60616d;
+  background-color: white;
+  font-size: 18px;
+}
+
+.oc_teaser_text {
+  text-transform: none;
+  line-height: 1em;
+  color: #60616d;
+  font-size: 14px;
+  width: 100%;
+}
+
+.oc_floatleft {
+  float: left;
+  padding-right: 30px;
+  padding-top: 15px;
+  line-height: 1.5em;
+  color: #60616d;
+  font-size: 18px;
+}
+
+.oc_summary {
+  background-color: white;
+}
+
+.oc_user_column {
+  float: left;
+  padding: 10px;
+}
+
+.oc_user_left {
+  width: 25%;
+}
+
+.oc_user_right {
+  width: 75%;
+}
+
+.oc_left_align {
+  text-align: left !important;
 }
 
 .oc_accordian_container {
   width: 100%;
   cursor: pointer;
   position: relative;
-}
-
-.oc_left_align {
-  text-align: left !important;
 }
 
 .oc_accordion_content a {
@@ -613,6 +471,61 @@ ul {
   }
 }
 
+.oc_show {
+  display: block !important;
+}
+
+.oc_btn_block {
+  border-style: solid;
+  border-bottom: 1px;
+  border-color: #e0e0e0;
+  outline: 0;
+  padding: 6px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none !important;
+  color: #fffeff;
+  background-color: #003853;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.oc_task_teaser {
+  height: 20px !important;
+}
+
+.oc_quiz {
+  cursor: default;
+}
+
+.oc_pointer {
+  cursor: pointer;
+}
+
+.oc_branding_logo {
+  width: 210px;
+}
+
+@media screen and (min-width: 768px) {
+  .oc_branding_logo {
+    width: 420px;
+  }
+  body {
+    margin-top: 0;
+  }
+}
+
+.oc_auth_title {
+  margin-top: 0;
+}
+
+.oc_iframe {
+  width: 400px;
+  height: 300px;
+}
+
 .oc_not_btn {
   display: none;
 }
@@ -639,191 +552,14 @@ ul {
   }
 }
 
-.oc_show {
-  display: block !important;
-}
-
-.oc_right {
-  clear: right;
-  float: right;
-  width: 100%;
-  margin-left: 20px;
-}
-
-@media screen and (max-width: 576px) {
-  .oc_right {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .oc_right {
-    width: 50%;
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .oc_right {
-    width: 40%;
-  }
-}
-
-.oc-book-title {
-  font-style: italic;
-}
-
-.oc-hider:hover .oc-hidee {
-  display: block !important;
-}
-
-.oc-hidee {
-  display: none;
-}
-
-.oc-row-class {
-  float: left;
-  position: relative;
-  width: 300px;
-  height: 460px;
-}
-
-.oc-doc-view {
-  padding-left: 25px;
-}
-
-.oc-fbt-body {
-  position: absolute;
-  top: 170px;
-  left: 30px;
-  width: 240px;
-}
-
-.oc-fbt-body:hover {
-  display: none;
-}
-
-.oc-fbt-title {
-  position: absolute;
-  top: -13px;
-  left: 15px;
-  width: 240px;
-}
-
-.oc-ftb-title:hover {
-  display: none;
-}
-
-.oc-fbt-author {
-  position: absolute;
-  top: 140px;
-  left: 30px;
-  width: 240px;
-}
-
-div.oc-row-class:hover + p.oc-fbt-author {
-  display: block;
-}
-
-.oc-fbt-author:hover {
-  display: block;
-}
-
-.oc-hidee-box {
-  position: absolute;
-  color: black;
-  top: 80px;
-  left: 15px;
-  width: 270px;
-  height: 320px;
-  background-color: #ffffff;
-  font-size: 14px !important;
-  padding: 10px 10px 10px 10px;
-  opacity: 0.8;
-  filter: alpha(opacity=80);
-  /* For IE8 and earlier */
-}
-
-.oc-row-class-seq {
-  position: relative;
-  width: 300px;
-  height: 220px;
-  padding-left: 150px;
-  -webkit-box-sizing: unset !important;
-          box-sizing: unset !important;
-}
-
-.oc-fbt-body-seq {
-  position: absolute;
-  top: 70px;
-  left: 465px;
-  width: 500px;
-}
-
-.oc-fbt-title-seq {
-  position: absolute;
-  top: -13px;
-  left: 0;
-  width: 240px;
-}
-
-.oc-fbt-author-seq {
-  position: absolute;
-  top: 140px;
-  left: 30px;
-  width: 240px;
-}
-
-div.oc-row-class-seq:hover + p.oc-fbt-author-seq {
-  display: block;
-}
-
-.oc-fbt-author-seq:hover {
-  display: block;
-}
-
-.oc-hidee-box-seq {
-  position: absolute;
-  color: black;
-  top: 15px;
-  left: 465px;
-  width: 500px;
-  height: 200px;
-  background-color: #ffffff;
-  font-size: 14px !important;
-  padding: 10px 10px 10px 10px;
-  opacity: 0.8;
-  filter: alpha(opacity=80);
-  /* For IE8 and earlier */
-}
-
-.oc-panel-left {
-  padding-left: 15px;
-}
-
-.oc-title {
-  color: #0071B3;
-  text-transform: uppercase;
-  font-size: 20px;
-  letter-spacing: .04em;
-  font-weight: bold;
-  background-image: none;
-  padding-top: 15px;
-}
-
-.oc-comment {
-  padding-right: 30px;
-  width: 80%;
+.oc_item_title {
+  padding-top: 15px !important;
+  white-space: normal;
+  color: #fffeff;
 }
 
 .oc_page_title {
   color: #ea4846;
-}
-
-.oc_text {
-  line-height: 1.5em;
-  color: #60616d;
-  background-color: white;
-  font-size: 18px;
 }
 
 .oc_summary_text {
@@ -833,69 +569,11 @@ div.oc-row-class-seq:hover + p.oc-fbt-author-seq {
   width: 600px;
 }
 
-.oc_teaser_text {
-  text-transform: none;
-  line-height: 1em;
-  color: #60616d;
-  font-size: 14px;
-  width: 100%;
-}
-
-.oc_floatleft {
-  float: left;
-  padding-right: 30px;
-  padding-top: 15px;
-  line-height: 1.5em;
-  color: #60616d;
-  font-size: 18px;
-}
-
-.oc_summary {
-  background-color: white;
-}
-
 .oc_right50 {
   clear: right;
   float: right;
   width: 50%;
   margin-left: 20px;
-}
-
-iframe {
-  width: 400px;
-  height: 300px;
-}
-
-.oc_red {
-  background-color: blue !important;
-}
-
-.edgy-1col.node-formation-doc {
-  background-color: white !important;
-  max-width: 100% !important;
-  padding-left: -30px !important;
-  padding-right: -30px !important;
-}
-
-#main-wrapper.oa-layout-fluid {
-  max-width: 100% !important;
-}
-
-.main.container.row {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-.oc_layout {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.oc_item {
-  padding: 0 0 0 0 !important;
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
-  background-attachment: fixed !important;
 }
 
 .oc_1 {
@@ -907,11 +585,7 @@ iframe {
           background-size: 100%;
 }
 
-.oc_2 {
-  height: 10px;
-}
-
-.oc-image-featured-box {
+.oc_image_featured_box {
   position: absolute;
   color: black;
   bottom: 15px;
@@ -929,41 +603,6 @@ iframe {
 .oc_container {
   position: relative;
   height: 400px;
-}
-
-.oc_col_width {
-  max-width: 700px !important;
-}
-
-.oc_edit {
-  display: none;
-}
-
-.oc_item_title {
-  padding-top: 15px !important;
-  white-space: normal;
-  color: #fffeff;
-}
-
-.oc_btn_block {
-  border-style: solid;
-  border-bottom: 1px;
-  border-color: #e0e0e0;
-  outline: 0;
-  padding: 6px 16px;
-  vertical-align: middle;
-  overflow: hidden;
-  text-decoration: none !important;
-  color: #fffeff;
-  background-color: #003853;
-  text-align: center;
-  cursor: pointer;
-  white-space: nowrap;
-  width: 100%;
-}
-
-.mayo_item_title {
-  color: #fffeff;
 }
 
 /*

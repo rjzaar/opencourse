@@ -220,6 +220,124 @@ ul {
 
 
 // end vertical superfish mod for right side
+// sfr-vertical and sfr-menu is added to menu-local-tasks.html.twig
+/* adding sf-vertical class in addition to sf-menu creates a vertical menu */
+/* eg. <ul class="sf-menu sf-vertical"> ... */
+.sfr-vertical {
+  width: 75px;
+  /* If you want the width of the closed menu to expand to its
+  widest top-level menu item (like its "Supersubs" submenus do),
+  replace the width rule above with the following two rules. */
+  /*
+  min-width: 12em;
+  *width: 12em;
+  */
+}
+.sfr-vertical ul {
+  left: -100%; /* MY EDIT: THIS WORKS OK AT 2nd LEVEL */
+  top: 0;
+}
+.sfr-vertical > li {
+  float: none;
+}
+.sfr-vertical li {
+  width: 100%;
+}
+.sfr-vertical ul ul {
+  left: -100%; /* MY EDIT: THIS WORKS OK AT 3rd LEVEL BUT SHADOW IS MISPLACED */
+  top: 0;
+}
+/*** alter arrow directions ***/
+.sfr-vertical.sfr-arrows > li > .sfr-with-ul:after {
+  margin-top: -5px;
+  margin-right: -3px;
+  border-color: transparent;
+  //border-left-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+  //border-left-color: rgba(255,255,255,0.5);
+}
+.sfr-vertical.sfr-arrows li > .sfr-with-ul:focus:after,
+.sfr-vertical.sfr-arrows li:hover > .sfr-with-ul:after,
+.sfr-vertical.sfr-arrows .sfrHover > .sfr-with-ul:after {
+  //border-left-color: white;
+}
+// right tabs
+/*** ESSENTIAL STYLES ***/
+.sfr-menu, .sfr-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  // remove font-family so fa icons show up.
+  //font-family: sans-serif;
+  //font-size: 14px;
+  color: $primary;
+}
+.sfr-menu li {
+  position: relative;
+}
+.sfr-menu ul {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
+  z-index: 99;
+}
+.sfr-menu > li {
+  float: left;
+}
+.sfr-menu li:hover > ul, .sfr-menu li.sfrHover > ul {
+  display: block;
+}
+.sfr-menu a {
+  display: block;
+  position: relative;
+}
+.sfr-menu ul ul {
+  top: 0;
+  left: 100%;
+}
+/*** DEMO SKIN ***/
+.sfr-menu {
+  float: left;
+  margin-bottom: 1em;
+}
+.sfr-menu ul {
+  //box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  min-width: 15em; /* allow long menu items to determine submenu width */
+  *width: 15em; /* no auto sub width for IE7, see white-space comment below */
+  padding-top: 9px; /* OC move the text down a bit relative to icons */
+  padding-right: 6px;
+}
+.sfr-menu a {
+  /*border-left: 1px solid #fff;*/
+  //border-top: 1px solid #dFeEFF; /* fallback colour must use full shorthand */
+  //border-top: 1px solid rgba(255,255,255,0.5);
+  //padding: .75em 1em;
+  text-decoration: none;
+  zoom: 1; /* IE7 */
+}
+.sfr-menu a {
+  //color: #13a;
+}
+.sfr-menu li {
+  //background: #BDD2FF;
+  white-space: nowrap; /* no need for Supersubs plugin */
+  *white-space: normal; /* ...unless you support IE7 (let it wrap) */
+  -webkit-transition: background .2s;
+  transition: background .2s;
+}
+.sfr-menu ul li {
+  //background: #AABDE6;
+}
+.sfr-menu ul ul li {
+  //background: #9AAEDB;
+}
+.sfr-menu li:hover, .sfr-menu li.sfrHover {
+  //background: #CFDEFF;
+  /* only transition out, not in */
+  -webkit-transition: none;
+  transition: none;
+}
+
 
 //.oc_li_h {
 //  height: 47px;
@@ -244,6 +362,136 @@ ul {
   z-index: 1500;
 }
 
+// **************************************************
+//
+// End of styles for page.html.twig and its subtemplates.
+//
+// **************************************************
+
+// **************************************************
+//
+// Start of styles that span mulitple pages
+//
+// **************************************************
+
+// for: ds-1col--node-oc-doc-featured.html.twig
+// for: ds-1col--node-oc-doc-full.html.twig
+// ds-1col--node-oc-doc-embeded.html.twig
+// for: ds-1col--node-oc-doc.html.twig
+// ds-1col--node-oc-book-full.html.twig
+// ds-1col--node-oc-book-teaser.html.twig
+// node-oc-image-full.html.twig
+// node-oc-sequence-full.html.twig
+.oc_inject {
+  padding-left: 5px; //  for all xs devices.
+
+  @media screen and (max-width: map-get($grid-breakpoints, "sm")) {
+    padding-left: 5px; // As from sm devices,
+  }
+
+  @media screen and (max-width: map-get($grid-breakpoints, "md")) {
+    padding-left: 15px; //  for md devices.
+  }
+
+  @media screen and (max-width: map-get($grid-breakpoints, "lg")) {
+    padding-left: 250px; // for lg devices.
+    width: 900px;
+  }
+}
+
+// for: ds-1col--node-oc-doc-full.html.twig
+// for: ds-1col--node-oc-doc.html.twig
+// ds-1col--node-oc-book-full.html.twig
+// ds-1col--node-oc-book-teaser.html.twig
+// node-oc-image-full.html.twig
+// node-oc-sequence-full.html.twig
+.oc_col_width {
+  max-width: 700px !important;
+}
+
+// for: ds-1col--node-oc-doc.html.twig
+// ds-1col--node-oc-book-full.html.twig
+// ds-1col--node-oc-book-teaser.html.twig
+// node-oc-image-full.html.twig
+.oc_title {
+  // padding: 15px 15px 15px 15px;
+}
+
+// for: ds-1col--node-oc-doc-featured.html.twig
+// for: ds-1col--node-oc-doc-full.html.twig
+// ds-1col--node-oc-doc-embeded.html.twig
+// ds-1col--node-oc-book-full.html.twig
+// ds-1col--node-oc-book-teaser.html.twig
+.oc_item {
+  padding: 0 0 0 0 !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
+}
+
+
+// for: ds-1col--node-oc-doc-featured.html.twig
+// for: ds-1col--node-oc-doc-full.html.twig
+// for: ds-1col--node-oc-doc.html.twig
+// ds-1col--node-oc-book-full.html.twig
+// ds-1col--node-oc-book-teaser.html.twig
+// node-oc-image-full.html.twig
+.oc_right {
+  clear: right;
+  float: right;
+  width: 100%;
+  margin-left: 20px;
+  @media screen and (max-width: map-get($grid-breakpoints, "sm")) {
+    width: 100%; // As from sm devices,
+  }
+
+  @media screen and (max-width: map-get($grid-breakpoints, "md")) {
+    width: 50%; //  for md devices.
+  }
+
+  @media screen and (max-width: map-get($grid-breakpoints, "lg")) {
+    width: 40%; // for lg devices.
+  }
+}
+.oc_text {
+  line-height: 1.5em;
+  color: #60616d;
+  background-color: white;
+  font-size: 18px;
+}
+
+// for: ds-1col--node-oc-doc-full.html.twig
+// for: ds-1col--node-oc-doc.html.twig
+// ds-1col--node-oc-book-full.html.twig
+// ds-1col--node-oc-book-teaser.html.twig
+// node-oc-image-full.html.twig
+.oc_teaser_text {
+  text-transform: none;
+  line-height: 1em;
+  color: #60616d;
+  font-size: 14px;
+  width: 100%;
+}
+.oc_floatleft {
+  float: left;
+  padding-right: 30px;
+  padding-top: 15px;
+  line-height: 1.5em;
+  color: #60616d;
+  font-size: 18px;
+}
+.oc_summary {
+  background-color: white;
+}
+
+// for: ds-1col--node-oc-doc-full.html.twig
+// for: ds-1col--node-oc-doc.html.twig
+// ds-1col--node-oc-book-full.html.twig
+// ds-1col--node-oc-book-teaser.html.twig
+// node-oc-image-full.html.twig
+//@oc_left: 150px;
+$oc_panel_left: 15px;
+
 // For user--full.html.twig
 .oc_user_column {
   float: left;
@@ -256,6 +504,77 @@ ul {
   width: 75%;
 }
 
+// for: ds-1col--node-oc-doc-featured.html.twig
+// ds-1col--node-oc-doc-embeded.html.twig
+.oc_left_align {
+  text-align: left !important;
+}
+
+// for ds-1col--node-oc-doc-featured.html.twig
+// for ds-1col--node-oc-image-featured.html.twig
+.oc_accordian_container {
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  //display: none;
+}
+.oc_accordion_content a {
+  -webkit-transition: background-color .25s, color .15s, box-shadow .25s, opacity 0.25s, filter 0.25s, border 0.15s;
+  transition: background-color .25s, color .15s, box-shadow .15s, opacity .25s, filter .25s, border .15s
+}
+.oc_accordion_content {
+  cursor: auto;
+  display: none;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  @media screen and (max-width: map-get($grid-breakpoints, "sm")) {
+    display: block; // As from sm devices,
+  }
+
+  @media screen and (max-width: map-get($grid-breakpoints, "md")) {
+    display: block; //  for md devices.
+  }
+
+  @media screen and (max-width: map-get($grid-breakpoints, "lg")) {
+    display: block; // for lg devices.
+  }
+}
+.oc_btn_block {
+  display: inline-block;
+
+  @media screen and (max-width: map-get($grid-breakpoints, "sm")) {
+    display: none; // As from sm devices,
+  }
+
+  @media screen and (max-width: map-get($grid-breakpoints, "md")) {
+    display: none; //  for md devices.
+  }
+
+  @media screen and (max-width: map-get($grid-breakpoints, "lg")) {
+    display: none; // for lg devices.
+  }
+}
+.oc_show {
+  display: block !important;
+}
+.oc_btn_block {
+  border-style: solid;
+  border-bottom: 1px;
+  border-color: #e0e0e0;
+  outline: 0;
+  padding: 6px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none !important;
+  color: #fffeff;
+  background-color: #003853;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  width: 100%;
+}
 
 // for: node--oc-tasks--teaser.html.twig
 .oc_task_teaser {
@@ -295,627 +614,40 @@ ul {
   margin-top: 0;
 }
 
-
-//Not checked yet
-.new {
-  height: 0;
+// video-embed-iframe.html.twig
+.oc_iframe {
+  width: 400px;
+  height: 300px;
 }
 
-
-
-
-///* Clear floats after the columns */
-//.oc_user_row:after {
-//  content: "";
-//  display: table;
-//  clear: both;
-//}
-
-
-.oc_fixed {
-  position: relative;
-  top: -200px;
-}
-
-.oc_main {
-  width: 100%;
-  top: 0;
-  left: 0;
-  position: relative;
-  object-fit: inherit;
-  background-color: white;
-}
-
-.quicktabs-style-navlist ul.quicktabs-tabs li {
-  display: inherit;
-  background: inherit;
-  list-style-type: inherit;
-  padding: inherit;
-  white-space: inherit;
-}
-
-// vertical superfish mod for right side
-/* adding sf-vertical class in addition to sf-menu creates a vertical menu */
-/* eg. <ul class="sf-menu sf-vertical"> ... */
-.sf-verticalr {
-  width: 150px;
-  /* If you want the width of the closed menu to expand to its
-  widest top-level menu item (like its "Supersubs" submenus do),
-  replace the width rule above with the following two rules. */
-
-  /*
-  min-width: 12em;
-  *width: 12em;
-  */
-}
-
-.sf-verticalr ul {
-  left: -100%; /* MY EDIT: THIS WORKS OK AT 2nd LEVEL */
-  top: 0;
-}
-
-.sf-verticalr > li {
-  float: none;
-}
-
-.sf-verticalr li {
-  width: 100%;
-}
-
-.sf-verticalr ul ul li {
-  left: -200%; /* MY EDIT: THIS WORKS OK AT 3rd LEVEL BUT SHADOW IS MISPLACED */
-  top: 0;
-}
-
-/*** alter arrow directions ***/
-.sf-verticalr.sf-arrows > li > .sf-with-ul:after {
-  margin-top: -5px;
-  margin-right: -3px;
-  border-color: transparent;
-  border-left-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
-  border-left-color: rgba(255, 255, 255, 0.5);
-}
-
-.sf-verticalr.sf-arrows li > .sf-with-ul:focus:after,
-.sf-verticalr.sf-arrows li:hover > .sf-with-ul:after,
-.sf-verticalr.sf-arrows .sfHover > .sf-with-ul:after {
-  border-left-color: white;
-}
-
-
-.sfHoverR {
-  right: 0;
-  top: 0;
-}
-
-.sfHover {
-  left: 0;
-  top: 0;
-}
-
-
-// right tabs
-/*** ESSENTIAL STYLES ***/
-.sfr-menu, .sfr-menu * {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  // remove font-family so fa icons show up.
-  //font-family: sans-serif;
-  //font-size: 14px;
-  color: $primary;
-}
-
-.sfr-menu li {
-  position: relative;
-}
-
-.sfr-menu ul {
-  position: absolute;
-  display: none;
-  top: 100%;
-  left: 0;
-  z-index: 99;
-}
-
-.sfr-menu > li {
-  float: left;
-}
-
-.sfr-menu li:hover > ul, .sfr-menu li.sfrHover > ul {
-  display: block;
-}
-
-.sfr-menu a {
-  display: block;
-  position: relative;
-}
-
-.sfr-menu ul ul {
-  top: 0;
-  left: 100%;
-}
-
-/*** DEMO SKIN ***/
-.sfr-menu {
-  float: left;
-  margin-bottom: 1em;
-}
-
-.sfr-menu ul {
-  //box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
-  min-width: 15em; /* allow long menu items to determine submenu width */
-  *width: 15em; /* no auto sub width for IE7, see white-space comment below */
-  padding-top: 9px; /* OC move the text down a bit relative to icons */
-  padding-right: 6px;
-}
-
-.sfr-menu a {
-  /*border-left: 1px solid #fff;*/
-  //border-top: 1px solid #dFeEFF; /* fallback colour must use full shorthand */
-  //border-top: 1px solid rgba(255,255,255,0.5);
-  //padding: .75em 1em;
-  text-decoration: none;
-  zoom: 1; /* IE7 */
-}
-
-.sfr-menu a {
-  //color: #13a;
-}
-
-.sfr-menu li {
-  //background: #BDD2FF;
-  white-space: nowrap; /* no need for Supersubs plugin */
-  *white-space: normal; /* ...unless you support IE7 (let it wrap) */
-  -webkit-transition: background .2s;
-  transition: background .2s;
-}
-
-.sfr-menu ul li {
-  //background: #AABDE6;
-}
-
-.sfr-menu ul ul li {
-  //background: #9AAEDB;
-}
-
-.sfr-menu li:hover, .sfr-menu li.sfrHover {
-  //background: #CFDEFF;
-  /* only transition out, not in */
-  -webkit-transition: none;
-  transition: none;
-}
-
-/*** arrows (for all except IE7) **/
-.sfr-arrows .sfr-with-ul {
-  padding-right: 2.5em;
-  *padding-right: 1em; /* no CSS arrows for IE7 (lack pseudo-elements) */
-}
-
-/* styling for both css and generated arrows */
-.sfr-arrows .sfr-with-ul:after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 2px; /* MY EDIT: PLACES ARROWS AT MOST LEFT, IT WORKS OK */
-  margin-top: -3px;
-  height: 0;
-  width: 0;
-  /* order of following 3 rules important for fallbacks to work */
-  //border: 5px solid transparent;
-  //border-top-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
-  //border-top-color: rgba(255,255,255,0.5);
-}
-
-.sfr-arrows > li > .sfr-with-ul:focus:after,
-.sfr-arrows > li:hover > .sfr-with-ul:after,
-.sfr-arrows > .sfrHover > .sfr-with-ul:after {
-  //border-top-color: white; /* IE8 fallback colour */
-}
-
-/* styling for right-facing arrows */
-.sfr-arrows ul .sfr-with-ul:after {
-  margin-top: -5px;
-  margin-right: -3px;
-  border-color: transparent;
-  //border-left-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
-  //border-left-color: rgba(255,255,255,0.5);
-}
-
-.sfr-arrows ul li > .sfr-with-ul:focus:after,
-.sfr-arrows ul li:hover > .sfr-with-ul:after,
-.sfr-arrows ul .sfrHover > .sfr-with-ul:after {
-  //border-left-color: white;
-}
-
-/* adding sf-vertical class in addition to sf-menu creates a vertical menu */
-/* eg. <ul class="sf-menu sf-vertical"> ... */
-.sfr-vertical {
-  width: 75px;
-  /* If you want the width of the closed menu to expand to its
-  widest top-level menu item (like its "Supersubs" submenus do),
-  replace the width rule above with the following two rules. */
-
-  /*
-  min-width: 12em;
-  *width: 12em;
-  */
-}
-
-.sfr-vertical ul {
-  left: -100%; /* MY EDIT: THIS WORKS OK AT 2nd LEVEL */
-  top: 0;
-}
-
-.sfr-vertical > li {
-  float: none;
-}
-
-.sfr-vertical li {
-  width: 100%;
-}
-
-.sfr-vertical ul ul {
-  left: -100%; /* MY EDIT: THIS WORKS OK AT 3rd LEVEL BUT SHADOW IS MISPLACED */
-  top: 0;
-}
-
-/*** alter arrow directions ***/
-.sfr-vertical.sfr-arrows > li > .sfr-with-ul:after {
-  margin-top: -5px;
-  margin-right: -3px;
-  border-color: transparent;
-  //border-left-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
-  //border-left-color: rgba(255,255,255,0.5);
-}
-
-.sfr-vertical.sfr-arrows li > .sfr-with-ul:focus:after,
-.sfr-vertical.sfr-arrows li:hover > .sfr-with-ul:after,
-.sfr-vertical.sfr-arrows .sfrHover > .sfr-with-ul:after {
-  //border-left-color: white;
-}
-
-//Old OC_theme styles
-//@oc_left: 150px;
-$oc_panel_left: 15px;
-
-.oc_inject_sm {
-  padding-left: 5px; // As from sm devices,
-}
-
-.oc_video_inject_sm {
-
-  padding-left: 5px; // As from sm devices,
-}
-
-.oc_accordion_content_sm {
-  cursor: auto;
-
-  position: relative;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.oc_accordian_container_sm {
-  width: 100%;
-  cursor: pointer;
-  position: relative;
-  display: none;
-}
-
-.oc_active {
-  display: inline-block;
-}
-
-.oc_btn_block_sm {
-  display: none; // As from sm devices,
-}
-
-.oc_not_btn_sm {
-  display: inline-block; // As from sm devices,
-}
-
-.oc_right_sm {
-  clear: right;
-  float: right;
-  width: 100%;
-  margin-left: 20px;
-
-}
-
-.oc_inject {
-  padding-left: 5px; //  for all xs devices.
-
-  @media screen and (max-width: map-get($grid-breakpoints, "sm")) {
-    padding-left: 5px; // As from sm devices,
-  }
-
-  @media screen and (max-width: map-get($grid-breakpoints, "md")) {
-    padding-left: 15px; //  for md devices.
-  }
-
-  @media screen and (max-width: map-get($grid-breakpoints, "lg")) {
-    padding-left: 250px; // for lg devices.
-    width: 900px;
-  }
-}
-
-.oc_video_inject {
-  padding-left: 0; //  for all xs devices.
-
-  @media screen and (max-width: map-get($grid-breakpoints, "sm")) {
-    padding-left: 5px; // As from sm devices,
-  }
-
-  @media screen and (max-width: map-get($grid-breakpoints, "md")) {
-    padding-left: 15px; //  for md devices.
-  }
-
-  @media screen and (max-width: map-get($grid-breakpoints, "lg")) {
-    padding-left: 150px; // for lg devices.
-  }
-}
-
-.oc_accordian_container {
-  width: 100%;
-  cursor: pointer;
-  position: relative;
-  //display: none;
-}
-
-.oc_left_align {
-  text-align: left !important;
-}
-
-.oc_accordion_content a {
-  -webkit-transition: background-color .25s, color .15s, box-shadow .25s, opacity 0.25s, filter 0.25s, border 0.15s;
-  transition: background-color .25s, color .15s, box-shadow .15s, opacity .25s, filter .25s, border .15s
-}
-
-.oc_accordion_content {
-  cursor: auto;
-  display: none;
-  position: relative;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  @media screen and (max-width: map-get($grid-breakpoints, "sm")) {
-    display: block; // As from sm devices,
-  }
-
-  @media screen and (max-width: map-get($grid-breakpoints, "md")) {
-    display: block; //  for md devices.
-  }
-
-  @media screen and (max-width: map-get($grid-breakpoints, "lg")) {
-    display: block; // for lg devices.
-  }
-}
-
-.oc_btn_block {
-  display: inline-block;
-
-  @media screen and (max-width: map-get($grid-breakpoints, "sm")) {
-    display: none; // As from sm devices,
-  }
-
-  @media screen and (max-width: map-get($grid-breakpoints, "md")) {
-    display: none; //  for md devices.
-  }
-
-  @media screen and (max-width: map-get($grid-breakpoints, "lg")) {
-    display: none; // for lg devices.
-  }
-}
-
+// ds-1col--node-oc-doc-featured.html.twig
 .oc_not_btn {
   display: none;
-
   .new_two {
     float: left;
   }
-
   @media screen and (max-width: map-get($grid-breakpoints, "sm")) {
     display: inline-block; // As from sm devices,
   }
-
   @media screen and (max-width: map-get($grid-breakpoints, "md")) {
     display: inline-block; //  for md devices.
   }
-
   @media screen and (max-width: map-get($grid-breakpoints, "lg")) {
     display: inline-block; // for lg devices.
   }
 }
-
-.oc_show {
-  display: block !important;
+.oc_item_title {
+  padding-top: 15px !important;
+  white-space: normal;
+  color: #fffeff;
 }
 
-.oc_right {
-  clear: right;
-  float: right;
-  width: 100%;
-  margin-left: 20px;
-  @media screen and (max-width: map-get($grid-breakpoints, "sm")) {
-    width: 100%; // As from sm devices,
-  }
-
-  @media screen and (max-width: map-get($grid-breakpoints, "md")) {
-    width: 50%; //  for md devices.
-  }
-
-  @media screen and (max-width: map-get($grid-breakpoints, "lg")) {
-    width: 40%; // for lg devices.
-  }
-}
-
-.oc-book-title {
-  font-style: italic;
-}
-
-.oc-hider:hover .oc-hidee {
-  display: block !important;
-}
-
-.oc-hidee {
-  display: none;
-}
-
-.oc-row-class {
-  float: left;
-  position: relative;
-  width: 300px;
-  height: 460px;
-}
-
-.oc-doc-view {
-  padding-left: 25px;
-
-}
-
-.oc-fbt-body {
-  // display:none;
-  position: absolute;
-  top: 170px;
-  left: 30px;
-  width: 240px;
-}
-
-.oc-fbt-body:hover {
-  display: none;
-}
-
-.oc-fbt-title {
-  // display:none;
-  position: absolute;
-  top: -13px;
-  left: 15px;
-  width: 240px;
-}
-
-.oc-ftb-title:hover {
-  display: none;
-}
-
-.oc-fbt-author {
-  // display:none;
-  position: absolute;
-  top: 140px;
-  left: 30px;
-  width: 240px;
-}
-
-div.oc-row-class:hover + p.oc-fbt-author {
-  display: block;
-}
-
-.oc-fbt-author:hover {
-  display: block;
-}
-
-.oc-hidee-box {
-  position: absolute;
-  color: black;
-  top: 80px;
-  left: 15px;
-  width: 270px;
-  height: 320px;
-  // border: 3px solid #73AD21;
-  background-color: #ffffff;
-  font-size: 14px !important;
-  padding: 10px 10px 10px 10px;
-  opacity: 0.8;
-  filter: alpha(opacity=80); /* For IE8 and earlier */
-}
-
-
-.oc-row-class-seq {
-  position: relative;
-  width: 300px;
-  height: 220px;
-  padding-left: 150px;
-  box-sizing: unset !important;
-}
-
-.oc-fbt-body-seq {
-  // display:none;
-  position: absolute;
-  top: 70px;
-  left: 465px;
-  width: 500px;
-}
-
-.oc-fbt-title-seq {
-  // display:none;
-  position: absolute;
-  top: -13px;
-  left: 0;
-  width: 240px;
-}
-
-.oc-fbt-author-seq {
-  // display:none;
-  position: absolute;
-  top: 140px;
-  left: 30px;
-  width: 240px;
-}
-
-div.oc-row-class-seq:hover + p.oc-fbt-author-seq {
-  display: block;
-}
-
-.oc-fbt-author-seq:hover {
-  display: block;
-}
-
-.oc-hidee-box-seq {
-  position: absolute;
-  color: black;
-  top: 15px;
-  left: 465px;
-  width: 500px;
-  height: 200px;
-  // border: 3px solid #73AD21;
-  background-color: #ffffff;
-  font-size: 14px !important;
-  padding: 10px 10px 10px 10px;
-  opacity: 0.8;
-  filter: alpha(opacity=80); /* For IE8 and earlier */
-}
-
-.oc-panel-left {
-  padding-left: $oc_panel_left;
-}
-
-.oc-title {
-  color: #0071B3;
-  text-transform: uppercase;
-  font-size: 20px;
-  letter-spacing: .04em;
-  font-weight: bold;
-  background-image: none;
-  padding-top: 15px;
-}
-
-.oc-comment {
-  padding-right: 30px;
-  width: 80%;
-}
-
+// field--node--title.html.twig
 .oc_page_title {
   color: #ea4846;
 }
 
-.oc_text {
-  line-height: 1.5em;
-  color: #60616d;
-  background-color: white;
-  font-size: 18px;
-}
-
+// node--oc-sequence--full.html.twig
 .oc_summary_text {
   line-height: 1.5em;
   color: #60616d;
@@ -923,28 +655,7 @@ div.oc-row-class-seq:hover + p.oc-fbt-author-seq {
   width: 600px;
 }
 
-.oc_teaser_text {
-  text-transform: none;
-  line-height: 1em;
-  color: #60616d;
-  font-size: 14px;
-  width: 100%;
-}
-
-.oc_floatleft {
-  float: left;
-  padding-right: 30px;
-  padding-top: 15px;
-  line-height: 1.5em;
-  color: #60616d;
-
-  font-size: 18px;
-}
-
-.oc_summary {
-  background-color: white;
-}
-
+// node--oc-image--full.html.twig
 .oc_right50 {
   clear: right;
   float: right;
@@ -952,49 +663,7 @@ div.oc-row-class-seq:hover + p.oc-fbt-author-seq {
   margin-left: 20px;
 }
 
-iframe {
-  width: 400px;
-  height: 300px;
-}
-
-.oc_red {
-  background-color: blue !important
-}
-
-.edgy-1col.node-formation-doc {
-  background-color: white !important;
-  max-width: 100% !important;
-  padding-left: -30px !important;
-  padding-right: -30px !important;
-}
-
-#main-wrapper.oa-layout-fluid {
-  max-width: 100% !important;
-}
-
-.main.container.row {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-
-}
-
-.oc_layout {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-// .oc_main {
-//   padding-left: 15px !important;
-//   padding-right: 15px !important;
-// }
-
-.oc_item {
-  padding: 0 0 0 0 !important;
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
-  background-attachment: fixed !important;
-}
-
+// ds-1col--node-oc-image-featured.html.twig
 .oc_1 {
   // (Featured)
   height: 400px;
@@ -1003,12 +672,7 @@ iframe {
   background-attachment: fixed !important;
   background-size: 100%;
 }
-
-.oc_2 {
-  height: 10px;
-}
-
-.oc-image-featured-box {
+.oc_image_featured_box {
   position: absolute;
   color: black;
   bottom: 15px;
@@ -1022,57 +686,9 @@ iframe {
   opacity: 0.8;
   filter: alpha(opacity=80); /* For IE8 and earlier */
 }
-
 .oc_container {
   position: relative;
   height: 400px;
-
-}
-
-.oc_col_width {
-  max-width: 700px !important;
-}
-
-.oc_edit {
-  display: none;
-}
-
-//.oc_edit:after {
-//  content: Edit
-//}
-
-.oc_title {
-  // padding: 15px 15px 15px 15px;
-}
-
-.oc_item_title {
-  padding-top: 15px !important;
-  white-space: normal;
-  color: #fffeff;
-
-}
-
-.oc_btn_block {
-  border-style: solid;
-  border-bottom: 1px;
-  border-color: #e0e0e0;
-
-  outline: 0;
-  padding: 6px 16px;
-  vertical-align: middle;
-  overflow: hidden;
-  text-decoration: none !important;
-  color: #fffeff;
-  background-color: #003853;
-  text-align: center;
-  cursor: pointer;
-  white-space: nowrap;
-  width: 100%;
-
-}
-
-.mayo_item_title {
-  color: #fffeff;
 }
 
 /*
