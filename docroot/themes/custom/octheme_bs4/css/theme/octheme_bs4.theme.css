@@ -1,6 +1,7 @@
 .container {
   margin-left: 0;
   margin-right: 0;
+  padding-left: 0;
   width: 100%;
   max-width: none !important;
 }
@@ -8,6 +9,26 @@
 .oc_navbar {
   margin-bottom: 0 !important;
   border-radius: 0;
+  z-index: 1000;
+}
+
+.oc_logo {
+  background-color: white;
+  border-radius: 0px 5px 5px 0px;
+  margin-top: 20px;
+  width: 300px;
+  height: 80px;
+  margin-left: 0px;
+  padding-left: 60px;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+.nav-link {
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+  margin-left: 20px;
 }
 
 .navbar-nav {
@@ -138,7 +159,7 @@ ul {
   /* Set a width if you like */
   position: fixed;
   left: 0;
-  top: 50px;
+  top: 10px;
   z-index: 1500;
   height: 340px;
 }
@@ -160,10 +181,6 @@ ul {
 
 .oc_icon_back {
   color: #930c29 !important;
-}
-
-.oc_deleteme {
-  color: green;
 }
 
 /* adding sf-vertical class in addition to sf-menu creates a vertical menu */

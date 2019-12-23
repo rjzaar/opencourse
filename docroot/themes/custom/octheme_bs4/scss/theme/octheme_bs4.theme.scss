@@ -19,6 +19,38 @@ $danger:        $red ;
 $light:         $gray-100 ;
 $dark:          $gray-800 ;
 
+// Structure of page.html.twig
+// Header: navbar, oc_navbar, oc_darken
+//// container: container
+////////// oc_logo <a>
+//////////// oc_branding_logo <img>
+////// navbar-collapse
+//////////////// nav-link <a>
+// oc_title_image_wrapper oc_darken_image
+//// oc_title_image img-fluid <img>
+// oc_header oc_darken_title oc_head_imageh
+//// container
+//////////// oc_heading oc_vinject <h1> This is the page heading.
+
+
+
+// LOGO
+$oc_logo_top_margin: 20px; //Distance from top to start of logo
+$oc_logo_left_padding: 60px; //Distance from left to start of logo with background color
+$oc_logo_left_margin: 0px; //Distance from left to start of background color
+$oc_logo_top_padding: 10px; //Logo top padding
+// More in .oc_logo
+
+// Right navigation links, eg Login and Contact Us
+$oc_navlink_color: black;
+$oc_navlink_bg_color: white;
+$oc_navlink_border_radius: 5px;
+$oc_navlink_gap: 20px; //gap between links, ie margin-left
+
+
+//Left navigation buttons
+
+
 // Superfish variables. These are for the vertical buttons on left and right.
 $superfish-1-color: #001010;
 $superfish-1-background-color-level-first: #f0f0f0;
@@ -31,6 +63,7 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
 .container {
   margin-left: 0;
   margin-right: 0;
+  padding-left: 0;
   width: 100%;
   max-width: none !important;
 }
@@ -38,6 +71,24 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
 .oc_navbar {
   margin-bottom: 0 !important;
   border-radius: 0;
+  z-index: 1000; // Needs to be in front of the image after it so links work.
+}
+.oc_logo {
+  background-color: white;
+  border-radius: 0px 5px 5px 0px;
+  margin-top: $oc_logo_top_margin;
+  width: 300px;
+  height: 80px;
+  margin-left: $oc_logo_left_margin;
+  padding-left: $oc_logo_left_padding;
+  padding-top: $oc_logo_top_padding;
+  padding-right: 10px;
+}
+.nav-link {
+  color: $oc_navlink_color;
+  background-color: $oc_navlink_bg_color;
+  border-radius: $oc_navlink_border_radius;
+  margin-left: $oc_navlink_gap;
 }
 // This darkens the title and image.
 .oc_darken_image {
@@ -46,6 +97,7 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
 .oc_darken_title {
   //  background-color: rgba(87, 87, 87, .25);
 }
+
 //navigation text, eg login and contact us
 .navbar-nav {
   font-family: Montserrat, sans-serif;
@@ -181,7 +233,7 @@ ul {
   position: fixed;
   //position:absolute;
   left: 0;
-  top: 50px;
+  top: 10px;
   z-index: 1500;
   height: 340px
 }
@@ -204,9 +256,7 @@ ul {
 .oc_icon_back {
   color: darken($primary, 25%) !important;
 }
-.oc_deleteme {
-  color: green;
-}
+
 // These don't work.
 //.group_nav_text a {
 //  position: relative;
