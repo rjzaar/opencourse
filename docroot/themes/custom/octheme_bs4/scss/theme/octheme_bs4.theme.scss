@@ -1,5 +1,6 @@
 // oc_ less for css
 // Note adding a font family could affect the fa icons.
+// Can be useful: https://www.cheatography.com/natshah/cheat-sheets/thinking-in-bootstrap-4-theming-with-vartheme-bs4/
 
 @import "../../node_modules/bootstrap/scss/functions";
 // Bootstrap functions.
@@ -9,6 +10,14 @@
 // octheme_bs4 variables.
 @import "../mixins"; // octheme_bs4 mixins.
 
+$primary:       #ee3159 ;
+$secondary:     #251b3d ;
+$success:       $green ;
+$info:          $cyan ;
+$warning:       $yellow ;
+$danger:        $red ;
+$light:         $gray-100 ;
+$dark:          $gray-800 ;
 
 // Superfish variables. These are for the vertical buttons on left and right.
 $superfish-1-color: #001010;
@@ -30,10 +39,13 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
   margin-bottom: 0 !important;
   border-radius: 0;
 }
-.oc_head_bgc {
-  background-color: rgba(87, 87, 87, .25);
+// This darkens the title and image.
+.oc_darken_image {
+//  background-color: rgba(87, 87, 87, .25);
 }
-
+.oc_darken_title {
+  //  background-color: rgba(87, 87, 87, .25);
+}
 //navigation text, eg login and contact us
 .navbar-nav {
   font-family: Montserrat, sans-serif;
@@ -177,7 +189,7 @@ ul {
 .oc_group_nav_text {
   display: inline-block;
   //float: left;
-  width: 200px;
+ // width: 200px;
   position: relative;
   top:0px;
   line-height: 1;
@@ -190,7 +202,10 @@ ul {
   color: white !important;
 }
 .oc_icon_back {
-  color: $primary !important;
+  color: darken($primary, 25%) !important;
+}
+.oc_deleteme {
+  color: green;
 }
 // These don't work.
 //.group_nav_text a {

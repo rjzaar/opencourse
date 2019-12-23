@@ -10,10 +10,6 @@
   border-radius: 0;
 }
 
-.oc_head_bgc {
-  background-color: rgba(87, 87, 87, 0.25);
-}
-
 .navbar-nav {
   font-family: Montserrat, sans-serif;
   font-weight: 700;
@@ -149,7 +145,6 @@ ul {
 
 .oc_group_nav_text {
   display: inline-block;
-  width: 200px;
   position: relative;
   top: 0px;
   line-height: 1;
@@ -164,7 +159,11 @@ ul {
 }
 
 .oc_icon_back {
-  color: #007bff !important;
+  color: #930c29 !important;
+}
+
+.oc_deleteme {
+  color: green;
 }
 
 /* adding sf-vertical class in addition to sf-menu creates a vertical menu */
@@ -212,7 +211,7 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  color: #007bff;
+  color: #ee3159;
 }
 
 .sfr-menu li {

@@ -420,31 +420,32 @@ function octheme_bs4_preprocess_views_bootstrap_grid(array &$vars)
 }
 
 //Added functions
-//function octheme_bs4_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id = NULL)
-//{
-//  // Work-around for a core bug affecting admin themes. See issue #943212.
-//  if (isset($form_id)) {
-//    return;
-//  }
-//
-//  $form['foo_example'] = array(
-//    '#type' => 'textfield',
-//    '#title' => t('OC Theme settings'),
-//    '#default_value' => theme_get_setting('foo_example'),
-//    '#description' => t("Place this text in the widget spot on your site."),
-//  );
-//  $form['oc_head_image'] = array(
-//    '#type' => 'entity_autocomplete',
-//    '#title' => t('OC Theme heading background image'),
-//    '#description' => t("Choose the background image."),
-//    '#target_type' => 'node',
-////    '#tags' => TRUE,
-////    '#selection_handler' => 'default', // Optional. The default selection handler is pre-populated to 'default'.
-//    '#selection_settings' => array(
-//      'target_bundles' => array('oc_image')
-//    ),
-//  );
-//}
+function octheme_bs4_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id = NULL)
+{
+  // Work-around for a core bug affecting admin themes. See issue #943212.
+  if (isset($form_id)) {
+    return;
+  }
+
+  $form['foo_example'] = array(
+    '#type' => 'textfield',
+    '#title' => t('OC Theme settings'),
+    '#default_value' => theme_get_setting('foo_example'),
+    '#description' => t("Place this text in the widget spot on your site."),
+  );
+  $form['oc_head_image'] = array(
+    '#type' => 'entity_autocomplete',
+    '#title' => t('OC Theme heading background image'),
+    '#description' => t("Choose the background image."),
+    '#target_type' => 'node',
+//    '#tags' => TRUE,
+//    '#selection_handler' => 'default', // Optional. The default selection handler is pre-populated to 'default'.
+    '#selection_settings' => array(
+      'target_bundles' => array('oc_image')
+    ),
+  );
+}
+
 
 /**
  * @param $variables

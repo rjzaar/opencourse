@@ -67,7 +67,7 @@
         'mb-4',
         'border-bottom',
         'shadow-sm',
-        'oc_head_bgc',
+        'oc_darken',
         'oc_navbar',
       ]
     %}
@@ -99,9 +99,9 @@
 
 {# octheme start 1#}
 {% if oc_head_image %}
-  <div class="oc_title_image_wrapper oc_head_bgc">
+  <div class="oc_title_image_wrapper oc_darken_image">
 
-    <img class="oc_title_image img-responsive" src="{{ oc_head_image }}"  >
+    <img class="oc_title_image img-fluid" src="{{ oc_head_image }}"  >
 
   </div>
 {%  endif %}
@@ -109,7 +109,7 @@
 
 <!-- Set your background image for this header on the line below. -->
 {#oc_title_image#}
-<div class="oc_header oc_head_bgc {% if oc_head_image %}oc_head_imageh{% else %}oc_head_noimageh{% endif %}">
+<div class="oc_header oc_darken_title {% if oc_head_image %}oc_head_imageh{% else %}oc_head_noimageh{% endif %}">
   {#style="background-image: url('{{ oc_title_image}}')"#}
 
   {#{{ node.field_oc_title_image }}#}

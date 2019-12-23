@@ -5,6 +5,28 @@
 // You can change them in octheme_bs4 in the vartheme_bs4-variables.sass
 //
 
+$primary:       #ee3159 !default;
+$secondary:     #251b3d !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-800 !default;
+//Here are all the variables for the octheme_bs4 theme
+// Colors
+$primary-shade: #A8CF45;
+$primary-light: lighten($primary-shade, 37%);
+$primary-dark: darken($primary-shade, 12%);
+$accent-shade: #0079C0;
+$accent-light: lighten($accent-shade, 37%);
+$accent-dark: darken($accent-shade, 12%);
+
+// Comments
+$comment-spacer-x: 1.25em;
+$comment-spacer-y: 1.25em;
+
+
 // View Mode Inventory (VMI).
 // -----------------------------------------------------------------------------
 $grid-gutter-width: 30px;
