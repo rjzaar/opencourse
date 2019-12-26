@@ -62,92 +62,63 @@
 {# Navbar #}
 {% if page.navigation or page.navigation_collapsible %}
   {% block navbar %}
-    {%
-      set navbar_classes = [
-        'mb-4',
-        'shadow-sm',
-        'oc_darken',
-        'oc_navbar',
-      ]
-    %}
+    {% set navbar_classes = [
+      'mb-4',
+      'shadow-sm',
+      'oc_darken',
+      'oc_header',
+    ] %}
     {#       'border-bottom', removed from above#}
-    <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
-      {% if container_navbar %}
-        <div class="container">
-      {% endif %}
-      <div class="navbar-brand mr-md-auto">
-        {{ page.navigation }}
+    {# octheme start 1 | These divs will create the header space. The other header elements fit in this space using position: absolute. #}
+    <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner"
+      {% if oc_head_image %}style="background: url({{ oc_head_image }}); background-size: cover; height: 100vh;"
+        {% else %}class="oc_head_noimageh"{% endif %}>
+      <div class="oc_navbar">
+        <div class="navbar-brand mr-md-auto">
+          {{ page.navigation }}
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse"
+                aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        {% if page.navigation_collapsible %}
+        <div class="oc_nav_links">
+          {{ page.navigation_collapsible }}
+        </div>
       </div>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
+      {% endif %}
 
-      {% if page.navigation_collapsible %}
-        <div id="navbar-collapse" class="navbar-collapse collapse">
-          <div class="navbar-nav ml-auto">
-            {{ page.navigation_collapsible }}
+      <div class="row h-100 justify-content-center align-items-center oc_title_row">
+        {% if node %}
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            {#                  <div class="post-heading oc_heading">#}
+            <h1 class="oc_heading oc_vinject">{{ node.label }}</h1>
+            {#                  </div>#}
           </div>
-        </div>
-      {% endif %}
-      {% if container_navbar %}
-        </div>
-      {% endif %}
+        {% else %}
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="site-heading">
+              <h1>{% if node.label %} {{ node.label }} {% else %} {{ site_name }} {% endif %}</h1>
+              {% if site_slogan %}
+                <hr class="small">
+                <span class="subheading">
+                {{ site_slogan }}
+              </span>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
     </header>
   {% endblock %}
 {% endif %}
 
-{# octheme start 1#}
-{% if oc_head_image %}
-  <div class="oc_title_image_wrapper oc_darken_image">
 
-    <img class="oc_title_image img-fluid" src="{{ oc_head_image }}"  >
 
-  </div>
-{%  endif %}
-<!-- Page Header -->
 
-<!-- Set your background image for this header on the line below. -->
-{#oc_title_image#}
-<div class="oc_header oc_darken_title {% if oc_head_image %}oc_head_imageh{% else %}oc_head_noimageh{% endif %}">
-  {#style="background-image: url('{{ oc_title_image}}')"#}
 
-  {#{{ node.field_oc_title_image }}#}
-  <div class="container">
-    <div class="row">
-      {% if node %}
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          <div class="post-heading oc_heading">
-
-            <h1 class="oc_heading oc_vinject">{{ node.label }}</h1>
-            {#{%  if node.field_oc_title_image %}#}
-            {#{{ oc_title_image }}#}
-            {#{% else %}#}
-            {#no title image#}
-            {#{% endif %}#}
-            {% if display_submitted %}
-              <span class="meta">
-                {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-              </span>
-            {% endif %}
-          </div>
-        </div>
-      {% else %}
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          <div class="site-heading">
-            <h1>{% if node.label %} {{ node.label }} {% else %} {{ site_name }} {% endif %}</h1>
-            {% if site_slogan %}
-              <hr class="small">
-              <span class="subheading">
-                {{ site_slogan }}
-              </span>
-            {% endif %}
-          </div>
-        </div>
-      {% endif %}
-    </div>
-  </div>
-</div>
 {# octheme end 1#}
 
 {# Header print #}
@@ -157,7 +128,7 @@
       <div class="col-sm-12">
         {# Logo print #}
         {% if logo_print %}
-          <img class="logo pull-left d-none d-print-inline-block" src="{{ logo_print }}" />
+          <img class="logo pull-left d-none d-print-inline-block" src="{{ logo_print }}"/>
         {% endif %}
       </div>
     </div>
@@ -167,9 +138,15 @@
 {# octheme start 2 #}
 {# group navigation #}
 {% if oc_group %}
-  <script>function ocexpand(x) {x.style.width = "250px";} function occontract(x) {x.style.width = "45px";}</script>
+  <script>function ocexpand(x) {
+      x.style.width = "250px";
+    }
+
+    function occontract(x) {
+      x.style.width = "45px";
+    }</script>
   <div class="oc_group_nav_wrapper block-superfish block-superfishtest">
-    <div onmouseover="ocexpand(this)" onmouseout="occontract(this)"class="oc_group_nav">
+    <div onmouseover="ocexpand(this)" onmouseout="occontract(this)" class="oc_group_nav">
       {{ oc_contents }}
       <ul id="superfish-test" class="sf-vertical sf-test sf-style-white sf-js-enabled sf-shadow">
         {#{% for id in content.oc_items|slice(0, 5) %}#}
@@ -211,74 +188,49 @@
           {%- block oc_name -%}Images{%- endblock -%}
         {% endembed %}
 
-    {% if node.type.value[0]['target_id']=="oc_sequence" or node.type.value[0]['target_id']=="oc_doc"  %} <li class="sf-depth-1 menuparent oc_pointer" onclick="showquiz()">
+        {% if node.type.value[0]['target_id']=="oc_sequence" or node.type.value[0]['target_id']=="oc_doc" %}
+        <li class="sf-depth-1 menuparent oc_pointer" onclick="showquiz()">
                      <span class="fa-stack fa-lg ">
                   <i class="fa fa-circle fa-stack-2x oc_icon_back"></i>
                   <i class="fa fa-question-circle fa-stack-2x fa-inverse"></i>
                         </span>
-          <ul class="sf-hidden oc_group_nav_text" >
+          <ul class="sf-hidden oc_group_nav_text">
             <li class="sf-depth-2 sf-no-children">
               Interactives
             </li>
 
           </ul>
           <script>
-              function showquiz() {
-                  var x = document.getElementsByClassName("oc_quiz");
-                  for(var i = 0; i < x.length; i++) {
-                      if (x[i].style.display == "none") {
-                          x[i].style.display = "block";
-                      } else {
-                          x[i].style.display = "none";
-                      }
-                  }
-
+            function showquiz() {
+              var x = document.getElementsByClassName("oc_quiz");
+              for (var i = 0; i < x.length; i++) {
+                if (x[i].style.display == "none") {
+                  x[i].style.display = "block";
+                } else {
+                  x[i].style.display = "none";
+                }
               }
+            }
           </script>{% endif %}
-
         </li>
       </ul>
-      {#<a href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/docs" class=""><span class="fa-stack fa-lg">#}
-      {#<i class="fa fa-square fa-stack-2x oc_icon_back"></i>#}
-      {#<i class="fa fa-file fa-stack-1x fa-inverse"></i>#}
-      {#</span>Docs</a>#}
-      {#<a href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/books" class=""><span class="fa-stack fa-lg">#}
-      {#<i class="fa fa-square fa-stack-2x oc_icon_back"></i>#}
-      {#<i class="fa fa-book fa-stack-1x fa-inverse"></i>#}
-      {#</span>Books</a>#}
-      {#<a href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/links" class="" ><span class="fa-stack fa-lg">#}
-      {#<i class="fa fa-square fa-stack-2x oc_icon_back"></i>#}
-      {#<i class="fa fa-link fa-stack-1x fa-inverse"></i>#}
-      {#</span>Links</a>#}
-      {#<a href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/images" class=""><span class="fa-stack fa-lg">#}
-      {#<i class="fa fa-square fa-stack-2x oc_icon_back"></i>#}
-      {#<i class="fa fa-image fa-stack-1x fa-inverse"></i>#}
-      {#</span>Images</a>#}
     </div>
   </div>
 {% endif %}
-
-{#{% if page.group %}#}
-    {#{% block group %}#}
-        {#<div class="group_nav">#}
-            {#{{ page.group }}#}
-        {#</div>#}
-    {#{% endblock %}#}
-{#{% endif %}#}
 {# octheme end 2 #}
 
 {# hero_slider #}
 {% if page.hero_slider %}
-{% block hero_slider %}
-  <div class="hero_slider mt-n4">
-    {{ page.hero_slider }}
-  </div>
-{% endblock %}
+  {% block hero_slider %}
+    <div class="hero_slider mt-n4">
+      {{ page.hero_slider }}
+    </div>
+  {% endblock %}
 {% endif %}
 
 {# Main #}
 {% block main %}
-  <div role="main" class="main-container {{ container }} js-quickedit-main-content">
+  <div role="main" class="main-container js-quickedit-main-content">
     <div class="row">
 
       {# Header #}
@@ -300,14 +252,12 @@
       {% endif %}
 
       {# Content #}
-      {%
-        set content_classes = [
-          page.sidebar_first and page.sidebar_second ? 'col-sm-6',
-          page.sidebar_first and page.sidebar_second is empty ? 'col-sm-9',
-          page.sidebar_second and page.sidebar_first is empty ? 'col-sm-9',
-          page.sidebar_first is empty and page.sidebar_second is empty ? 'col-sm-12'
-        ]
-      %}
+      {% set content_classes = [
+        page.sidebar_first and page.sidebar_second ? 'col-sm-6',
+        page.sidebar_first and page.sidebar_second is empty ? 'col-sm-9',
+        page.sidebar_second and page.sidebar_first is empty ? 'col-sm-9',
+        page.sidebar_first is empty and page.sidebar_second is empty ? 'col-sm-12',
+      ] %}
       <section{{ content_attributes.addClass(content_classes) }}>
 
         {# Highlighted #}

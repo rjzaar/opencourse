@@ -1,78 +1,5 @@
-.container {
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 0;
-  width: 100%;
-  max-width: none !important;
-}
-
-.oc_navbar {
-  margin-bottom: 0 !important;
-  border-radius: 0;
-  z-index: 1000;
-}
-
-.oc_logo {
-  background-color: white;
-  border-radius: 0px 5px 5px 0px;
-  margin-top: 20px;
-  width: 300px;
-  height: 80px;
-  margin-left: 0px;
-  padding-left: 60px;
-  padding-top: 10px;
-  padding-right: 10px;
-}
-
-.nav-link {
-  color: black;
-  background-color: white;
-  border-radius: 5px;
-  margin-left: 20px;
-}
-
-.navbar-nav {
-  font-family: Montserrat, sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 15.5px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-decoration: none;
-  line-height: 1em;
-}
-
-.oc_title_image_wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-.oc_title_image {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  left: 0;
-  position: relative;
-  -o-object-fit: inherit;
-     object-fit: inherit;
-  z-index: -100;
-}
-
 .oc_header {
-  width: 100%;
-  top: 0;
-  left: 0;
-  position: relative;
-  -o-object-fit: inherit;
-     object-fit: inherit;
-  z-index: 10;
-}
-
-.oc_head_imageh {
-  height: 90vh;
+  margin-bottom: 0 !important;
 }
 
 .oc_head_noimageh {
@@ -97,11 +24,93 @@
   }
 }
 
+.container {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  width: 100%;
+  max-width: none !important;
+}
+
+.oc_navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-bottom: 0 !important;
+  border-radius: 0;
+  z-index: 1000;
+}
+
+.oc_nav_links {
+  position: absolute;
+  top: 45px;
+  right: 15px;
+}
+
+.oc_logo {
+  background-color: white;
+  border-radius: 0 5px 5px 0;
+  margin-top: 20px;
+  width: 300px;
+  height: 80px;
+  margin-left: 0px;
+  padding-left: 60px;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+.nav-link {
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+  margin-left: 20px;
+  height: 30px;
+}
+
+.navbar-nav {
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 15.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1em;
+}
+
+.oc_title_image_wrapper {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.oc_title_image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  left: 0;
+  position: relative;
+  -o-object-fit: inherit;
+     object-fit: inherit;
+  z-index: -100;
+}
+
+.oc_title_row {
+  width: 100%;
+}
+
 .oc_heading {
   color: #fff !important;
   text-align: center;
-  font-family: "Raleway", Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .oc_vinject {
@@ -159,7 +168,7 @@ ul {
   /* Set a width if you like */
   position: fixed;
   left: 0;
-  top: 10px;
+  bottom: 10px;
   z-index: 1500;
   height: 340px;
 }
@@ -335,15 +344,16 @@ ul {
   }
 }
 
-@media screen and (max-width: 992px) {
-  .oc_inject {
-    padding-left: 250px;
-    width: 900px;
-  }
-}
-
 .oc_col_width {
   max-width: 700px !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .oc_col_width {
+    margin-left: 45px;
+  }
 }
 
 .oc_item {
@@ -447,19 +457,19 @@ ul {
   padding: 0;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (min-width: 576px) {
   .oc_accordion_content {
     display: block;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .oc_accordion_content {
     display: block;
   }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (mmin-width: 992px) {
   .oc_accordion_content {
     display: block;
   }
@@ -469,19 +479,19 @@ ul {
   display: inline-block;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (min-width: 576px) {
   .oc_btn_block {
     display: none;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .oc_btn_block {
     display: none;
   }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 992px) {
   .oc_btn_block {
     display: none;
   }
@@ -619,6 +629,22 @@ ul {
 .oc_container {
   position: relative;
   height: 400px;
+}
+
+#superfish-test-toggle span {
+  display: none;
+}
+
+#superfish-test-toggle:after {
+  content: 'nav';
+  color: white;
+  position: absolute !important;
+  top: 5px;
+  left: 0;
+  padding: 10px 10px 10px 5px;
+  background-color: #ee3159;
+  font-size: 20px !important;
+  border-radius: 0 5px 5px 0;
 }
 
 /*
