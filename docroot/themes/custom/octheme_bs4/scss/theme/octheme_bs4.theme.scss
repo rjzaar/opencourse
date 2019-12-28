@@ -10,6 +10,10 @@
 // octheme_bs4 variables.
 @import "../mixins"; // octheme_bs4 mixins.
 
+
+// Text is set at 18px with a max-width of 600px. This gives about 72 characters per line.
+// The aim is readability of text. So as the screen size decreases, once the text takes up the full width
+// this is the breakpoint and side navigation is moved out the way.
 $primary: #ee3159;
 $secondary: #251b3d;
 $success: $green;
@@ -32,14 +36,20 @@ $dark: $gray-800;
 //// container
 //////////// oc_heading oc_vinject <h1> This is the page heading.
 
-$oc_margin: 15px; // This is used for the left and right side all the way down.
+
+// #### These margins need to be worked on, eg oc_sequences should be turned into
+// flex boxes so format better between screen sizes.
+// These are the universal margins for the site.
+$oc_margin: 50px;
+$oc_margin_xs: 5px; // This is used for the left and right side all the way down.
+$oc_margin_sm: 15px;
+$oc_margin_md: 30px;
 
 // LOGO
-$oc_logo_top_margin: 20px; //Distance from top to start of logo
 $oc_logo_left_padding: 60px; //Distance from left to start of logo with background color
 $oc_logo_left_margin: 0px; //Distance from left to start of background color
-$oc_logo_top_padding: 10px; //Logo top padding
-$oc_logo_height: 80px; //logo height
+$oc_logo_top_padding: 5px; //Logo top padding
+
 // More in .oc_logo
 
 // Right navigation links, eg Login and Contact Us
@@ -47,12 +57,196 @@ $oc_navlink_color: black;
 $oc_navlink_bg_color: white;
 $oc_navlink_border_radius: 5px;
 $oc_navlink_gap: 20px; //gap between links, ie margin-left
-$oc_navlink_height: 30px;
+$oc_navlink_height: 30px; // this is constant
+
+$oc_nav_button_height: 42px; //This is the height of the top right nav button
+// It is used to calculate position based on other elements
 
 
-//Left navigation buttons
+// Central resizing breakpoints
+//small phones
+$oc_logo_top_margin_xs: 0; //Distance from top to start of logo
+$oc_logo_top_margin_sm: 10px;
+$oc_logo_top_margin_md: 20px;
+
+$oc_branding_logo_height_xs: 30px; //logo height
+$oc_branding_logo_height_sm: 50px; //logo height
+$oc_branding_logo_height_md: 80px; //logo height
+.oc_logo {
+  margin-top: $oc_logo_top_margin_xs;
+  border-radius: 5px 5px 5px 5px;
+  width: 100px;
+  margin-left: 5px;
+  padding-left: 5px;
+  padding-top: 0;
+  padding-right: 5px;
+}
+.oc_branding_logo {
+height: $oc_branding_logo_height_xs ;
+ }
+.oc_vinject {
+  padding-top: 5px; //  for all xs devices.
+  font-size: 150% !important;
+}
+.oc_nav_links {
+  top: $oc_logo_top_margin_xs +($oc_branding_logo_height_xs - $oc_navlink_height)/2;
+  right: $oc_margin;
+}
+.oc_small_nav_button {
+  top: $oc_logo_top_margin_xs + ($oc_branding_logo_height_xs - $oc_nav_button_height)/2;
+}
+// There are two locations for the nav links, ie login and contact us.
+// Only one is possibly visible at a time with the swap at 768px.
+.oc_nav_link_button {
+  visibility: visible;
+}
+.oc_nav_links {
+  visibility: hidden;
+}
+// Small devices (landscape phones, 576px and up)
+@media (min-width: map-get($grid-breakpoints, "sm")) {
+  .oc_logo {
+    margin-top: $oc_logo_top_margin_sm;
+    border-radius: 5px 5px 5px 5px;
+    width: 200px;
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-top: 0;
+    padding-right: 10px;
+  }
+  .oc_branding_logo {
+    height: $oc_branding_logo_height_sm ;
+  }
+  .oc_vinject {
+    padding-top: 5px; // As from sm devices,
+    font-size: 200% !important;
+  }
+  .oc_nav_links {
+    top: $oc_logo_top_margin_sm +($oc_branding_logo_height_sm - $oc_navlink_height)/2;
+    right: $oc_margin;
+  }
+  .oc_small_nav_button {
+    top: $oc_logo_top_margin_sm + ($oc_branding_logo_height_sm - $oc_nav_button_height)/2;
+  }
+  .oc_nav_link_button {
+    visibility: visible;
+  }
+  .oc_nav_links {
+    visibility: hidden;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: map-get($grid-breakpoints, "md")) {
+
+  .oc_logo {
+    margin-top: $oc_logo_top_margin_md;
+    border-radius: 0 5px 5px 0;
+    width: 300px;
+    margin-left: $oc_logo_left_margin;
+    padding-left: $oc_logo_left_padding;
+    padding-top: $oc_logo_top_padding;
+    padding-right: 10px;
+  }
+  .oc_branding_logo {
+    height: $oc_branding_logo_height_md ;
+  }
+  .oc_vinject {
+    padding-top: 15px; //  for md devices.
+    font-size: 400% !important;
+  }
+  .oc_nav_links {
+    top: $oc_logo_top_margin_md +($oc_branding_logo_height_md - $oc_navlink_height)/2;
+    right: $oc_margin;
+  }
+  .oc_small_nav_button {
+    top: $oc_logo_top_margin_md + ($oc_branding_logo_height_md - $oc_nav_button_height)/2;
+  }
+  .oc_nav_link_button {
+    visibility: hidden;
+  }
+  .oc_nav_links {
+    visibility: visible;
+  }
+}
+
+// Small screen css: works opposite to the above system.
+.oc_small_nav_button {
+  display: none;
+  position: fixed;
+  left: 0;
+  height: $oc_nav_button_height;
+  z-index: 1600; // This needs to get checked: see https://w3codemasters.in/bootstrap-4-components-z-index-values/
+  width: 45px;
+  @media (max-width: map-get($grid-breakpoints, "md")) {
+    display: inline;
+  }
+}
+
+// This 'trick' forces the navbar to hide when making the screen smaller than 768
+// and reappear when going the other way, by forcing it to be not seen and then seen or
+// visa-versa respectively, while definitely showing the navbar when larger than 768.
+// but leaving it up to the toggle to show and hide when less than 766.
+// there is a danger with a screen size of 766.x or 767.x but that is rare......
+.collapse {
+
+  @media (min-width: 766.1px) and (max-width: 766.9px) {
+
+    display: none !important;
+  }
+  @media (min-width: 767.1px) and (max-width: 767.9px) {
+
+    display: block !important;
+  }
+  @media (min-width: 768px) {
+
+    display: block !important;
+  }
+}
+
+// This moves the site logo from center for <md to left for >=md
+.oc_brand {
+  -webkit-box-pack: center !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+
+  @media screen and (min-width: 768px) {
+      display: inline;
+    }
+
+}
+
+.oc_view_spacing {
+  margin-left: $oc_margin;
+  margin-top: 40px;
+}
 
 
+// Change font size depending on device size.
+//.oc_vinject {
+//  padding-top: 5px; //  for all xs devices.
+//  font-size: 150% !important;
+//
+//  @media screen and (max-width: map-get($grid-breakpoints, "sm")) {
+//    padding-top: 5px; // As from sm devices,
+//    font-size: 200% !important;
+//  }
+//
+//  @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+//    padding-top: 15px; //  for md devices.
+//    font-size: 400% !important;
+//  }
+//
+//}
 // Superfish variables. These are for the vertical buttons on left and right.
 $superfish-1-color: #001010;
 $superfish-1-background-color-level-first: #f0f0f0;
@@ -77,24 +271,24 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
   height: 150px;
 }
 
-// Set up heights for different screens.
-@media screen and (max-width: 670px) {
-  .oc_header {
-    height: 300px;
-  }
-}
-
-@media screen and (max-width: 460px) {
-  .oc_header {
-    height: 200px;
-  }
-}
-
-@media screen and (max-width: 350px) {
-  .oc_header {
-    height: 120px;
-  }
-}
+//// Set up heights for different screens.
+//@media screen and (max-width: 670px) {
+//  .oc_header {
+//    height: 300px;
+//  }
+//}
+//
+//@media screen and (max-width: 460px) {
+//  .oc_header {
+//    height: 200px;
+//  }
+//}
+//
+//@media screen and (max-width: 350px) {
+//  .oc_header {
+//    height: 120px;
+//  }
+//}
 
 .container {
   margin-left: 0;
@@ -117,21 +311,10 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
 
 .oc_nav_links {
   position: absolute;
-  top: $oc_logo_top_margin+($oc_logo_height - $oc_navlink_height)/2;
-  right: $oc_margin;
-
 }
 
 .oc_logo {
   background-color: white;
-  border-radius: 0 5px 5px 0;
-  margin-top: $oc_logo_top_margin;
-  width: 300px;
-  height: $oc_logo_height;
-  margin-left: $oc_logo_left_margin;
-  padding-left: $oc_logo_left_padding;
-  padding-top: $oc_logo_top_padding;
-  padding-right: 10px;
 }
 
 .nav-link {
@@ -202,26 +385,6 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
   //background-color: #0a78d1;
 }
 
-// Change font size depending on device size.
-.oc_vinject {
-  padding-top: 5px; //  for all xs devices.
-  font-size: 150% !important;
-
-  @media screen and (max-width: map-get($grid-breakpoints, "sm")) {
-    padding-top: 5px; // As from sm devices,
-    font-size: 200% !important;
-  }
-
-  @media screen and (min-width: map-get($grid-breakpoints, "md")) {
-    padding-top: 15px; //  for md devices.
-    font-size: 400% !important;
-  }
-
-  @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
-    padding-top: 15px; // for lg devices.
-    font-size: 400% !important;
-  }
-}
 
 .site-heading {
   color: white;
@@ -479,6 +642,40 @@ ul {
 }
 
 
+
+
+
+.oc_navbar_toggler {
+  //padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  // background-color: rgba(0, 0, 0, 0.1);
+  border: transparent;
+  //  border-radius: 0.25rem;
+  // color: rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+}
+
+.oc_navbar_toggler_icon {
+  //  color: rgba(0, 0, 0, 0.5);
+  //  border-color: rgba(0, 0, 0, 0.1);
+  // background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  //background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 1.5em;
+  height: 1em;
+  vertical-align: middle;
+  content: "";
+  background: no-repeat center center;
+  background-size: 100% 100%;
+  z-index: 1700;
+}
+
+
+
 // **************************************************
 //
 // End of styles for page.html.twig and its subtemplates.
@@ -511,8 +708,8 @@ ul {
   }
 
   @media screen and (max-width: map-get($grid-breakpoints, "lg")) {
-   // padding-left: 250px; // for lg devices.
-   // width: 900px;
+    // padding-left: 250px; // for lg devices.
+    // width: 900px;
   }
 }
 
@@ -522,12 +719,13 @@ ul {
 // ds-1col--node-oc-book-teaser.html.twig
 // node-oc-image-full.html.twig
 // node-oc-sequence-full.html.twig
+// ds-1col--node-oc-doc-featured.html.twig
 .oc_col_width {
-  max-width: 700px !important;
+  max-width: 600px !important;
   margin-left: auto;
   margin-right: auto;
 
-  @media screen and (max-width: 800px) {
+  @media (max-width: map-get($grid-breakpoints, "md")) {
     margin-left: 45px;
   }
 }
@@ -728,9 +926,21 @@ $oc_panel_left: 15px;
 }
 
 // used in: ds-1col--node-oc-doc-full.html.twig
+// used in block--system-branding-block.html.twig therefore for all pages with logo.
 .oc_branding_logo {
   width: 210px;
-  //background-color: lighten(@brand-primary, 20%)
+  -webkit-box-pack: center !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
 }
 
 @media screen and (min-width: 768px) {
@@ -831,11 +1041,17 @@ $oc_panel_left: 15px;
   height: 400px;
 }
 
+// view: oc_sequences
+.oc_sequence_image {
+  margin-left: $oc_margin;
+}
+
 // Change the text of the collapsed left navigation from 'test' to 'nav'
 // This is the easiest way to do it.
 #superfish-test-toggle span {
   display: none;
 }
+
 // or put here whatever you like.
 #superfish-test-toggle:after {
   content: 'nav';

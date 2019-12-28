@@ -64,23 +64,19 @@
   {% block navbar %}
     {% set navbar_classes = [
       'mb-4',
-      'shadow-sm',
       'oc_darken',
       'oc_header',
     ] %}
     {#       'border-bottom', removed from above#}
     {# octheme start 1 | These divs will create the header space. The other header elements fit in this space using position: absolute. #}
     <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner"
-      {% if oc_head_image %}style="background: url({{ oc_head_image }}); background-size: cover; height: 100vh;"
-        {% else %}class="oc_head_noimageh"{% endif %}>
+      {% if oc_head_image %}style="background: url({{ oc_head_image }}) no-repeat center center fixed;
+        background-size: cover; -webkit-background-size: cover; -moz-background-size: cover;
+        -o-background-size: cover; height: 100vh;"{% else %}class="oc_head_noimageh"{% endif %}>
       <div class="oc_navbar">
-        <div class="navbar-brand mr-md-auto">
+        <div class="navbar-brand mr-md-auto oc_brand">
           {{ page.navigation }}
         </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse"
-                aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
         {% if page.navigation_collapsible %}
         <div class="oc_nav_links">
           {{ page.navigation_collapsible }}
@@ -115,8 +111,15 @@
   {% endblock %}
 {% endif %}
 
+{# Start of small screen setup#}
+<div class="oc_small_nav_button  ">
+  <button class="oc_navbar_toggler fa-stack fa-lg " type="button" data-toggle="collapse" data-target="#oc_nav_collapse"
+          aria-controls="navbar-collapse" aria-expanded="true" aria-label="Toggle navigation">
+    <span class="oc_navbar_toggler_icon fa fa-square fa-stack-2x oc_icon_back"></span>
+    <span class="oc_navbar_toggler_icon fa fa-stack-1x fa-inverse fa-bars "></span>
+  </button>
 
-
+</div>
 
 
 {# octheme end 1#}
@@ -145,78 +148,89 @@
     function occontract(x) {
       x.style.width = "45px";
     }</script>
-  <div class="oc_group_nav_wrapper block-superfish block-superfishtest">
-    <div onmouseover="ocexpand(this)" onmouseout="occontract(this)" class="oc_group_nav">
-      {{ oc_contents }}
-      <ul id="superfish-test" class="sf-vertical sf-test sf-style-white sf-js-enabled sf-shadow">
-        {#{% for id in content.oc_items|slice(0, 5) %}#}
-        {#<li>{{ id['id'] }} {{ id['type'] }} </li>#}
-        {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
-          {%- block oc_icon -%}columns{%- endblock -%}
-          {%- block oc_type -%}lp{%- endblock -%}
-          {%- block oc_name -%}Landing Pages{%- endblock -%}
-        {% endembed %}
+<div class="oc_group_nav_wrapper block-superfish block-superfishtest collapse  " id="oc_nav_collapse">
+  <div onmouseover="ocexpand(this)" onmouseout="occontract(this)" class="oc_group_nav">
+    {{ oc_contents }}
+    <ul id="superfish-test" class="sf-vertical sf-test sf-style-white sf-js-enabled sf-shadow">
+      {#{% for id in content.oc_items|slice(0, 5) %}#}
+      {#<li>{{ id['id'] }} {{ id['type'] }} </li>#}
+      {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
+        {%- block oc_icon -%}columns{%- endblock -%}
+        {%- block oc_type -%}lp{%- endblock -%}
+        {%- block oc_name -%}Landing Pages{%- endblock -%}
+      {% endembed %}
 
-        {#{% endfor %}#}
-        {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
-          {%- block oc_icon -%}leanpub{%- endblock -%}
-          {%- block oc_type -%}sequences{%- endblock -%}
-          {%- block oc_name -%}Sequences{%- endblock -%}
-        {% endembed %}
+      {#{% endfor %}#}
+      {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
+        {%- block oc_icon -%}leanpub{%- endblock -%}
+        {%- block oc_type -%}sequences{%- endblock -%}
+        {%- block oc_name -%}Sequences{%- endblock -%}
+      {% endembed %}
 
-        {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
-          {%- block oc_icon -%}file{%- endblock -%}
-          {%- block oc_type -%}docs{%- endblock -%}
-          {%- block oc_name -%}Docs{%- endblock -%}
-        {% endembed %}
+      {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
+        {%- block oc_icon -%}file{%- endblock -%}
+        {%- block oc_type -%}docs{%- endblock -%}
+        {%- block oc_name -%}Docs{%- endblock -%}
+      {% endembed %}
 
-        {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
-          {%- block oc_icon -%}book{%- endblock -%}
-          {%- block oc_type -%}books{%- endblock -%}
-          {%- block oc_name -%}Books{%- endblock -%}
-        {% endembed %}
+      {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
+        {%- block oc_icon -%}book{%- endblock -%}
+        {%- block oc_type -%}books{%- endblock -%}
+        {%- block oc_name -%}Books{%- endblock -%}
+      {% endembed %}
 
-        {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
-          {%- block oc_icon -%}link{%- endblock -%}
-          {%- block oc_type -%}links{%- endblock -%}
-          {%- block oc_name -%}Links{%- endblock -%}
-        {% endembed %}
+      {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
+        {%- block oc_icon -%}link{%- endblock -%}
+        {%- block oc_type -%}links{%- endblock -%}
+        {%- block oc_name -%}Links{%- endblock -%}
+      {% endembed %}
 
-        {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
-          {%- block oc_icon -%}image{%- endblock -%}
-          {%- block oc_type -%}images{%- endblock -%}
-          {%- block oc_name -%}Images{%- endblock -%}
-        {% endembed %}
-
-        {% if node.type.value[0]['target_id']=="oc_sequence" or node.type.value[0]['target_id']=="oc_doc" %}
-        <li class="sf-depth-1 menuparent oc_pointer" onclick="showquiz()">
+      {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
+        {%- block oc_icon -%}image{%- endblock -%}
+        {%- block oc_type -%}images{%- endblock -%}
+        {%- block oc_name -%}Images{%- endblock -%}
+      {% endembed %}
+      {% if node.type.value[0]['target_id']=="oc_sequence" or node.type.value[0]['target_id']=="oc_doc" %}
+      <li class="sf-depth-1 menuparent oc_pointer" onclick="showquiz()">
                      <span class="fa-stack fa-lg ">
                   <i class="fa fa-circle fa-stack-2x oc_icon_back"></i>
                   <i class="fa fa-question-circle fa-stack-2x fa-inverse"></i>
                         </span>
-          <ul class="sf-hidden oc_group_nav_text">
-            <li class="sf-depth-2 sf-no-children">
-              Interactives
-            </li>
+        <ul class="sf-hidden oc_group_nav_text">
+          <li class="sf-depth-2 sf-no-children">
+            Interactives
+          </li>
 
-          </ul>
-          <script>
-            function showquiz() {
-              var x = document.getElementsByClassName("oc_quiz");
-              for (var i = 0; i < x.length; i++) {
-                if (x[i].style.display == "none") {
-                  x[i].style.display = "block";
-                } else {
-                  x[i].style.display = "none";
-                }
+        </ul>
+
+        <script>
+          function showquiz() {
+            var x = document.getElementsByClassName("oc_quiz");
+            for (var i = 0; i < x.length; i++) {
+              if (x[i].style.display == "none") {
+                x[i].style.display = "block";
+              } else {
+                x[i].style.display = "none";
               }
             }
-          </script>{% endif %}
-        </li>
-      </ul>
-    </div>
+          }
+        </script>
+      </li>{% endif %}
+      {% embed directory ~ '/templates/system/page-llbutton.html.twig' %}
+        {%- block oc_icon -%}sign-in{%- endblock -%}
+        {%- block oc_link -%}user/login{%- endblock -%}
+        {%- block oc_name -%}Login{%- endblock -%}
+      {% endembed %}
+      {% embed directory ~ '/templates/system/page-llbutton.html.twig' %}
+        {%- block oc_icon -%}envelope{%- endblock -%}
+        {%- block oc_link -%}form/contact{%- endblock -%}
+        {%- block oc_name -%}Contact Us{%- endblock -%}
+      {% endembed %}
+    </ul>
   </div>
+</div>
 {% endif %}
+{#{% endif %}#}
 {# octheme end 2 #}
 
 {# hero_slider #}
@@ -290,8 +304,8 @@
 
         {# Content #}
         {% block content %}
-          <a id="main-content"></a>
-          {{ page.content }}
+          <div id="main-content" class="oc_main_spacing">
+          {{ page.content }}</div>
         {% endblock %}
       </section>
 
