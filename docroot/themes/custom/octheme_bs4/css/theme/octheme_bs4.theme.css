@@ -14,7 +14,7 @@
 
 .oc_vinject {
   padding-top: 5px;
-  font-size: 150% !important;
+  font-size: 100% !important;
 }
 
 .oc_nav_links {
@@ -49,7 +49,7 @@
   }
   .oc_vinject {
     padding-top: 5px;
-    font-size: 200% !important;
+    font-size: 150% !important;
   }
   .oc_nav_links {
     top: 20px;
@@ -81,7 +81,7 @@
   }
   .oc_vinject {
     padding-top: 15px;
-    font-size: 400% !important;
+    font-size: 200% !important;
   }
   .oc_nav_links {
     top: 45px;
@@ -155,7 +155,7 @@
   }
 }
 
-.oc_view_spacing {
+.oc-view-spacing {
   margin-left: 50px;
   margin-top: 40px;
 }
@@ -244,7 +244,7 @@
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   margin: 0 !important;
-  padding: 0 !important;
+  padding: 0 10px !important;
 }
 
 .site-heading {
@@ -705,21 +705,21 @@ ul {
   float: left;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (min-width: 576px) {
   .oc_not_btn {
-    display: inline-block;
+    display: inherit;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .oc_not_btn {
-    display: inline-block;
+    display: inherit;
   }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 992px) {
   .oc_not_btn {
-    display: inline-block;
+    display: inherit;
   }
 }
 
@@ -727,6 +727,7 @@ ul {
   padding-top: 15px !important;
   white-space: normal;
   color: #fffeff;
+  text-align: center;
 }
 
 .oc_page_title {

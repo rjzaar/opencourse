@@ -1,4 +1,4 @@
-var page = "http://opencat.loc1/";
+var page = "";
 let gulp = require('gulp'),
   sass = require('gulp-sass'),
   postcss = require('gulp-postcss'),
