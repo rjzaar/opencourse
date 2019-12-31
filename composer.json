@@ -45,7 +45,8 @@
         "vardot/varbase": "~8.7.4",
         "vardot/varbase-updater": "~1.0",
         "webflo/drupal-finder": "~1.0",
-        "webmozart/path-util": "~2.0"
+        "webmozart/path-util": "~2.0",
+        "drupal/varbase_media_header": "^7.4"
     },
     "conflict": {
         "drupal/drupal": "*"
