@@ -38,10 +38,10 @@ libraries:
 
   # Icons: Uncomment the following if you want to use icons.
   #- octheme_bs4/material_design_icons
-  #- octheme_bs4/fontawesome
+  - octheme_bs4/fontawesome
 
   # Fonts: Uncomment the following if you want to use the roboto font.
-  #- octheme_bs4/roboto   
+  - octheme_bs4/roboto
 
 libraries-override:
   vartheme_bs4/framework: false

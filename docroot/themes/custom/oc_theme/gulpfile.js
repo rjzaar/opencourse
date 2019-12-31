@@ -1,4 +1,4 @@
-var gulp        = require('gulp'),
+var page = "http://localhost:3000/node/890";
     browserSync = require('browser-sync'),
     // sass        = require('gulp-sass'),
     // prefix      = require('gulp-autoprefixer'),

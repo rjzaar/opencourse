@@ -71,11 +71,6 @@ composer.lock
 config/*
 /docroot/themes/custom/oc_theme/node_modules/
 
-/update_backups
-.update-error-log
-failed-patches.txt
-/console
-
 #One file so it can be used for content_default
 !/docroot/sites/default/files/St-Anthony-seq.jpg
 .editorconfig

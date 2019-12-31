@@ -12,9 +12,9 @@ use Drupal\image\Entity\ImageStyle;
 
 /**
  * Implements hook_theme_registry_alter().
- * Original bs4
  */
-function octheme_bs4_theme_registry_alter(&$theme_registry) {
+function octheme_bs4_theme_registry_alter(&$theme_registry)
+{
   // octheme_bs4 path.
   $octheme_bs4_path = Drupal::service('theme_handler')->getTheme('octheme_bs4')->getPath();
   $theme_registry['entity_embed_container']['path'] = $octheme_bs4_path . '/templates/entity-embed';
@@ -31,35 +31,11 @@ function octheme_bs4_theme_registry_alter(&$theme_registry) {
   }
 }
 
-function octheme_bs4_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id = NULL) {
-  // Work-around for a core bug affecting admin themes. See issue #943212.
-  if (isset($form_id)) {
-    return;
-  }
-
-  $form['foo_example'] = array(
-    '#type'          => 'textfield',
-    '#title'         => t('OC Theme settings'),
-    '#default_value' => theme_get_setting('foo_example'),
-    '#description'   => t("Place this text in the widget spot on your site."),
-  );
-  $form['oc_head_image'] = array(
-    '#type' => 'entity_autocomplete',
-    '#title'         => t('OC Theme heading background image'),
-    '#description'   => t("Choose the background image."),
-    '#target_type' => 'node',
-//    '#tags' => TRUE,
-//    '#selection_handler' => 'default', // Optional. The default selection handler is pre-populated to 'default'.
-    '#selection_settings' => array(
-      'target_bundles' => array('oc_image')
-    ),
-  );
-}
-
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function octheme_bs4_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+function octheme_bs4_theme_suggestions_page_alter(array &$suggestions, array $variables)
+{
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     if (is_numeric($node)) {
       $node = Node::load($node);
@@ -73,7 +49,8 @@ function octheme_bs4_theme_suggestions_page_alter(array &$suggestions, array $va
 /**
  *
  */
-function octheme_bs4_preprocess_html(&$variables) {
+function octheme_bs4_preprocess_html(&$variables)
+{
   // Add information about the number of sidebars.
   if (theme_get_setting('bootstrap_barrio_navbar_position')) {
     $variables['navbar_position'] = theme_get_setting('bootstrap_barrio_navbar_position');
@@ -83,10 +60,11 @@ function octheme_bs4_preprocess_html(&$variables) {
 /**
  * Implements hook_preprocess_page().
  */
-function octheme_bs4_preprocess_page(&$variables) {
+function octheme_bs4_preprocess_page(&$variables)
+{
   $variables['logo_print'] = \Drupal::request()->getBaseUrl() . '/' . drupal_get_path('theme', 'octheme_bs4') . '/logo-print.png';
 
-//
+  //
 //  //See if the URL is a group URL and if so add the group menus.
 //  if ($node = \Drupal::routeMatch()->getParameter('node')) {
 //    $variables['node'] = $node;
@@ -100,7 +78,6 @@ function octheme_bs4_preprocess_page(&$variables) {
   $config = \Drupal::config('system.site');
   $variables['site_name'] = $config->get('name');
   $variables['site_slogan'] = $config->get('slogan');
-
 
 
 //  $node = \Drupal::routeMatch()->getParameter('node');
@@ -131,14 +108,14 @@ function octheme_bs4_preprocess_page(&$variables) {
 //  }
 
   //First try to get the head image from site settings.
-  $imid= theme_get_setting('oc_head_image');
+  $imid = theme_get_setting('oc_head_image');
   if (is_numeric($imid)) {
     $imnode = \Drupal\node\Entity\Node::load($imid);
 //    $variables['oc_head_image'] =$imnode ;
     $fnodeid = $imnode->get('field_oc_image')->getValue()[0]['target_id'];
 //    $variables['oc_head_image'] =$fnodeid ;
     $fnode = \Drupal\file\Entity\File::load($fnodeid);
-    $variables['oc_image_uri'] =$fnode->getFileUri();
+    $variables['oc_image_uri'] = $fnode->getFileUri();
     $fnodeuri = $fnode->getFileUri();
     $variables['oc_head_image'] = file_create_url($fnodeuri);
 
@@ -156,7 +133,7 @@ function octheme_bs4_preprocess_page(&$variables) {
           $fnodeid = $node->get('field_oc_image')->getValue()[0]['target_id'];
 //    $variables['oc_head_image'] =$fnodeid ;
           $fnode = \Drupal\file\Entity\File::load($fnodeid);
-          $variables['oc_image_uri'] =$fnode->getFileUri();
+          $variables['oc_image_uri'] = $fnode->getFileUri();
           if (isset($fnode)) {
             $fnodeuri = $fnode->getFileUri();
             $variables['oc_head_image'] = file_create_url($fnodeuri);
@@ -170,14 +147,14 @@ function octheme_bs4_preprocess_page(&$variables) {
           $fnodeid = $node->get('field_oc_book_image')->getValue()[0]['target_id'];
 //    $variables['oc_head_image'] =$fnodeid ;
           $fnode = \Drupal\file\Entity\File::load($fnodeid);
-          $variables['oc_image_uri'] =$fnode->getFileUri();
+          $variables['oc_image_uri'] = $fnode->getFileUri();
           if (isset($fnode)) {
             $fnodeuri = $fnode->getFileUri();
             $variables['oc_head_image'] = file_create_url($fnodeuri);
 
             $display_options = [
-              'label'    => 'hidden',
-              'type'     => 'responsive_image',
+              'label' => 'hidden',
+              'type' => 'responsive_image',
               'settings' => [
                 'responsive_image_style' => 'de2e',
               ],
@@ -204,7 +181,7 @@ function octheme_bs4_preprocess_page(&$variables) {
             $imnode = \Drupal\node\Entity\Node::load($lnodeid);
             $fnodeid = $imnode->get('field_oc_image')->getValue()[0]['target_id'];
             $fnode = \Drupal\file\Entity\File::load($fnodeid);
-            $variables['oc_image_uri'] =$fnode->getFileUri();
+            $variables['oc_image_uri'] = $fnode->getFileUri();
             if (isset($fnode)) {
               $fnodeuri = $fnode->getFileUri();
               $variables['oc_head_image'] = file_create_url($fnodeuri);
@@ -220,7 +197,7 @@ function octheme_bs4_preprocess_page(&$variables) {
                 $imnode = \Drupal\node\Entity\Node::load($lnodeid);
                 $fnodeid = $imnode->get('field_oc_image')->getValue()[0]['target_id'];
                 $fnode = \Drupal\file\Entity\File::load($fnodeid);
-                $variables['oc_image_uri'] =$fnode->getFileUri();
+                $variables['oc_image_uri'] = $fnode->getFileUri();
                 if (isset($fnode)) {
                   $fnodeuri = $fnode->getFileUri();
                   $variables['oc_head_image'] = file_create_url($fnodeuri);
@@ -232,10 +209,10 @@ function octheme_bs4_preprocess_page(&$variables) {
 
       }
       //The following check is needed to deal with viewing revisions.
-      $gnode=$variables['node'];
+      $gnode = $variables['node'];
       if (is_string($gnode)) {
         $variables['node'] = \Drupal\node\Entity\Node::load($gnode);
-        $gnode=$variables['node'];
+        $gnode = $variables['node'];
       }
       foreach (\Drupal\group\Entity\GroupContent::loadByEntity($gnode) as $group_content) {
         $oc_group = $group_content->getGroup()->id();
@@ -247,7 +224,7 @@ function octheme_bs4_preprocess_page(&$variables) {
 
 //  // Now set the image style for oc_head_image
   $style = \Drupal::entityTypeManager()->getStorage('image_style')->load('de2e_standard');
-  $variables['oc_style']=$style;
+  $variables['oc_style'] = $style;
   if (isset($variables['oc_head_image'])) {
 //    $variables['oc_head_image1'] = ImageStyle::load($style)->buildUrl($variables['oc_head_image']);
     $variables['oc_head_image'] = $style->buildUrl($variables['oc_image_uri']);
@@ -259,12 +236,12 @@ function octheme_bs4_preprocess_page(&$variables) {
     //$variables['oc_url1'] = \Drupal::request()->getRequestUri();
     $variables['oc_url'] = $oc_url;
     //needs to be 1 and not /group 0 since 0 is considered false.
-    if (strpos($oc_url,'group') == 1) {
-      preg_match('/\d+/',$oc_url,$match);
-      if(is_array($match)){
-        $match=$match[0];
+    if (strpos($oc_url, 'group') == 1) {
+      preg_match('/\d+/', $oc_url, $match);
+      if (is_array($match)) {
+        $match = $match[0];
       }
-      $variables['oc_group']=$match;
+      $variables['oc_group'] = $match;
 
     }
   }
@@ -334,13 +311,148 @@ function octheme_bs4_preprocess_page(&$variables) {
 
 }
 
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function octheme_bs4_preprocess_paragraph(&$variables)
+{
+  $file_path = NULL;
+  if (isset($variables['paragraph']->bp_image_field)
+    && isset($variables['paragraph']->bp_image_field->target_id)) {
+
+    // Get the target id and build the url.
+    $paragraph = &$variables['paragraph'];
+    if (isset($paragraph->get('bp_image_field')->entity)
+      && isset($paragraph->get('bp_image_field')->entity->field_media_image)
+      && isset($paragraph->get('bp_image_field')->entity->field_media_image->target_id)) {
+
+      $target_id = $paragraph->get('bp_image_field')->entity->field_media_image->target_id;
+      $file = File::load($target_id);
+      if (isset($file)) {
+        $file_uri = $file->getFileUri();
+        $style = ImageStyle::load('de2e');
+        $file_path = $style->buildUrl($file_uri);
+      }
+    }
+  }
+
+  $width_value = NULL;
+  if (isset($variables['paragraph']->bp_width)
+    && isset($variables['paragraph']->bp_width->value)) {
+
+    $width_value = $variables['paragraph']->bp_width->value;
+  }
+
+  $width_map = [
+    'paragraph--width--tiny' => 'col-md-4 offset-md-4 col-sm-8 offset-sm-2',
+    'paragraph--width--narrow' => 'col-md-6 offset-md-3 col-sm-10 offset-sm-1',
+    'paragraph--width--medium' => 'col-md-8 offset-md-2',
+    'paragraph--width--wide' => 'col-md-10 offset-md-1',
+    'paragraph--width--full' => 'col-12',
+    'bg-edge2edge' => 'bg-edge2edge col-12',
+  ];
+
+  $width = 'col-12';
+  if (isset($width_map[$width_value])) {
+    $width = $width_map[$width_value];
+  }
+
+  $custom_paragraph_classes_value = NULL;
+  if (isset($variables['paragraph']->bp_classes)
+    && isset($variables['paragraph']->bp_classes->value)) {
+    $custom_paragraph_classes_value = $variables['paragraph']->bp_classes->value;
+  }
+
+  $gutter_value = FALSE;
+  if (isset($variables['paragraph']->bp_gutter)
+    && isset($variables['paragraph']->bp_gutter->value)) {
+    $gutter_value = $variables['paragraph']->bp_gutter->value;
+  }
+
+  $title_status = FALSE;
+  if (isset($variables['paragraph']->bp_title_status)
+    && isset($variables['paragraph']->bp_title_status->value)) {
+    $title_status = $variables['paragraph']->bp_title_status->value;
+  }
+
+  // Add variables to template.
+  $variables["VBP"] = [
+    'background_image' => [
+      'type' => 'image',
+      'url' => $file_path,
+    ],
+    'bp_width' => [
+      'type' => 'string',
+      'value' => $width,
+    ],
+    'bp_classes' => [
+      'type' => 'string',
+      'value' => $custom_paragraph_classes_value,
+    ],
+    'bp_gutter' => [
+      'type' => 'bool',
+      'value' => $gutter_value,
+    ],
+    'bp_title_status' => [
+      'type' => 'bool',
+      'value' => $title_status,
+    ],
+  ];
+}
+
+/**
+ * Prepares variables for views grid templates.
+ *
+ * Default template: views-bootstrap-grid.html.twig.
+ *
+ * @param array $vars
+ *   An associative array containing:
+ *   - view: A ViewExecutable object.
+ *   - rows: The raw row data.
+ */
+function octheme_bs4_preprocess_views_bootstrap_grid(array &$vars)
+{
+
+  if (isset($vars['options']) && isset($vars['options']["col_xs"])) {
+    $vars['options']["col_xs"] = str_replace("xs-", "", $vars['options']["col_xs"]);
+  }
+
+}
+
+//Added functions
+//function octheme_bs4_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id = NULL)
+//{
+//  // Work-around for a core bug affecting admin themes. See issue #943212.
+//  if (isset($form_id)) {
+//    return;
+//  }
+//
+//  $form['foo_example'] = array(
+//    '#type' => 'textfield',
+//    '#title' => t('OC Theme settings'),
+//    '#default_value' => theme_get_setting('foo_example'),
+//    '#description' => t("Place this text in the widget spot on your site."),
+//  );
+//  $form['oc_head_image'] = array(
+//    '#type' => 'entity_autocomplete',
+//    '#title' => t('OC Theme heading background image'),
+//    '#description' => t("Choose the background image."),
+//    '#target_type' => 'node',
+////    '#tags' => TRUE,
+////    '#selection_handler' => 'default', // Optional. The default selection handler is pre-populated to 'default'.
+//    '#selection_settings' => array(
+//      'target_bundles' => array('oc_image')
+//    ),
+//  );
+//}
 
 /**
  * @param $variables
  */
-function octheme_bs4_preprocess_node(&$variables) {
+function octheme_bs4_preprocess_node(&$variables)
+{
 
-  if ( isset($variables['elements']['content']['#block_content'])) {
+  if (isset($variables['elements']['content']['#block_content'])) {
     //$block_content = $variables['elements']['content']['#block_content'];
     $variables['uuid'] = $variables['elements']['content']['#block_content']->uuid();
   }
@@ -353,37 +465,36 @@ function octheme_bs4_preprocess_node(&$variables) {
   if ($node->hasField('field_oc_author_s_')) {
     $auth = $node->get('field_oc_author_s_')[0]->get('target_id')->getValue();
     $term = Drupal\taxonomy\Entity\Term::load($auth);
-    $variables['auth']=$term->getName();
+    $variables['auth'] = $term->getName();
   }
-  $variables['created'] =format_date($node->created->value);
-  $variables['modified'] =format_date($node->changed->value);
-  if ($node->hasField('field_oc_link')){
+  $variables['created'] = format_date($node->created->value);
+  $variables['modified'] = format_date($node->changed->value);
+  if ($node->hasField('field_oc_link')) {
     // I think the next line should be $node->filed_oc_link[0]
     if (!is_null($node->hasField('field_oc_link')[0])) {
       $variables['link_title'] = $node->field_oc_link[0]->get('title')->getValue();
       $variables['link_url'] = $node->field_oc_link[0]->get('uri')->getValue();
     }
   }
-  if ($node->hasField('field_oc_licence')){
-    $variables['link_lic_title']= $node->field_oc_licence[0]->get('title')->getValue();
-    $variables['link_lic_url']= $node->field_oc_licence[0]->get('uri')->getValue();
+  if ($node->hasField('field_oc_licence')) {
+    $variables['link_lic_title'] = $node->field_oc_licence[0]->get('title')->getValue();
+    $variables['link_lic_url'] = $node->field_oc_licence[0]->get('uri')->getValue();
   }
 
   // For oc_task
-  $variables['title']=$node->getTitle();
+  $variables['title'] = $node->getTitle();
   if ($node->hasField('field_oc_assigned')) {
     if (!is_null($node->field_oc_assigned[0])) {
-      $variables['assigned'] = "/user/".$node->field_oc_assigned[0]->get('target_id')->getValue();
-    } else
-    {
+      $variables['assigned'] = "/user/" . $node->field_oc_assigned[0]->get('target_id')->getValue();
+    } else {
       //Set up option for user to accept
       $variables['assigned'] = "";
     }
   }
-  if ($node->hasField('field_oc_task_type')){
+  if ($node->hasField('field_oc_task_type')) {
     if (!is_null($node->field_oc_task_type[0])) {
       $variables['usetitle'] = TRUE;
-      if ($node->field_oc_task_type[0]->getValue()['value']=="1") {
+      if ($node->field_oc_task_type[0]->getValue()['value'] == "1") {
         $variables['usetitle'] = FALSE;
       }
     }
@@ -395,20 +506,22 @@ function octheme_bs4_preprocess_node(&$variables) {
   }
 }
 
-
 /**
  * @param $variables
  */
-function octheme_bs4_preprocess_template(&$variables) {
- // $variables['uuid'] = "John";
+function octheme_bs4_preprocess_template(&$variables)
+{
+  $variables['uuid'] = "John";
 
 
 }
 
+
 /**
  * @param $variables
  */
-function octheme_bs4_preprocess_block(&$variables) {
+function octheme_bs4_preprocess_block(&$variables)
+{
   //This commented section is the start of trying to migrate videos etc into a single text field.
 //  $videoinfo = [];
 //  $nids = \Drupal::entityQuery('node')
@@ -510,7 +623,8 @@ function octheme_bs4_preprocess_menu_local_task(&$variables)
 /**
  * Implements hook_preprocess_node().
  */
-function octheme_bs4_preprocess_ds_1col(&$variables) {
+function octheme_bs4_preprocess_ds_1col(&$variables)
+{
 
   $node = \Drupal::routeMatch()->getParameter('node');
   if (isset($node)) {
@@ -524,25 +638,22 @@ function octheme_bs4_preprocess_ds_1col(&$variables) {
       if (!is_null($node->get('field_oc_author_s_')[0])) {
         $auth = $node->get('field_oc_author_s_')[0]->get('target_id')->getValue();
         $term = Drupal\taxonomy\Entity\Term::load($auth);
-        $variables['auth']=$term->getName();
+        $variables['auth'] = $term->getName();
       }
     }
-    $variables['created'] =format_date($node->created->value);
-    $variables['modified'] =format_date($node->changed->value);
-    if ($node->hasField('field_oc_link')){
-      $variables['link_title']= $node->field_oc_link[0]->get('title')->getValue();
-      $variables['link_url']= $node->field_oc_link[0]->get('uri')->getValue();
+    $variables['created'] = format_date($node->created->value);
+    $variables['modified'] = format_date($node->changed->value);
+    if ($node->hasField('field_oc_link')) {
+      $variables['link_title'] = $node->field_oc_link[0]->get('title')->getValue();
+      $variables['link_url'] = $node->field_oc_link[0]->get('uri')->getValue();
     }
-    if ($node->hasField('field_oc_licence')){
-      $variables['link_lic_title']= $node->field_oc_licence[0]->get('title')->getValue();
-      $variables['link_lic_url']= $node->field_oc_licence[0]->get('uri')->getValue();
+    if ($node->hasField('field_oc_licence')) {
+      $variables['link_lic_title'] = $node->field_oc_licence[0]->get('title')->getValue();
+      $variables['link_lic_url'] = $node->field_oc_licence[0]->get('uri')->getValue();
     }
     if ($node->hasField('field_oc_interactive')) {
       $variables['finteractive'] = $node->get('field_oc_interactive');
     }
-
-
-
 
 
     // Check for nodes that have a title image
@@ -593,18 +704,19 @@ function octheme_bs4_preprocess_ds_1col(&$variables) {
   }
 }
 
+
 /**
  * Implements hook_preprocess_field().
  */
-function octheme_bs4_preprocess_field(&$variables) {
-//  $context = $variables['context'];
-//  $variables['varnid'] = "apple";
-//  $variables['nid'] = $context['#object']['x-default'];
-//  $variables['object']= $context['element']['#object']['x-default'];
+//function octheme_bs4_preprocess_field(&$variables) {
+////  $context = $variables['context'];
+////  $variables['varnid'] = "apple";
+////  $variables['nid'] = $context['#object']['x-default'];
+////  $variables['object']= $context['element']['#object']['x-default'];
+//
+//}
 
-}
-
-//function oc_theme_menu() {
+//function octheme_bs4_menu() {
 //  $items['examples/vertical_tabs'] = array(
 //    'title' => 'Vertical tabs example',
 //    'description' => 'Shows how vertical tabs can best be supported by a custom module',
@@ -614,164 +726,5 @@ function octheme_bs4_preprocess_field(&$variables) {
 //  return $items;
 //}
 
-/**
- * Bootstrap theme for Quicktabs NavList style tabset.
- */
-function octheme_bs4_qt_quicktabs_tabset(&$vars) {
-  // Return default for non navlist style.
-  if ($vars['tabset']['#options']['style'] != 'navlist') {
-    return theme_qt_quicktabs_tabset($vars);
-  }
-
-  $variables = array(
-    'attributes' => array(
-      'class' => 'quicktabs-tabs nav nav-pills nav-stacked col-md-3',
-    ),
-    'items' => array(),
-  );
-  foreach (element_children($vars['tabset']['tablinks']) as $key) {
-    $item = array();
-    if (is_array($vars['tabset']['tablinks'][$key])) {
-      $tab = $vars['tabset']['tablinks'][$key];
-
-      $item['class'] = array('tab-pane');
-      if ($key == $vars['tabset']['#options']['active']) {
-        $item['class'][] = 'active';
-      }
-      $item['data'] = drupal_render($tab);
-      $variables['items'][] = $item;
-    }
-  }
-  return theme('item_list', $variables);
-}
-
-/**
- * Bootstrap theme for Quicktabs NavList style tabs.
- */
-function octheme_bs4_qt_quicktabs(&$vars) {
-  // Return default for non navlist style.
-  if ($vars['element']['tabs']['#options']['style'] != 'navlist') {
-    return theme_qt_quicktabs($vars);
-  }
-
-  $element = $vars['element'];
-
-  // Next is hard-coded, so only str_replace:
-  $element['container']['#prefix'] = str_replace('quicktabs-style-navlist', 'tab-content col-md-9', $element['container']['#prefix']);
-
-  $output = '<div '. drupal_attributes($element['#options']['attributes']) .'>';
-  $output .= drupal_render($element['tabs']);
-
-  $output .= drupal_render($element['container']);
-
-  $output .= '</div>';
-  return $output;
-}
 
 
-/**
- * Implements hook_preprocess_paragraph().
- * original bs4
- */
-function octheme_bs4_preprocess_paragraph(&$variables) {
-  $file_path = NULL;
-  if (isset($variables['paragraph']->bp_image_field)
-    && isset($variables['paragraph']->bp_image_field->target_id)) {
-
-    // Get the target id and build the url.
-    $paragraph = &$variables['paragraph'];
-    if (isset($paragraph->get('bp_image_field')->entity)
-      && isset($paragraph->get('bp_image_field')->entity->field_media_image)
-      && isset($paragraph->get('bp_image_field')->entity->field_media_image->target_id)) {
-
-      $target_id = $paragraph->get('bp_image_field')->entity->field_media_image->target_id;
-      $file = File::load($target_id);
-      if (isset($file)) {
-        $file_uri = $file->getFileUri();
-        $style = ImageStyle::load('de2e');
-        $file_path = $style->buildUrl($file_uri);
-      }
-    }
-  }
-
-  $width_value = NULL;
-  if (isset($variables['paragraph']->bp_width)
-    && isset($variables['paragraph']->bp_width->value)) {
-
-    $width_value = $variables['paragraph']->bp_width->value;
-  }
-
-  $width_map = [
-    'paragraph--width--tiny' => 'col-md-4 offset-md-4 col-sm-8 offset-sm-2',
-    'paragraph--width--narrow' => 'col-md-6 offset-md-3 col-sm-10 offset-sm-1',
-    'paragraph--width--medium' => 'col-md-8 offset-md-2',
-    'paragraph--width--wide' => 'col-md-10 offset-md-1',
-    'paragraph--width--full' => 'col-12',
-    'bg-edge2edge' => 'bg-edge2edge col-12',
-  ];
-
-  $width = 'col-12';
-  if (isset($width_map[$width_value])) {
-    $width = $width_map[$width_value];
-  }
-
-  $custom_paragraph_classes_value = NULL;
-  if (isset($variables['paragraph']->bp_classes)
-      && isset($variables['paragraph']->bp_classes->value)) {
-    $custom_paragraph_classes_value = $variables['paragraph']->bp_classes->value;
-  }
-
-  $gutter_value = FALSE;
-  if (isset($variables['paragraph']->bp_gutter)
-      && isset($variables['paragraph']->bp_gutter->value)) {
-    $gutter_value = $variables['paragraph']->bp_gutter->value;
-  }
-
-  $title_status = FALSE;
-  if (isset($variables['paragraph']->bp_title_status)
-      && isset($variables['paragraph']->bp_title_status->value)) {
-    $title_status = $variables['paragraph']->bp_title_status->value;
-  }
-
-  // Add variables to template.
-  $variables["VBP"] = [
-    'background_image' => [
-      'type' => 'image',
-      'url' => $file_path,
-    ],
-    'bp_width' => [
-      'type' => 'string',
-      'value' => $width,
-    ],
-    'bp_classes' => [
-      'type' => 'string',
-      'value' => $custom_paragraph_classes_value,
-    ],
-    'bp_gutter' => [
-      'type' => 'bool',
-      'value' => $gutter_value,
-    ],
-    'bp_title_status' => [
-      'type' => 'bool',
-      'value' => $title_status,
-    ],
-  ];
-}
-
-/**
- * Prepares variables for views grid templates.
- *
- * Default template: views-bootstrap-grid.html.twig.
- *
- * @param array $vars
- *   An associative array containing:
- *   - view: A ViewExecutable object.
- *   - rows: The raw row data.
- */
-function octheme_bs4_preprocess_views_bootstrap_grid(array &$vars) {
-
-  if (isset($vars['options']) && isset($vars['options']["col_xs"])) {
-    $vars['options']["col_xs"] = str_replace("xs-", "", $vars['options']["col_xs"]);
-  }
-
-}

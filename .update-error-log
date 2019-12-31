@@ -1,0 +1,64 @@
+
+[32mPreparing composer.json for Varbase updates...(B[0m
+[32mUpdating Varbase...(B[0m
+    1/1:	https://packages.drupal.org/8/drupal/provider-2019-4$843b4d8db6087bc2135ef833bfdacf00fa675e2225931e1c50bad01e576f5af4.json
+    Finished: success: 1, skipped: 0, failure: 0, total: 1
+    1/3:	http://repo.packagist.org/p/provider-latest$45b5d5d8d951278b9ca07763208d579503e40941a95e8acb3cb904f78efa1c85.json
+    2/3:	http://repo.packagist.org/p/provider-2019-10$39399427db75a8e96ab1b4ab281648a8ae78901fc486ad7a08ecd02a4c032f64.json
+    3/3:	http://repo.packagist.org/p/provider-2018$d5eb316192f241299956ede7d4c1f715590840a8e8acf2e250580b3c2f39ca29.json
+    Finished: success: 3, skipped: 0, failure: 0, total: 3
+Gathering patches for root package.
+Removing package drupal/group so that it can be re-installed and re-patched.
+  - Removing drupal/group (1.0.0-rc5)
+Deleting docroot/modules/contrib/group - deleted
+Removing package drupal/social_auth_google so that it can be re-installed and re-patched.
+  - Removing drupal/social_auth_google (2.0.0)
+Deleting docroot/modules/contrib/social_auth_google - deleted
+Loading composer repositories with package information
+                                                      Updating dependencies (including require-dev)
+Your requirements could not be resolved to an installable set of packages.
+
+  Problem 1
+    - drupal/varbase_core 8.x-dev requires drupal/betterlogin 1.3 -> satisfiable by drupal/betterlogin[1.3.0] but these conflict with your requirements or minimum-stability.
+    - vardot/varbase 8.8.x-dev requires drupal/varbase_core 8.x-dev -> satisfiable by drupal/varbase_core[8.x-dev].
+    - Installation request for vardot/varbase 8.8.x-dev -> satisfiable by vardot/varbase[8.8.x-dev].
+
+
+In DiscoveryTrait.php line 53:
+                                                                               
+  The "group_permission" plugin does not exist. Valid plugin IDs for Drupal\v  
+  iews\Plugin\ViewsPluginManager are: h5paccessuserpoints, role, perm, none    
+                                                                               
+
+cache:rebuild [--cache-clear [CACHE-CLEAR]] [--no-cache-clear] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbose] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-d|--debug] [-y|--yes] [--no] [--remote-host REMOTE-HOST] [--remote-user REMOTE-USER] [-r|--root ROOT] [-l|--uri URI] [--simulate] [--pipe] [-D|--define DEFINE] [--druplicon] [--xh-link XH-LINK] [--notify [NOTIFY]] [--] <command>
+
+[32mEnabling new required modules for the latest Varbase version...(B[0m
+[32mUpdating the database for latest changes.(B[0m
+ [warning] The following module is missing from the file system: gnode bootstrap.inc:277
+ [warning] The following module is missing from the file system: group bootstrap.inc:277
+ [warning] PHP max upload size should be set appropriately so you are able to upload H5Ps and other media.
+ [error]  Opencourse Book requires this module. (Currently using Unresolved dependency gnode (Missing)) 
+ [error]  Opencourse Book requires this module. (Currently using Unresolved dependency group (Missing)) 
+ [error]  oc_content requires this module. (Currently using Unresolved dependency gnode (Missing)) 
+ [error]  oc_content requires this module. (Currently using Unresolved dependency group (Missing)) 
+ [error]  oc_dev requires this module. (Currently using Unresolved dependency gnode (Missing)) 
+ [error]  oc_dev requires this module. (Currently using Unresolved dependency group (Missing)) 
+ [error]  Opencourse Groups requires this module. (Currently using Unresolved dependency gnode (Missing)) 
+ [error]  Opencourse Groups requires this module. (Currently using Unresolved dependency group (Missing)) 
+ [error]  Opencourse Image requires this module. (Currently using Unresolved dependency gnode (Missing)) 
+ [error]  Opencourse Image requires this module. (Currently using Unresolved dependency group (Missing)) 
+ [error]  Opencourse link requires this module. (Currently using Unresolved dependency gnode (Missing)) 
+ [error]  Opencourse link requires this module. (Currently using Unresolved dependency group (Missing)) 
+ [error]  Opencourse Landing Page requires this module. (Currently using Unresolved dependency gnode (Missing)) 
+ [error]  Opencourse Landing Page requires this module. (Currently using Unresolved dependency group (Missing)) 
+ [error]  oc_prod requires this module. (Currently using Unresolved dependency gnode (Missing)) 
+ [error]  oc_prod requires this module. (Currently using Unresolved dependency group (Missing)) 
+ [error]  Opencourse Task requires this module. (Currently using Unresolved dependency gnode (Missing)) 
+ [error]  Opencourse Task requires this module. (Currently using Unresolved dependency group (Missing)) 
+ [error]  Opencourse Works requires this module. (Currently using Unresolved dependency gnode (Missing)) 
+ [error]  Opencourse Works requires this module. (Currently using Unresolved dependency group (Missing)) 
+
+ // Requirements check reports errors. Do you wish to continue?: yes.           
+
+ [success] No pending updates.
+[32mHoya! Updates are now done. We will add a link in the near future for here to link to common issues appearing after updates and how to fix them.(B[0m

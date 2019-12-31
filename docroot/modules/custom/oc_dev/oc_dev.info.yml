@@ -8,7 +8,6 @@ dependencies:
   - views_ui
   - block_place
   - devel
-  - kint
   - features_ui
   - oc_prod
   - dblog

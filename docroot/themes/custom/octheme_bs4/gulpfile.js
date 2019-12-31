@@ -1,3 +1,4 @@
+var page = "";
 let gulp = require('gulp'),
   sass = require('gulp-sass'),
   postcss = require('gulp-postcss'),
@@ -100,3 +101,5 @@ exports.move_popper_js_files = move_popper_js_files
 exports.watch = watch
 
 exports.default = build
+
+

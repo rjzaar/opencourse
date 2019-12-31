@@ -143,7 +143,7 @@ global-styles:
       css/theme/content.theme.css: {}
       css/theme/footer.theme.css: {}
       css/theme/betterlogin.theme.css: {}
-      css/theme/octheme_bs4.css: {}
+      css/theme/octheme_bs4.theme.css: {}
   dependencies:
     - core/jquery
 
@@ -261,6 +261,12 @@ material_design_icons:
       //fonts.googleapis.com/icon?family=Material+Icons: {}
 
 fontawesome:
+  remote: https://fortawesome.github.io/Font-Awesome/
+  version: 4.7.0
+  license:
+    name: MIT
+    url: https://fortawesome.github.io/Font-Awesome/license/
+    gpl-compatible: true
   css:
-    component:
-      //use.fontawesome.com/releases/v5.0.13/css/all.css: {}
+    theme:
+      https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css: { type: external, minified: true }

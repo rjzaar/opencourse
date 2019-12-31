@@ -58,7 +58,7 @@
                 <h2 class="oc_inject oc_item_title" {{ title_attributes }}>
                     {{ title[0]['#context']['value'] }}
                 </h2></button>
-            <h2 class="oc_inject oc_not_btn oc_item_title" {{ title_attributes }}>
+            <h2 class="oc_inject oc_not_btn oc_item_title oc_col_width" {{ title_attributes }}>
                 <a href="/node/{{ node.id }}">{{ title[0]['#context']['value']}}</a>
             </h2>
         {% endif %}
@@ -80,7 +80,7 @@
                     {#</div>#}
                 {#</div>#}
             {#</div>#}
-            <div class="oc_inject oc_text">
+            <div class="oc_inject oc_col_width oc_text">
                 {{ content.body }}
             </div>
             <div class="oc_inject oc_text oc_quiz" >
