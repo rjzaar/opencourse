@@ -54,11 +54,6 @@ content:
             classes: {  }
     type: text_default
     region: ds_content
-  content_moderation_control:
-    weight: -20
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   field_oc_link:
     weight: 0
     label: hidden

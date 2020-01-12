@@ -60,21 +60,21 @@ widgets:
     label: 'Upload image'
     id: dropzonejs_media_entity_inline_entity_form
   c05a5c40-6a5e-4a45-a841-7ba471656952:
+    id: dropzonejs_media_entity_inline_entity_form
+    label: 'Upload video'
     settings:
-      form_mode: entity_browser
-      media_type: video
-      upload_location: 'public://videos/[date:custom:Y]-[date:custom:m]'
-      dropzone_description: 'Drop video files here to upload them'
-      max_filesize: 128M
-      extensions: 'mp4 webm ogv'
       clientside_resize: false
-      resize_width: null
+      dropzone_description: 'Drop video files here to upload them'
+      extensions: 'mp4 webm ogv'
+      form_mode: entity_browser
+      max_filesize: 128M
+      media_type: video
       resize_height: null
-      resize_quality: !!float 1
       resize_method: contain
-      thumbnail_method: contain
+      resize_quality: !!float 1
+      resize_width: null
       submit_text: 'Select video(s)'
+      thumbnail_method: contain
+      upload_location: 'public://videos/[date:custom:Y]-[date:custom:m]'
     uuid: c05a5c40-6a5e-4a45-a841-7ba471656952
     weight: -8
-    label: 'Upload video'
-    id: dropzonejs_media_entity_inline_entity_form

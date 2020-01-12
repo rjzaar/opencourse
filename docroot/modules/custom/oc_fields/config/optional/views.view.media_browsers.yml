@@ -19,6 +19,7 @@ description: 'Browser view to select media content form the library of images, m
 tag: ''
 base_table: media_field_data
 base_field: mid
+core: 8.x
 display:
   default:
     display_plugin: default
@@ -264,8 +265,6 @@ display:
           id: status
           expose:
             operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
           group: 1
         name:
           id: name
@@ -295,8 +294,6 @@ display:
               content_admin: '0'
               site_admin: '0'
               administrator: '0'
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -749,8 +746,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -794,8 +789,6 @@ display:
               content_admin: '0'
               site_admin: '0'
               administrator: '0'
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -841,8 +834,6 @@ display:
               site_admin: '0'
               administrator: '0'
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -881,8 +872,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -929,43 +918,34 @@ display:
           text_input_required: 'Select any filter and click on Apply to see results'
           bef:
             general:
+              allow_secondary: false
+              secondary_label: 'Advanced options'
               autosubmit: false
               autosubmit_exclude_textfield: true
               autosubmit_hide: false
-              input_required: false
-              text_input_required: 'Select any filter and click on Apply to see results'
-              text_input_required_format: basic_html
-              allow_secondary: false
-              secondary_label: 'Advanced options'
             sort:
-              plugin_id: default
+              bef_format: default
               advanced:
+                collapsible: false
+                collapsible_label: 'Sort options'
                 combine: true
                 combine_rewrite: ''
                 reset: false
                 reset_label: ''
-                collapsible: false
-                collapsible_label: 'Sort options'
                 is_secondary: false
-            filter:
-              name:
-                plugin_id: default
-                advanced:
-                  collapsible: false
-                  is_secondary: false
-                  placeholder_text: ''
-                  rewrite:
-                    filter_rewrite_values: ''
-                  sort_options: false
-              bundle:
-                plugin_id: default
-                advanced:
-                  collapsible: false
-                  is_secondary: false
-                  placeholder_text: ''
-                  rewrite:
-                    filter_rewrite_values: ''
-                  sort_options: false
+            name:
+              bef_format: default
+              more_options:
+                is_secondary: false
+                placeholder_text: ''
+            bundle:
+              bef_format: default
+              more_options:
+                bef_select_all_none: false
+                bef_collapsible: false
+                is_secondary: false
+                rewrite:
+                  filter_rewrite_values: ''
           text_input_required_format: full_html
     cache_metadata:
       max-age: -1
@@ -1318,8 +1298,6 @@ display:
           id: status
           expose:
             operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
           group: 1
         name:
           id: name
@@ -1349,8 +1327,6 @@ display:
               content_admin: '0'
               site_admin: '0'
               administrator: '0'
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1425,34 +1401,26 @@ display:
           text_input_required: 'Select any filter and click on Apply to see results'
           bef:
             general:
+              allow_secondary: false
+              secondary_label: 'Advanced options'
               autosubmit: false
               autosubmit_exclude_textfield: false
               autosubmit_hide: false
-              input_required: false
-              text_input_required: 'Select any filter and click on Apply to see results'
-              text_input_required_format: basic_html
-              allow_secondary: false
-              secondary_label: 'Advanced options'
             sort:
-              plugin_id: default
+              bef_format: default
               advanced:
+                collapsible: false
+                collapsible_label: 'Sort options'
                 combine: false
                 combine_rewrite: ''
                 reset: false
                 reset_label: ''
-                collapsible: false
-                collapsible_label: 'Sort options'
                 is_secondary: false
-            filter:
-              name:
-                plugin_id: default
-                advanced:
-                  collapsible: false
-                  is_secondary: false
-                  placeholder_text: ''
-                  rewrite:
-                    filter_rewrite_values: ''
-                  sort_options: false
+            name:
+              bef_format: default
+              more_options:
+                is_secondary: false
+                placeholder_text: ''
           text_input_required_format: full_html
     cache_metadata:
       max-age: -1
@@ -1805,8 +1773,6 @@ display:
           id: status
           expose:
             operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
           group: 1
         name:
           id: name
@@ -1836,8 +1802,6 @@ display:
               content_admin: '0'
               site_admin: '0'
               administrator: '0'
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1878,8 +1842,6 @@ display:
             remember_roles:
               authenticated: authenticated
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1918,8 +1880,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1992,34 +1952,26 @@ display:
           text_input_required: 'Select any filter and click on Apply to see results'
           bef:
             general:
+              allow_secondary: false
+              secondary_label: 'Advanced options'
               autosubmit: false
               autosubmit_exclude_textfield: false
               autosubmit_hide: false
-              input_required: false
-              text_input_required: 'Select any filter and click on Apply to see results'
-              text_input_required_format: basic_html
-              allow_secondary: false
-              secondary_label: 'Advanced options'
             sort:
-              plugin_id: default
+              bef_format: default
               advanced:
+                collapsible: false
+                collapsible_label: 'Sort options'
                 combine: true
                 combine_rewrite: ''
                 reset: false
                 reset_label: ''
-                collapsible: false
-                collapsible_label: 'Sort options'
                 is_secondary: false
-            filter:
-              name:
-                plugin_id: default
-                advanced:
-                  collapsible: false
-                  is_secondary: false
-                  placeholder_text: ''
-                  rewrite:
-                    filter_rewrite_values: ''
-                  sort_options: false
+            name:
+              bef_format: default
+              more_options:
+                is_secondary: false
+                placeholder_text: ''
           text_input_required_format: full_html
     cache_metadata:
       max-age: -1
@@ -2372,8 +2324,6 @@ display:
           id: status
           expose:
             operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
           group: 1
         name:
           id: name
@@ -2403,8 +2353,6 @@ display:
               content_admin: '0'
               site_admin: '0'
               administrator: '0'
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -2453,8 +2401,6 @@ display:
               site_admin: '0'
               administrator: '0'
             reduce: true
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -2497,8 +2443,6 @@ display:
             remember_roles:
               authenticated: authenticated
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -2537,8 +2481,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -2611,43 +2553,34 @@ display:
           text_input_required: 'Select any filter and click on Apply to see results'
           bef:
             general:
+              allow_secondary: false
+              secondary_label: 'Advanced options'
               autosubmit: false
               autosubmit_exclude_textfield: false
               autosubmit_hide: false
-              input_required: false
-              text_input_required: 'Select any filter and click on Apply to see results'
-              text_input_required_format: basic_html
-              allow_secondary: false
-              secondary_label: 'Advanced options'
             sort:
-              plugin_id: default
+              bef_format: default
               advanced:
+                collapsible: false
+                collapsible_label: 'Sort options'
                 combine: false
                 combine_rewrite: ''
                 reset: false
                 reset_label: ''
-                collapsible: false
-                collapsible_label: 'Sort options'
                 is_secondary: false
-            filter:
-              name:
-                plugin_id: default
-                advanced:
-                  collapsible: false
-                  is_secondary: false
-                  placeholder_text: ''
-                  rewrite:
-                    filter_rewrite_values: ''
-                  sort_options: false
-              bundle_1:
-                plugin_id: default
-                advanced:
-                  collapsible: false
-                  is_secondary: false
-                  placeholder_text: ''
-                  rewrite:
-                    filter_rewrite_values: ''
-                  sort_options: false
+            name:
+              bef_format: default
+              more_options:
+                is_secondary: false
+                placeholder_text: ''
+            bundle_1:
+              bef_format: default
+              more_options:
+                bef_select_all_none: false
+                bef_collapsible: false
+                is_secondary: false
+                rewrite:
+                  filter_rewrite_values: ''
           text_input_required_format: full_html
     cache_metadata:
       max-age: -1
@@ -3000,8 +2933,6 @@ display:
           id: status
           expose:
             operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
           group: 1
         name:
           id: name
@@ -3031,8 +2962,6 @@ display:
               content_admin: '0'
               site_admin: '0'
               administrator: '0'
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -3080,8 +3009,6 @@ display:
               site_admin: '0'
               administrator: '0'
             reduce: true
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -3123,8 +3050,6 @@ display:
             remember_roles:
               authenticated: authenticated
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -3163,8 +3088,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -3237,43 +3160,34 @@ display:
           text_input_required: 'Select any filter and click on Apply to see results'
           bef:
             general:
+              allow_secondary: false
+              secondary_label: 'Advanced options'
               autosubmit: true
               autosubmit_exclude_textfield: true
               autosubmit_hide: false
-              input_required: false
-              text_input_required: 'Select any filter and click on Apply to see results'
-              text_input_required_format: basic_html
-              allow_secondary: false
-              secondary_label: 'Advanced options'
             sort:
-              plugin_id: default
+              bef_format: default
               advanced:
+                collapsible: false
+                collapsible_label: 'Sort options'
                 combine: true
                 combine_rewrite: ''
                 reset: false
                 reset_label: ''
-                collapsible: false
-                collapsible_label: 'Sort options'
                 is_secondary: false
-            filter:
-              name:
-                plugin_id: default
-                advanced:
-                  collapsible: false
-                  is_secondary: false
-                  placeholder_text: ''
-                  rewrite:
-                    filter_rewrite_values: ''
-                  sort_options: false
-              bundle:
-                plugin_id: default
-                advanced:
-                  collapsible: false
-                  is_secondary: false
-                  placeholder_text: ''
-                  rewrite:
-                    filter_rewrite_values: ''
-                  sort_options: false
+            name:
+              bef_format: default
+              more_options:
+                is_secondary: false
+                placeholder_text: ''
+            bundle:
+              bef_format: default
+              more_options:
+                bef_select_all_none: false
+                bef_collapsible: false
+                is_secondary: false
+                rewrite:
+                  filter_rewrite_values: ''
           text_input_required_format: full_html
     cache_metadata:
       max-age: -1

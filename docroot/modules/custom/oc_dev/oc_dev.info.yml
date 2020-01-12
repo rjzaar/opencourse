@@ -11,7 +11,6 @@ dependencies:
   - features_ui
   - oc_prod
   - dblog
-  - search_kint
   - twig_xdebug
 
 

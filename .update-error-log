@@ -1,64 +1,332 @@
 
 [32mPreparing composer.json for Varbase updates...(B[0m
 [32mUpdating Varbase...(B[0m
-    1/1:	https://packages.drupal.org/8/drupal/provider-2019-4$843b4d8db6087bc2135ef833bfdacf00fa675e2225931e1c50bad01e576f5af4.json
-    Finished: success: 1, skipped: 0, failure: 0, total: 1
-    1/3:	http://repo.packagist.org/p/provider-latest$45b5d5d8d951278b9ca07763208d579503e40941a95e8acb3cb904f78efa1c85.json
-    2/3:	http://repo.packagist.org/p/provider-2019-10$39399427db75a8e96ab1b4ab281648a8ae78901fc486ad7a08ecd02a4c032f64.json
-    3/3:	http://repo.packagist.org/p/provider-2018$d5eb316192f241299956ede7d4c1f715590840a8e8acf2e250580b3c2f39ca29.json
-    Finished: success: 3, skipped: 0, failure: 0, total: 3
-Gathering patches for root package.
-Removing package drupal/group so that it can be re-installed and re-patched.
-  - Removing drupal/group (1.0.0-rc5)
-Deleting docroot/modules/contrib/group - deleted
-Removing package drupal/social_auth_google so that it can be re-installed and re-patched.
-  - Removing drupal/social_auth_google (2.0.0)
-Deleting docroot/modules/contrib/social_auth_google - deleted
 Loading composer repositories with package information
                                                       Updating dependencies (including require-dev)
-Your requirements could not be resolved to an installable set of packages.
+Package operations: 15 installs, 73 updates, 4 removals
+  - Removing doctrine/reflection (v1.0.0)
+  - Removing brumann/polyfill-unserialize (v1.0.4)
+  - Removing doctrine/event-manager (1.1.0)
+  - Removing doctrine/persistence (1.3.3)
+  - Installing cweagans/composer-patches (1.7.4): Loading from cache
+Gathering patches for root package.
+Gathering patches for dependencies. This might take a minute.
+  - Installing drupal/core-composer-scaffold (8.8.1): Downloading (connecting...)Downloading (100%)         
+  - Installing drupal/core-project-message (8.8.1): Downloading (connecting...)Downloading (100%)         
+  - Downgrading symfony/polyfill-ctype (v1.13.1 => v1.12.0): Downloading (connecting...)Downloading (0%)           Downloading (100%)
+  - Downgrading symfony/yaml (v3.4.36 => v3.4.35): Loading from cache
+  - Updating vardot/varbase-updater (1.1.11 => 1.1.24):     The package has modified files:
+    M scripts/update/update-varbase.sh
+    Discard changes [y,n,v,d,s,?]?  Checking out 4e162091dc
+  - Downgrading twig/twig (v1.42.4 => v1.42.3): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (10%)Downloading (15%)Downloading (20%)Downloading (25%)Downloading (30%)Downloading (35%)Downloading (40%)Downloading (45%)Downloading (50%)Downloading (55%)Downloading (60%)Downloading (65%)Downloading (70%)Downloading (75%)Downloading (80%)Downloading (85%)Downloading (90%)Downloading (95%)Downloading (100%)
+  - Downgrading symfony/polyfill-mbstring (v1.13.1 => v1.12.0): Downloading (connecting...)Downloading (0%)           Downloading (30%)Downloading (60%)Downloading (90%)Downloading (100%)
+  - Downgrading symfony/translation (v3.4.36 => v3.4.35): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (10%)Downloading (15%)Downloading (20%)Downloading (25%)Downloading (30%)Downloading (35%)Downloading (40%)Downloading (45%)Downloading (50%)Downloading (55%)Downloading (60%)Downloading (65%)Downloading (70%)Downloading (75%)Downloading (80%)Downloading (85%)Downloading (90%)Downloading (95%)Downloading (100%)
+  - Downgrading symfony/validator (v3.4.36 => v3.4.35): Downloading (connecting...)Downloading (100%)         
+  - Downgrading symfony/serializer (v3.4.36 => v3.4.35): Downloading (connecting...)Downloading (100%)         
+  - Downgrading symfony/routing (v3.4.36 => v3.4.35): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (10%)Downloading (15%)Downloading (20%)Downloading (25%)Downloading (30%)Downloading (35%)Downloading (40%)Downloading (45%)Downloading (50%)Downloading (55%)Downloading (60%)Downloading (65%)Downloading (70%)Downloading (75%)Downloading (80%)Downloading (85%)Downloading (90%)Downloading (95%)Downloading (100%)
+  - Downgrading symfony/polyfill-php70 (v1.13.1 => v1.12.0): Downloading (connecting...)Downloading (0%)           Downloading (85%)Downloading (100%)
+  - Downgrading symfony/http-foundation (v3.4.36 => v3.4.35): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (10%)Downloading (15%)Downloading (20%)Downloading (25%)Downloading (30%)Downloading (35%)Downloading (40%)Downloading (45%)Downloading (50%)Downloading (55%)Downloading (60%)Downloading (65%)Downloading (70%)Downloading (75%)Downloading (80%)Downloading (85%)Downloading (90%)Downloading (95%)Downloading (100%)
+  - Downgrading symfony/psr-http-message-bridge (v1.2.0 => v1.1.2): Downloading (connecting...)Downloading (0%)           Downloading (35%)Downloading (40%)Downloading (75%)Downloading (100%)
+  - Downgrading symfony/process (v3.4.36 => v3.4.35): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (35%)Downloading (40%)Downloading (45%)Downloading (75%)Downloading (80%)Downloading (85%)Downloading (100%)
+  - Downgrading symfony/polyfill-iconv (v1.13.1 => v1.12.0): Downloading (connecting...)Downloading (100%)         
+  - Downgrading symfony/polyfill-util (v1.13.1 => v1.12.0): Downloading (connecting...)Downloading (0%)           Downloading (100%)
+  - Downgrading symfony/polyfill-php56 (v1.13.1 => v1.12.0): Downloading (connecting...)Downloading (0%)           Downloading (100%)
+  - Downgrading symfony/event-dispatcher (v3.4.36 => v3.4.35): Loading from cache
+  - Downgrading psr/log (1.1.2 => 1.1.0): Downloading (connecting...)Downloading (0%)           Downloading (65%)Downloading (90%)Downloading (100%)
+  - Downgrading symfony/debug (v3.4.36 => v3.4.35): Loading from cache
+  - Downgrading symfony/http-kernel (v3.4.36 => v3.4.35): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (10%)Downloading (15%)Downloading (20%)Downloading (25%)Downloading (30%)Downloading (35%)Downloading (40%)Downloading (45%)Downloading (50%)Downloading (55%)Downloading (60%)Downloading (65%)Downloading (70%)Downloading (75%)Downloading (80%)Downloading (85%)Downloading (90%)Downloading (95%)Downloading (100%)
+  - Downgrading symfony/dependency-injection (v3.4.36 => v3.4.35): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (10%)Downloading (15%)Downloading (20%)Downloading (25%)Downloading (30%)Downloading (35%)Downloading (40%)Downloading (45%)Downloading (50%)Downloading (55%)Downloading (60%)Downloading (65%)Downloading (70%)Downloading (75%)Downloading (80%)Downloading (85%)Downloading (90%)Downloading (95%)Downloading (100%)
+  - Downgrading symfony/console (v3.4.36 => v3.4.35): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (10%)Downloading (15%)Downloading (20%)Downloading (25%)Downloading (30%)Downloading (35%)Downloading (40%)Downloading (45%)Downloading (50%)Downloading (55%)Downloading (60%)Downloading (65%)Downloading (70%)Downloading (75%)Downloading (80%)Downloading (90%)Downloading (95%)Downloading (100%)
+  - Downgrading symfony/class-loader (v3.4.36 => v3.4.35): Loading from cache
+  - Downgrading pear/pear_exception (v1.0.1 => v1.0.0): Loading from cache
+  - Downgrading pear/console_getopt (v1.4.3 => v1.4.2): Downloading (connecting...)Downloading (0%)           Downloading (100%)
+  - Downgrading pear/pear-core-minimal (v1.10.10 => v1.10.9): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (10%)Downloading (15%)Downloading (20%)Downloading (25%)Downloading (30%)Downloading (35%)Downloading (100%)
+  - Downgrading masterminds/html5 (2.7.0 => 2.3.0): Downloading (connecting...)Downloading (100%)         
+  - Downgrading guzzlehttp/guzzle (6.5.0 => 6.3.3): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (15%)Downloading (20%)Downloading (30%)Downloading (35%)Downloading (40%)Downloading (50%)Downloading (55%)Downloading (65%)Downloading (70%)Downloading (75%)Downloading (85%)Downloading (90%)Downloading (100%)
+  - Downgrading doctrine/lexer (1.2.0 => 1.0.2): Downloading (connecting...)Downloading (0%)           Downloading (65%)Downloading (100%)
+  - Downgrading egulias/email-validator (2.1.12 => 2.1.11): Loading from cache
+  - Downgrading doctrine/annotations (v1.8.0 => v1.4.0): Downloading (connecting...)Downloading (0%)           Downloading (15%)Downloading (25%)Downloading (40%)Downloading (55%)Downloading (70%)Downloading (80%)Downloading (95%)Downloading (100%)
+  - Downgrading doctrine/collections (1.6.4 => v1.4.0): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (55%)Downloading (60%)Downloading (100%)
+  - Downgrading doctrine/cache (1.10.0 => v1.6.2): Downloading (connecting...)Downloading (0%)           Downloading (10%)Downloading (15%)Downloading (25%)Downloading (30%)Downloading (40%)Downloading (55%)Downloading (65%)Downloading (70%)Downloading (80%)Downloading (95%)Downloading (100%)
+  - Downgrading doctrine/inflector (1.3.1 => v1.2.0): Downloading (connecting...)Downloading (0%)           Downloading (90%)Downloading (100%)
+  - Downgrading doctrine/common (v2.11.0 => v2.7.3): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (10%)Downloading (15%)Downloading (20%)Downloading (25%)Downloading (50%)Downloading (55%)Downloading (60%)Downloading (65%)Downloading (70%)Downloading (75%)Downloading (80%)Downloading (85%)Downloading (90%)Downloading (95%)Downloading (100%)
+  - Updating typo3/phar-stream-wrapper (v2.1.3 => v3.1.3): Downloading (connecting...)Downloading (100%)         
+  - Updating drupal/core (8.7.11 => 8.8.1): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (10%)Downloading (15%)Downloading (20%)Downloading (25%)Downloading (30%)Downloading (35%)Downloading (40%)Downloading (45%)Downloading (50%)Downloading (55%)Downloading (60%)Downloading (65%)Downloading (70%)Downloading (75%)Downloading (80%)Downloading (85%)Downloading (90%)Downloading (95%)Downloading (100%)
+  - Applying patches for drupal/core
+    https://www.drupal.org/files/issues/2018-04-19/node-revisions-missing-local-tasks-2885278-11.patch (node-revisions-missing-local-tasks-2885278-11.patch)
+    https://www.drupal.org/files/issues/2018-07-10/drupal-views-comment-count-2801929-12.patch (drupal-views-comment-count-2801929-12.patch)
+    https://www.drupal.org/files/issues/comment-action_exist-2915728-13.patch (comment-action_exist-2915728-13.patch)
+    https://www.drupal.org/files/issues/2869592-remove-update-warning-7.patch (Issue #2869592: Disabled update module shouldn't produce a status report warning)
+    https://www.drupal.org/files/issues/2019-11-27/2815221-125.patch (Issue #2815221: Add quickedit to the latest-revision route)
+    https://www.drupal.org/files/issues/2019-11-05/1356276-531-8.8.x-4.patch (Issue #1356276: Allow profiles to define a base/parent profile and load them in the correct order)
+    https://www.drupal.org/files/issues/2018-07-09/2914389-8-do-not-test.patch (Issue #2914389: Allow profiles to exclude dependencies of their parent)
+    https://www.drupal.org/files/issues/2018-12-10/core--getDerivatives-Invalid-argument-foreach--2893892-11-d8.patch (Issue #2893892: Fixed Warning Invalid argument supplied for foreach() in Drupal)
+    https://www.drupal.org/files/issues/2019-03-31/3044656-2.patch (Issue #3044656: Add a helper method to strip subdirectories from URL paths)
+    https://www.drupal.org/files/issues/2018-12-15/2646744-34.patch (Issue #2646744: Drupal Core Url does not accept root-relative (file) URLs, making it impossible to let LinkGenerator create root-relative file URL links)
+    https://www.drupal.org/files/issues/2019-12-19/3101231-19.patch (Issue #3101231: Fix multilingual site's layout edit context issue with TypeError: Argument 1 passed to UrlHelper::buildQuery() must be of the type array, null given)
+    https://www.drupal.org/files/issues/2019-12-03/2996114-99.patch (Issue #2996114: Fix Argument 2 passed to Drupal jsonapi Routing closure must be an instance of ResourceType, NULL given)
 
-  Problem 1
-    - drupal/varbase_core 8.x-dev requires drupal/betterlogin 1.3 -> satisfiable by drupal/betterlogin[1.3.0] but these conflict with your requirements or minimum-stability.
-    - vardot/varbase 8.8.x-dev requires drupal/varbase_core 8.x-dev -> satisfiable by drupal/varbase_core[8.x-dev].
-    - Installation request for vardot/varbase 8.8.x-dev -> satisfiable by vardot/varbase[8.8.x-dev].
+  - Updating drupal/betterlogin (dev-1.x f7cf1c5 => 1.3.0):     Update failed (The .git directory is missing from docroot/modules/contrib/betterlogin, see https://getcomposer.org/commit-deps for more information)
+    Would you like to try reinstalling the package instead [yes]?   - Removing drupal/betterlogin (dev-1.x)
+  - Installing drupal/betterlogin (1.3.0): Cloning 8.x-1.3 from cache
+  - Downgrading emuse/behat-html-formatter (v0.2.0 => v0.1.0): Loading from cache
+  - Updating drupal/devel (2.1.0 => 3.0.0-beta1): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (10%)Downloading (15%)Downloading (20%)Downloading (25%)Downloading (30%)Downloading (35%)Downloading (40%)Downloading (45%)Downloading (50%)Downloading (55%)Downloading (60%)Downloading (65%)Downloading (70%)Downloading (75%)Downloading (80%)Downloading (85%)Downloading (90%)Downloading (95%)Downloading (100%)
+  - Downgrading mehrpadin/superfish (2.x-dev d7def64 => 2.1):     Update failed (The .git directory is missing from docroot/libraries/superfish, see https://getcomposer.org/commit-deps for more information)
+    Would you like to try reinstalling the package instead [yes]?   - Removing mehrpadin/superfish (2.x-dev)
+  - Installing mehrpadin/superfish (2.1): Cloning 80a0a484b7 from cache
+  - Updating drupal/vartheme_bs4 (6.5.0 => 6.6.0):     Update failed (The .git directory is missing from docroot/themes/contrib/vartheme_bs4, see https://getcomposer.org/commit-deps for more information)
+    Would you like to try reinstalling the package instead [yes]?   - Removing drupal/vartheme_bs4 (6.5.0)
+  - Installing drupal/vartheme_bs4 (6.6.0): Cloning 8.x-6.6 from cache
+  - Installing drupal/social_auth_google (2.0.0): Loading from cache
+  - Updating drupal/social_auth_facebook (2.0.0-beta4 => 2.0.0): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (70%)Downloading (75%)Downloading (80%)Downloading (100%)
+  - Updating drupal/userprotect (1.0.0 => 1.1.0): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (40%)Downloading (45%)Downloading (50%)Downloading (55%)Downloading (85%)Downloading (90%)Downloading (95%)Downloading (100%)
+  - Updating drupal/token (1.5.0 => 1.6.0): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (10%)Downloading (15%)Downloading (30%)Downloading (35%)Downloading (40%)Downloading (45%)Downloading (50%)Downloading (55%)Downloading (60%)Downloading (65%)Downloading (80%)Downloading (85%)Downloading (90%)Downloading (95%)Downloading (100%)
+  - Updating drupal/diff (1.0.0-rc2 => 1.0.0): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (10%)Downloading (15%)Downloading (30%)Downloading (35%)Downloading (40%)Downloading (45%)Downloading (50%)Downloading (55%)Downloading (60%)Downloading (65%)Downloading (75%)Downloading (80%)Downloading (85%)Downloading (90%)Downloading (95%)Downloading (100%)
+  - Updating drupal/crop (2.0.0-rc1 => 2.0.0): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (10%)Downloading (15%)Downloading (20%)Downloading (25%)Downloading (30%)Downloading (35%)Downloading (40%)Downloading (45%)Downloading (50%)Downloading (55%)Downloading (60%)Downloading (65%)Downloading (70%)Downloading (75%)Downloading (80%)Downloading (85%)Downloading (90%)Downloading (95%)Downloading (100%)
+  - Updating drupal/drd_agent (3.10.0 => 3.12.0): Downloading (connecting...)Downloading (0%)           Downloading (10%)Downloading (20%)Downloading (30%)Downloading (40%)Downloading (50%)Downloading (60%)Downloading (65%)Downloading (75%)Downloading (85%)Downloading (95%)Downloading (100%)
+  - Updating drupal/menu_position (1.0.0-alpha1 => 1.0.0-alpha2): Downloading (connecting...)Downloading (0%)           Downloading (25%)Downloading (50%)Downloading (75%)Downloading (100%)
+  - Updating drupal/length_indicator (1.0.0 => 1.1.0): Downloading (connecting...)Downloading (0%)           Downloading (45%)Downloading (90%)Downloading (100%)
+  - Updating drupal/content_lock (1.0.0-alpha8 => 2.0.0): Downloading (connecting...)Downloading (0%)           Downloading (10%)Downloading (15%)Downloading (25%)Downloading (35%)Downloading (40%)Downloading (50%)Downloading (60%)Downloading (75%)Downloading (85%)Downloading (100%)
+  - Installing drupal/core-recommended (8.8.1)
+  - Updating drupal/varbase_update_helper (7.7.0 => 8.1.0)
+  - Updating drupal/varbase_core (7.7.0 => 8.1.0):     Update failed (The .git directory is missing from docroot/modules/contrib/varbase_core, see https://getcomposer.org/commit-deps for more information)
+    Would you like to try reinstalling the package instead [yes]?   - Removing drupal/varbase_core (7.7.0)
+  - Installing drupal/varbase_core (8.1.0): Cloning 8.x-8.1 from cache
+  - Updating drupal/varbase_auth (6.6.0 => 6.7.0):     Update failed (The .git directory is missing from docroot/modules/contrib/varbase_auth, see https://getcomposer.org/commit-deps for more information)
+    Would you like to try reinstalling the package instead [yes]?   - Removing drupal/varbase_auth (6.6.0)
+  - Installing drupal/varbase_auth (6.7.0): Cloning 8.x-6.7 from cache
+  - Installing drupal/layout_library (1.0.0-beta1): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (50%)Downloading (55%)Downloading (100%)
+  - Updating drupal/blazy (2.0.0-rc5 => 2.0.0-rc6): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (10%)Downloading (15%)Downloading (20%)Downloading (25%)Downloading (30%)Downloading (35%)Downloading (40%)Downloading (45%)Downloading (50%)Downloading (55%)Downloading (60%)Downloading (65%)Downloading (70%)Downloading (75%)Downloading (80%)Downloading (85%)Downloading (90%)Downloading (95%)Downloading (100%)
+  - Updating drupal/slick (2.0.0-rc4 => 2.0.0): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (10%)Downloading (20%)Downloading (25%)Downloading (30%)Downloading (35%)Downloading (40%)Downloading (45%)Downloading (50%)Downloading (55%)Downloading (60%)Downloading (65%)Downloading (70%)Downloading (75%)Downloading (80%)Downloading (85%)Downloading (90%)Downloading (95%)Downloading (100%)
+  - Updating drupal/media_entity_twitter (2.1.0 => 2.2.0): Downloading (connecting...)Downloading (0%)           Downloading (10%)Downloading (35%)Downloading (45%)Downloading (70%)Downloading (80%)Downloading (90%)Downloading (100%)
+  - Updating drupal/dropzonejs (2.0.0-alpha4 => 2.0.0-alpha5): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (10%)Downloading (15%)Downloading (20%)Downloading (25%)Downloading (30%)Downloading (100%)
+  - Updating drupal/dropzonejs_eb_widget (2.0.0-alpha4 => 2.0.0-alpha5)
+  - Updating drupal/slick_views (2.0.0 => 2.1.0): Downloading (connecting...)Downloading (0%)           Downloading (50%)Downloading (100%)
+  - Updating drupal/entity_browser_generic_embed (7.8.0 => 7.11.0)
+  - Updating drupal/varbase_media (7.8.0 => 7.11.0):     Update failed (The .git directory is missing from docroot/modules/contrib/varbase_media, see https://getcomposer.org/commit-deps for more information)
+    Would you like to try reinstalling the package instead [yes]?   - Removing drupal/varbase_media (7.8.0)
+  - Installing drupal/varbase_media (7.11.0): Cloning 8.x-7.11 from cache
+  - Updating drupal/varbase_blog (7.2.0 => 8.0.0):     Update failed (The .git directory is missing from docroot/modules/contrib/varbase_blog, see https://getcomposer.org/commit-deps for more information)
+    Would you like to try reinstalling the package instead [yes]?   - Removing drupal/varbase_blog (7.2.0)
+  - Installing drupal/varbase_blog (8.0.0): Cloning 8.x-8.0 from cache
+  - Updating drupal/varbase_heroslider_media (7.5.0 => 7.6.0):     Update failed (The .git directory is missing from docroot/modules/contrib/varbase_heroslider_media, see https://getcomposer.org/commit-deps for more information)
+    Would you like to try reinstalling the package instead [yes]?   - Removing drupal/varbase_heroslider_media (7.5.0)
+  - Installing drupal/varbase_heroslider_media (7.6.0): Cloning 8.x-7.6 from cache
+  - Installing drupal/lb_ux (1.0.0-beta1): Downloading (connecting...)Downloading (0%)           Downloading (15%)Downloading (70%)Downloading (85%)Downloading (100%)
+  - Installing drupal/media_library_form_element (1.0.0-alpha4): Downloading (connecting...)Downloading (0%)           Downloading (10%)Downloading (15%)Downloading (25%)Downloading (35%)Downloading (40%)Downloading (50%)Downloading (55%)Downloading (60%)Downloading (65%)Downloading (75%)Downloading (80%)Downloading (85%)Downloading (90%)Downloading (100%)
+  - Installing drupal/layout_builder_at (2.10.0): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (70%)Downloading (75%)Downloading (80%)Downloading (100%)
+  - Installing drupal/media_library_theme_reset (1.0.0-beta1): Downloading (connecting...)Downloading (0%)           Downloading (5%)Downloading (20%)Downloading (25%)Downloading (30%)Downloading (45%)Downloading (50%)Downloading (55%)Downloading (70%)Downloading (75%)Downloading (80%)Downloading (100%)
+  - Installing drupal/layout_builder_block_sanitizer (1.0.0-alpha2): Downloading (connecting...)Downloading (0%)           Downloading (15%)Downloading (30%)Downloading (45%)Downloading (60%)Downloading (75%)Downloading (100%)
+  - Installing drupal/layout_builder_modal (1.0.0-alpha2): Downloading (connecting...)Downloading (0%)           Downloading (15%)Downloading (30%)Downloading (45%)Downloading (70%)Downloading (85%)Downloading (100%)
+  - Applying patches for drupal/layout_builder_modal
+    https://www.drupal.org/files/issues/2019-12-22/3101791-8.patch (Issue #3101791: Fix an integration issue with [Layout Builder Modal] and  [Layout Builder UX] to configure shortcut link to open with modal)
 
-
-In DiscoveryTrait.php line 53:
-                                                                               
-  The "group_permission" plugin does not exist. Valid plugin IDs for Drupal\v  
-  iews\Plugin\ViewsPluginManager are: h5paccessuserpoints, role, perm, none    
-                                                                               
-
-cache:rebuild [--cache-clear [CACHE-CLEAR]] [--no-cache-clear] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbose] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-d|--debug] [-y|--yes] [--no] [--remote-host REMOTE-HOST] [--remote-user REMOTE-USER] [-r|--root ROOT] [-l|--uri URI] [--simulate] [--pipe] [-D|--define DEFINE] [--druplicon] [--xh-link XH-LINK] [--notify [NOTIFY]] [--] <command>
-
+  - Installing drupal/entity_block (1.0.0-beta1): Downloading (connecting...)Downloading (0%)           Downloading (25%)Downloading (100%)
+  - Installing drupal/varbase_layout_builder (1.0.0-alpha4): Downloading (connecting...)Downloading (0%)           Downloading (10%)Downloading (15%)Downloading (20%)Downloading (25%)Downloading (30%)Downloading (35%)Downloading (45%)Downloading (55%)Downloading (60%)Downloading (65%)Downloading (70%)Downloading (75%)Downloading (80%)Downloading (90%)Downloading (100%)
+  - Updating vardot/varbase (8.7.4 => 8.8.1):     Update failed (The .git directory is missing from docroot/profiles/varbase, see https://getcomposer.org/commit-deps for more information)
+    Would you like to try reinstalling the package instead [yes]?   - Removing vardot/varbase (8.7.4)
+  - Installing vardot/varbase (8.8.1): Cloning 51a8089749 from cache
+  - Installing drupal/varbase_media_header (7.4.0): Downloading (connecting...)Downloading (0%)           Downloading (15%)Downloading (40%)Downloading (55%)Downloading (70%)Downloading (95%)Downloading (100%)
+Package container-interop/container-interop is abandoned, you should avoid using it. Use psr/container instead.
+Package zendframework/zend-diactoros is abandoned, you should avoid using it. Use laminas/laminas-diactoros instead.
+Package zendframework/zend-escaper is abandoned, you should avoid using it. Use laminas/laminas-escaper instead.
+Package zendframework/zend-feed is abandoned, you should avoid using it. Use laminas/laminas-feed instead.
+Package zendframework/zend-stdlib is abandoned, you should avoid using it. Use laminas/laminas-stdlib instead.
+Writing lock file
+Generating autoload files
+Scaffolding files for drupal/core:
+  - Copy [project-root]/.editorconfig from assets/scaffold/files/editorconfig
+  - Copy [project-root]/.gitattributes from assets/scaffold/files/gitattributes
+  - Copy [web-root]/.csslintrc from assets/scaffold/files/csslintrc
+  - Copy [web-root]/.eslintignore from assets/scaffold/files/eslintignore
+  - Copy [web-root]/.eslintrc.json from assets/scaffold/files/eslintrc.json
+  - Copy [web-root]/.ht.router.php from assets/scaffold/files/ht.router.php
+  - Copy [web-root]/.htaccess from assets/scaffold/files/htaccess
+  - Copy [web-root]/example.gitignore from assets/scaffold/files/example.gitignore
+  - Copy [web-root]/index.php from assets/scaffold/files/index.php
+  - Copy [web-root]/INSTALL.txt from assets/scaffold/files/drupal.INSTALL.txt
+  - Copy [web-root]/README.txt from assets/scaffold/files/drupal.README.txt
+  - Copy [web-root]/robots.txt from assets/scaffold/files/robots.txt
+  - Copy [web-root]/update.php from assets/scaffold/files/update.php
+  - Copy [web-root]/web.config from assets/scaffold/files/web.config
+  - Copy [web-root]/sites/README.txt from assets/scaffold/files/sites.README.txt
+  - Copy [web-root]/sites/development.services.yml from assets/scaffold/files/development.services.yml
+  - Copy [web-root]/sites/example.settings.local.php from assets/scaffold/files/example.settings.local.php
+  - Copy [web-root]/sites/example.sites.php from assets/scaffold/files/example.sites.php
+  - Copy [web-root]/sites/default/default.services.yml from assets/scaffold/files/default.services.yml
+  - Copy [web-root]/sites/default/default.settings.php from assets/scaffold/files/default.settings.php
+  - Copy [web-root]/modules/README.txt from assets/scaffold/files/modules.README.txt
+  - Copy [web-root]/profiles/README.txt from assets/scaffold/files/profiles.README.txt
+  - Copy [web-root]/themes/README.txt from assets/scaffold/files/themes.README.txt
+> Varbase\composer\ScriptHandler::postDrupalScaffoldProcedure
+> Varbase\composer\ScriptHandler::createRequiredFiles
+> Varbase\composer\ScriptHandler::removeGitDirectories
+ [success] Cache rebuild complete.
 [32mEnabling new required modules for the latest Varbase version...(B[0m
 [32mUpdating the database for latest changes.(B[0m
- [warning] The following module is missing from the file system: gnode bootstrap.inc:277
- [warning] The following module is missing from the file system: group bootstrap.inc:277
+ [warning] The following module is missing from the file system: kint bootstrap.inc:291
  [warning] PHP max upload size should be set appropriately so you are able to upload H5Ps and other media.
- [error]  Opencourse Book requires this module. (Currently using Unresolved dependency gnode (Missing)) 
- [error]  Opencourse Book requires this module. (Currently using Unresolved dependency group (Missing)) 
- [error]  oc_content requires this module. (Currently using Unresolved dependency gnode (Missing)) 
- [error]  oc_content requires this module. (Currently using Unresolved dependency group (Missing)) 
- [error]  oc_dev requires this module. (Currently using Unresolved dependency gnode (Missing)) 
- [error]  oc_dev requires this module. (Currently using Unresolved dependency group (Missing)) 
- [error]  Opencourse Groups requires this module. (Currently using Unresolved dependency gnode (Missing)) 
- [error]  Opencourse Groups requires this module. (Currently using Unresolved dependency group (Missing)) 
- [error]  Opencourse Image requires this module. (Currently using Unresolved dependency gnode (Missing)) 
- [error]  Opencourse Image requires this module. (Currently using Unresolved dependency group (Missing)) 
- [error]  Opencourse link requires this module. (Currently using Unresolved dependency gnode (Missing)) 
- [error]  Opencourse link requires this module. (Currently using Unresolved dependency group (Missing)) 
- [error]  Opencourse Landing Page requires this module. (Currently using Unresolved dependency gnode (Missing)) 
- [error]  Opencourse Landing Page requires this module. (Currently using Unresolved dependency group (Missing)) 
- [error]  oc_prod requires this module. (Currently using Unresolved dependency gnode (Missing)) 
- [error]  oc_prod requires this module. (Currently using Unresolved dependency group (Missing)) 
- [error]  Opencourse Task requires this module. (Currently using Unresolved dependency gnode (Missing)) 
- [error]  Opencourse Task requires this module. (Currently using Unresolved dependency group (Missing)) 
- [error]  Opencourse Works requires this module. (Currently using Unresolved dependency gnode (Missing)) 
- [error]  Opencourse Works requires this module. (Currently using Unresolved dependency group (Missing)) 
+ [error]  oc_dev requires this module. (Currently using Unresolved dependency kint (Missing)) 
 
  // Requirements check reports errors. Do you wish to continue?: yes.           
 
- [success] No pending updates.
+ -------------------- ----------- --------------- --------------------------------- 
+  Module               Update ID   Type            Description                      
+ -------------------- ----------- --------------- --------------------------------- 
+  system               8801        hook_update_n   Remove 'path.temporary' config   
+                                                   if redundant.                    
+  system               8802        hook_update_n   Fix system.theme:admin when the  
+                                                   default theme is used as the     
+                                                   admin theme.                     
+  system               8803        hook_update_n   Install the 'path_alias' entity  
+                                                   type.                            
+  system               8804        hook_update_n   Convert path aliases to          
+                                                   entities.                        
+  system               8805        hook_update_n   Change the provider of the       
+                                                   'path_alias' entity type and     
+                                                   its base fields.                 
+  crop                 8004        hook_update_n   Uninstall deprecated sub-module  
+                                                   from active instance.            
+  crop                 8005        hook_update_n   Add index on type and uri.       
+  media_library        8703        hook_update_n   This update has been removed     
+                                                   and will not run.                
+  media_library        8704        hook_update_n   Creates the                      
+                                                   media_library.settings config    
+                                                   object.                          
+  varbase_media        8702        hook_update_n   Issue #3103229: Fix icons for    
+                                                   [Embed buttons] for the          
+                                                   CKEditor after the  change of    
+                                                   Embed API as they had droped     
+                                                   icon_uuid and change of config   
+                                                   schema                           
+  varbase_media        8703        hook_update_n   Follow up fix Issue #3103229:    
+                                                   Fix icons for [Embed buttons]    
+                                                   for the CKEditor  after the      
+                                                   change of Embed API as they had  
+                                                   droped icon_uuid and change of   
+                                                   config schema in case for        
+                                                   optional updates or buttons      
+                                                   were deleted.                    
+  content_moderation   views       post-update     Update the moderation state      
+                       _fiel                       views field plugin ID.           
+                       d_plu                                                        
+                       gin_i                                                        
+                       d                                                            
+  media_library        add_b       post-update     Add edit and delete button to    
+                       utton                       media library view page          
+                       s_to_                       display.                         
+                       page_                                                        
+                       view                                                         
+  media_library        add_l       post-update     Add langcode filters to media    
+                       angco                       library view displays.           
+                       de_fi                                                        
+                       lters                                                        
+  media_library        add_s       post-update     Add a status extra filter to     
+                       tatus                       the media library view default   
+                       _extr                       display.                         
+                       a_fil                                                        
+                       ter                                                          
+  media_library        defau       post-update     Sets admincontentmedia to the    
+                       lt_ad                       table display of the 'media'     
+                       minis                       view.                            
+                       trati                                                        
+                       ve_li                                                        
+                       st_to                                                        
+                       _tabl                                                        
+                       e_dis                                                        
+                       play                                                         
+  media_library        updat       post-update     Add non js prefixed classes to   
+                       e_800                       checkboxes if not present.       
+                       1_che                       Note the inclusion of            
+                       ckbox                       "update_8001" in the function    
+                       _clas                       name. This ensures the           
+                       ses                         function is executed after       
+                                                   media_library_post_update_table  
+                                                   _display(), as                   
+                                                   hook_post_update_NAME()          
+                                                   implementations within the same  
+                                                   file are executed in             
+                                                   alphanumeric order.              
+  media                add_s       post-update     Add a status extra filter to     
+                       tatus                       the media view default display.  
+                       _extr                                                        
+                       a_fil                                                        
+                       ter                                                          
+  path                 creat       post-update     Create the language content      
+                       e_lan                       settings configuration object    
+                       guage                       for path aliases.                
+                       _cont                                                        
+                       ent_s                                                        
+                       ettin                                                        
+                       gs                                                           
+  system               entit       post-update     Populate the new 'match_limit'   
+                       y_ref                       setting for the ER autocomplete  
+                       erenc                       widget.                          
+                       e_aut                                                        
+                       ocomp                                                        
+                       lete_                                                        
+                       match                                                        
+                       _limi                                                        
+                       t                                                            
+  system               layou       post-update     Clear the schema cache.          
+                       t_plu                                                        
+                       gin_s                                                        
+                       chema                                                        
+                       _chan                                                        
+                       ge                                                           
+  taxonomy             confi       post-update     Add status with settings to all  
+                       gure_                       form displays for taxonomy       
+                       statu                       entities.                        
+                       s_fie                                                        
+                       ld_wi                                                        
+                       dget                                                         
+  text                 add_r       post-update     Update text_with_summary fields  
+                       equir                       and widgets to add summary       
+                       ed_su                       required flags.                  
+                       mmary                                                        
+                       _flag                                                        
+  views                limit       post-update     Define default values for limit  
+                       _oper                       operators settings in all        
+                       ator_                       filters.                         
+                       defau                                                        
+                       lts                                                          
+  views                remov       post-update     Remove core key from views       
+                       e_cor                       configuration.                   
+                       e_key                                                        
+ -------------------- ----------- --------------- --------------------------------- 
+
+ // Do you wish to run the specified pending updates?: yes.                     
+
+ [warning] The following module is missing from the file system: kint bootstrap.inc:291
+>  [notice] Update started: system_update_8801
+>  [notice] Update completed: system_update_8801
+>  [notice] Update started: system_update_8802
+>  [notice] Update completed: system_update_8802
+>  [notice] Update started: system_update_8803
+>  [error]  The module kint does not exist. 
+>  [error]  Update failed: system_update_8803 
+>  [notice] Update started: crop_update_8004
+>  [notice] Update completed: crop_update_8004
+>  [notice] Update started: media_library_update_8703
+>  [notice] Update completed: media_library_update_8703
+>  [notice] Update started: varbase_media_update_8702
+>  [notice] Update completed: varbase_media_update_8702
+>  [notice] Update started: crop_update_8005
+>  [notice] Update completed: crop_update_8005
+>  [notice] Update started: media_library_update_8704
+>  [notice] Update completed: media_library_update_8704
+>  [notice] Update started: varbase_media_update_8703
+>  [notice] Update completed: varbase_media_update_8703
+> PHP Fatal error:  Uncaught ReflectionException: Class Drupal\path_alias\AliasRepository does not exist in /var/www/oc/loc/vendor/symfony/dependency-injection/ContainerBuilder.php:1174
+> Stack trace:
+> #0 /var/www/oc/loc/vendor/symfony/dependency-injection/ContainerBuilder.php(1174): ReflectionClass->__construct('Drupal\\path_ali...')
+> #1 /var/www/oc/loc/vendor/symfony/dependency-injection/ContainerBuilder.php(634): Symfony\Component\DependencyInjection\ContainerBuilder->createService(Object(Symfony\Component\DependencyInjection\Definition), Array, true, 'path_alias.repo...')
+> #2 /var/www/oc/loc/vendor/symfony/dependency-injection/ContainerBuilder.php(1281): Symfony\Component\DependencyInjection\ContainerBuilder->doGet('path_alias.repo...', 1, Array, true)
+> #3 /var/www/oc/loc/vendor/symfony/dependency-injection/ContainerBuilder.php(1238): Symfony\Component\DependencyInjection\ContainerBuilder->doResolveServices(Object(Symfony\Component\DependencyInjection\Reference), Array, true)
+> #4 /var/www/oc/loc/vendor/symfony/dependency-injection/ in /var/www/oc/loc/vendor/symfony/dependency-injection/ContainerBuilder.php on line 1174
+> PHP Stack trace:
+> PHP   1. {main}() /var/www/oc/loc/vendor/drush/drush/drush:0
+> PHP   2. require() /var/www/oc/loc/vendor/drush/drush/drush:4
+ [error]  Update aborted by: system_update_8803 
+ [error]  Finished performing updates. 
 [32mHoya! Updates are now done. We will add a link in the near future for here to link to common issues appearing after updates and how to fix them.(B[0m

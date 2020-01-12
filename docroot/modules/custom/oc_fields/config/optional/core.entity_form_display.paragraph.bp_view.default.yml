@@ -7,8 +7,6 @@ dependencies:
     - field.field.paragraph.bp_view.bp_classes
     - field.field.paragraph.bp_view.bp_gutter
     - field.field.paragraph.bp_view.bp_image_field
-    - field.field.paragraph.bp_view.bp_title
-    - field.field.paragraph.bp_view.bp_title_status
     - field.field.paragraph.bp_view.bp_view
     - field.field.paragraph.bp_view.bp_width
     - paragraphs.paragraphs_type.bp_view
@@ -81,7 +79,6 @@ content:
       match_operator: CONTAINS
       size: '60'
       placeholder: ''
-      match_limit: 10
     third_party_settings: {  }
     type: viewsreference_autocomplete
     region: content
@@ -91,14 +88,7 @@ content:
     third_party_settings: {  }
     type: options_buttons
     region: content
-  translation:
-    weight: 10
-    settings: {  }
-    third_party_settings: {  }
-    region: content
 hidden:
-  bp_title: true
-  bp_title_status: true
   created: true
   status: true
   uid: true

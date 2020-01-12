@@ -16,6 +16,7 @@ description: 'Have a media browser for the hero slider selection of media.'
 tag: ''
 base_table: media_field_data
 base_field: mid
+core: 8.x
 display:
   default:
     display_plugin: default
@@ -197,8 +198,6 @@ display:
           id: status
           expose:
             operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
           group: 1
         bundle:
           id: bundle
@@ -226,8 +225,6 @@ display:
             remember_roles:
               authenticated: authenticated
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -271,8 +268,6 @@ display:
               content_admin: '0'
               site_admin: '0'
               administrator: '0'
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''

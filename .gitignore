@@ -75,3 +75,8 @@ config/*
 !/docroot/sites/default/files/St-Anthony-seq.jpg
 .editorconfig
 .gitattributes
+
+#ignore varbase files
+.update-error-log
+.failed-patches.txt
+/temp

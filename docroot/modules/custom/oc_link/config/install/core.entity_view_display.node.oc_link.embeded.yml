@@ -241,11 +241,6 @@ content:
         default_config_hash: MXWhmW_WMpYFgV8c9O0eAsJmREegCqcqe9WljMN8Ev0
     third_party_settings: {  }
     region: ds_content
-  content_moderation_control:
-    weight: -20
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   field_oc_author_s_:
     weight: 2
     label: inline
