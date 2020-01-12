@@ -41,5 +41,6 @@ dependencies:
   - oc_task
   - comment
   - forum
+  - varbase_media_header
 
 
