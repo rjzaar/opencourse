@@ -14,7 +14,6 @@ description: ''
 tag: ''
 base_table: node_field_revision
 base_field: vid
-core: 8.x
 display:
   default:
     display_plugin: default
@@ -374,14 +373,14 @@ display:
           entity_type: node
           entity_field: revision_uid
           plugin_id: field
-        moderation_state:
-          id: moderation_state
-          table: content_moderation_state_field_revision
+        moderation_state_1:
+          id: moderation_state_1
+          table: node_field_revision
           field: moderation_state
-          relationship: moderation_state
+          relationship: none
           group_type: group
           admin_label: ''
-          label: Status
+          label: 'Moderation state'
           exclude: false
           alter:
             alter_text: false
@@ -414,7 +413,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -423,9 +422,8 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
+          type: content_moderation_state
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -436,9 +434,8 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: content_moderation_state
-          entity_field: moderation_state
-          plugin_id: field
+          entity_type: node
+          plugin_id: moderation_state_field
         edit_node:
           id: edit_node
           table: node_field_revision
@@ -516,6 +513,8 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -552,6 +551,8 @@ display:
             description: ''
             use_operator: false
             operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -577,28 +578,7 @@ display:
       header: {  }
       footer: {  }
       empty: {  }
-      relationships:
-        moderation_state:
-          id: moderation_state
-          table: node_field_revision
-          field: moderation_state
-          relationship: none
-          group_type: group
-          admin_label: 'Content moderation state'
-          required: false
-          entity_type: node
-          plugin_id: standard
-        uid:
-          id: uid
-          table: content_moderation_state_field_revision
-          field: uid
-          relationship: moderation_state
-          group_type: group
-          admin_label: User
-          required: false
-          entity_type: content_moderation_state
-          entity_field: uid
-          plugin_id: standard
+      relationships: {  }
       arguments:
         vid:
           id: vid

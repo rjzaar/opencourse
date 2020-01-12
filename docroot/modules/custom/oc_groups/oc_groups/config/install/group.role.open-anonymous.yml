@@ -11,11 +11,11 @@ audience: anonymous
 group_type: open
 permissions_ui: true
 permissions:
-  0: 'view group_node:landing_page entity'
-  1: 'view group_node:oc_sequence entity'
-  2: 'view group_node:oc_book entity'
-  3: 'view group_node:oc_doc entity'
-  4: 'view group_node:oc_image entity'
-  5: 'view group_node:oc_link entity'
-  6: 'view group'
-  9: 'view group_node:oc_lp entity'
+  - 'view group'
+  - 'view group_node:landing_page entity'
+  - 'view group_node:oc_book entity'
+  - 'view group_node:oc_doc entity'
+  - 'view group_node:oc_image entity'
+  - 'view group_node:oc_link entity'
+  - 'view group_node:oc_lp entity'
+  - 'view group_node:oc_sequence entity'

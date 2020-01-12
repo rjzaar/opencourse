@@ -6,9 +6,9 @@ dependencies:
   module:
     - superfish
   theme:
-    - oc_theme
-id: test
-theme: oc_theme
+    - octheme_bs4
+id: test_2
+theme: octheme_bs4
 region: header
 weight: 0
 provider: null
@@ -22,27 +22,27 @@ settings:
   depth: '0'
   expand_all_items: false
   menu_type: vertical
-  style: white
+  style: none
   arrow: 0
-  shadow: 1
+  shadow: 0
   speed: fast
-  delay: '800'
-  slide: horizontal
+  delay: '0'
+  slide: none
   supposition: 1
   hoverintent: 1
   touch: '0'
-  touchbh: '2'
-  touchbp: '768'
+  touchbh: '0'
+  touchbp: '0'
   touchua: '0'
   touchual: ''
   touchuam: '0'
-  small: '2'
+  small: '0'
   smallbp: '768'
   smallua: '0'
   smallual: ''
   smalluam: '0'
   smallact: '1'
-  smallset: ''
+  smallset: Nic
   smallasa: 0
   smallcmc: 0
   smallecm: ''
@@ -50,11 +50,11 @@ settings:
   smallech: ''
   smallicm: ''
   smallich: ''
-  smallamt: ''
-  smallabt: '1'
-  supersubs: 1
-  minwidth: '12'
-  maxwidth: '27'
+  smallamt: Nav
+  smallabt: '0'
+  supersubs: 0
+  minwidth: '30'
+  maxwidth: '40'
   multicolumn: 0
   multicolumn_depth: '1'
   multicolumn_levels: '1'
