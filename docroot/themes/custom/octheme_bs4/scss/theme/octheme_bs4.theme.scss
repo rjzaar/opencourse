@@ -67,7 +67,8 @@ $oc_nav_button_height: 42px; //This is the height of the top right nav button
 }
 
 .vmh-container {
-  height: 600px !important;
+  max-height: 95vh;
+  height: 95vh;
 }
 
 // Central resizing breakpoints

@@ -4,7 +4,8 @@
 }
 
 .vmh-container {
-  height: 600px !important;
+  max-height: 95vh;
+  height: 95vh;
 }
 
 .oc_logo {
