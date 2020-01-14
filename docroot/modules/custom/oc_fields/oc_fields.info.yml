@@ -22,7 +22,6 @@ dependencies:
   - h5p
   - h5peditor
   - image
-  - jquery_colorpicker
   - language
   - link
   - media

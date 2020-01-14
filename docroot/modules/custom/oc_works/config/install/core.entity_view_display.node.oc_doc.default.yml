@@ -238,4 +238,6 @@ content:
     region: ds_content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_media: true
+  field_page_header_style: true

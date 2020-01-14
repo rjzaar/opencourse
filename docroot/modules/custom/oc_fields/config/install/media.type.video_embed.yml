@@ -6,7 +6,7 @@ dependencies:
     - video_embed_media
 third_party_settings:
   crop:
-    image_field: _none
+    image_field: field_media_cover_image
 id: video_embed
 label: 'Video (external)'
 description: 'A video hosted by YouTube, Vimeo, or some other external provider.'
@@ -15,4 +15,6 @@ queue_thumbnail_downloads: false
 new_revision: false
 source_configuration:
   source_field: field_media_video_embed_field
-field_map: {  }
+field_map:
+  source_name: name
+  image_local: thumbnail

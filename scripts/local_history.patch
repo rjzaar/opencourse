@@ -1,0 +1,19 @@
+Index: docroot/modules/contrib/varbase_media/scss/varbase_media.common_logged.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- docroot/modules/contrib/varbase_media/scss/varbase_media.common_logged.scss	(date 1578869692312)
++++ docroot/modules/contrib/varbase_media/scss/varbase_media.common_logged.scss	(date 1578869692312)
+@@ -472,7 +472,10 @@
+       }
+     }
+   }
+-
++  .varbase-media-small {
++    height: 225px;
++    width: 300px;
++  }
+   .entity-browser-generic-embed div {
+     .varbase-video-player {
+       width: 100%;

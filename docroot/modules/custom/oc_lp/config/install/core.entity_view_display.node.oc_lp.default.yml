@@ -35,3 +35,5 @@ hidden:
   field_yoast_seo: true
   langcode: true
   links: true
+  field_media: true
+  field_page_header_style: true

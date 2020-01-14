@@ -9,6 +9,7 @@ dependencies:
   - content_moderation
   - ds
   - entity_access_by_field
+  - entity_browser
   - entity_reference_revisions
   - field
   - h5p

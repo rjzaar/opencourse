@@ -12,7 +12,6 @@ dependencies:
   - gnode
   - group
   - image
-  - jquery_colorpicker
   - link
   - media
   - menu_ui

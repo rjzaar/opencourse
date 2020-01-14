@@ -19,4 +19,5 @@ excluded:
   - core.entity_view_display.node.forum.default
   - field.field.comment.comment_forum.comment_body
   - field.field.node.forum.comment_forum
+  - field.field.node.oc_doc.field_media
 required: true

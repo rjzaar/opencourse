@@ -61,7 +61,14 @@ $oc_navlink_height: 30px; // this is constant
 
 $oc_nav_button_height: 42px; //This is the height of the top right nav button
 // It is used to calculate position based on other elements
+.media--type-video-embed.media--view-mode-small .varbase-video-player {
+  height: 225px;
+  width: 300px;
+}
 
+.vmh-container {
+  height: 600px !important;
+}
 
 // Central resizing breakpoints
 //small phones
@@ -81,28 +88,35 @@ $oc_branding_logo_height_md: 80px; //logo height
   padding-top: 0;
   padding-right: 5px;
 }
+
 .oc_branding_logo {
-height: $oc_branding_logo_height_xs ;
- }
+  height: $oc_branding_logo_height_xs;
+}
+
 .oc_vinject {
   padding-top: 5px; //  for all xs devices.
   font-size: 100% !important;
 }
+
 .oc_nav_links {
   top: $oc_logo_top_margin_xs +($oc_branding_logo_height_xs - $oc_navlink_height)/2;
   right: $oc_margin;
 }
+
 .oc_small_nav_button {
   top: $oc_logo_top_margin_xs + ($oc_branding_logo_height_xs - $oc_nav_button_height)/2;
 }
+
 // There are two locations for the nav links, ie login and contact us.
 // Only one is possibly visible at a time with the swap at 768px.
 .oc_nav_link_button {
   visibility: visible;
 }
+
 .oc_nav_links {
   visibility: hidden;
 }
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: map-get($grid-breakpoints, "sm")) {
   .oc_logo {
@@ -115,7 +129,7 @@ height: $oc_branding_logo_height_xs ;
     padding-right: 10px;
   }
   .oc_branding_logo {
-    height: $oc_branding_logo_height_sm ;
+    height: $oc_branding_logo_height_sm;
   }
   .oc_vinject {
     padding-top: 5px; // As from sm devices,
@@ -149,7 +163,7 @@ height: $oc_branding_logo_height_xs ;
     padding-right: 10px;
   }
   .oc_branding_logo {
-    height: $oc_branding_logo_height_md ;
+    height: $oc_branding_logo_height_md;
   }
   .oc_vinject {
     padding-top: 15px; //  for md devices.
@@ -220,8 +234,8 @@ height: $oc_branding_logo_height_xs ;
   align-items: center !important;
 
   @media screen and (min-width: 768px) {
-      display: inline;
-    }
+    display: inline;
+  }
 
 }
 
@@ -545,7 +559,7 @@ ul {
 .sfr-menu ul {
   position: absolute;
   display: none;
-  top: 100%;
+  //top: 100%;  //This is what moved the text down.
   left: 0;
   z-index: 99;
 }
@@ -643,9 +657,6 @@ ul {
 }
 
 
-
-
-
 .oc_navbar_toggler {
   //padding: 0.25rem 0.75rem;
   font-size: 1.25rem;
@@ -674,7 +685,6 @@ ul {
   background-size: 100% 100%;
   z-index: 1700;
 }
-
 
 
 // **************************************************
