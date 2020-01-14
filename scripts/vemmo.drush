@@ -1,5 +1,0 @@
-#!/usr/bin/env drush
-
-/** @var \Drupal\vem_migrate_oembed\VemMigrate $vemService */
-$vemService = \Drupal::service('vem_migrate_oembed.migrate');
-$vemService->migrate();

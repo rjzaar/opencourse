@@ -265,9 +265,7 @@
         ],
         "post-drupal-scaffold-cmd": [
             "Varbase\\composer\\ScriptHandler::postDrupalScaffoldProcedure",
-            "cd docroot && patch -p1 <../scripts/local_history.patch",
-            "cd docroot && patch -p1 <../scripts/Add-FollowSymLinks-to-htaccess.patch",
-            "cd docroot && patch -p1 <../scripts/varbase_media_small_embed.patch"
+            "cd docroot && patch -p1 <../scripts/Add-FollowSymLinks-to-htaccess.patch"
         ]
     },
     "license": [
