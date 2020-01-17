@@ -7,6 +7,11 @@ dependencies:
     - core.entity_view_mode.media.original
     - core.entity_view_mode.media.small
     - entity_browser.browser.editor_media_browser
+    - media.type.file
+    - media.type.gallery
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
   module:
     - entity_embed
     - media
@@ -15,7 +20,12 @@ id: media
 type_id: entity
 type_settings:
   entity_type: media
-  bundles: {  }
+  bundles:
+    - file
+    - gallery
+    - image
+    - remote_video
+    - video
   display_plugins:
     - 'view_mode:media.large'
     - 'view_mode:media.medium'
@@ -23,8 +33,8 @@ type_settings:
     - 'view_mode:media.small'
   inline_entity_form: false
   inline_entity_form_settings:
-    entity_form_display: default
-    display_review: 1
+    entity_form_display: entity_browser
+    display_review: 0
   entity_browser: editor_media_browser
   entity_browser_settings:
     display_review: true

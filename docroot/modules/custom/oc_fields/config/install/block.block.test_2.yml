@@ -10,7 +10,7 @@ dependencies:
 id: test_2
 theme: octheme_bs4
 region: header
-weight: -2
+weight: 0
 provider: null
 plugin: 'superfish:test'
 settings:

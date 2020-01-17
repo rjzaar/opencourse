@@ -26,9 +26,8 @@ dependencies:
   - text
   - user
   - varbase_media
-  - video_embed_field
   - views
   - yoast_seo
-version: 8.x-0.3
+version: 8.x-0.4
 package: oc
 core_incompatible: false

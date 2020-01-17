@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_oc_vlevel
+    - media.type.remote_video
+  module:
+    - options
+id: media.remote_video.field_oc_vlevel
+field_name: field_oc_vlevel
+entity_type: media
+bundle: remote_video
+label: Level
+description: 'What is the difficulty level of this doc.'
+required: true
+translatable: false
+default_value:
+  -
+    value: '2'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

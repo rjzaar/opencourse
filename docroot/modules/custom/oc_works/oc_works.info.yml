@@ -34,6 +34,6 @@ dependencies:
   - views_infinite_scroll
   - workflows
   - yoast_seo
-version: 8.x-0.01
+version: 8.x-0.02
 package: oc
 core_incompatible: false

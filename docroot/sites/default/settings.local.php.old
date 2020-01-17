@@ -1,0 +1,21 @@
+<?php
+
+$settings['install_profile'] = 'varbase';
+$settings['file_private_path'] =  '../private';
+$databases['default']['default'] = array (
+  'database' => 'loc1opencat',
+  'username' => 'loc1opencat',
+  'password' => 'loc1opencat',
+  'prefix' => '',
+  'host' => 'localhost',
+  'port' => '3306',
+  'namespace' => 'Drupal\Core\Database\Driver\mysql',
+  'driver' => 'mysql',
+);
+$config_directories[CONFIG_SYNC_DIRECTORY] = '../cmi';
+$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
+$settings['cache']['bins']['render'] = 'cache.backend.null';
+$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
+$config['config_split.config_split.config_dev']['status'] = TRUE;
+$config['system.site']['name'] = "loc1"; 
+$settings['hash_salt'] = '92350dee085a781753d9301fea11d51c857a70da8e7da7322f8b596';
