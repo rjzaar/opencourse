@@ -19,7 +19,6 @@ dependencies:
     - field.field.node.oc_doc.field_oc_linked_image
     - field.field.node.oc_doc.field_oc_title_image
     - field.field.node.oc_doc.field_oc_topic
-    - field.field.node.oc_doc.field_oc_video
     - field.field.node.oc_doc.field_page_header_style
     - field.field.node.oc_doc.field_yoast_seo
     - node.type.oc_doc
@@ -190,15 +189,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: ds_content
-  field_oc_video:
-    weight: 13
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
     region: ds_content
   flag_follow_content:
     weight: 10

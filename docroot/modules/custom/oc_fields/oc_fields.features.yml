@@ -8,6 +8,7 @@ excluded:
   - core.entity_view_display.taxonomy_term.oc_group_content.default
   - field.storage.taxonomy_term.field_blocks
   - field.storage.taxonomy_term.field_group_list
+  - field.storage.node.field_oc_video
   - embed.button.node
   - views.view.archive
   - views.view.control_content
