@@ -27,7 +27,7 @@
         "drupal/pathauto": "^1.6",
         "drupal/pathologic": "^1.0-alpha1",
         "drupal/prepopulate": "2.x-dev#96d7b48dac02d5d126602775f684f89f50412ffd",
-        "drupal/quiz": "4.x-dev",
+        "drupal/quiz": "5.x-dev",
         "drupal/riddler": "^1.1",
         "drupal/security_review": "1.x-dev#35ebae445bb260e961e47c4c58efe7c50c228999",
         "drupal/site_settings": "^1.11",
@@ -48,7 +48,11 @@
         "vardot/varbase-updater": "~1.0",
         "webflo/drupal-finder": "~1.0",
         "webmozart/path-util": "~2.0",
-        "wikimedia/composer-merge-plugin": "^1.4"
+        "wikimedia/composer-merge-plugin": "^1.4",
+        "drupal/view_mode_page": "^3.1",
+        "drupal/content_export_csv": "^3.0@beta",
+        "drupal/contentimport": "^4.1",
+        "drupal/field_tools": "^1.0@alpha"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -242,6 +246,10 @@
             },
             "drupal/image_resize_filter": {
                "2955937-filter-schema-5.patch": "https://www.drupal.org/files/issues/2018-05-03/2955937-filter-schema-5.patch"
+            },
+            "drupal/metatag": {
+                "Issue #3102937 by yasmeensalah, DamienMcKenna, Berdir: Fix Plugin AlternateHandheld is misnamed":
+                "https://www.drupal.org/files/issues/2019-12-24/class-alternateHandheld-not-found-3102937-2.patch"
             }
         },
         "merge-plugin": {

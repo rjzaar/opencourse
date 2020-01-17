@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_oc_vtopic
+    - media.type.remote_video
+    - taxonomy.vocabulary.oc_topics
+id: media.remote_video.field_oc_vtopic
+field_name: field_oc_vtopic
+entity_type: media
+bundle: remote_video
+label: Topics
+description: 'What topic(s) does this video relate to?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      oc_topics: oc_topics
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

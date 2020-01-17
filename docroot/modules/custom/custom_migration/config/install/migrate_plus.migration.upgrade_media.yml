@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_media
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: alterFieldWidgetMigration
+cck_plugin_method: null
+migration_tags:
+  - 'OC'
+migration_group: oc
+label: 'embeded 2 remote'
+source:
+  plugin: d8_entity
+  key: 'loclopencat'
+  entity_type: media
+  bundle: video_embed
+process:
+  mid: mid
+  name: name
+  status: status
+  created: created
+  media_cover_image: media_cover_image
+  media_in_library: media_in_library
+  field_media_oembed_video: media_video_embed_field
+destination:
+  plugin: 'entity:media'
+  default_bundle: remote_video
+migration_dependencies:
+  required:
+#    - upgrade_d7_node_type
+  optional: {  }
+#  optional:
+#    - upgrade_d7_field_instance

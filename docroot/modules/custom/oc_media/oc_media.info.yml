@@ -1,0 +1,20 @@
+name: 'Opencourse Media'
+description: 'Provides Remote media type'
+type: module
+core: 8.x
+dependencies:
+  - comment
+  - embed
+  - entity_embed
+  - field
+  - h5p
+  - language
+  - media
+  - oc_taxonomy
+  - options
+  - taxonomy
+  - text
+  - yoast_seo
+version: 8.x-0.4
+package: oc
+core_incompatible: false

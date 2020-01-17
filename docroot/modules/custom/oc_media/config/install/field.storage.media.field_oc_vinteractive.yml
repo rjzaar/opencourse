@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - h5p
+    - media
+id: media.field_oc_vinteractive
+field_name: field_oc_vinteractive
+entity_type: media
+type: h5p
+settings: {  }
+module: h5p
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -516,6 +516,17 @@ function octheme_bs4_preprocess_template(&$variables)
 
 }
 
+/**
+ * @param $variables
+ */
+function octheme_bs4_preprocess_varbase_media_header_block(&$variables)
+{
+  if (substr(\Drupal::request()->getRequestUri(),-7) == "summary" ) {
+    $variables['oc_summary'] = TRUE;
+  } else {
+    $variables['oc_summary'] = FALSE;
+  }
+}
 
 /**
  * @param $variables

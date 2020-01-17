@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_oc_transcript
+    - media.type.remote_video
+  module:
+    - text
+id: media.remote_video.field_oc_transcript
+field_name: field_oc_transcript
+entity_type: media
+bundle: remote_video
+label: Transcript
+description: 'Video transcript'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

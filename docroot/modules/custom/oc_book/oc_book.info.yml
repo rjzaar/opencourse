@@ -12,7 +12,9 @@ dependencies:
   - focal_point
   - gnode
   - group
+  - h5p
   - image
+  - layout_builder
   - link
   - menu_ui
   - metatag
@@ -21,6 +23,7 @@ dependencies:
   - oc_image
   - oc_link
   - oc_taxonomy
+  - oc_works
   - options
   - paragraphs
   - path

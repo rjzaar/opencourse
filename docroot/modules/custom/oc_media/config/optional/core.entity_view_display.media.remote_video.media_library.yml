@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.remote_video.field_media_cover_image
+    - field.field.media.remote_video.field_media_in_library
+    - field.field.media.remote_video.field_media_oembed_video
+    - field.field.media.remote_video.field_oc_provider
+    - field.field.media.remote_video.field_oc_transcript
+    - field.field.media.remote_video.field_oc_vbody
+    - field.field.media.remote_video.field_oc_vcomments
+    - field.field.media.remote_video.field_oc_vinteractive
+    - field.field.media.remote_video.field_oc_vlevel
+    - field.field.media.remote_video.field_oc_vseo
+    - field.field.media.remote_video.field_oc_vtopic
+    - image.style.medium
+    - media.type.remote_video
+  module:
+    - image
+id: media.remote_video.media_library
+targetEntityType: media
+bundle: remote_video
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    weight: 0
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_media_cover_image: true
+  field_media_in_library: true
+  field_media_oembed_video: true
+  field_oc_provider: true
+  field_oc_transcript: true
+  field_oc_vbody: true
+  field_oc_vcomments: true
+  field_oc_vinteractive: true
+  field_oc_vlevel: true
+  field_oc_vseo: true
+  field_oc_vtopic: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  uid: true

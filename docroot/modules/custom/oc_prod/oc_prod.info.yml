@@ -17,7 +17,6 @@ dependencies:
   - oc_groups
   - oc_lp
   - oc_blocks
-  - video_embed_field
   - entity_access_by_field
   - group
   - book
