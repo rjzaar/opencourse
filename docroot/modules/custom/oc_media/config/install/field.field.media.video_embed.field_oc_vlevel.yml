@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_oc_vlevel
+    - media.type.video_embed
+  module:
+    - options
+id: media.video_embed.field_oc_vlevel
+field_name: field_oc_vlevel
+entity_type: media
+bundle: video_embed
+label: Level
+description: 'What is the difficulty level of this doc.'
+required: true
+translatable: false
+default_value:
+  -
+    value: '2'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,13 +1,11 @@
 bundle: oc
 excluded:
-  - views.view.oc_images_list
   - field.field.group.open.field_oc_grp_image
-  - field.field.media.video_embed.field_media_cover_image
   - field.field.media.video_embed.field_media_in_library
+  - field.field.media.video_embed.field_media_cover_image
   - field.field.media.video_embed.field_media_video_embed_field
   - field.storage.group.field_oc_grp_image
   - field.storage.media.field_media_video_embed_field
-  - core.entity_view_display.node.oc_image.vertical_media_teaser_small
   - core.entity_view_display.media.video_embed.browser_teaser
   - core.entity_view_display.media.video_embed.default
   - core.entity_view_display.media.video_embed.field_preview
@@ -68,7 +66,5 @@ excluded:
   - core.entity_view_display.media.video_embed.se2e_standard
   - core.entity_view_display.media.video_embed.se2e_traditional
   - core.entity_view_display.media.video_embed.small
-  - core.entity_form_display.media.video_embed.default
-  - core.entity_form_display.media.video_embed.entity_browser
-  - core.entity_form_display.media.video_embed.media_library
+  - core.entity_view_display.media.video_embed.varbase_media_header
 required: true

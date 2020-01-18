@@ -52,7 +52,8 @@
         "drupal/view_mode_page": "^3.1",
         "drupal/content_export_csv": "^3.0@beta",
         "drupal/contentimport": "^4.1",
-        "drupal/field_tools": "^1.0@alpha"
+        "drupal/field_tools": "^1.0@alpha",
+        "drupal/bulk_copy_fields": "^1.0@alpha"
     },
     "conflict": {
         "drupal/drupal": "*"

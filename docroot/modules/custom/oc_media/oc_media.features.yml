@@ -1,85 +1,29 @@
 bundle: oc
 excluded:
-  - language.content_settings.media.video_embed
-  - core.entity_form_display.media.video_embed.default
-  - core.entity_form_display.media.video_embed.entity_browser
-  - core.entity_form_display.media.video_embed.media_library
-  - core.entity_view_display.media.video_embed.browser_teaser
-  - core.entity_view_display.media.video_embed.default
-  - core.entity_view_display.media.video_embed.field_preview
-  - core.entity_view_display.media.video_embed.large
-  - core.entity_view_display.media.video_embed.media_library
-  - core.entity_view_display.media.video_embed.medium
-  - core.entity_view_display.media.video_embed.s01
-  - core.entity_view_display.media.video_embed.s01_square
-  - core.entity_view_display.media.video_embed.s01_standard
-  - core.entity_view_display.media.video_embed.s01_traditional
-  - core.entity_view_display.media.video_embed.s02
-  - core.entity_view_display.media.video_embed.s02_square
-  - core.entity_view_display.media.video_embed.s02_standard
-  - core.entity_view_display.media.video_embed.s02_traditional
-  - core.entity_view_display.media.video_embed.s03
-  - core.entity_view_display.media.video_embed.s03_square
-  - core.entity_view_display.media.video_embed.s03_standard
-  - core.entity_view_display.media.video_embed.s03_traditional
-  - core.entity_view_display.media.video_embed.s04
-  - core.entity_view_display.media.video_embed.s04_square
-  - core.entity_view_display.media.video_embed.s04_standard
-  - core.entity_view_display.media.video_embed.s04_traditional
-  - core.entity_view_display.media.video_embed.s05
-  - core.entity_view_display.media.video_embed.s05_square
-  - core.entity_view_display.media.video_embed.s05_standard
-  - core.entity_view_display.media.video_embed.s05_traditional
-  - core.entity_view_display.media.video_embed.s06
-  - core.entity_view_display.media.video_embed.s06_square
-  - core.entity_view_display.media.video_embed.s06_standard
-  - core.entity_view_display.media.video_embed.s06_traditional
-  - core.entity_view_display.media.video_embed.s07
-  - core.entity_view_display.media.video_embed.s07_square
-  - core.entity_view_display.media.video_embed.s07_standard
-  - core.entity_view_display.media.video_embed.s07_traditional
-  - core.entity_view_display.media.video_embed.s08
-  - core.entity_view_display.media.video_embed.s08_square
-  - core.entity_view_display.media.video_embed.s08_standard
-  - core.entity_view_display.media.video_embed.s08_traditional
-  - core.entity_view_display.media.video_embed.s09
-  - core.entity_view_display.media.video_embed.s09_square
-  - core.entity_view_display.media.video_embed.s09_standard
-  - core.entity_view_display.media.video_embed.s09_traditional
-  - core.entity_view_display.media.video_embed.s10
-  - core.entity_view_display.media.video_embed.s10_square
-  - core.entity_view_display.media.video_embed.s10_standard
-  - core.entity_view_display.media.video_embed.s10_traditional
-  - core.entity_view_display.media.video_embed.s11
-  - core.entity_view_display.media.video_embed.s11_square
-  - core.entity_view_display.media.video_embed.s11_standard
-  - core.entity_view_display.media.video_embed.s11_traditional
-  - core.entity_view_display.media.video_embed.s12
-  - core.entity_view_display.media.video_embed.s12_square
-  - core.entity_view_display.media.video_embed.s12_standard
-  - core.entity_view_display.media.video_embed.s12_traditional
-  - core.entity_view_display.media.video_embed.se2e
-  - core.entity_view_display.media.video_embed.se2e_4_1
-  - core.entity_view_display.media.video_embed.se2e_square
-  - core.entity_view_display.media.video_embed.se2e_standard
-  - core.entity_view_display.media.video_embed.se2e_traditional
-  - core.entity_view_display.media.video_embed.small
-  - core.entity_view_display.media.video_embed.varbase_media_header
+  - language.content_settings.media.remote_video
+  - core.entity_form_display.media.remote_video.default
+  - core.entity_form_display.media.remote_video.media_library
   - core.entity_view_display.node.oc_image.vertical_media_teaser_small
-  - field.field.media.video_embed.field_media_cover_image
-  - field.field.media.video_embed.field_media_in_library
+  - core.entity_view_display.media.remote_video.default
+  - core.entity_view_display.media.remote_video.media_library
   - field.field.media.video_embed.field_media_video_embed_field
   - field.field.node.oc_book.field_media
   - field.field.node.oc_doc.field_media
   - field.field.node.oc_lp.field_media
   - field.field.node.oc_sequence.field_media
+  - field.field.media.remote_video.field_media_cover_image
+  - field.field.media.remote_video.field_media_in_library
+  - field.field.media.remote_video.field_media_oembed_video
+  - field.field.media.remote_video.field_oc_provider
+  - field.field.media.remote_video.field_oc_transcript
+  - field.field.media.remote_video.field_oc_vbody
+  - field.field.media.remote_video.field_oc_vcomments
+  - field.field.media.remote_video.field_oc_vinteractive
+  - field.field.media.remote_video.field_oc_vlevel
+  - field.field.media.remote_video.field_oc_vseo
+  - field.field.media.remote_video.field_oc_vtopic
   - varbase_media_header.settings
-  - core.base_field_override.media.video_embed.changed
-  - core.base_field_override.media.video_embed.created
-  - core.base_field_override.media.video_embed.name
-  - core.base_field_override.media.video_embed.path
-  - core.base_field_override.media.video_embed.status
-  - core.base_field_override.media.video_embed.thumbnail
-  - core.base_field_override.media.video_embed.uid
   - field.storage.media.field_media_video_embed_field
+  - media.type.remote_video
+  - migrate_plus.migration.upgrade_media_1
 required: true
