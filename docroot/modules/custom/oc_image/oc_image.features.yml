@@ -4,6 +4,16 @@ excluded:
   - field.field.media.video_embed.field_media_in_library
   - field.field.media.video_embed.field_media_cover_image
   - field.field.media.video_embed.field_media_video_embed_field
+  - field.field.media.video_embed.field_media_oembed_video
+  - field.field.media.video_embed.field_oc_provider
+  - field.field.media.video_embed.field_oc_transcript
+  - field.field.media.video_embed.field_oc_vbody
+  - field.field.media.video_embed.field_oc_vcomments
+  - field.field.media.video_embed.field_oc_vinteractive
+  - field.field.media.video_embed.field_oc_vlevel
+  - field.field.media.video_embed.field_oc_vseo
+  - field.field.media.video_embed.field_oc_vtopic
+  - field.field.node.oc_doc.field_oc_title_image
   - field.storage.group.field_oc_grp_image
   - field.storage.media.field_media_video_embed_field
   - core.entity_view_display.media.video_embed.browser_teaser
@@ -67,4 +77,7 @@ excluded:
   - core.entity_view_display.media.video_embed.se2e_traditional
   - core.entity_view_display.media.video_embed.small
   - core.entity_view_display.media.video_embed.varbase_media_header
+  - core.entity_form_display.media.video_embed.default
+  - core.entity_form_display.media.video_embed.entity_browser
+  - core.entity_form_display.media.video_embed.media_library
 required: true

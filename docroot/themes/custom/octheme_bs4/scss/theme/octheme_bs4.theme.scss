@@ -61,11 +61,16 @@ $oc_navlink_height: 30px; // this is constant
 
 $oc_nav_button_height: 42px; //This is the height of the top right nav button
 // It is used to calculate position based on other elements
+
+// This enables the embeded video to be seen if left or right aligned.
+.media--type-remote-video.media--view-mode-small .varbase-video-player {
+  height: 225px;
+  width: 300px;
+}
 .media--type-video-embed.media--view-mode-small .varbase-video-player {
   height: 225px;
   width: 300px;
 }
-
 .vmh-container {
   max-height: 95vh;
   height: 95vh;

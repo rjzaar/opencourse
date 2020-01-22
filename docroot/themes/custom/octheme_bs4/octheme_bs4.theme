@@ -637,8 +637,10 @@ function octheme_bs4_preprocess_menu_local_task(&$variables)
  */
 function octheme_bs4_preprocess_ds_1col(&$variables)
 {
-   $node = \Drupal::routeMatch()->getParameter('node');
 
+//  $variables['ocvid'] = \Drupal::entityTypeManager()->getStorage('media')->load(2239);
+
+  $node = \Drupal::routeMatch()->getParameter('node');
   if (isset($node)) {
     // If loading a revision, node will be a string. Need to extract an array.
     if (is_string($node)) {

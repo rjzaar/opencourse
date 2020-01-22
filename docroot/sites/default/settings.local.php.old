@@ -18,4 +18,4 @@ $settings['cache']['bins']['render'] = 'cache.backend.null';
 $settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
 $config['config_split.config_split.config_dev']['status'] = TRUE;
 $config['system.site']['name'] = "loc1"; 
-$settings['hash_salt'] = '979a659fe9f4cc5f2dfef047b5da50ab230a6741f165e1875cdda3f';
+$settings['hash_salt'] = '6acfe16b984d473723a8495a84e548b785e1b8bbda1bd1ec3465c97';

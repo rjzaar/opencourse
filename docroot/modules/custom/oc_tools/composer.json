@@ -1,0 +1,26 @@
+{
+    "name": "drupal/oc_tools",
+    "description": "This extension provides new commands for Drush.",
+    "type": "drupal-module",
+    "autoload": {
+        "psr-4": {
+            "Drupal\\oc_tools\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Author name",
+            "email": "author@example.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "extra": {
+        "drush": {
+            "services": {
+                "drush.services.yml": "^9"
+            }
+        }
+    }
+}

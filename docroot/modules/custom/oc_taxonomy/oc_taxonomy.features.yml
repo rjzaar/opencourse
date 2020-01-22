@@ -2,6 +2,7 @@ bundle: oc
 excluded:
   - field.field.taxonomy_term.oc_group_content.field_blocks
   - field.field.taxonomy_term.oc_group_content.field_group_list
+  - field.field.media.video_embed.field_oc_vtopic
   - field.storage.taxonomy_term.field_blocks
   - field.storage.taxonomy_term.field_group_list
   - rabbit_hole.behavior_settings.taxonomy_vocabulary_oc_task_types

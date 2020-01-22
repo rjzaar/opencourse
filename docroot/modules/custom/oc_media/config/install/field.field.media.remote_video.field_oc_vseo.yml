@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_oc_vseo
+    - media.type.remote_video
+  module:
+    - yoast_seo
+id: media.remote_video.field_oc_vseo
+field_name: field_oc_vseo
+entity_type: media
+bundle: remote_video
+label: 'Real-time SEO'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    yoast_seo:
+      focus_keyword: ''
+      status: ''
+    status: ''
+    focus_keyword: ''
+default_value_callback: ''
+settings: {  }
+field_type: yoast_seo

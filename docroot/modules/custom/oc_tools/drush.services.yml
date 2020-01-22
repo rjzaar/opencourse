@@ -1,0 +1,5 @@
+services:
+  oc_tools.commands:
+    class: \Drupal\oc_tools\Commands\OcToolsCommands
+    tags:
+      - { name: drush.command }

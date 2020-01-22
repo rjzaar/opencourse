@@ -3,30 +3,20 @@ description: 'Provides Remote media type'
 type: module
 core: 8.x
 dependencies:
-  - advanced_text_formatter
   - comment
-  - content_translation
-  - crop
-  - ds
-  - embed
-  - entity_embed
+  - entity_browser
+  - entity_browser_entity_form
   - field
-  - focal_point
   - h5p
-  - h5peditor
-  - image
   - language
-  - layout_builder
-  - maxlength
   - media
-  - migrate_plus
   - oc_taxonomy
   - options
-  - path
-  - responsive_image
   - taxonomy
   - text
+  - user
+  - views
   - yoast_seo
-version: 8.x-0.5
+version: 8.x-0.7
 package: oc
 core_incompatible: false

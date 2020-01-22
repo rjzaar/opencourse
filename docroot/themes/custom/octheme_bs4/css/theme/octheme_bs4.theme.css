@@ -1,3 +1,8 @@
+.media--type-remote-video.media--view-mode-small .varbase-video-player {
+  height: 225px;
+  width: 300px;
+}
+
 .media--type-video-embed.media--view-mode-small .varbase-video-player {
   height: 225px;
   width: 300px;
