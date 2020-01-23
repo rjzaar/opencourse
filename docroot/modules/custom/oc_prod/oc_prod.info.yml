@@ -6,7 +6,7 @@ package: Custom
 dependencies:
 # oc_content is no longer in prod since it should not be reinstalled. when first installing list both oc_prod and oc_content
 #  - oc_content
-#  - oc_theme  Make sure you install the theme before installing oc_site
+#  - octheme_bs4  Make sure you install the theme before installing oc_site
   - oc_site
   - oc_fields
   - oc_taxonomy

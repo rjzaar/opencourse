@@ -6,9 +6,9 @@ dependencies:
   module:
     - menu_block
   theme:
-    - vartheme
+    - octheme_bs4
 id: group
-theme: vartheme
+theme: octheme_bs4
 region: header
 weight: 0
 provider: null

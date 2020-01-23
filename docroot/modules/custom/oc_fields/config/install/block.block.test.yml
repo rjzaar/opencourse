@@ -6,9 +6,9 @@ dependencies:
   module:
     - superfish
   theme:
-    - oc_theme
+    - octheme_bs4
 id: test
-theme: oc_theme
+theme: octheme_bs4
 region: header
 weight: 0
 provider: null

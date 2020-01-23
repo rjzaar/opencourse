@@ -759,3 +759,4 @@ $settings['entity_update_backup'] = TRUE;
        include $app_root . '/' . $site_path . '/settings.local.php';
     }
 
+$settings['install_profile'] = 'varbase';
