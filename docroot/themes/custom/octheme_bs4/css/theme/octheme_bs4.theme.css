@@ -146,6 +146,12 @@
   }
 }
 
+@media (min-width: 768px) {
+  .anoncollapse {
+    display: none !important;
+  }
+}
+
 .oc_brand {
   -webkit-box-pack: center !important;
   -ms-flex-pack: center !important;
