@@ -21,7 +21,6 @@ dependencies:
   module:
     - ds
     - image
-    - panelizer
     - user
 third_party_settings:
   ds:
@@ -42,11 +41,6 @@ third_party_settings:
     regions:
       main:
         - field_oc_image
-  panelizer:
-    enable: false
-    custom: false
-    allow: false
-    default: default
 id: node.oc_image.vertical_media_teaser_small
 targetEntityType: node
 bundle: oc_image

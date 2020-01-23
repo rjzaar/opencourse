@@ -25,6 +25,7 @@ dependencies:
   - varbase_core
   - varbase_landing
   - varbase_seo
+  - varbase_media_header
   - views
   - yoast_seo
 version: 8.x-0.1

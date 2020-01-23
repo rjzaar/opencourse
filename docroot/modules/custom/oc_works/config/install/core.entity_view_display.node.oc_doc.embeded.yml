@@ -17,7 +17,6 @@ dependencies:
     - field.field.node.oc_doc.field_oc_internal_links
     - field.field.node.oc_doc.field_oc_level
     - field.field.node.oc_doc.field_oc_linked_image
-    - field.field.node.oc_doc.field_oc_title_image
     - field.field.node.oc_doc.field_oc_topic
     - field.field.node.oc_doc.field_page_header_style
     - field.field.node.oc_doc.field_yoast_seo
@@ -56,7 +55,6 @@ third_party_settings:
         - field_oc_linked_image
         - field_content_visibility
         - field_oc_video
-        - field_oc_title_image
         - field_oc_back_color
         - field_oc_head_back_color
         - field_lp_paragraphs
@@ -132,22 +130,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: ds_content
-  field_oc_title_image:
-    weight: 111
-    label: above
-    settings:
-      view_mode: title_image
-      link: false
-    third_party_settings:
-      ds:
-        ft:
-          id: default
-          settings:
-            lb: ''
-            lb-col: false
-            classes: {  }
-    type: entity_reference_entity_view
     region: ds_content
   field_oc_topic:
     weight: 105
