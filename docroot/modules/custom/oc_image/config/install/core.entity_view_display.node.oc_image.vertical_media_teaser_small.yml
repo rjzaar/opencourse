@@ -41,14 +41,6 @@ third_party_settings:
     regions:
       main:
         - field_oc_image
-<<<<<<< HEAD
-  panelizer:
-    enable: false
-    custom: false
-    allow: false
-    default: default
-=======
->>>>>>> refs/remotes/origin/8.8.x
 id: node.oc_image.vertical_media_teaser_small
 targetEntityType: node
 bundle: oc_image

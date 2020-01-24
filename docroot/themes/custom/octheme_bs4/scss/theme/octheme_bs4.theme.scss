@@ -234,12 +234,6 @@ $oc_branding_logo_height_md: 80px; //logo height
   }
 }
 
-
-  @media (min-width: 768px) {
-
-    display: none !important;
-  }
-}
 // This moves the site logo from center for <md to left for >=md
 .oc_brand {
   -webkit-box-pack: center !important;
