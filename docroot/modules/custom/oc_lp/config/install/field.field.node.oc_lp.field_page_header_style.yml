@@ -6,6 +6,7 @@ dependencies:
     - node.type.oc_lp
   module:
     - options
+    - varbase_media_header
 id: node.oc_lp.field_page_header_style
 field_name: field_page_header_style
 entity_type: node

@@ -87,11 +87,11 @@
 
       <div class="row h-100 justify-content-center align-items-center oc_title_row">
         {% if node %}
-{#          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">#}
-            {#                  <div class="post-heading oc_heading">#}
-            <h1 class="oc_heading oc_vinject">{{ node.label }}</h1>
-            {#                  </div>#}
-{#          </div>#}
+          {#          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">#}
+          {#                  <div class="post-heading oc_heading">#}
+          <h1 class="oc_heading oc_vinject">{{ node.label }}</h1>
+          {#                  </div>#}
+          {#          </div>#}
         {% else %}
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="site-heading">
@@ -113,8 +113,8 @@
 
 {# Start of small screen setup#}
 <div class="oc_small_nav_button  ">
-  <button class="oc_navbar_toggler fa-stack fa-lg " type="button" data-toggle="collapse" data-target="#oc_nav_collapse"
-          aria-controls="navbar-collapse" aria-expanded="true" aria-label="Toggle navigation">
+  <button class="oc_navbar_toggler fa-stack fa-lg collapsed hello" type="button" data-toggle="collapse" data-target="#oc_nav_collapse"
+          aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="oc_navbar_toggler_icon fa fa-square fa-stack-2x oc_icon_back"></span>
     <span class="oc_navbar_toggler_icon fa fa-stack-1x fa-inverse fa-bars "></span>
   </button>
@@ -145,6 +145,7 @@
   <script>
     window.onload = function() {
       document.getElementById('oc_nav_collapse').classList.add('collapse');
+
     };
     function ocexpand(x) {
       x.style.width = "250px";
@@ -153,72 +154,71 @@
     function occontract(x) {
       x.style.width = "45px";
     }</script>
-<div class="oc_group_nav_wrapper block-superfish block-superfishtest collapse
-{% if 'producer' in ocroles or 'seo_admin' in ocroles or 'leader' in ocroles or 'content_admin' in ocroles
-or 'editor' in ocroles or 'site_admin' in ocroles or 'administrator' in ocroles%}
+
+
+  <div class="block-superfish block-superfishtest
+{% if 'producer' in ocroles or 'seo_admin' in ocroles or 'leader' in ocroles or 'content_admin' in ocroles or
+    'editor' in ocroles or 'site_admin' in ocroles or 'administrator' in ocroles  %}
 collapse
-{% else %}
+{%else  %}
 anoncollapse
 {% endif %}
 " id="oc_nav_collapse">
-  <div onmouseover="ocexpand(this)" onmouseout="occontract(this)" class="oc_group_nav">
-    {{ oc_contents }}
-    <ul id="superfish-test" class="sf-vertical sf-test sf-style-white sf-js-enabled sf-shadow">
-      {#{% for id in content.oc_items|slice(0, 5) %}#}
-      {#<li>{{ id['id'] }} {{ id['type'] }} </li>#}
-      {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
-        {%- block oc_icon -%}columns{%- endblock -%}
-        {%- block oc_type -%}lp{%- endblock -%}
-        {%- block oc_name -%}Topics{%- endblock -%}
-      {% endembed %}
+    <div onmouseover="ocexpand(this)" onmouseout="occontract(this)" class="oc_group_nav">
+      {{ oc_contents }}
+      <ul id="superfish-test" class="sf-vertical sf-test sf-style-white sf-js-enabled sf-shadow">
+        {#{% for id in content.oc_items|slice(0, 5) %}#}
+        {#<li>{{ id['id'] }} {{ id['type'] }} </li>#}
+        {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
+          {%- block oc_icon -%}columns{%- endblock -%}
+          {%- block oc_type -%}lp{%- endblock -%}
+          {%- block oc_name -%}Topics{%- endblock -%}
+        {% endembed %}
+        {#{% endfor %}#}
+        {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
+          {%- block oc_icon -%}leanpub{%- endblock -%}
+          {%- block oc_type -%}sequences{%- endblock -%}
+          {%- block oc_name -%}Courses{%- endblock -%}
+        {% endembed %}
+        {% if 'producer' in ocroles or 'seo_admin' in ocroles or 'leader' in ocroles or 'content_admin' in ocroles or
+          'editor' in ocroles or 'site_admin' in ocroles or 'administrator' in ocroles  %}
+          {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
+            {%- block oc_icon -%}file{%- endblock -%}
+            {%- block oc_type -%}docs{%- endblock -%}
+            {%- block oc_name -%}Docs{%- endblock -%}
+          {% endembed %}
+          {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
+            {%- block oc_icon -%}book{%- endblock -%}
+            {%- block oc_type -%}books{%- endblock -%}
+            {%- block oc_name -%}Books{%- endblock -%}
+          {% endembed %}
+          {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
+            {%- block oc_icon -%}link{%- endblock -%}
+            {%- block oc_type -%}links{%- endblock -%}
+            {%- block oc_name -%}Links{%- endblock -%}
+          {% endembed %}
 
-      {#{% endfor %}#}
-      {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
-        {%- block oc_icon -%}leanpub{%- endblock -%}
-        {%- block oc_type -%}sequences{%- endblock -%}
-        {%- block oc_name -%}Courses{%- endblock -%}
-      {% endembed %}
-      {% if 'producer' in ocroles or 'seo_admin' in ocroles or 'leader' in ocroles or 'content_admin' in ocroles
-        or 'editor' in ocroles or 'site_admin' in ocroles or 'administrator' in ocroles%}
-      {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
-        {%- block oc_icon -%}file{%- endblock -%}
-        {%- block oc_type -%}docs{%- endblock -%}
-        {%- block oc_name -%}Docs{%- endblock -%}
-      {% endembed %}
-
-      {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
-        {%- block oc_icon -%}book{%- endblock -%}
-        {%- block oc_type -%}books{%- endblock -%}
-        {%- block oc_name -%}Books{%- endblock -%}
-      {% endembed %}
-
-      {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
-        {%- block oc_icon -%}link{%- endblock -%}
-        {%- block oc_type -%}links{%- endblock -%}
-        {%- block oc_name -%}Links{%- endblock -%}
-      {% endembed %}
-
-      {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
-        {%- block oc_icon -%}image{%- endblock -%}
-        {%- block oc_type -%}images{%- endblock -%}
-        {%- block oc_name -%}Images{%- endblock -%}
-      {% endembed %}
-     {% endif %}
-      {% embed directory ~ '/templates/system/page-llbutton.html.twig' %}
-        {%- block oc_icon -%}sign-in{%- endblock -%}
-        {%- block oc_link -%}user/login{%- endblock -%}
-        {%- block oc_name -%}Login{%- endblock -%}
-      {% endembed %}
-      {% embed directory ~ '/templates/system/page-llbutton.html.twig' %}
-        {%- block oc_icon -%}envelope{%- endblock -%}
-        {%- block oc_link -%}form/contact{%- endblock -%}
-        {%- block oc_name -%}Contact Us{%- endblock -%}
-      {% endembed %}
-    </ul>
+          {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
+            {%- block oc_icon -%}image{%- endblock -%}
+            {%- block oc_type -%}images{%- endblock -%}
+            {%- block oc_name -%}Images{%- endblock -%}
+          {% endembed %}
+        {% endif %}
+        {% embed directory ~ '/templates/system/page-llbutton.html.twig' %}
+          {%- block oc_icon -%}sign-in{%- endblock -%}
+          {%- block oc_link -%}user/login{%- endblock -%}
+          {%- block oc_name -%}Login{%- endblock -%}
+        {% endembed %}
+        {% embed directory ~ '/templates/system/page-llbutton.html.twig' %}
+          {%- block oc_icon -%}envelope{%- endblock -%}
+          {%- block oc_link -%}form/contact{%- endblock -%}
+          {%- block oc_name -%}Contact Us{%- endblock -%}
+        {% endembed %}
+      </ul>
+    </div>
   </div>
-</div>
 {% endif %}
-{#{% endif %}#}
+
 {# octheme end 2 #}
 
 {# hero_slider #}
@@ -293,7 +293,7 @@ anoncollapse
         {# Content #}
         {% block content %}
           <div id="main-content" class="oc_main_spacing">
-          {{ page.content }}</div>
+            {{ page.content }}</div>
         {% endblock %}
       </section>
 

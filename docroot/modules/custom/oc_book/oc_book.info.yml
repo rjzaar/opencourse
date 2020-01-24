@@ -23,7 +23,6 @@ dependencies:
   - oc_image
   - oc_link
   - oc_taxonomy
-  - oc_works
   - options
   - paragraphs
   - path

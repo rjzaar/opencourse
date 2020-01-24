@@ -8,12 +8,12 @@ dependencies:
     - block_class
     - superfish
   theme:
-    - oc_theme
+    - octheme_bs4
 third_party_settings:
   block_class:
     classes: ''
 id: test
-theme: oc_theme
+theme: octheme_bs4
 region: header
 weight: 0
 provider: null

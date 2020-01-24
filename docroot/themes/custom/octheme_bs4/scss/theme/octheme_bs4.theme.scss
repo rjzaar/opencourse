@@ -223,7 +223,16 @@ $oc_branding_logo_height_md: 80px; //logo height
     display: block !important;
   }
 }
+
+
+// This is used for anonymous and authenticated users who shouldn't see the left navarb
 .anoncollapse {
+
+  @media (min-width: 768px) {
+
+    display: none !important;
+  }
+}
 
 
   @media (min-width: 768px) {
