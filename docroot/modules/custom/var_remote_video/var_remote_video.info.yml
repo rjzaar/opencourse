@@ -1,0 +1,13 @@
+name: var_remote_video
+description: 'vabase remote video settings'
+type: module
+core: 8.x
+version: 8.x-1.0
+core_incompatible: false
+dependencies:
+  - comment
+  - field
+  - h5p
+  - options
+  - text
+  - yoast_seo

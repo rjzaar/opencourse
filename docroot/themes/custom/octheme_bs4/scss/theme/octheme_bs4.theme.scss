@@ -53,19 +53,24 @@ $oc_logo_top_padding: 5px; //Logo top padding
 // More in .oc_logo
 
 // Right navigation links, eg Login and Contact Us
-$oc_navlink_color: black;
-$oc_navlink_bg_color: white;
+$oc_navlink_color: white;
+$oc_navlink_bg_color: transparent;
 $oc_navlink_border_radius: 5px;
 $oc_navlink_gap: 20px; //gap between links, ie margin-left
 $oc_navlink_height: 30px; // this is constant
 
 $oc_nav_button_height: 42px; //This is the height of the top right nav button
 // It is used to calculate position based on other elements
+
+// This enables the embeded video to be seen if left or right aligned.
+.media--type-remote-video.media--view-mode-small .varbase-video-player {
+  height: 225px;
+  width: 300px;
+}
 .media--type-video-embed.media--view-mode-small .varbase-video-player {
   height: 225px;
   width: 300px;
 }
-
 .vmh-container {
   max-height: 95vh;
   height: 95vh;
@@ -218,7 +223,14 @@ $oc_branding_logo_height_md: 80px; //logo height
     display: block !important;
   }
 }
+.anoncollapse {
 
+
+  @media (min-width: 768px) {
+
+    display: none !important;
+  }
+}
 // This moves the site logo from center for <md to left for >=md
 .oc_brand {
   -webkit-box-pack: center !important;
@@ -275,8 +287,21 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
 // Header Image
 .oc_header {
   margin-bottom: 0 !important;
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
 }
 
+.vmh-breadcrumb {
+  display: none;
+}
+.vmh-content {
+  width: 100%;
+}
+.vmh-page-title {
+  justify-content: center !important;
+}
 // Header image height if there is an image
 .oc_head_imageh {
   //height: 90vh;
@@ -322,7 +347,7 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
   width: 100%;
   margin-bottom: 0 !important;
   border-radius: 0;
-  z-index: 1000; // Needs to be in front of the image after it so links work.
+  z-index: 497; // Needs to be in front of the image after it so links work.
 }
 
 .oc_nav_links {
@@ -334,11 +359,19 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
 }
 
 .nav-link {
-  color: $oc_navlink_color;
+  color: $oc_navlink_color !important;
   background-color: $oc_navlink_bg_color;
   border-radius: $oc_navlink_border_radius;
   margin-left: $oc_navlink_gap;
   height: $oc_navlink_height;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 17px;
+  /* identical to box height */
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 // This darkens the title and image.
@@ -654,7 +687,7 @@ ul {
   //position: absolute;
   right: 0;
   bottom: 20px;
-  z-index: 1500;
+  z-index: 498;
 }
 
 
@@ -684,7 +717,7 @@ ul {
   content: "";
   background: no-repeat center center;
   background-size: 100% 100%;
-  z-index: 1700;
+  z-index: 499;
 }
 
 

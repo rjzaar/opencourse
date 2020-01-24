@@ -52,7 +52,9 @@
         "drupal/view_mode_page": "^3.1",
         "drupal/content_export_csv": "^3.0@beta",
         "drupal/contentimport": "^4.1",
-        "drupal/field_tools": "^1.0@alpha"
+        "drupal/field_tools": "^1.0@alpha",
+        "drupal/bulk_copy_fields": "^1.0@alpha",
+        "drupal/responsive_favicons": "^1.5"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -273,7 +275,7 @@
         ],
         "post-drupal-scaffold-cmd": [
             "Varbase\\composer\\ScriptHandler::postDrupalScaffoldProcedure",
-            "cd docroot && patch -p1 <../scripts/Add-FollowSymLinks-to-htaccess.patch"
+            "cd docroot && patch -p1 <../scripts/htaccess_favicon.patch"
         ]
     },
     "license": [

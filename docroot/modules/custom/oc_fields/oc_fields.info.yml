@@ -14,10 +14,13 @@ dependencies:
   - link
   - media
   - node
+  - oc_image
+  - oc_works
   - options
   - superfish
   - system
   - taxonomy
+  - user
 version: 8.x-0.6
 package: oc
 core_incompatible: false

@@ -3,7 +3,9 @@ description: 'Provides Opencourse Image content type and related configuration. 
 type: module
 core: 8.x
 dependencies:
+  - advanced_text_formatter
   - color_field
+  - comment
   - content_moderation
   - ds
   - entity_access_by_field
@@ -11,8 +13,12 @@ dependencies:
   - focal_point
   - gnode
   - group
+  - h5p
+  - h5peditor
   - image
+  - layout_builder
   - link
+  - maxlength
   - media
   - menu_ui
   - metatag
@@ -28,6 +34,6 @@ dependencies:
   - varbase_media
   - views
   - yoast_seo
-version: 8.x-0.4
+version: 8.x-0.5
 package: oc
 core_incompatible: false

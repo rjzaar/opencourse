@@ -18,6 +18,4 @@ source_configuration:
     - YouTube
     - Vimeo
   source_field: field_media_oembed_video
-field_map:
-  title: name
-  provider_name: field_oc_provider
+field_map: {  }

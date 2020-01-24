@@ -15,109 +15,178 @@ dependencies:
     - field.field.media.remote_video.field_oc_vseo
     - field.field.media.remote_video.field_oc_vtopic
     - media.type.remote_video
+    - responsive_image.styles.de2e_standard
   module:
     - comment
+    - ds
     - h5p
-    - image
     - media
     - options
+    - responsive_image
     - text
+    - yoast_seo
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_media_oembed_video
+        - field_media_cover_image
 id: media.remote_video.default
 targetEntityType: media
 bundle: remote_video
 mode: default
 content:
   field_media_cover_image:
+    type: responsive_image
     weight: 1
-    label: above
+    region: ds_content
+    label: hidden
     settings:
-      image_style: ''
+      responsive_image_style: de2e_standard
       image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
-  field_media_in_library:
-    weight: 2
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
+    third_party_settings:
+      ds:
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
+            ow: true
+            ow-el: ''
+            ow-cl: 'media-cover-image video-player-icon js-video-player-icon'
+            ow-at: ''
+            ow-def-at: true
+            ow-def-cl: true
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fi-el: ''
+            fi-cl: ''
+            fi-at: ''
+            suffix: ''
+            lbw: false
+            lb-col: false
+            fis: false
+            fis-def-at: false
+            fi: false
+            fi-def-at: false
   field_media_oembed_video:
     type: oembed
-    label: visually_hidden
     weight: 0
+    label: hidden
     settings:
       max_width: 0
       max_height: 0
-    third_party_settings: {  }
-    region: content
+    third_party_settings:
+      ds:
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
+            ow: true
+            ow-el: ''
+            ow-cl: 'varbase-video-player embed-responsive embed-responsive-16by9'
+            ow-at: ''
+            ow-def-at: true
+            ow-def-cl: true
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fi-el: ''
+            fi-cl: ''
+            fi-at: ''
+            suffix: ''
+            lbw: false
+            lb-col: false
+            fis: false
+            fis-def-at: false
+            fi: false
+            fi-def-at: false
+    region: ds_content
   field_oc_provider:
-    weight: 3
+    weight: 2
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
   field_oc_transcript:
-    weight: 4
+    weight: 3
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
   field_oc_vbody:
-    weight: 7
+    weight: 6
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
   field_oc_vcomments:
-    weight: 8
+    weight: 7
     label: above
     settings:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
     type: comment_default
-    region: content
+    region: ds_content
   field_oc_vinteractive:
-    weight: 9
+    weight: 8
     label: above
     settings: {  }
     third_party_settings: {  }
     type: h5p_default
-    region: content
+    region: ds_content
   field_oc_vlevel:
-    weight: 6
+    weight: 5
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
-    region: content
+    region: ds_content
   field_oc_vseo:
-    weight: 10
+    weight: 9
     label: above
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
-    type: string
-    region: content
+    type: yoastseo_formatter
+    region: ds_content
   field_oc_vtopic:
-    weight: 5
+    weight: 4
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
 hidden:
   created: true
+  field_media_in_library: true
   langcode: true
   name: true
   search_api_excerpt: true

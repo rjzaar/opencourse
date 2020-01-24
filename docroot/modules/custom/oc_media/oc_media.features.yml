@@ -1,9 +1,6 @@
 bundle: oc
 excluded:
-  - language.content_settings.media.video_embed
-  - core.entity_form_display.media.video_embed.default
-  - core.entity_form_display.media.video_embed.entity_browser
-  - core.entity_form_display.media.video_embed.media_library
+  - core.entity_view_display.node.oc_image.vertical_media_teaser_small
   - core.entity_view_display.media.video_embed.browser_teaser
   - core.entity_view_display.media.video_embed.default
   - core.entity_view_display.media.video_embed.field_preview
@@ -65,15 +62,16 @@ excluded:
   - core.entity_view_display.media.video_embed.se2e_traditional
   - core.entity_view_display.media.video_embed.small
   - core.entity_view_display.media.video_embed.varbase_media_header
-  - core.entity_view_display.node.oc_image.vertical_media_teaser_small
-  - field.field.media.video_embed.field_media_cover_image
-  - field.field.media.video_embed.field_media_in_library
-  - field.field.media.video_embed.field_media_video_embed_field
   - field.field.node.oc_book.field_media
   - field.field.node.oc_doc.field_media
   - field.field.node.oc_lp.field_media
   - field.field.node.oc_sequence.field_media
+  - field.field.media.remote_video.field_oc_vtopic
+  - field.field.media.video_embed.field_media_video_embed_field
   - varbase_media_header.settings
+  - field.storage.media.field_media_video_embed_field
+  - migrate_plus.migration.upgrade_media_1
+  - language.content_settings.media.video_embed
   - core.base_field_override.media.video_embed.changed
   - core.base_field_override.media.video_embed.created
   - core.base_field_override.media.video_embed.name
@@ -81,5 +79,19 @@ excluded:
   - core.base_field_override.media.video_embed.status
   - core.base_field_override.media.video_embed.thumbnail
   - core.base_field_override.media.video_embed.uid
-  - field.storage.media.field_media_video_embed_field
+  - media.type.video_embed
+  - core.entity_form_display.media.video_embed.default
+  - core.entity_form_display.media.video_embed.entity_browser
+  - core.entity_form_display.media.video_embed.media_library
+  - core.entity_form_display.paragraph.bp_accordion.default
+  - core.entity_form_display.paragraph.bp_block.default
+  - core.entity_form_display.paragraph.bp_columns.default
+  - core.entity_form_display.paragraph.bp_columns_three_uneven.default
+  - core.entity_form_display.paragraph.bp_columns_two_uneven.default
+  - core.entity_form_display.paragraph.bp_image.default
+  - core.entity_form_display.paragraph.bp_modal.default
+  - core.entity_form_display.paragraph.bp_simple.default
+  - core.entity_form_display.paragraph.bp_tabs.default
+  - core.entity_form_display.paragraph.bp_view.default
+  - core.entity_form_display.paragraph.bp_webform.default
 required: true

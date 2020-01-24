@@ -15,6 +15,7 @@ dependencies:
   - h5p
   - h5peditor
   - language
+  - layout_builder
   - menu_ui
   - metatag
   - node
@@ -30,6 +31,7 @@ dependencies:
   - smart_trim
   - text
   - user
+  - view_mode_page
   - views
   - views_infinite_scroll
   - workflows

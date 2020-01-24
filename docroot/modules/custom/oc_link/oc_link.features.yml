@@ -1,4 +1,5 @@
 bundle: oc
 excluded:
   - views.view.oc_links_list
+  - field.field.node.oc_image.field_oc_link
 required: true

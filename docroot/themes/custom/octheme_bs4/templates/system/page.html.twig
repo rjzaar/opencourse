@@ -140,15 +140,27 @@
 
 {# octheme start 2 #}
 {# group navigation #}
+{% set ocroles = user.getroles %}
 {% if oc_group %}
-  <script>function ocexpand(x) {
+  <script>
+    window.onload = function() {
+      document.getElementById('oc_nav_collapse').classList.add('collapse');
+    };
+    function ocexpand(x) {
       x.style.width = "250px";
     }
 
     function occontract(x) {
       x.style.width = "45px";
     }</script>
-<div class="oc_group_nav_wrapper block-superfish block-superfishtest collapse  " id="oc_nav_collapse">
+<div class="oc_group_nav_wrapper block-superfish block-superfishtest collapse
+{% if 'producer' in ocroles or 'seo_admin' in ocroles or 'leader' in ocroles or 'content_admin' in ocroles
+or 'editor' in ocroles or 'site_admin' in ocroles or 'administrator' in ocroles%}
+collapse
+{% else %}
+anoncollapse
+{% endif %}
+" id="oc_nav_collapse">
   <div onmouseover="ocexpand(this)" onmouseout="occontract(this)" class="oc_group_nav">
     {{ oc_contents }}
     <ul id="superfish-test" class="sf-vertical sf-test sf-style-white sf-js-enabled sf-shadow">
@@ -157,16 +169,17 @@
       {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
         {%- block oc_icon -%}columns{%- endblock -%}
         {%- block oc_type -%}lp{%- endblock -%}
-        {%- block oc_name -%}Landing Pages{%- endblock -%}
+        {%- block oc_name -%}Topics{%- endblock -%}
       {% endembed %}
 
       {#{% endfor %}#}
       {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
         {%- block oc_icon -%}leanpub{%- endblock -%}
         {%- block oc_type -%}sequences{%- endblock -%}
-        {%- block oc_name -%}Sequences{%- endblock -%}
+        {%- block oc_name -%}Courses{%- endblock -%}
       {% endembed %}
-
+      {% if 'producer' in ocroles or 'seo_admin' in ocroles or 'leader' in ocroles or 'content_admin' in ocroles
+        or 'editor' in ocroles or 'site_admin' in ocroles or 'administrator' in ocroles%}
       {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
         {%- block oc_icon -%}file{%- endblock -%}
         {%- block oc_type -%}docs{%- endblock -%}
@@ -190,32 +203,7 @@
         {%- block oc_type -%}images{%- endblock -%}
         {%- block oc_name -%}Images{%- endblock -%}
       {% endembed %}
-      {% if node.type.value[0]['target_id']=="oc_sequence" or node.type.value[0]['target_id']=="oc_doc" %}
-      <li class="sf-depth-1 menuparent oc_pointer" onclick="showquiz()">
-                     <span class="fa-stack fa-lg ">
-                  <i class="fa fa-circle fa-stack-2x oc_icon_back"></i>
-                  <i class="fa fa-question-circle fa-stack-2x fa-inverse"></i>
-                        </span>
-        <ul class="sf-hidden oc_group_nav_text">
-          <li class="sf-depth-2 sf-no-children">
-            Interactives
-          </li>
-
-        </ul>
-
-        <script>
-          function showquiz() {
-            var x = document.getElementsByClassName("oc_quiz");
-            for (var i = 0; i < x.length; i++) {
-              if (x[i].style.display == "none") {
-                x[i].style.display = "block";
-              } else {
-                x[i].style.display = "none";
-              }
-            }
-          }
-        </script>
-      </li>{% endif %}
+     {% endif %}
       {% embed directory ~ '/templates/system/page-llbutton.html.twig' %}
         {%- block oc_icon -%}sign-in{%- endblock -%}
         {%- block oc_link -%}user/login{%- endblock -%}

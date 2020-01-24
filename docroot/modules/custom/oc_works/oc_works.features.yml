@@ -20,4 +20,5 @@ excluded:
   - field.field.comment.comment_forum.comment_body
   - field.field.node.forum.comment_forum
   - field.field.node.oc_doc.field_media
+  - field.field.node.oc_doc.field_oc_title_image
 required: true

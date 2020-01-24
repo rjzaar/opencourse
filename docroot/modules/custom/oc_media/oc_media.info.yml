@@ -4,8 +4,8 @@ type: module
 core: 8.x
 dependencies:
   - comment
-  - embed
-  - entity_embed
+  - entity_browser
+  - entity_browser_entity_form
   - field
   - h5p
   - language
@@ -14,7 +14,9 @@ dependencies:
   - options
   - taxonomy
   - text
+  - user
+  - views
   - yoast_seo
-version: 8.x-0.4
+version: 8.x-0.7
 package: oc
 core_incompatible: false

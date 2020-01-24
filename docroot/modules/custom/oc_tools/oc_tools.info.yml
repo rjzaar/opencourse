@@ -1,0 +1,5 @@
+name: 'oc_tools'
+type: module
+description: 'Tools for Opencourse development'
+core: 8.x
+package: 'OC'
