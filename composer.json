@@ -54,7 +54,8 @@
         "drupal/contentimport": "^4.1",
         "drupal/field_tools": "^1.0@alpha",
         "drupal/bulk_copy_fields": "^1.0@alpha",
-        "drupal/responsive_favicons": "^1.5"
+        "drupal/responsive_favicons": "^1.5",
+        "drupal/menu_link_attributes": "^1.0"
     },
     "conflict": {
         "drupal/drupal": "*"

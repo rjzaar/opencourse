@@ -127,6 +127,15 @@ function octheme_bs4_preprocess_page(&$variables)
       if (is_string($node)) {
         $node = \Drupal\node\Entity\Node::load($node);
       }
+      // ### varbase_media_header check to see if it is set to media_header
+      if ($node->hasField('field_page_header_style')) {
+        if (isset($node->get('field_page_header_style')[0])) {
+        if ( $node->get('field_page_header_style')->getValue()[0]['value'] == "media_header") {
+          $variables['oc_vmh'] = 1;
+        } else {
+          $variables['oc_vmh'] = 0;
+        }
+      } }
       // Add head image if it has one.
       if ($node->hasField('field_oc_image')) {
         if (isset($node->get('field_oc_image')[0])) {

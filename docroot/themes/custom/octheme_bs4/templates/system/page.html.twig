@@ -62,12 +62,19 @@
 {# Navbar #}
 {% if page.navigation or page.navigation_collapsible %}
   {% block navbar %}
+    {% if oc_vmh %}     {% set navbar_classes = [
+    'mb-4',
+    'oc_darken',
+    'oc_header',
+  ] %}
+    {% else %}
     {% set navbar_classes = [
       'mb-4',
       'oc_darken',
-      'oc_header',
+      'oc_header_novmh',
     ] %}
-    {#       'border-bottom', removed from above#}
+    {% endif %}
+     {#       'border-bottom', removed from above#}
     {# octheme start 1 | These divs will create the header space. The other header elements fit in this space using position: absolute. #}
     <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner"
       {% if oc_head_image %}style="background: url({{ oc_head_image }}) no-repeat center center fixed;

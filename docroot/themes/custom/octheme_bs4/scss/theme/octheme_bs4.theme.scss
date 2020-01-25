@@ -16,6 +16,7 @@
 // this is the breakpoint and side navigation is moved out the way.
 $primary: #ee3159;
 $secondary: #251b3d;
+$ocback: #171126;
 $success: $green;
 $info: $cyan;
 $warning: $yellow;
@@ -67,10 +68,12 @@ $oc_nav_button_height: 42px; //This is the height of the top right nav button
   height: 225px;
   width: 300px;
 }
+
 .media--type-video-embed.media--view-mode-small .varbase-video-player {
   height: 225px;
   width: 300px;
 }
+
 .vmh-container {
   max-height: 95vh;
   height: 95vh;
@@ -292,19 +295,26 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
   margin-bottom: 0 !important;
   position: absolute;
   top: 0;
-  left:0;
+  left: 0;
   width: 100%;
+}
+
+.oc_header_novmh {
+  margin-bottom: 0 !important;
 }
 
 .vmh-breadcrumb {
   display: none;
 }
+
 .vmh-content {
   width: 100%;
 }
+
 .vmh-page-title {
   justify-content: center !important;
 }
+
 // Header image height if there is an image
 .oc_head_imageh {
   //height: 90vh;
@@ -1113,6 +1123,106 @@ $oc_panel_left: 15px;
   font-size: 20px !important;
   border-radius: 0 5px 5px 0;
   //filter: alpha(opacity=80); /* For IE8 and earlier */
+}
+
+.oc_footer_nav {
+  background-color: $ocback;
+  width: 100%
+}
+
+.footer-wrapper .footer section.region-footer div[id$="-copyright"] {
+  padding: 0;
+}
+
+.oc_footer_link {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+}
+
+.oc_footer_up {
+  position: relative;
+  bottom: 30px;
+}
+
+.oc_footer_image {
+  width: 63px;
+  height: 68px;
+  position: relative;
+  left: 30px;
+  top: 15px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.oc_footer_join {
+  position: absolute;
+  right: 30px;
+  bottom: 46px;
+  background-color: $primary;
+  border-radius: 5px;
+  height: 48px;
+  width: 106px;
+  padding-top: 16px;
+  padding-left: 20px !important;
+}
+
+.oc_footer_login {
+  position: absolute;
+  right: 150px;
+  bottom: 46px;
+}
+
+@media (max-width: map-get($grid-breakpoints, "md")) {
+  .footer-wrapper .footer section.region-footer .menu--footer ul.nav {
+    -webkit-box-orient: vertical;
+    display: block;
+  }
+  .oc_footer_nav {
+    height: 364px;
+  }
+  .oc_footer_image {
+    width: 63px;
+    height: 68px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: -10px;
+    left: 0;
+
+  }
+
+  .oc_footer_join {
+    position: relative;
+    text-align: center;
+    bottom: 0;
+    right: -50px;
+    background-color: $primary;
+    border-radius: 5px;
+    height: 48px;
+    width: 106px;
+    padding-top: 16px;
+  }
+
+  .oc_footer_login {
+    position: relative;
+    right: 50px;
+    top: 136px;
+    text-align: center;
+  }
+  .oc_footer_link {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
 }
 
 /*
