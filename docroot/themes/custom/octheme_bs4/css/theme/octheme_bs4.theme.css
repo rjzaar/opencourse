@@ -27,6 +27,16 @@
   height: 30px;
 }
 
+.oc_logo_trans {
+  margin-top: 0;
+  border-radius: 5px 5px 5px 5px;
+  width: 100px;
+  margin-left: 5px;
+  padding-left: 5px;
+  padding-top: 0;
+  padding-right: 5px;
+}
+
 .oc_vinject {
   padding-top: 5px;
   font-size: 100% !important;
@@ -901,10 +911,90 @@ ul {
   bottom: 46px;
 }
 
+.ofi_wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.ofi_tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.ofi_tooltip .ofi_tooltip_text {
+  visibility: hidden;
+  position: absolute;
+  background: #333;
+  color: #fff;
+  width: 200px !important;
+  border-radius: 6px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  padding: 5px 0;
+  text-align: center;
+  z-index: 1;
+}
+
+.ofi_tooltip:hover .ofi_tooltip_text {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .ofi_wrapper {
+    width: 90px;
+  }
+  .ofi_tooltip {
+    width: 90px;
+  }
+  .ofi_tooltip .ofi_tooltip_text {
+    left: 105%;
+    top: -30px;
+  }
+  .ofi_tooltip_text::after {
+    content: "";
+    position: absolute;
+    top: 80%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #555 transparent transparent;
+  }
+}
+
 @media (max-width: 768px) {
   .footer-wrapper .footer section.region-footer .menu--footer ul.nav {
     -webkit-box-orient: vertical;
     display: block;
+  }
+  .ofi_wrapper {
+    width: 100%;
+  }
+  .ofi_tooltip {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 90px;
+  }
+  .ofi_tooltip .ofi_tooltip_text {
+    bottom: 125%;
+    left: 50% !important;
+    margin-left: -100px;
+    height: 80px;
+  }
+  .ofi_tooltip_text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
   }
   .oc_footer_nav {
     height: 364px;

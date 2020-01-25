@@ -48,10 +48,12 @@
   {{ title_prefix }}
   <h2{{ title_attributes.setAttribute('id', heading_id) }}>{{ configuration.label }}</h2>
   {{ title_suffix }}
-
-  <div class="oc_footer_image">
+<div class="ofi_wrapper">
+  <div class="ofi_tooltip">
     <img src="/themes/custom/octheme_bs4/oclogot.png" class="oc_footer_image">
-  </div>
+    <span class="ofi_tooltip_text">This site is consecrated to the Sacred Heart of Jesus and the Immaculate Heart of Mary
+    <a href="/sacredheart">Find out more</a></span>
+  </div></div>
   {# Menu. #}
   {% block content %}
     {{ content }}
