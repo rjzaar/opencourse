@@ -27,7 +27,6 @@
         "drupal/pathauto": "^1.6",
         "drupal/pathologic": "^1.0-alpha1",
         "drupal/prepopulate": "2.x-dev#96d7b48dac02d5d126602775f684f89f50412ffd",
-        "drupal/quiz": "5.x-dev",
         "drupal/riddler": "^1.1",
         "drupal/security_review": "1.x-dev#35ebae445bb260e961e47c4c58efe7c50c228999",
         "drupal/site_settings": "^1.11",
@@ -37,7 +36,7 @@
         "drupal/twig_field_value": "^1.1",
         "drupal/twig_tweak": "^2.4",
         "drupal/varbase_media_header": "^7.4",
-        "drupal/vartheme_bs4": "^6.2",
+        "drupal/vartheme_bs4": "^6.7",
         "drupal/video_embed_field": "^2",
         "drupal/views_field_view": "^1.0@beta",
         "drush/drush": "~9.0",
@@ -291,24 +290,6 @@
         "assets": {
             "type": "composer",
             "url": "https://asset-packagist.org"
-        },
-        "fontawesome": {
-            "type": "package",
-            "package": {
-                "name": "fortawesome/font-awesome",
-                "version": "v4.7.0",
-                "type": "drupal-library",
-                "extra": {
-                    "installer-name": "fontawesome"
-                },
-                "dist": {
-                    "url": "https://github.com/FortAwesome/Font-Awesome/archive/v4.7.0.zip",
-                    "type": "zip"
-                },
-                "require": {
-                    "composer/installers": "~1.0"
-                }
-            }
         },
         "composer-patches": {
             "type": "vcs",

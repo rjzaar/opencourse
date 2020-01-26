@@ -2,6 +2,7 @@ var page = "http://opencat.loc/node/890";
 let gulp = require('gulp'),
   sass = require('gulp-sass'),
   postcss = require('gulp-postcss'),
+  csscomb = require('gulp-csscomb'),
   autoprefixer = require('autoprefixer'),
   browserSync = require('browser-sync').create()
 
@@ -56,6 +57,7 @@ function compile () {
         'Android >= 4',
         'Opera >= 12']
     })]))
+    .pipe(csscomb())
     .pipe(gulp.dest(paths.scss.dest))
     .pipe(browserSync.stream())
 }
