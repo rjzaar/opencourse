@@ -613,7 +613,7 @@ function octheme_bs4_preprocess_menu_local_task(&$variables)
   if ($title == "View") {
     $variables['oc_icon'] = "fa-eye";
   } elseif ($title == "Edit") {
-    $variables['oc_icon'] = "fa-pencil-square-o";
+    $variables['oc_icon'] = "fa-edit";
   } elseif ($title == "Outline") {
     $variables['oc_icon'] = "fa-list";
   } elseif ($title == "Delete") {
@@ -631,7 +631,7 @@ function octheme_bs4_preprocess_menu_local_task(&$variables)
   } elseif ($title == "Nodes") {
     $variables['oc_icon'] = "fa-square-o";
   } elseif ($title == "Revisions") {
-    $variables['oc_icon'] = "fa-code-fork";
+    $variables['oc_icon'] = "fa-code-branch";
   } elseif ($title == "View Revision") {
     $variables['oc_icon'] = "fa-file-text-o";
   } elseif ($title == "Latest version") {
