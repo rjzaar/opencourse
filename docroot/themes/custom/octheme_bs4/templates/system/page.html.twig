@@ -65,38 +65,44 @@
     {% if oc_vmh %}     {% set navbar_classes = [
     'mb-4',
     'oc_darken',
+    'oc_header_vmh',
+  ] %}
+    {% else %}
+    {% if oc_tm %}     {% set navbar_classes = [
+    'mb-4',
+    'oc_darken',
     'oc_header',
   ] %}
     {% else %}
     {% set navbar_classes = [
       'mb-4',
-      'oc_darken',
+      'oc_header',
       'oc_header_novmh',
     ] %}
-    {% endif %}
+    {% endif %}{% endif %}
      {#       'border-bottom', removed from above#}
     {# octheme start 1 | These divs will create the header space. The other header elements fit in this space using position: absolute. #}
     <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner"
       {% if oc_head_image %}style="background: url({{ oc_head_image }}) no-repeat center center fixed;
         background-size: cover; -webkit-background-size: cover; -moz-background-size: cover;
         -o-background-size: cover; height: 100vh;"{% else %}class="oc_head_noimageh"{% endif %}>
-      <div class="oc_navbar">
-        <div class="navbar-brand mr-md-auto oc_brand">
+      <div class="oc_navbar {% if oc_tm %}oc_navbar_dark{% else %}oc_navbar_light{% endif %}">
+        <div class="navbar-brand mr-md-auto oc_brand {% if oc_tm %}oc_brand_dark{% else %}oc_brand_light{% endif %} ">
           {{ page.navigation }}
         </div>
         {% if page.navigation_collapsible %}
-        <div class="oc_nav_links">
+        <div class="oc_nav_links {% if oc_tm %}oc_nav_links_dark{% else %}oc_nav_links_light{% endif %}">
           {{ page.navigation_collapsible }}
         </div>
       </div>
 
       {% endif %}
 
-      <div class="row h-100 justify-content-center align-items-center oc_title_row">
+      <div class="row {% if oc_tm %}h-100{% else %}oc_title_plain{% endif %} justify-content-center align-items-center oc_title_row">
         {% if node %}
           {#          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">#}
           {#                  <div class="post-heading oc_heading">#}
-          <h1 class="oc_heading oc_vinject">{{ node.label }}</h1>
+          <h1 class="{% if oc_tm %}oc_heading_dark{% else %}oc_heading_light{% endif %} oc_heading">{{ node.label }}</h1>
           {#                  </div>#}
           {#          </div>#}
         {% else %}
@@ -211,12 +217,12 @@ anoncollapse
             {%- block oc_name -%}Images{%- endblock -%}
           {% endembed %}
         {% endif %}
-        {% embed directory ~ '/templates/system/page-llbutton.html.twig' %}
+        {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
           {%- block oc_icon -%}sign-in-alt{%- endblock -%}
           {%- block oc_link -%}user/login{%- endblock -%}
           {%- block oc_name -%}Login{%- endblock -%}
         {% endembed %}
-        {% embed directory ~ '/templates/system/page-llbutton.html.twig' %}
+        {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
           {%- block oc_icon -%}envelope{%- endblock -%}
           {%- block oc_link -%}form/contact{%- endblock -%}
           {%- block oc_name -%}Contact Us{%- endblock -%}

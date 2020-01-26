@@ -13,6 +13,15 @@
   height: 95vh;
 }
 
+.oc_logo_white {
+  background-color: white;
+}
+
+.oc_logo_dark {
+  background-color: black;
+  background: rgba(0, 0, 0, 0.1);
+}
+
 .oc_logo {
   margin-top: 0;
   border-radius: 5px 5px 5px 5px;
@@ -24,17 +33,8 @@
 }
 
 .oc_branding_logo {
-  height: 30px;
-}
-
-.oc_logo_trans {
-  margin-top: 0;
-  border-radius: 5px 5px 5px 5px;
-  width: 100px;
-  margin-left: 5px;
-  padding-left: 5px;
-  padding-top: 0;
-  padding-right: 5px;
+  height: 40px;
+  width: 164px !important;
 }
 
 .oc_vinject {
@@ -43,12 +43,12 @@
 }
 
 .oc_nav_links {
-  top: 0px;
+  top: 5px;
   right: 50px;
 }
 
 .oc_small_nav_button {
-  top: -6px;
+  top: -1px;
 }
 
 .oc_nav_link_button {
@@ -57,6 +57,14 @@
 
 .oc_nav_links {
   visibility: hidden;
+}
+
+.oc_nav_links_dark a {
+  color: white !important;
+}
+
+.oc_nav_links_light a {
+  color: black !important;
 }
 
 @media (min-width: 576px) {
@@ -70,18 +78,19 @@
     padding-right: 10px;
   }
   .oc_branding_logo {
-    height: 50px;
+    height: 40px;
+    width: 164px !important;
   }
   .oc_vinject {
     padding-top: 5px;
     font-size: 150% !important;
   }
   .oc_nav_links {
-    top: 20px;
+    top: 15px;
     right: 50px;
   }
   .oc_small_nav_button {
-    top: 14px;
+    top: 9px;
   }
   .oc_nav_link_button {
     visibility: visible;
@@ -102,18 +111,19 @@
     padding-right: 10px;
   }
   .oc_branding_logo {
-    height: 80px;
+    height: 50px;
+    width: 205px !important;
   }
   .oc_vinject {
     padding-top: 15px;
     font-size: 200% !important;
   }
   .oc_nav_links {
-    top: 45px;
+    top: 30px;
     right: 50px;
   }
   .oc_small_nav_button {
-    top: 39px;
+    top: 24px;
   }
   .oc_nav_link_button {
     visibility: hidden;
@@ -186,12 +196,16 @@
   }
 }
 
+.oc_brand_light {
+  height: 120px;
+}
+
 .oc-view-spacing {
   margin-left: 50px;
   margin-top: 40px;
 }
 
-.oc_header {
+.oc_header_vmh {
   margin-bottom: 0 !important;
   position: absolute;
   top: 0;
@@ -200,7 +214,13 @@
 }
 
 .oc_header_novmh {
-  margin-bottom: 0 !important;
+  padding: 0;
+  margin: 0;
+}
+
+.oc_header {
+  padding: 0;
+  margin: 0;
 }
 
 .vmh-breadcrumb {
@@ -240,17 +260,16 @@
   z-index: 497;
 }
 
+.oc_navbar_light {
+  background-color: white;
+  height: 120px;
+}
+
 .oc_nav_links {
   position: absolute;
 }
 
-.oc_logo {
-  background-color: white;
-}
-
 .nav-link {
-  color: white !important;
-  background-color: transparent;
   border-radius: 5px;
   margin-left: 20px;
   height: 30px;
@@ -261,6 +280,18 @@
   /* identical to box height */
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  z-index: 1;
+}
+
+.oc_darken::after {
+  background-color: rgba(87, 87, 87, 0.5);
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
 }
 
 .navbar-nav {
@@ -295,17 +326,38 @@
 
 .oc_title_row {
   width: 100%;
+  margin: 0;
+}
+
+.oc_title_plain {
+  height: 400px;
+  background-color: #251b3d;
 }
 
 .oc_heading {
   color: #fff !important;
   text-align: center;
   font-family: 'Roboto', sans-serif;
-  font-weight: 700;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 66px;
+  padding: 0 10px !important;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  z-index: 1;
+}
+
+.oc_heading_light {
+  margin: 90px 0 0 0 !important;
+}
+
+.oc_heading_dark {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   margin: 0 !important;
-  padding: 0 10px !important;
 }
 
 .site-heading {
@@ -737,6 +789,7 @@ ul {
   -webkit-align-items: center !important;
   -ms-flex-align: center !important;
   align-items: center !important;
+  z-index: 1;
 }
 
 @media screen and (min-width: 768px) {
@@ -876,6 +929,7 @@ ul {
   text-transform: uppercase;
   padding: 0;
   margin: 0;
+  color: white;
 }
 
 .oc_footer_up {

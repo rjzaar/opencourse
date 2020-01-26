@@ -18,7 +18,9 @@
 {% block content %}
   {% if site_logo %}
     <a class="logo oc_logo navbar-btn pull-left" href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
-      <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" class="oc_branding_logo"/>
+
+      <img src="{% if oc_tm %}/themes/custom/octheme_bs4/logodark.png{% else %}/themes/custom/octheme_bs4/logo.png{% endif %}"
+           alt="{{ 'Home'|t }}" class="oc_branding_logo {% if oc_tm %}oc_logo_dark{% else %}oc_logo_white{% endif %}"/>
     </a>
   {% endif %}
   {% if site_name %}
@@ -28,3 +30,4 @@
     <p class="navbar-text">{{ site_slogan }}</p>
   {% endif %}
 {% endblock %}
+

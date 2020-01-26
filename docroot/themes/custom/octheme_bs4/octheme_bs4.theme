@@ -120,6 +120,8 @@ function octheme_bs4_preprocess_page(&$variables)
     $variables['oc_head_image'] = file_create_url($fnodeuri);
 
   }
+  $variables['oc_tm'] = 0;
+  $variables['oc_vmh'] = 0;
 // Next try to get the head image from a node while adding other node variables
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     if (isset($node)) {
@@ -130,17 +132,18 @@ function octheme_bs4_preprocess_page(&$variables)
       // ### varbase_media_header check to see if it is set to media_header
       if ($node->hasField('field_page_header_style')) {
         if (isset($node->get('field_page_header_style')[0])) {
-        if ( $node->get('field_page_header_style')->getValue()[0]['value'] == "media_header") {
-          $variables['oc_vmh'] = 1;
-        } else {
-          $variables['oc_vmh'] = 0;
+          if ($node->get('field_page_header_style')->getValue()[0]['value'] == "media_header") {
+            $variables['oc_tm'] = 1;
+            $variables['oc_vmh'] = 1;
+          }
         }
-      } }
+      }
       // Add head image if it has one.
       if ($node->hasField('field_oc_image')) {
         if (isset($node->get('field_oc_image')[0])) {
           $fnodeid = $node->get('field_oc_image')->getValue()[0]['target_id'];
 //    $variables['oc_head_image'] =$fnodeid ;
+          $variables['oc_tm'] = 1;
           $fnode = \Drupal\file\Entity\File::load($fnodeid);
           $variables['oc_image_uri'] = $fnode->getFileUri();
           if (isset($fnode)) {
@@ -155,6 +158,7 @@ function octheme_bs4_preprocess_page(&$variables)
         if (isset($node->get('field_oc_book_image')[0])) {
           $fnodeid = $node->get('field_oc_book_image')->getValue()[0]['target_id'];
 //    $variables['oc_head_image'] =$fnodeid ;
+          $variables['oc_tm'] = 1;
           $fnode = \Drupal\file\Entity\File::load($fnodeid);
           $variables['oc_image_uri'] = $fnode->getFileUri();
           if (isset($fnode)) {
@@ -181,11 +185,13 @@ function octheme_bs4_preprocess_page(&$variables)
         }
       }
 
-      //get OC doc title image if it has one.
-      if ($node->hasField('field_oc_title_image')) {
-        if (isset($node->get('field_oc_title_image')[0])) {
+
+      //get OC doc linked image if it has one but only if there is no title image
+      if ($node->hasField('field_oc_linked_image')) {
+        if (isset($node->get('field_oc_linked_image')[0])) {
 //          $lnodeid = $node->get('field_oc_linked_image')->getValue()[0];
-          $lnodeid = $node->get('field_oc_title_image')->getValue()[0]['target_id'];
+          $variables['oc_tm'] = 1;
+          $lnodeid = $node->get('field_oc_linked_image')->getValue()[0]['target_id'];
           if (is_numeric($lnodeid)) {
             $imnode = \Drupal\node\Entity\Node::load($lnodeid);
             $fnodeid = $imnode->get('field_oc_image')->getValue()[0]['target_id'];
@@ -194,24 +200,6 @@ function octheme_bs4_preprocess_page(&$variables)
             if (isset($fnode)) {
               $fnodeuri = $fnode->getFileUri();
               $variables['oc_head_image'] = file_create_url($fnodeuri);
-            }
-          }
-        } else {
-          //get OC doc linked image if it has one but only if there is no title image
-          if ($node->hasField('field_oc_linked_image')) {
-            if (isset($node->get('field_oc_linked_image')[0])) {
-//          $lnodeid = $node->get('field_oc_linked_image')->getValue()[0];
-              $lnodeid = $node->get('field_oc_linked_image')->getValue()[0]['target_id'];
-              if (is_numeric($lnodeid)) {
-                $imnode = \Drupal\node\Entity\Node::load($lnodeid);
-                $fnodeid = $imnode->get('field_oc_image')->getValue()[0]['target_id'];
-                $fnode = \Drupal\file\Entity\File::load($fnodeid);
-                $variables['oc_image_uri'] = $fnode->getFileUri();
-                if (isset($fnode)) {
-                  $fnodeuri = $fnode->getFileUri();
-                  $variables['oc_head_image'] = file_create_url($fnodeuri);
-                }
-              }
             }
           }
         }
@@ -255,11 +243,11 @@ function octheme_bs4_preprocess_page(&$variables)
     }
   }
 
-  // Leaving this for when to work out how to get entityTypeManager without 'This'.
-  // some of the needed code: opencourse/docroot/modules/contrib/group/src/Entity/Controller/GroupContentController.php
-  // Start of building views and left buttons for the group
+// Leaving this for when to work out how to get entityTypeManager without 'This'.
+// some of the needed code: opencourse/docroot/modules/contrib/group/src/Entity/Controller/GroupContentController.php
+// Start of building views and left buttons for the group
 
-  // Get all content types for that group
+// Get all content types for that group
 //  $bundles = [];
 //  $create_mode = FALSE;
 //  $entityTypeManager = $this->getEntityTypeManager();
@@ -276,9 +264,9 @@ function octheme_bs4_preprocess_page(&$variables)
 //  }
 //  $variables['oc_contents']= $bundles;
 
-  // For each content type work out the code, name and icon.
+// For each content type work out the code, name and icon.
 
-  // Add the built array to variables.
+// Add the built array to variables.
 
 //  $build = [];
 //
@@ -316,7 +304,7 @@ function octheme_bs4_preprocess_page(&$variables)
 //  if(isset($oc_nodes)) {
 //    $build['oc_items'] = $oc_nodes;
 //  }
-  // End of building views and left buttons for the group
+// End of building views and left buttons for the group
 
 }
 
@@ -516,22 +504,22 @@ function octheme_bs4_preprocess_node(&$variables)
   }
 }
 
-/**
- * @param $variables
- */
-function octheme_bs4_preprocess_template(&$variables)
-{
-  $variables['uuid'] = "John";
-
-
-}
+///**
+// * @param $variables
+// */
+//function octheme_bs4_preprocess_template(&$variables)
+//{
+//  $variables['uuid'] = "John";
+//
+//
+//}
 
 /**
  * @param $variables
  */
 function octheme_bs4_preprocess_varbase_media_header_block(&$variables)
 {
-  if (substr(\Drupal::request()->getRequestUri(),-7) == "summary" ) {
+  if (substr(\Drupal::request()->getRequestUri(), -7) == "summary") {
     $variables['oc_summary'] = TRUE;
   } else {
     $variables['oc_summary'] = FALSE;
@@ -543,50 +531,39 @@ function octheme_bs4_preprocess_varbase_media_header_block(&$variables)
  */
 function octheme_bs4_preprocess_block(&$variables)
 {
-  //This commented section is the start of trying to migrate videos etc into a single text field.
-//  $videoinfo = [];
-//  $nids = \Drupal::entityQuery('node')
-//    ->condition('type', 'oc_doc')
-//    ->execute();
-//
-// $variables['nids']=$variables['attributes'];
-// if ( $variables['attributes']['id']= "block-oc-theme-content") {
-//   $variables['nids']="yes";
-//   //OK can get it to work here!
-//   $nids = \Drupal::entityQuery('node')
-//     ->condition('type', 'oc_doc')
-//     ->execute();
-//
-//   $nid = 890;
-//   $node      = \Drupal\node\Entity\NODE::load($nid);
-//   $videos = $node->field_oc_video->getValue();
-//   foreach ($videos as $video) {
-//
-//     $vnode = \Drupal\media_entity\Entity\Media::load($video['target_id']);
-//     $videosarr[]  = $vnode;
-//     $videoinfo[] = array('thumbnail' => $vnode->get('thumbnail'),'url' => $vnode->get('field_media_video_embed_field')->value);
-////     ,'url' => $vnode->url()
-////        $paragraph = Paragraph::create([
-////          'title'          => $q,
-////          'type'           => 'bp_simple',
-////          'bp_text' => $q,
-////        ]);
-////        $paragraph->save();
-////        $node->field_lp_paragraphs[] = $paragraph->id();
-////        $node->paragraph_field_referenced->appendItem($paragraph);
-//   }
-//   $variables['videosarr']=$videosarr;
-//   $variables['videos']=$videoinfo;
-//
-// }
-
-
+  $variables['oc_tm'] = 0; //title media
   $node = \Drupal::request()->attributes->get('node');
   // If loading a revision, node will be a string. Need to extract an array.
   if (is_string($node)) {
     $node = \Drupal\node\Entity\Node::load($node);
   }
+
+  // Check to see if an image or video is used. If so use the dark option, if not use the light option for the logo.
   if ($node) {
+    // ### varbase_media_header check to see if it is set to media_header
+    if ($node->hasField('field_page_header_style')) {
+      if (isset($node->get('field_page_header_style')[0])) {
+        if ($node->get('field_page_header_style')->getValue()[0]['value'] == "media_header") {
+          $variables['oc_tm'] = 1;
+        }
+      }
+    }
+    //Now check for pages with images
+    if ($node->hasField('field_oc_image')) {
+      if (isset($node->get('field_oc_image')[0])) {
+        $variables['oc_tm'] = 1;
+      }
+    }
+    if ($node->hasField('field_oc_book_image')) {
+      if (isset($node->get('field_oc_book_image')[0])) {
+        $variables['oc_tm'] = 1;
+      }
+    }
+    if ($node->hasField('field_oc_linked_image')) {
+      if (isset($node->get('field_oc_linked_image')[0])) {
+        $variables['oc_tm'] = 1;
+      }
+    }
     foreach (\Drupal\group\Entity\GroupContent::loadByEntity($node) as $group_content) {
       $oc_group = $group_content->getGroup()->id();
 
