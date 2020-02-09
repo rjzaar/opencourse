@@ -633,6 +633,12 @@ function octheme_bs4_preprocess_ds_1col(&$variables)
       //$node = $variables['content']['#node'];
       $node = \Drupal\node\Entity\Node::load($node);
     }
+    if ($node->hasField('field_oc_lmedia')) {
+      if (!is_null($node->get('field_oc_lmedia'))) {
+       // $variables['nmed'] = $node->get('field_oc_lmedia')[0]->get('target_id')->getValue();
+      }
+    }
+
     //if there is an author, pass the author on
     if ($node->hasField('field_oc_author_s_')) {
       if (!is_null($node->get('field_oc_author_s_')[0])) {

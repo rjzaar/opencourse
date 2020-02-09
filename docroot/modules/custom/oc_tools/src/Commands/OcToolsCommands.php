@@ -169,8 +169,8 @@ class OcToolsCommands extends DrushCommands
         # OK this node has an embeded entity
 
         $mend = 0;
-        $vecount=substr_count($newbody, 'data-embed-button="media"');
-        $processv=0;
+        $vecount = substr_count($newbody, 'data-embed-button="media"');
+        $processv = 0;
         for ($k = 0; $k < $vecount; $k++) {
           # pull out the media entity embed.
           # Find the last < before data-embed-button="media"
@@ -178,14 +178,14 @@ class OcToolsCommands extends DrushCommands
           # Get the > after that point
           $mend = strpos($newbody, ">", $mstart + 3);
           # get the next one. This is the end of the media embed section.
-          $mend = strpos($newbody, ">", $mend + 3)+1;
+          $mend = strpos($newbody, ">", $mend + 3) + 1;
           # Get the section to work on
           $mediasec = substr($newbody, $mstart, $mend - $mstart);
           $newmediasec = $mediasec;
 
           # Need to jump if already fixed!
-          if ( strpos($mediasec,"drupal-media") == false) {
-            $processv=1;
+          if (strpos($mediasec, "drupal-media") == false) {
+            $processv = 1;
             $newmediasec = str_replace("drupal-entity", "drupal-media", $newmediasec, $j);
 
             $newmediasec = str_replace("data-entity-embed-display=\"view_mode:media.small\"", "data-view-mode=\"small\"", $newmediasec, $i);
@@ -207,14 +207,116 @@ class OcToolsCommands extends DrushCommands
           $node->set('body', [
             'summary' => $oldsum,
             'value' => $newbody,
-            'format' => $oldformat, ]);
+            'format' => $oldformat,]);
           $node->save();
         }
       }
 
 
     }
-    print_r ($tobefixed);
+    print_r($tobefixed);
   }
 
+  /**
+   * Command oc_oc2mediaimage: This will transfer content from oc_image to media:image
+   *
+   * @command oc_tools:oc_oc2mediaimage
+   * @aliases oc2media
+   */
+  public function oc_oc2mediaimage()
+  {
+    # This will transfer content from oc_image to media:image
+
+    # Get all oc_docs
+    $nids = \Drupal::entityQuery('node')->condition('type', 'oc_image')->execute();
+    $tobefixed = array();
+//    $fix = new OcToolsCommands();
+//    $euuids = $fix->oc_mlist("remote_video"); # get the array of corresponding values.
+    foreach ($nids as $nid) {
+      $node = \Drupal\node\Entity\Node::load($nid);
+      $newbody = $node->get('body')->getValue()[0]['value'];
+      $oldsum = $node->get('body')->summary;
+      $oldformat = $node->get('body')->format;
+      $authors = $node->get('field_oc_author_s_')->getValue();
+      $level = $node->get('field_oc_level')->getValue();
+      $licence = $node->get('field_oc_licence')->getValue();
+      $link = $node->get('field_oc_link')->getValue();
+      $meta = $node->get('field_meta_tags')->getValue();
+      $back = $node->get('field_oc_back_color')->getValue();
+      $publisher = $node->get('field_oc_publisher')->getValue();
+      $seo = $node->get('field_yoast_seo')->getValue();
+      $topic = $node->get('field_oc_topic')->getValue();
+      $visibility = $node->get('field_content_visibility')->getValue();
+      $year = $node->get('field_oc_year')->getValue();
+      $image = $node->get('field_oc_image')->getValue();
+      $title = $node->get('title')->getValue();
+
+      $account = \Drupal\user\Entity\User::load('4');
+      $oldmedia = \Drupal::entityTypeManager()->getStorage('media');
+      $media = \Drupal\media\entity\Media::create([
+        'bundle' => 'image',
+        'uid' => $account->id(),
+        'langcode' => \Drupal::languageManager()->getDefaultLanguage()->getId(),
+        'status' => 1,
+        'field_media_in_library' => TRUE,
+////        'body' => $newbody,
+        'field_oc_author_s_' => $authors,
+        'field_oc_level' => $level,
+        'field_oc_licence' => $licence,
+        'field_oc_link' => $link,
+        'field_meta_tags' => $meta,
+        'field_oc_back_color' => $back,
+        'field_oc_publisher' => $publisher,
+        'field_yoast_seo' => $seo,
+        'field_oc_topic' => $topic,
+        'field_content_visibility' => $visibility,
+        'field_oc_year' => $year,
+        'title' => $title,
+        'field_media_image' => [
+          'target_id' => $image[0]['target_id'],
+          'alt' => $image[0]['alt'],
+'title' => $image[0]['alt'],
+'width' => $image[0]['width'],
+'height' => $image[0]['height']
+],
+//        'field_oc_old' => $node->id(),
+      ]);
+      $media->set('body', [
+        'summary' => $oldsum,
+        'value' => $newbody,
+        'format' => $oldformat,]);
+      $media->setName($node->get('title')->getValue())->setPublished(TRUE)->save();
+
+// Now modify the oc_doc link to the image and change to media:image
+
+      $nids = \Drupal::entityQuery('node')->condition('type', 'oc_doc')->execute();
+
+      foreach ($nids as $nidd) {
+        $node = \Drupal\node\Entity\Node::load($nidd);
+        if (isset($node->get('field_oc_linked_image')->getValue()[0])) {
+          $imageid = $node->get('field_oc_linked_image')->getValue()[0]['target_id'];
+          if ($imageid == $nid) {
+            //now add the correct new media id to field_oc_linked_media
+            $node->set('field_media', $media->id());
+            $node->set('field_page_header_style','media_header');
+            $node->save();
+          }
+        }
+      }
+      $nids = \Drupal::entityQuery('node')->condition('type', 'oc_sequence')->execute();
+
+      foreach ($nids as $nidd) {
+        $node = \Drupal\node\Entity\Node::load($nidd);
+        if (isset($node->get('field_oc_linked_image')->getValue()[0])) {
+          $imageid = $node->get('field_oc_linked_image')->getValue()[0]['target_id'];
+          if ($imageid == $nid) {
+            //now add the correct new media id to field_oc_linked_media
+            $node->set('field_media', $media->id());
+            $node->set('field_page_header_style','media_header');
+            $node->save();
+          }
+        }
+      }
+    }
+  }
 }

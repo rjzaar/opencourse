@@ -63,6 +63,41 @@ $oc_navlink_height: 30px; // this is constant
 $oc_nav_button_height: 42px; //This is the height of the top right nav button
 // It is used to calculate position based on other elements
 
+.btn_oc_primary {
+  color: #fff;
+  background-color: $primary;
+  border-color: $primary;
+}
+
+.oc_btn_group {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.oc_btn_group label {
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+  background-color: $primary;
+  border-color: $primary;
+}
+
+.ococomment {
+  display: block;
+}
+
+.ocosummary {
+  display: none;
+}
+
+.ocoquiz {
+  display: none;
+}
+
 // This enables the embeded video to be seen if left or right aligned.
 .media--type-remote-video.media--view-mode-small .varbase-video-player {
   height: 225px;
@@ -76,8 +111,9 @@ $oc_nav_button_height: 42px; //This is the height of the top right nav button
 
 .vmh-container {
   max-height: 95vh;
-  height: 95vh;
+  //height: 95vh;
 }
+
 
 // Central resizing breakpoints
 //small phones
@@ -95,7 +131,7 @@ $oc_branding_logo_height_md: 50px; //logo height
 
 .oc_logo_dark {
   background-color: black;
-  background: rgba(0,0,0,.1)
+  background: rgba(0, 0, 0, .1)
 }
 
 .oc_logo {
@@ -145,6 +181,7 @@ $oc_branding_logo_height_md: 50px; //logo height
 .oc_nav_links_light a {
   color: black !important;
 }
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: map-get($grid-breakpoints, "sm")) {
   .oc_logo {
@@ -287,6 +324,7 @@ $oc_branding_logo_height_md: 50px; //logo height
 .oc_brand_light {
   height: 120px;
 }
+
 // Needs to use - not _ since drupal changes _ to - for view classes!
 .oc-view-spacing {
   margin-left: $oc_margin;
@@ -329,12 +367,13 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
 }
 
 .oc_header_novmh {
-  padding: 0 ;
-  margin: 0 ;
+  padding: 0;
+  margin: 0;
 }
+
 .oc_header {
-  padding: 0 ;
-  margin: 0 ;
+  padding: 0;
+  margin: 0;
 }
 
 .vmh-breadcrumb {
@@ -347,6 +386,18 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
 
 .vmh-page-title {
   justify-content: center !important;
+  color: #fff !important;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 66px !important;
+  padding: 0 10px !important;
+  align-items: center;
+  z-index: 1;
+  //background-color: rgba(0, 0, 0, .2);
+  border-radius: $oc_navlink_border_radius;
+  margin: auto !important;
 }
 
 // Header image height if there is an image
@@ -357,6 +408,11 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
 // Header image height if there is no image
 .oc_head_noimageh {
   height: 150px;
+}
+
+//just used in media-image-full
+.oc_block {
+  display: block !important;
 }
 
 //// Set up heights for different screens.
@@ -396,13 +452,16 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
   border-radius: 0;
   z-index: 497; // Needs to be in front of the image after it so links work.
 }
+
 .oc_navbar_dark {
 
 }
+
 .oc_navbar_light {
   background-color: white;
   height: 120px;
 }
+
 .oc_nav_links {
   position: absolute;
 }
@@ -426,7 +485,7 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
 
 // This darkens the title and image.
 .oc_darken::after {
-    background-color: rgba(87, 87, 87, .5);
+  background-color: rgba(87, 87, 87, .5);
   content: '';
   position: absolute;
   top: 0;
@@ -478,10 +537,12 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
   width: 100%;
   margin: 0;
 }
+
 .oc_title_plain {
   height: 400px;
   background-color: $secondary;
 }
+
 // Node title in the header
 .oc_heading {
   color: #fff !important;
@@ -489,10 +550,9 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   font-style: normal;
-  font-size: 66px;
+  font-size: 66px !important;
   padding: 0 10px !important;
   align-items: center;
-  text-align: center;
   z-index: 1;
   //background-color: #0a78d1;
 }
@@ -500,6 +560,7 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
 .oc_heading_light {
   margin: 90px 0 0 0 !important;
 }
+
 .oc_heading_dark {
   background-color: rgba(0, 0, 0, .2);
   border-radius: $oc_navlink_border_radius;
@@ -1186,7 +1247,8 @@ $oc_panel_left: 15px;
 
 .oc_footer_nav {
   background-color: $ocback;
-  width: 100%
+  width: 100%;
+  position: relative;
 }
 
 .footer-wrapper .footer section.region-footer div[id$="-copyright"] {
@@ -1239,10 +1301,12 @@ $oc_panel_left: 15px;
   right: 150px;
   bottom: 46px;
 }
+
 .ofi_wrapper {
   position: relative;
   display: inline-block;
 }
+
 .ofi_tooltip {
   position: relative;
   display: inline-block;
@@ -1269,7 +1333,7 @@ $oc_panel_left: 15px;
 
 @media (min-width: map-get($grid-breakpoints, "md")) {
   .ofi_wrapper {
-width: 90px;
+    width: 90px;
   }
   .ofi_tooltip {
     width: 90px;

@@ -94,7 +94,7 @@
     <div class="oc_col_width oc_text">
         {{ content.body }}
     </div>
-  <div></br></div>
+
 </div>
 
 
@@ -108,27 +108,46 @@
    {%else  %}
 
        {{ content.field_oc_interactive }}
-     <div></br></div>
+
    {% endif %}
      {#</div>#}</div>
-
+   <div></br></div>
 
 
 {% if node.body.summary  %}
-    <div class="oc_summary ocosummary ocshow oc_text oc_col_width">
-{#        <h2 class="oc_inject oc_title">#}
-{#            {{ "SUMMARY" }}#}
-{#        </h2>#}
+    <div class="oc_summary ocosummary ocshow oc_text">
+        <h2 class="oc_inject oc_title">
+            {{ "SUMMARY" }}
+        </h2>
 
         <div class="oc_inject oc_text field-item clearfix"{{ content_attributes }}>
 {{ node.body.summary | raw }}
         </div>
     </div>
-  <div></br></div>
+
 {% endif %}
 
         <div class="content oc_inject clearfix"{{ content_attributes }}>
-            <div class="">
+            <div>
+                <div class="oc_floatleft">
+                   {{ content.created }}
+
+                    {#" Modified: " {{ content.changed_date }}#}
+                </div>
+                <div class="oc_floatleft">
+                    {{ content.field_oc_topic }}
+                </div>
+                <div class="oc_floatleft">
+                    {{ content.field_oc_level }}
+                </div>
+                <div class="oc_floatleft">
+                    {{ content.field_oc_importance }}
+                </div>
+            </div>
+            <div class="oc_floatleft">
+                <br>
+                This page is part of a Book. You can navigate to the previous
+    page, up a level or to the next page.
 
                 {% if book == "0"  %}
                     <a href=\"/admin/structure/book/"{{ node.id }}">Sort</a>|"

@@ -83,7 +83,7 @@
      {#       'border-bottom', removed from above#}
     {# octheme start 1 | These divs will create the header space. The other header elements fit in this space using position: absolute. #}
     <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner"
-      {% if oc_head_image %}style="background: url({{ oc_head_image }}) no-repeat center center fixed;
+      {% if oc_head_image and not oc_vmh %}style="background: url({{ oc_head_image }}) no-repeat center center fixed;
         background-size: cover; -webkit-background-size: cover; -moz-background-size: cover;
         -o-background-size: cover; height: 100vh;"{% else %}class="oc_head_noimageh"{% endif %}>
       <div class="oc_navbar {% if oc_tm %}oc_navbar_dark{% else %}oc_navbar_light{% endif %}">
@@ -97,7 +97,7 @@
       </div>
 
       {% endif %}
-
+{% if not oc_vmh %}
       <div class="row {% if oc_tm %}h-100{% else %}oc_title_plain{% endif %} justify-content-center align-items-center oc_title_row">
         {% if node %}
           {#          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">#}
@@ -119,7 +119,7 @@
           </div>
         {% endif %}
       </div>
-
+{%  endif %}
     </header>
   {% endblock %}
 {% endif %}
