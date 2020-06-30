@@ -1,2 +1,4 @@
 bundle: oc
+excluded:
+  - field.field.node.oc_lp.field_media
 required: true

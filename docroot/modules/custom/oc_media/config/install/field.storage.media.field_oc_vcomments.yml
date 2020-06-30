@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+    - media
+id: media.field_oc_vcomments
+field_name: field_oc_vcomments
+entity_type: media
+type: comment
+settings:
+  comment_type: comment_media
+module: comment
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

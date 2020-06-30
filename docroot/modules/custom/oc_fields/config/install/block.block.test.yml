@@ -6,9 +6,9 @@ dependencies:
   module:
     - superfish
   theme:
-    - oc_theme
+    - octheme_bs4
 id: test
-theme: oc_theme
+theme: octheme_bs4
 region: header
 weight: 0
 provider: null
@@ -20,6 +20,7 @@ settings:
   label_display: '0'
   level: '1'
   depth: '0'
+  expand_all_items: false
   menu_type: vertical
   style: white
   arrow: 0

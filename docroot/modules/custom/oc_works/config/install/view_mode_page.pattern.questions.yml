@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: questions
+label: Questions
+type: 'canonical_entities:node'
+pattern: /%/questions
+view_mode: questions
+selection_criteria:
+  6387ec9b-ef73-4fa9-a80e-da4938d7c2b8:
+    id: node_type
+    bundles:
+      oc_doc: oc_doc
+      oc_sequence: oc_sequence
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 6387ec9b-ef73-4fa9-a80e-da4938d7c2b8
+selection_logic: and
+weight: -5
+relationships: {  }

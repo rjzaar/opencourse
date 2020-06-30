@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.oc_doc.comment_forum
     - field.field.node.oc_doc.field_content_visibility
     - field.field.node.oc_doc.field_lp_paragraphs
+    - field.field.node.oc_doc.field_media
     - field.field.node.oc_doc.field_meta_tags
     - field.field.node.oc_doc.field_oc_back_color
     - field.field.node.oc_doc.field_oc_external_links
@@ -16,9 +17,8 @@ dependencies:
     - field.field.node.oc_doc.field_oc_internal_links
     - field.field.node.oc_doc.field_oc_level
     - field.field.node.oc_doc.field_oc_linked_image
-    - field.field.node.oc_doc.field_oc_title_image
     - field.field.node.oc_doc.field_oc_topic
-    - field.field.node.oc_doc.field_oc_video
+    - field.field.node.oc_doc.field_page_header_style
     - field.field.node.oc_doc.field_yoast_seo
     - node.type.oc_doc
   module:
@@ -54,6 +54,7 @@ hidden:
   comment_forum: true
   field_content_visibility: true
   field_lp_paragraphs: true
+  field_media: true
   field_meta_tags: true
   field_oc_back_color: true
   field_oc_external_links: true
@@ -63,8 +64,8 @@ hidden:
   field_oc_internal_links: true
   field_oc_level: true
   field_oc_linked_image: true
-  field_oc_title_image: true
   field_oc_topic: true
-  field_oc_video: true
+  field_page_header_style: true
   field_yoast_seo: true
   langcode: true
+  search_api_excerpt: true

@@ -176,11 +176,28 @@ vbp-colors:
     theme:
       css/theme/vbp-colors.theme.css: {}
 
+# octheme_bs4 Varbase Layout Builder colors theme.
+vlb-colors:
+  css:
+    theme:
+      css/theme/vlb-colors.theme.css: {}
+
 # octheme_bs4 better login theme.
 betterlogin:
   css:
     theme:
       css/theme/betterlogin.theme.css: {}
+
+# octheme_bs4 Varbase Media Hero Slider theme.
+heroslider:
+  css:
+    theme:
+      css/theme/varbase-heroslider-media.theme.css: {}
+
+
+# ------------------------------------------------------------------------------
+# Bootstrap Barrio components overrides.
+# ------------------------------------------------------------------------------
 
 affix:
   js:
@@ -261,12 +278,6 @@ material_design_icons:
       //fonts.googleapis.com/icon?family=Material+Icons: {}
 
 fontawesome:
-  remote: https://fortawesome.github.io/Font-Awesome/
-  version: 4.7.0
-  license:
-    name: MIT
-    url: https://fortawesome.github.io/Font-Awesome/license/
-    gpl-compatible: true
   css:
-    theme:
-      https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css: { type: external, minified: true }
+    component:
+      //use.fontawesome.com/releases/v5.0.13/css/all.css: {}

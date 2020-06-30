@@ -9,11 +9,13 @@ dependencies:
   - content_moderation
   - ds
   - entity_access_by_field
+  - entity_browser
   - entity_reference_revisions
   - field
   - h5p
   - h5peditor
   - language
+  - layout_builder
   - menu_ui
   - metatag
   - node
@@ -29,10 +31,11 @@ dependencies:
   - smart_trim
   - text
   - user
+  - view_mode_page
   - views
   - views_infinite_scroll
   - workflows
   - yoast_seo
-version: 8.x-0.01
+version: 8.x-0.02
 package: oc
 core_incompatible: false

@@ -16,6 +16,7 @@
 // this is the breakpoint and side navigation is moved out the way.
 $primary: #ee3159;
 $secondary: #251b3d;
+$ocback: #171126;
 $success: $green;
 $info: $cyan;
 $warning: $yellow;
@@ -53,14 +54,65 @@ $oc_logo_top_padding: 5px; //Logo top padding
 // More in .oc_logo
 
 // Right navigation links, eg Login and Contact Us
-$oc_navlink_color: black;
-$oc_navlink_bg_color: white;
+$oc_navlink_color: white;
+$oc_navlink_bg_color: transparent;
 $oc_navlink_border_radius: 5px;
 $oc_navlink_gap: 20px; //gap between links, ie margin-left
 $oc_navlink_height: 30px; // this is constant
 
 $oc_nav_button_height: 42px; //This is the height of the top right nav button
 // It is used to calculate position based on other elements
+
+.btn_oc_primary {
+  color: #fff;
+  background-color: $primary;
+  border-color: $primary;
+}
+
+.oc_btn_group {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.oc_btn_group label {
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+  background-color: $primary;
+  border-color: $primary;
+}
+
+.ococomment {
+  display: block;
+}
+
+.ocosummary {
+  display: none;
+}
+
+.ocoquiz {
+  display: none;
+}
+
+// This enables the embeded video to be seen if left or right aligned.
+.media--type-remote-video.media--view-mode-small .varbase-video-player {
+  height: 225px;
+  width: 300px;
+}
+
+.media--type-video-embed.media--view-mode-small .varbase-video-player {
+  height: 225px;
+  width: 300px;
+}
+
+.vmh-container {
+  max-height: 95vh;
+  //height: 95vh;
+}
 
 
 // Central resizing breakpoints
@@ -69,9 +121,19 @@ $oc_logo_top_margin_xs: 0; //Distance from top to start of logo
 $oc_logo_top_margin_sm: 10px;
 $oc_logo_top_margin_md: 20px;
 
-$oc_branding_logo_height_xs: 30px; //logo height
-$oc_branding_logo_height_sm: 50px; //logo height
-$oc_branding_logo_height_md: 80px; //logo height
+$oc_branding_logo_height_xs: 40px; //logo height
+$oc_branding_logo_height_sm: 40px; //logo height
+$oc_branding_logo_height_md: 50px; //logo height
+
+.oc_logo_white {
+  background-color: white;
+}
+
+.oc_logo_dark {
+  background-color: black;
+  background: rgba(0, 0, 0, .1)
+}
+
 .oc_logo {
   margin-top: $oc_logo_top_margin_xs;
   border-radius: 5px 5px 5px 5px;
@@ -81,28 +143,45 @@ $oc_branding_logo_height_md: 80px; //logo height
   padding-top: 0;
   padding-right: 5px;
 }
+
 .oc_branding_logo {
-height: $oc_branding_logo_height_xs ;
- }
+  height: $oc_branding_logo_height_xs;
+  width: $oc_branding_logo_height_xs/50*205 !important;
+}
+
 .oc_vinject {
   padding-top: 5px; //  for all xs devices.
   font-size: 100% !important;
 }
+
 .oc_nav_links {
   top: $oc_logo_top_margin_xs +($oc_branding_logo_height_xs - $oc_navlink_height)/2;
   right: $oc_margin;
 }
+
 .oc_small_nav_button {
   top: $oc_logo_top_margin_xs + ($oc_branding_logo_height_xs - $oc_nav_button_height)/2;
 }
+
 // There are two locations for the nav links, ie login and contact us.
 // Only one is possibly visible at a time with the swap at 768px.
 .oc_nav_link_button {
   visibility: visible;
 }
+
 .oc_nav_links {
   visibility: hidden;
 }
+
+
+.oc_nav_links_dark a {
+  color: white !important;
+}
+
+.oc_nav_links_light a {
+  color: black !important;
+}
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: map-get($grid-breakpoints, "sm")) {
   .oc_logo {
@@ -115,7 +194,8 @@ height: $oc_branding_logo_height_xs ;
     padding-right: 10px;
   }
   .oc_branding_logo {
-    height: $oc_branding_logo_height_sm ;
+    height: $oc_branding_logo_height_sm;
+    width: $oc_branding_logo_height_sm/50*205 !important;
   }
   .oc_vinject {
     padding-top: 5px; // As from sm devices,
@@ -149,7 +229,8 @@ height: $oc_branding_logo_height_xs ;
     padding-right: 10px;
   }
   .oc_branding_logo {
-    height: $oc_branding_logo_height_md ;
+    height: $oc_branding_logo_height_md;
+    width: $oc_branding_logo_height_md/50*205 !important;
   }
   .oc_vinject {
     padding-top: 15px; //  for md devices.
@@ -204,6 +285,16 @@ height: $oc_branding_logo_height_xs ;
   }
 }
 
+
+// This is used for anonymous and authenticated users who shouldn't see the left navarb
+.anoncollapse {
+
+  @media (min-width: 768px) {
+
+    display: none !important;
+  }
+}
+
 // This moves the site logo from center for <md to left for >=md
 .oc_brand {
   -webkit-box-pack: center !important;
@@ -219,10 +310,19 @@ height: $oc_branding_logo_height_xs ;
   -ms-flex-align: center !important;
   align-items: center !important;
 
-  @media screen and (min-width: 768px) {
-      display: inline;
-    }
 
+  @media screen and (min-width: 768px) {
+    display: inline;
+  }
+
+}
+
+.oc_brand_dark {
+
+}
+
+.oc_brand_light {
+  height: 120px;
 }
 
 // Needs to use - not _ since drupal changes _ to - for view classes!
@@ -258,8 +358,46 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
 //For page.html.twig
 // This is the container for the header.
 // Header Image
-.oc_header {
+.oc_header_vmh {
   margin-bottom: 0 !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.oc_header_novmh {
+  padding: 0;
+  margin: 0;
+}
+
+.oc_header {
+  padding: 0;
+  margin: 0;
+}
+
+.vmh-breadcrumb {
+  display: none;
+}
+
+.vmh-content {
+  width: 100%;
+}
+
+.vmh-page-title {
+  justify-content: center !important;
+  color: #fff !important;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 66px !important;
+  padding: 0 10px !important;
+  align-items: center;
+  z-index: 1;
+  //background-color: rgba(0, 0, 0, .2);
+  border-radius: $oc_navlink_border_radius;
+  margin: auto !important;
 }
 
 // Header image height if there is an image
@@ -270,6 +408,11 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
 // Header image height if there is no image
 .oc_head_noimageh {
   height: 150px;
+}
+
+//just used in media-image-full
+.oc_block {
+  display: block !important;
 }
 
 //// Set up heights for different screens.
@@ -307,28 +450,49 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
   width: 100%;
   margin-bottom: 0 !important;
   border-radius: 0;
-  z-index: 1000; // Needs to be in front of the image after it so links work.
+  z-index: 497; // Needs to be in front of the image after it so links work.
+}
+
+.oc_navbar_dark {
+
+}
+
+.oc_navbar_light {
+  background-color: white;
+  height: 120px;
 }
 
 .oc_nav_links {
   position: absolute;
 }
 
-.oc_logo {
-  background-color: white;
-}
-
 .nav-link {
-  color: $oc_navlink_color;
-  background-color: $oc_navlink_bg_color;
+  //color: $oc_navlink_color !important;
+  //background-color: $oc_navlink_bg_color;
   border-radius: $oc_navlink_border_radius;
   margin-left: $oc_navlink_gap;
   height: $oc_navlink_height;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 17px;
+  /* identical to box height */
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  z-index: 1;
 }
 
 // This darkens the title and image.
-.oc_darken_image {
-  //  background-color: rgba(87, 87, 87, .25);
+.oc_darken::after {
+  background-color: rgba(87, 87, 87, .5);
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
 }
 
 .oc_darken_title {
@@ -371,6 +535,12 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
 
 .oc_title_row {
   width: 100%;
+  margin: 0;
+}
+
+.oc_title_plain {
+  height: 400px;
+  background-color: $secondary;
 }
 
 // Node title in the header
@@ -378,14 +548,24 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
   color: #fff !important;
   text-align: center;
   font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  background-color: rgba(0, 0, 0, .2);
-  border-radius: $oc_navlink_border_radius;
-  margin: 0 !important;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 66px !important;
   padding: 0 10px !important;
+  align-items: center;
+  z-index: 1;
   //background-color: #0a78d1;
 }
 
+.oc_heading_light {
+  margin: 90px 0 0 0 !important;
+}
+
+.oc_heading_dark {
+  background-color: rgba(0, 0, 0, .2);
+  border-radius: $oc_navlink_border_radius;
+  margin: 0 !important;
+}
 
 .site-heading {
   color: white;
@@ -545,7 +725,7 @@ ul {
 .sfr-menu ul {
   position: absolute;
   display: none;
-  top: 100%;
+  //top: 100%;  //This is what moved the text down.
   left: 0;
   z-index: 99;
 }
@@ -639,11 +819,8 @@ ul {
   //position: absolute;
   right: 0;
   bottom: 20px;
-  z-index: 1500;
+  z-index: 498;
 }
-
-
-
 
 
 .oc_navbar_toggler {
@@ -672,9 +849,8 @@ ul {
   content: "";
   background: no-repeat center center;
   background-size: 100% 100%;
-  z-index: 1700;
+  z-index: 499;
 }
-
 
 
 // **************************************************
@@ -942,6 +1118,7 @@ $oc_panel_left: 15px;
   -webkit-align-items: center !important;
   -ms-flex-align: center !important;
   align-items: center !important;
+  z-index: 1;
 }
 
 @media screen and (min-width: 768px) {
@@ -1066,6 +1243,189 @@ $oc_panel_left: 15px;
   font-size: 20px !important;
   border-radius: 0 5px 5px 0;
   //filter: alpha(opacity=80); /* For IE8 and earlier */
+}
+
+.oc_footer_nav {
+  background-color: $ocback;
+  width: 100%;
+  position: relative;
+}
+
+.footer-wrapper .footer section.region-footer div[id$="-copyright"] {
+  padding: 0;
+}
+
+.oc_footer_link {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+.oc_footer_up {
+  position: relative;
+  bottom: 30px;
+}
+
+
+.oc_footer_image {
+  width: 63px;
+  height: 68px;
+  position: relative;
+  left: 30px;
+  top: 15px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.oc_footer_join {
+  position: absolute;
+  right: 30px;
+  bottom: 46px;
+  background-color: $primary;
+  border-radius: 5px;
+  height: 48px;
+  width: 106px;
+  padding-top: 16px;
+  padding-left: 20px !important;
+}
+
+.oc_footer_login {
+  position: absolute;
+  right: 150px;
+  bottom: 46px;
+}
+
+.ofi_wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.ofi_tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.ofi_tooltip .ofi_tooltip_text {
+  visibility: hidden;
+  position: absolute;
+  background: #333;
+  color: #fff;
+  width: 200px !important;
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  padding: 5px 0;
+  text-align: center;
+  z-index: 1;
+}
+
+.ofi_tooltip:hover .ofi_tooltip_text {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (min-width: map-get($grid-breakpoints, "md")) {
+  .ofi_wrapper {
+    width: 90px;
+  }
+  .ofi_tooltip {
+    width: 90px;
+  }
+  .ofi_tooltip .ofi_tooltip_text {
+    left: 105%;
+    top: -30px;
+  }
+
+  .ofi_tooltip_text::after {
+    content: "";
+    position: absolute;
+    top: 80%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #555 transparent transparent;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, "md")) {
+  .footer-wrapper .footer section.region-footer .menu--footer ul.nav {
+    -webkit-box-orient: vertical;
+    display: block;
+  }
+  .ofi_wrapper {
+    width: 100%;
+  }
+  .ofi_tooltip {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 90px;
+
+  }
+  .ofi_tooltip .ofi_tooltip_text {
+    bottom: 125%;
+    left: 50% !important;
+    margin-left: -100px;
+    height: 80px;
+  }
+  .ofi_tooltip_text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  .oc_footer_nav {
+    height: 364px;
+  }
+  .oc_footer_image {
+    width: 63px;
+    height: 68px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: -10px;
+    left: 0;
+
+  }
+
+  .oc_footer_join {
+    position: relative;
+    text-align: center;
+    bottom: 0;
+    right: -50px;
+    background-color: $primary;
+    border-radius: 5px;
+    height: 48px;
+    width: 106px;
+    padding-top: 16px;
+  }
+
+  .oc_footer_login {
+    position: relative;
+    right: 50px;
+    top: 136px;
+    text-align: center;
+  }
+  .oc_footer_link {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
 }
 
 /*

@@ -12,7 +12,9 @@ dependencies:
   - focal_point
   - gnode
   - group
+  - h5p
   - image
+  - layout_builder
   - link
   - menu_ui
   - metatag

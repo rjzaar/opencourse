@@ -66,14 +66,14 @@
                 "schema_web_site_url": "http:\/\/rob\/",
                 "og_type": "website",
                 "og_url": "http:\/\/rob\/node",
-                "google_plus_image": "http:\/\/rob\/themes\/custom\/oc_theme\/share-image.png",
+                "google_plus_image": "http:\/\/rob\/themes\/custom\/octheme_bs4\/share-image.png",
                 "og_title": "Homepage | opencourse",
                 "generator": "Varbase",
                 "referrer": "origin",
                 "rights": "\u00a92018 opencourse. All rights reserved.",
                 "twitter_cards_page_url": "http:\/\/rob\/node",
-                "twitter_cards_image": "http:\/\/rob\/themes\/custom\/oc_theme\/share-image.png",
-                "og_image": "http:\/\/rob\/themes\/custom\/oc_theme\/share-image.png",
+                "twitter_cards_image": "http:\/\/rob\/themes\/custom\/octheme_bs4\/share-image.png",
+                "og_image": "http:\/\/rob\/themes\/custom\/octheme_bs4\/share-image.png",
                 "schema_web_site_publisher": {
                     "@type": "Organization",
                     "name": "opencourse",
@@ -83,7 +83,7 @@
                         "url": "http:\/\/rob\/\/logo.png"
                     }
                 },
-                "og_image_url": "http:\/\/rob\/themes\/custom\/oc_theme\/share-image.png",
+                "og_image_url": "http:\/\/rob\/themes\/custom\/octheme_bs4\/share-image.png",
                 "mobileoptimized": "width",
                 "handheldfriendly": "true",
                 "apple_mobile_web_app_capable": "yes"

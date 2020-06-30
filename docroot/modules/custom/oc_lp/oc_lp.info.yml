@@ -16,6 +16,7 @@ dependencies:
   - metatag
   - node
   - oc_fields
+  - options
   - paragraphs_previewer
   - path
   - rabbit_hole
@@ -24,6 +25,7 @@ dependencies:
   - varbase_core
   - varbase_landing
   - varbase_seo
+  - varbase_media_header
   - views
   - yoast_seo
 version: 8.x-0.1

@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.oc_doc.comment_forum
     - field.field.node.oc_doc.field_content_visibility
     - field.field.node.oc_doc.field_lp_paragraphs
+    - field.field.node.oc_doc.field_media
     - field.field.node.oc_doc.field_meta_tags
     - field.field.node.oc_doc.field_oc_back_color
     - field.field.node.oc_doc.field_oc_external_links
@@ -16,22 +17,21 @@ dependencies:
     - field.field.node.oc_doc.field_oc_internal_links
     - field.field.node.oc_doc.field_oc_level
     - field.field.node.oc_doc.field_oc_linked_image
-    - field.field.node.oc_doc.field_oc_title_image
     - field.field.node.oc_doc.field_oc_topic
-    - field.field.node.oc_doc.field_oc_video
+    - field.field.node.oc_doc.field_page_header_style
     - field.field.node.oc_doc.field_yoast_seo
     - node.type.oc_doc
   module:
     - color_field
     - comment
     - ds
-    - h5p
     - metatag
     - options
     - paragraphs
     - text
     - user
     - yoast_seo
+    - varbase_media_header
 third_party_settings:
   ds:
     layout:
@@ -40,6 +40,7 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
+        label: ''
         wrappers:
           ds_content: div
         outer_wrapper: div
@@ -62,11 +63,9 @@ third_party_settings:
         - field_oc_linked_image
         - field_content_visibility
         - field_oc_video
-        - field_oc_title_image
         - field_oc_back_color
         - field_oc_head_back_color
         - field_oc_importance
-        - field_oc_interactive
         - field_meta_tags
         - field_yoast_seo
         - comment_forum
@@ -78,7 +77,7 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 2
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     region: ds_content
@@ -92,12 +91,12 @@ content:
     type: comment_default
     region: ds_content
   content_moderation_control:
-    weight: -20
+    weight: 0
     region: ds_content
     settings: {  }
     third_party_settings: {  }
   field_content_visibility:
-    weight: 8
+    weight: 10
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -105,7 +104,7 @@ content:
     region: ds_content
   field_lp_paragraphs:
     type: paragraph_summary
-    weight: 0
+    weight: 2
     region: ds_content
     label: above
     settings: {  }
@@ -118,7 +117,7 @@ content:
     type: metatag_empty_formatter
     region: ds_content
   field_oc_back_color:
-    weight: 11
+    weight: 13
     label: above
     settings:
       format: hex
@@ -127,7 +126,7 @@ content:
     type: color_field_formatter_text
     region: ds_content
   field_oc_external_links:
-    weight: 3
+    weight: 5
     label: above
     settings:
       link: true
@@ -135,7 +134,7 @@ content:
     type: entity_reference_label
     region: ds_content
   field_oc_head_back_color:
-    weight: 12
+    weight: 14
     label: above
     settings:
       format: hex
@@ -144,7 +143,7 @@ content:
     type: color_field_formatter_text
     region: ds_content
   field_oc_importance:
-    weight: 14
+    weight: 15
     label: above
     settings:
       thousand_separator: ''
@@ -152,15 +151,8 @@ content:
     third_party_settings: {  }
     type: number_integer
     region: ds_content
-  field_oc_interactive:
-    weight: 15
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: h5p_default
-    region: ds_content
   field_oc_internal_links:
-    weight: 4
+    weight: 6
     label: above
     settings:
       link: true
@@ -168,46 +160,22 @@ content:
     type: entity_reference_label
     region: ds_content
   field_oc_level:
-    weight: 6
+    weight: 8
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: ds_content
   field_oc_linked_image:
-    weight: 7
+    weight: 9
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: ds_content
-  field_oc_title_image:
-    weight: 10
-    label: above
-    settings:
-      view_mode: title_image
-      link: false
-    third_party_settings:
-      ds:
-        ft:
-          id: default
-          settings:
-            lb: ''
-            lb-col: false
-            classes: {  }
-    type: entity_reference_entity_view
     region: ds_content
   field_oc_topic:
-    weight: 5
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: ds_content
-  field_oc_video:
-    weight: 9
+    weight: 7
     label: above
     settings:
       link: true
@@ -226,7 +194,7 @@ content:
     region: content
   langcode:
     type: language
-    weight: 0
+    weight: 1
     region: ds_content
     label: above
     settings:
@@ -234,8 +202,12 @@ content:
       native_language: false
     third_party_settings: {  }
   links:
-    weight: 1
+    weight: 3
     region: ds_content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_media: true
+  field_oc_interactive: true
+  field_page_header_style: true
+  search_api_excerpt: true

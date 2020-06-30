@@ -15,6 +15,11 @@ targetEntityType: node
 bundle: oc_lp
 mode: default
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_lp_paragraphs:
     type: entity_reference_revisions_entity_view
     weight: 0
@@ -30,3 +35,5 @@ hidden:
   field_yoast_seo: true
   langcode: true
   links: true
+  field_media: true
+  field_page_header_style: true

@@ -9,4 +9,9 @@ excluded:
   - views.view.oc_books
   - views.view.oc_books_list
   - tour.tour.oc-book
+  - field.field.node.oc_book.field_media
+  - core.entity_view_display.node.oc_sequence.questions
+  - core.entity_view_display.node.oc_sequence.summary
+  - core.entity_view_display.node.oc_doc.questions
+  - core.entity_view_mode.node.questions
 required: true

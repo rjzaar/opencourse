@@ -1,0 +1,7 @@
+name: oc_audio
+description: 'Audio files, eg podcasts.'
+type: module
+core: 8.x
+version: 8.x-1.0
+core_incompatible: false
+package: oc

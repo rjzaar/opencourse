@@ -1,0 +1,76 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.questions
+    - field.field.node.oc_sequence.body
+    - field.field.node.oc_sequence.field_content_visibility
+    - field.field.node.oc_sequence.field_media
+    - field.field.node.oc_sequence.field_meta_tags
+    - field.field.node.oc_sequence.field_oc_importance
+    - field.field.node.oc_sequence.field_oc_level
+    - field.field.node.oc_sequence.field_oc_linked_image
+    - field.field.node.oc_sequence.field_oc_sequence_items
+    - field.field.node.oc_sequence.field_oc_topic
+    - field.field.node.oc_sequence.field_page_header_style
+    - field.field.node.oc_sequence.field_yoast_seo
+    - node.type.oc_sequence
+  module:
+    - ds
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.oc_sequence.questions
+targetEntityType: node
+bundle: oc_sequence
+mode: questions
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_oc_sequence_items:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: questions
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view
+    region: content
+  flag_follow_content:
+    weight: 10
+    region: content
+hidden:
+  field_content_visibility: true
+  field_media: true
+  field_meta_tags: true
+  field_oc_importance: true
+  field_oc_level: true
+  field_oc_linked_image: true
+  field_oc_topic: true
+  field_page_header_style: true
+  field_yoast_seo: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

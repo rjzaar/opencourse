@@ -4,12 +4,14 @@ dependencies:
   config:
     - field.field.node.oc_sequence.body
     - field.field.node.oc_sequence.field_content_visibility
+    - field.field.node.oc_sequence.field_media
     - field.field.node.oc_sequence.field_meta_tags
     - field.field.node.oc_sequence.field_oc_importance
     - field.field.node.oc_sequence.field_oc_level
     - field.field.node.oc_sequence.field_oc_linked_image
     - field.field.node.oc_sequence.field_oc_sequence_items
     - field.field.node.oc_sequence.field_oc_topic
+    - field.field.node.oc_sequence.field_page_header_style
     - field.field.node.oc_sequence.field_yoast_seo
     - node.type.oc_sequence
   module:
@@ -18,6 +20,7 @@ dependencies:
     - options
     - text
     - user
+    - yoast_seo
 id: node.oc_sequence.default
 targetEntityType: node
 bundle: oc_sequence
@@ -32,9 +35,9 @@ content:
     region: content
   content_moderation_control:
     weight: -20
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   field_content_visibility:
     weight: 106
     label: above
@@ -101,10 +104,9 @@ content:
   field_yoast_seo:
     weight: 110
     label: above
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
-    type: string
+    type: yoastseo_formatter
     region: content
   flag_follow_content:
     weight: 10
@@ -115,4 +117,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_media: true
+  field_page_header_style: true
   langcode: true
+  search_api_excerpt: true
