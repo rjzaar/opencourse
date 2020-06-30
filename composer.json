@@ -224,7 +224,8 @@
                 "node-revisions-missing-local-tasks-2885278-11.patch": "https://www.drupal.org/files/issues/2018-04-19/node-revisions-missing-local-tasks-2885278-11.patch",
                 "drupal-views-comment-count-2801929-12.patch": "https://www.drupal.org/files/issues/2018-07-10/drupal-views-comment-count-2801929-12.patch",
                 "comment-action_exist-2915728-13.patch": "https://www.drupal.org/files/issues/comment-action_exist-2915728-13.patch",
-                "Content_Moderation_requirements_check_relies_on_Views_UI_module-3099364-13.patch": "https://www.drupal.org/files/issues/2019-12-13/Content_Moderation_requirements_check_relies_on_Views_UI_module-3099364-13.patch"
+                "Content_Moderation_requirements_check_relies_on_Views_UI_module-3099364-13.patch": "https://www.drupal.org/files/issues/2019-12-13/Content_Moderation_requirements_check_relies_on_Views_UI_module-3099364-13.patch",
+                "core-typed_config_handle_missing_config-2925297-18.patch": "https://www.drupal.org/files/issues/2019-09-26/core-typed_config_handle_missing_config-2925297-18.patch"
             },
             "drupal/legal": {
                 "2988875-4-languageconfig.patch": "https://www.drupal.org/files/issues/2018-08-09/2988875-4-languageconfig.patch"
