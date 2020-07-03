@@ -275,10 +275,10 @@ class OcToolsCommands extends DrushCommands
         'field_media_image' => [
           'target_id' => $image[0]['target_id'],
           'alt' => $image[0]['alt'],
-'title' => $image[0]['alt'],
-'width' => $image[0]['width'],
-'height' => $image[0]['height']
-],
+          'title' => $image[0]['alt'],
+          'width' => $image[0]['width'],
+          'height' => $image[0]['height']
+        ],
 //        'field_oc_old' => $node->id(),
       ]);
       $media->set('body', [
@@ -298,7 +298,7 @@ class OcToolsCommands extends DrushCommands
           if ($imageid == $nid) {
             //now add the correct new media id to field_oc_linked_media
             $node->set('field_media', $media->id());
-            $node->set('field_page_header_style','media_header');
+            $node->set('field_page_header_style', 'media_header');
             $node->save();
           }
         }
@@ -312,11 +312,218 @@ class OcToolsCommands extends DrushCommands
           if ($imageid == $nid) {
             //now add the correct new media id to field_oc_linked_media
             $node->set('field_media', $media->id());
-            $node->set('field_page_header_style','media_header');
+            $node->set('field_page_header_style', 'media_header');
             $node->save();
           }
         }
       }
     }
   }
+
+
+  /**
+   * Command oc_addmediafield: This will add the field_media to a content type.
+   *
+   * @command oc_tools:oc_addmediafield
+   * @aliases oc_addmf
+   */
+  public function oc_addmediafield()
+  {
+//    $field = \Drupal\field\Entity\FieldConfig::loadByName('node', 'oc_doc', 'field_media');
+//    $uuid = 'd12da227-890b-4eb7-86b1-93937e7d6d91';
+//    $field->set('uuid',$uuid);
+//    $field->save();
+    $label = "Main Media";
+    $type = "oc_link";
+    $field_storage = \Drupal\field\Entity\FieldStorageConfig::loadByName('node', 'field_media');
+    $field = \Drupal\field\Entity\FieldConfig::loadByName('node', $type, 'field_media');
+    if (empty($field)) {
+      $field = \Drupal\field\Entity\FieldConfig::create([
+        'field_storage' => $field_storage,
+        'bundle' => $type,
+        'label' => $label,
+        'settings' =>
+          array(
+            'handler' => 'default:media',
+            'handler_settings' =>
+              array(
+                'target_bundles' =>
+                  array(
+                    'image' => 'image',
+                    'remote_video' => 'remote_video',
+                    'video' => 'video',
+                  ),
+                'sort' =>
+                  array(
+                    'field' => '_none',
+                  ),
+                'auto_create' => false,
+                'auto_create_bundle' => 'remote_video',
+              ),
+          ),
+      ]);
+      $field->save();
+    }
+
+    // could use: https://drupal.stackexchange.com/questions/220229/how-can-i-add-color-to-drush-output
+
+
+    $instance = \Drupal\field\Entity\FieldStorageConfig::loadByName('node', 'field_media');
+    $field_info = \Drupal\field\Entity\FieldConfig::loadByName('node', 'oc_link', 'field_media');
+    drush_print("Instance");
+    //drush_print($instance);
+
+    //drush_print($field_info);
+//    Drupal\field\Entity\FieldConfig::__set_state(array(
+//      'deleted' => false,
+//      'fieldStorage' => NULL,
+//      'id' => 'node.oc_doc.field_media',
+//      'field_name' => 'field_media',
+//      'field_type' => 'entity_reference',
+//      'entity_type' => 'node',
+//      'bundle' => 'oc_link',
+//      'label' => 'Main media',
+//      'description' => '',
+//      'settings' =>
+//        array (
+//          'handler' => 'default:media',
+//          'handler_settings' =>
+//            array (
+//              'target_bundles' =>
+//                array (
+//                  'image' => 'image',
+//                  'remote_video' => 'remote_video',
+//                  'video' => 'video',
+//                ),
+//              'sort' =>
+//                array (
+//                  'field' => '_none',
+//                ),
+//              'auto_create' => false,
+//              'auto_create_bundle' => 'remote_video',
+//            ),
+//        ),
+//      'required' => false,
+//      'translatable' => true,
+//      'default_value' =>
+//        array (
+//        ),
+//      'default_value_callback' => '',
+//      'itemDefinition' => NULL,
+//      'constraints' =>
+//        array (
+//        ),
+//      'propertyConstraints' =>
+//        array (
+//        ),
+//      'originalId' => 'node.oc_doc.field_media',
+//      'status' => true,
+//      'uuid' => NULL,
+//      'isUninstalling' => false,
+//      'langcode' => 'en',
+//      'third_party_settings' =>
+//        array (
+//        ),
+//      '_core' =>
+//        array (
+//        ),
+//      'trustedData' => false,
+//      'entityTypeId' => 'field_config',
+//      'enforceIsNew' => NULL,
+//      'typedData' => NULL,
+//      'cacheContexts' =>
+//        array (
+//          0 => 'languages:language_interface',
+//        ),
+//      'cacheTags' =>
+//        array (
+//        ),
+//      'cacheMaxAge' => -1,
+//      '_serviceIds' =>
+//        array (
+//        ),
+//      '_entityStorages' =>
+//        array (
+//        ),
+//      'dependencies' =>
+//        array (
+//          'config' =>
+//            array (
+//              0 => 'field.storage.node.field_media',
+//              1 => 'media.type.image',
+//              2 => 'media.type.remote_video',
+//              3 => 'media.type.video',
+//              4 => 'node.type.oc_link',
+//            ),
+//        ),
+//      'isSyncing' => false,
+//    ));
+    drush_print("done");
+  }
+
+
+  /**
+   * Command oc_updatectwfm: This will update content types using varbase_media_header by copying field_media content to
+   * a new field_nmedia then removing the field and reapplying the field
+   *
+   * @command oc_tools:oc_updatectwfm1
+   * @aliases ocuctwfm1
+   */
+  public function oc_updatectwfm1()
+  {
+    # This will transfer content from oc_image to media:image
+
+    # Get all oc_docs
+    $nids = \Drupal::entityQuery('node')->condition('type', 'oc_sequence')->execute();
+    $tobefixed = array();
+//    $fix = new OcToolsCommands();
+//    $euuids = $fix->oc_mlist("remote_video"); # get the array of corresponding values.
+
+
+    //transfer content from media_field to temp field
+    foreach ($nids as $nid) {
+      $node = \Drupal\node\Entity\Node::load($nid);
+      $mediaf = $node->get('field_media')->getValue();
+      $phs = $node->get('field_page_header_style')->getValue();
+      $node->set('field_oc_lmedia', $mediaf);
+      $node->save();
+    }
+  }
+
+
+
+  /**
+   * Command oc_updatectwfm: This will update content types using varbase_media_header by copying field_media content to
+   * a new field_nmedia then removing the field and reapplying the field
+   *
+   * @command oc_tools:oc_updatectwfm2
+   * @aliases ocuctwfm2
+   */
+  public function oc_updatectwfm2()
+  {
+    # This will transfer content from oc_image to media:image
+
+    # Get all oc_docs
+    $nids = \Drupal::entityQuery('node')->condition('type', 'oc_sequence')->execute();
+    $tobefixed = array();
+//    $fix = new OcToolsCommands();
+//    $euuids = $fix->oc_mlist("remote_video"); # get the array of corresponding values.
+
+
+    //transfer content from media_field to temp field
+    foreach ($nids as $nid) {
+      $node = \Drupal\node\Entity\Node::load($nid);
+      $mediaf = $node->get('field_oc_lmedia')->getValue();
+      $phs = $node->get('field_page_header_style')->getValue();
+      $node->set('field_media', $mediaf);
+      if ($mediaf) {
+        $node->set('field_page_header_style', 'media_header');
+      } else {
+        $node->set('field_page_header_style', 'standard');
+      }
+      $node->save();
+    }
+  }
+
+
 }
