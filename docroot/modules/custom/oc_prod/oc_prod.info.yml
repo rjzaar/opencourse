@@ -4,7 +4,6 @@ description: enables all modules required by oc
 core: 8.x
 package: Custom
 dependencies:
-  - jquery_colorpicker
 # oc_content is no longer in prod since it should not be reinstalled. when first installing list both oc_prod and oc_content
 #  - oc_content
 #  - oc_theme  Make sure you install the theme before installing oc_site
@@ -18,7 +17,6 @@ dependencies:
   - oc_groups
   - oc_lp
   - oc_blocks
-  - video_embed_field
   - entity_access_by_field
   - group
   - book

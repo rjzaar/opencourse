@@ -12,7 +12,6 @@ dependencies:
   - gnode
   - group
   - image
-  - jquery_colorpicker
   - link
   - media
   - menu_ui
@@ -27,7 +26,6 @@ dependencies:
   - text
   - user
   - varbase_media
-  - video_embed_field
   - views
   - yoast_seo
 version: 8.x-0.3

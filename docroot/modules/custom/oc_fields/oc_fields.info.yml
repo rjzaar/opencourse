@@ -22,7 +22,6 @@ dependencies:
   - h5p
   - h5peditor
   - image
-  - jquery_colorpicker
   - language
   - link
   - media
@@ -36,8 +35,6 @@ dependencies:
   - text
   - user
   - varbase_media
-  - video_embed_field
-  - video_embed_media
   - views
   - viewsreference
 version: 8.x-0.5
