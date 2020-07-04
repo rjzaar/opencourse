@@ -19,9 +19,11 @@ dependencies:
     - field.field.node.oc_book.field_oc_topic
     - field.field.node.oc_book.field_oc_translator
     - field.field.node.oc_book.field_oc_year
+    - field.field.node.oc_book.field_page_header_style
     - field.field.node.oc_book.field_yoast_seo
     - image.style.thumbnail
     - node.type.oc_book
+    - workflows.workflow.oc_workflow
   module:
     - content_moderation
     - focal_point
@@ -56,6 +58,21 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
+    region: content
+  field_media:
+    weight: -10
+    settings:
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: field_preview
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
     region: content
   field_meta_tags:
     weight: 121
@@ -181,6 +198,12 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_page_header_style:
+    weight: -11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
   field_yoast_seo:
     weight: 122
     settings:
@@ -251,25 +274,4 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_media:
-    weight: -10
-    settings:
-      entity_browser: media_browser
-      field_widget_display: rendered_entity
-      field_widget_edit: true
-      field_widget_remove: true
-      field_widget_replace: true
-      open: true
-      selection_mode: selection_append
-      field_widget_display_settings:
-        view_mode: field_preview
-    third_party_settings: {  }
-    type: entity_browser_entity_reference
-    region: content
-  field_page_header_style:
-    weight: -11
-    settings: {  }
-    third_party_settings: {  }
-    type: options_buttons
-    region: content
 hidden: {  }

@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.oc_link.field_oc_link
     - field.field.node.oc_link.field_oc_topic
     - node.type.oc_link
+    - workflows.workflow.oc_workflow
   module:
     - content_moderation
     - link

@@ -17,6 +17,8 @@ dependencies:
     - field.field.node.oc_doc.field_oc_internal_links
     - field.field.node.oc_doc.field_oc_level
     - field.field.node.oc_doc.field_oc_linked_image
+    - field.field.node.oc_doc.field_oc_lmedia
+    - field.field.node.oc_doc.field_oc_title_image
     - field.field.node.oc_doc.field_oc_topic
     - field.field.node.oc_doc.field_page_header_style
     - field.field.node.oc_doc.field_yoast_seo
@@ -31,7 +33,6 @@ dependencies:
     - text
     - user
     - yoast_seo
-    - varbase_media_header
 third_party_settings:
   ds:
     layout:
@@ -209,5 +210,7 @@ content:
 hidden:
   field_media: true
   field_oc_interactive: true
+  field_oc_lmedia: true
+  field_oc_title_image: true
   field_page_header_style: true
   search_api_excerpt: true

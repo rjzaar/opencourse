@@ -13,6 +13,7 @@ dependencies:
     - field.field.media.remote_video.field_oc_vlevel
     - field.field.media.remote_video.field_oc_vseo
     - field.field.media.remote_video.field_oc_vtopic
+    - field.field.media.remote_video.field_provider
     - image.style.field_preview
     - media.type.remote_video
   module:
@@ -145,5 +146,6 @@ content:
 hidden:
   created: true
   field_oc_vcomments: true
+  field_provider: true
   path: true
   uid: true

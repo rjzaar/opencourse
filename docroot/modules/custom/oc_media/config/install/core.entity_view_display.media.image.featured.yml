@@ -1,0 +1,107 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.featured
+    - field.field.media.image.body
+    - field.field.media.image.field_content_visibility
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_media_in_library
+    - field.field.media.image.field_meta_tags
+    - field.field.media.image.field_oc_author_s_
+    - field.field.media.image.field_oc_back_color
+    - field.field.media.image.field_oc_level
+    - field.field.media.image.field_oc_licence
+    - field.field.media.image.field_oc_link
+    - field.field.media.image.field_oc_old
+    - field.field.media.image.field_oc_publisher
+    - field.field.media.image.field_oc_topic
+    - field.field.media.image.field_oc_year
+    - field.field.media.image.field_yoast_seo
+    - media.type.image
+    - responsive_image.styles.default
+  module:
+    - ds
+    - layout_builder
+    - responsive_image
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_media_image
+        - thumbnail
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: media.image.featured
+targetEntityType: media
+bundle: image
+mode: featured
+content:
+  field_media_image:
+    weight: 0
+    label: hidden
+    settings:
+      responsive_image_style: de2e
+      image_link: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: responsive_image
+    region: ds_content
+  thumbnail:
+    type: responsive_image
+    weight: 1
+    region: ds_content
+    label: hidden
+    settings:
+      responsive_image_style: default
+      image_link: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+hidden:
+  body: true
+  created: true
+  field_content_visibility: true
+  field_media_in_library: true
+  field_meta_tags: true
+  field_oc_author_s_: true
+  field_oc_back_color: true
+  field_oc_level: true
+  field_oc_licence: true
+  field_oc_link: true
+  field_oc_old: true
+  field_oc_publisher: true
+  field_oc_topic: true
+  field_oc_year: true
+  field_yoast_seo: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  uid: true

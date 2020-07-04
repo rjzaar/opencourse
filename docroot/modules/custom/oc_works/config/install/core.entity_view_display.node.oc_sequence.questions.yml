@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.oc_sequence.field_oc_importance
     - field.field.node.oc_sequence.field_oc_level
     - field.field.node.oc_sequence.field_oc_linked_image
+    - field.field.node.oc_sequence.field_oc_lmedia
     - field.field.node.oc_sequence.field_oc_sequence_items
     - field.field.node.oc_sequence.field_oc_topic
     - field.field.node.oc_sequence.field_page_header_style
@@ -68,6 +69,7 @@ hidden:
   field_oc_importance: true
   field_oc_level: true
   field_oc_linked_image: true
+  field_oc_lmedia: true
   field_oc_topic: true
   field_page_header_style: true
   field_yoast_seo: true

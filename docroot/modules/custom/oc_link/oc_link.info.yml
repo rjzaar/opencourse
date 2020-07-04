@@ -15,6 +15,7 @@ dependencies:
   - node
   - oc_fields
   - oc_taxonomy
+  - oc_works
   - options
   - path
   - taxonomy

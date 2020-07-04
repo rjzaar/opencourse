@@ -5,6 +5,7 @@ core: 8.x
 dependencies:
   - advanced_text_formatter
   - content_moderation
+  - entity_browser
   - entity_reference_revisions
   - field
   - field_group
@@ -16,6 +17,7 @@ dependencies:
   - metatag
   - node
   - oc_fields
+  - oc_works
   - options
   - paragraphs_previewer
   - path
@@ -24,8 +26,8 @@ dependencies:
   - varbase_bootstrap_paragraphs
   - varbase_core
   - varbase_landing
-  - varbase_seo
   - varbase_media_header
+  - varbase_seo
   - views
   - yoast_seo
 version: 8.x-0.1

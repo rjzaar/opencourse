@@ -26,7 +26,6 @@
         "drupal/l10n_client": "1.x-dev#9bf8d597732870bdca301512c71b6e5d74d48db2",
         "drupal/legal": "^1.0@beta",
         "drupal/mail_edit": "1.x-dev#bcd0041830d8581b36e6211f0c8eabd8caf9652b",
-        "drupal/material_admin": "^1.0-alpha6",
         "drupal/menu_item_role_access": "^1.0",
         "drupal/menu_link_attributes": "^1.0",
         "drupal/node_edit_protection": "1.x-dev#902339c08222f838030c07aaea23bdc51ababebd",
@@ -43,23 +42,12 @@
         "drupal/tour_builder": "1.x-dev#d70e898949b7ec4095efb391a0dbec56d0117558",
         "drupal/twig_field_value": "^1.1",
         "drupal/twig_tweak": "^2.4",
-        "drupal/varbase_bootstrap_paragraphs": "^7.8",
-        "drupal/varbase_core": "^8.4",
-        "drupal/varbase_editor": "^7.5",
-        "drupal/varbase_email": "^6.1",
-        "drupal/varbase_landing": "^7.1",
-        "drupal/varbase_media": "^7.13",
-        "drupal/varbase_media_header": "^7.4",
-        "drupal/varbase_search": "^6.4",
-        "drupal/varbase_seo": "^6.9",
-        "drupal/varbase_total_control": "^6.9",
-        "drupal/vartheme_bs4": "^6.7",
-        "drupal/video_embed_field": "^2",
         "drupal/view_mode_page": "^3.1",
         "drupal/views_field_view": "^1.0@beta",
         "drush/drush": "^10.3",
         "fortawesome/font-awesome": "*",
         "jquery/chosen": "*",
+        "jquery/geocomplete": "*",
         "jquery/hotkeys": "*",
         "jquery/icheck": "*",
         "jquery/image-picker": "*",
@@ -79,7 +67,29 @@
         "vardot/varbase-updater": "~1.0",
         "webflo/drupal-finder": "~1.0",
         "webmozart/path-util": "~2.0",
-        "wikimedia/composer-merge-plugin": "^1.4"
+        "wikimedia/composer-merge-plugin": "^1.4",
+        "drupal/migrate_plus": "^5.1",
+        "drupal/varbase_media_header": "^7.8",
+        "drupal/varbase_core": "~8.0",
+        "drupal/varbase_api": "~7.0",
+        "drupal/varbase_media": "~7.0",
+        "drupal/varbase_bootstrap_paragraphs": "~7.0",
+        "drupal/varbase_editor": "~7.0",
+        "drupal/varbase_landing": "~7.0",
+        "drupal/varbase_layout_builder": "~1.0",
+        "drupal/varbase_heroslider_media": "~7.0",
+        "drupal/varbase_carousels": "~7.0",
+        "drupal/varbase_blog": "~8.0",
+        "drupal/varbase_search": "~6.0",
+        "drupal/varbase_seo": "~6.0",
+        "drupal/varbase_auth": "~6.0",
+        "drupal/varbase_total_control": "~6.0",
+        "drupal/varbase_styleguide": "~6.0",
+        "drupal/varbase_email": "~6.0",
+        "drupal/vartheme": "~6.0",
+        "drupal/vartheme_bs4": "~6.0",
+        "drupal/vartheme_admin": "~6.0",
+        "drupal/vartheme_claro": "~2.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -94,20 +104,11 @@
         "behat/mink-selenium2-driver": "1.3.1",
         "behat/mink-zombie-driver": "1.4.0",
         "behatch/contexts": "~3.0",
-        "drupal/bulk_copy_fields": "^1.0@alpha",
         "drupal/coder": "8.2.12",
-        "drupal/content_export_csv": "^3.0@beta",
-        "drupal/contentimport": "^4.1",
         "drupal/default_content": "^1.0@alpha",
         "drupal/devel": "~3.0",
         "drupal/devel_entity_updates": "^1.0",
         "drupal/drupal-extension": "3.3.1",
-        "drupal/field_tools": "^1.0@alpha",
-        "drupal/migrate_devel": "1.x-dev",
-        "drupal/migrate_manifest": "^1.6",
-        "drupal/migrate_plus": "^4.0",
-        "drupal/migrate_tools": "^4.0",
-        "drupal/migrate_upgrade": "^3.0",
         "drupal/search_kint": "^1.0",
         "drupal/twig_xdebug": "^1.0",
         "emuse/behat-html-formatter": "0.1.0",
@@ -117,6 +118,9 @@
     "type": "project",
     "extra": {
         "drupal-scaffold": {
+            "allowed-packages": [
+                "drupal/core"
+            ],
             "locations": {
                 "web-root": "docroot/"
             }
@@ -194,14 +198,12 @@
             ],
             "drush/contrib/{$name}": [
                 "type:drupal-drush"
-            ],
-            "docroot": [
-                "rjzaar/docroot"
             ]
         },
         "drupal-libraries": {
             "library-directory": "docroot/libraries",
             "libraries": [
+                {"name": "objectfitpolyfill", "package": "bower-asset/objectfitpolyfill"},
                 {
                     "name": "dropzone",
                     "package": "npm-asset/dropzone"
@@ -253,9 +255,6 @@
             "drupal/migrate_plus": {
                 "Issue #2923824: Nested source for entity_lookup causes an error": "https://www.drupal.org/files/issues/nested-source-for-entity_lookup-causes-an-error-2923824-2.patch"
             },
-            "drupal/panels": {
-                "Issue #2879001: Warning: array_unique() expects parameter 1 to be array, string given": "https://www.drupal.org/files/issues/panels-ipe-set-classes-arrays-2879001-5.patch"
-            },
             "drupal/core": {
                 "node-revisions-missing-local-tasks-2885278-11.patch": "https://www.drupal.org/files/issues/2018-04-19/node-revisions-missing-local-tasks-2885278-11.patch",
                 "drupal-views-comment-count-2801929-12.patch": "https://www.drupal.org/files/issues/2018-07-10/drupal-views-comment-count-2801929-12.patch",
@@ -278,12 +277,6 @@
             },
             "drupal/image_resize_filter": {
                 "2955937-filter-schema-5.patch": "https://www.drupal.org/files/issues/2018-05-03/2955937-filter-schema-5.patch"
-            },
-            "drupal/metatag": {
-                "Issue #3102937 by yasmeensalah, DamienMcKenna, Berdir: Fix Plugin AlternateHandheld is misnamed": "https://www.drupal.org/files/issues/2019-12-24/class-alternateHandheld-not-found-3102937-2.patch"
-            },
-            "drupal/better_exposed_filters": {
-                "undefined_index_filter-3104673-1.patch": "https://www.drupal.org/files/issues/2020-01-06/undefined_index_filter-3104673-1.patch"
             }
         },
         "merge-plugin": {
@@ -293,22 +286,16 @@
         }
     },
     "scripts": {
-        "drupal-scaffold": [
-            "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
-        ],
         "post-install-cmd": [
             "Varbase\\composer\\ScriptHandler::createRequiredFiles",
-            "Varbase\\composer\\ScriptHandler::removeGitDirectories",
-            "@composer drupal-scaffold"
+            "Varbase\\composer\\ScriptHandler::removeGitDirectories"
         ],
         "post-update-cmd": [
             "Varbase\\composer\\ScriptHandler::createRequiredFiles",
             "Varbase\\composer\\ScriptHandler::removeGitDirectories"
         ],
-        "post-drupal-scaffold-cmd": [
-            "Varbase\\composer\\ScriptHandler::postDrupalScaffoldProcedure",
-            "cd docroot && patch -p1 <../scripts/htaccess_favicon.patch"
-        ]
+        "post-drupal-scaffold-cmd": ["Varbase\\composer\\ScriptHandler::postDrupalScaffoldProcedure",
+            "cd docroot && patch -p1 <../scripts/htaccess_favicon.patch"]
     },
     "license": [
         "GPL-2.0-or-later"
