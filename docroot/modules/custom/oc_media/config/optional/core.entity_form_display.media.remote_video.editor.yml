@@ -14,6 +14,7 @@ dependencies:
     - field.field.media.remote_video.field_oc_vlevel
     - field.field.media.remote_video.field_oc_vseo
     - field.field.media.remote_video.field_oc_vtopic
+    - field.field.media.remote_video.field_provider
     - media.type.remote_video
   module:
     - media
@@ -49,6 +50,7 @@ hidden:
   field_oc_vlevel: true
   field_oc_vseo: true
   field_oc_vtopic: true
+  field_provider: true
   name: true
   path: true
   preview: true

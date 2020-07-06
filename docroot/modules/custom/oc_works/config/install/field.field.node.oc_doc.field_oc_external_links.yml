@@ -7,8 +7,6 @@ dependencies:
     - node.type.oc_doc
     - node.type.oc_image
     - node.type.oc_link
-  module:
-    - oc_book
 id: node.oc_doc.field_oc_external_links
 field_name: field_oc_external_links
 entity_type: node

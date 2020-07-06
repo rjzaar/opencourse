@@ -18,6 +18,8 @@ dependencies:
     - field.field.node.oc_doc.field_oc_internal_links
     - field.field.node.oc_doc.field_oc_level
     - field.field.node.oc_doc.field_oc_linked_image
+    - field.field.node.oc_doc.field_oc_lmedia
+    - field.field.node.oc_doc.field_oc_title_image
     - field.field.node.oc_doc.field_oc_topic
     - field.field.node.oc_doc.field_page_header_style
     - field.field.node.oc_doc.field_yoast_seo
@@ -224,6 +226,8 @@ content:
 hidden:
   field_media: true
   field_meta_tags: true
+  field_oc_lmedia: true
+  field_oc_title_image: true
   field_page_header_style: true
   field_yoast_seo: true
   langcode: true

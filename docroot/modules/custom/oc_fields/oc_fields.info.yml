@@ -14,8 +14,6 @@ dependencies:
   - link
   - media
   - node
-  - oc_image
-  - oc_works
   - options
   - superfish
   - system

@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.oc_book.field_oc_topic
     - field.field.node.oc_book.field_oc_translator
     - field.field.node.oc_book.field_oc_year
+    - field.field.node.oc_book.field_page_header_style
     - field.field.node.oc_book.field_yoast_seo
     - node.type.oc_book
   module:
@@ -191,6 +192,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  langcode: true
   field_media: true
   field_page_header_style: true
+  langcode: true
+  search_api_excerpt: true

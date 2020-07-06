@@ -294,3 +294,4 @@ content:
 hidden:
   field_content_visibility: true
   langcode: true
+  search_api_excerpt: true

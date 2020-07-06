@@ -5,12 +5,15 @@ dependencies:
     - core.entity_view_mode.node.full
     - field.field.node.oc_sequence.body
     - field.field.node.oc_sequence.field_content_visibility
+    - field.field.node.oc_sequence.field_media
     - field.field.node.oc_sequence.field_meta_tags
     - field.field.node.oc_sequence.field_oc_importance
     - field.field.node.oc_sequence.field_oc_level
     - field.field.node.oc_sequence.field_oc_linked_image
+    - field.field.node.oc_sequence.field_oc_lmedia
     - field.field.node.oc_sequence.field_oc_sequence_items
     - field.field.node.oc_sequence.field_oc_topic
+    - field.field.node.oc_sequence.field_page_header_style
     - field.field.node.oc_sequence.field_yoast_seo
     - node.type.oc_sequence
   module:
@@ -56,11 +59,15 @@ content:
     region: content
 hidden:
   field_content_visibility: true
+  field_media: true
   field_meta_tags: true
   field_oc_importance: true
   field_oc_level: true
   field_oc_linked_image: true
+  field_oc_lmedia: true
   field_oc_topic: true
+  field_page_header_style: true
   field_yoast_seo: true
   langcode: true
   links: true
+  search_api_excerpt: true

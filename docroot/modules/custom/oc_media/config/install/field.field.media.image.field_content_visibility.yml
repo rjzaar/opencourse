@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_visibility
+    - media.type.image
+  module:
+    - entity_access_by_field
+id: media.image.field_content_visibility
+field_name: field_content_visibility
+entity_type: media
+bundle: image
+label: Visibility
+description: 'Who can see this image? Everyone (Public) or only your group (Community).'
+required: true
+translatable: true
+default_value:
+  -
+    value: public
+default_value_callback: ''
+settings: {  }
+field_type: entity_access_field

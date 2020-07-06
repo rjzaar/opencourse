@@ -3,15 +3,23 @@ description: 'Provides Remote media type'
 type: module
 core: 8.x
 dependencies:
+  - color_field
   - comment
+  - ds
+  - entity_access_by_field
   - entity_browser
   - entity_browser_entity_form
   - field
   - h5p
   - language
+  - layout_builder
+  - link
   - media
+  - metatag
+  - oc_fields
   - oc_taxonomy
   - options
+  - responsive_image
   - taxonomy
   - text
   - user

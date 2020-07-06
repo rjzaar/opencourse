@@ -7,6 +7,8 @@ dependencies:
   - color_field
   - comment
   - content_moderation
+  - content_translation
+  - crop
   - ds
   - entity_access_by_field
   - entity_browser
@@ -14,8 +16,10 @@ dependencies:
   - field
   - h5p
   - h5peditor
+  - image
   - language
   - layout_builder
+  - media
   - menu_ui
   - metatag
   - node

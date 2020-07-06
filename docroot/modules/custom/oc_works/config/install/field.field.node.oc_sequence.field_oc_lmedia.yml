@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oc_lmedia
+    - media.type.image
+    - media.type.video
+    - media.type.video_embed
+    - node.type.oc_sequence
+id: node.oc_sequence.field_oc_lmedia
+field_name: field_oc_lmedia
+entity_type: node
+bundle: oc_sequence
+label: 'Linked media'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+      video_embed: video_embed
+      video: video
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oc_level
+    - media.type.image
+  module:
+    - options
+id: media.image.field_oc_level
+field_name: field_oc_level
+entity_type: media
+bundle: image
+label: Level
+description: 'An image is usually at the Beginner level.'
+required: true
+translatable: false
+default_value:
+  -
+    value: '2'
+default_value_callback: ''
+settings: {  }
+field_type: list_string
