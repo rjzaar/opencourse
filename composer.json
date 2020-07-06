@@ -263,16 +263,21 @@
         }
     },
     "scripts": {
+        "pre-install-cmd": ["Varbase\\composer\\ScriptHandler::checkComposerVersion"],
+        "pre-update-cmd": ["Varbase\\composer\\ScriptHandler::checkComposerVersion"],
         "post-install-cmd": [
             "Varbase\\composer\\ScriptHandler::createRequiredFiles",
-            "Varbase\\composer\\ScriptHandler::removeGitDirectories"
+            "Varbase\\composer\\ScriptHandler::removeGitDirectories",
+            "./bin/phing push"
         ],
         "post-update-cmd": [
             "Varbase\\composer\\ScriptHandler::createRequiredFiles",
-            "Varbase\\composer\\ScriptHandler::removeGitDirectories"
+            "Varbase\\composer\\ScriptHandler::removeGitDirectories",
+            "./bin/phing push"
         ],
         "post-drupal-scaffold-cmd": ["Varbase\\composer\\ScriptHandler::postDrupalScaffoldProcedure",
-            "cd docroot && patch -p1 <../scripts/htaccess_favicon.patch"]
+            "cd docroot && patch -p1 <../scripts/htaccess_favicon.patch"],
+        "create-new-vartheme": "scripts/create-new-vartheme.sh"
     },
     "license": [
         "GPL-2.0-or-later"
