@@ -1,10 +1,14 @@
-var page = "http://opencat.loc/node/1832";
+var page = "http://pleasy.lbt/oc-sequencesvt?page=0";
 let gulp = require('gulp'),
   sass = require('gulp-sass'),
   postcss = require('gulp-postcss'),
   csscomb = require('gulp-csscomb'),
   autoprefixer = require('autoprefixer'),
-  browserSync = require('browser-sync').create()
+  browserSync = require('browser-sync').create();
+
+// browserSync.init({
+//   proxy: "pleasy.loc"
+// });
 
 const paths = {
   scss: {
@@ -35,7 +39,8 @@ const paths = {
 }
 
 // Compile sass into CSS & auto-inject into browsers
-function compile () {
+function compile() {
+
   var sassOptions = {
     outputStyle: 'expanded',
     indentType: 'space',
@@ -45,25 +50,14 @@ function compile () {
 
   return gulp.src([paths.scss.src])
     .pipe(sass(sassOptions).on('error', sass.logError))
-    .pipe(postcss([autoprefixer({
-      browsers: [
-        'Chrome >= 35',
-        'Firefox >= 38',
-        'Edge >= 12',
-        'Explorer >= 10',
-        'iOS >= 8',
-        'Safari >= 8',
-        'Android 2.3',
-        'Android >= 4',
-        'Opera >= 12']
-    })]))
+    .pipe(postcss([autoprefixer()]))
     .pipe(csscomb())
     .pipe(gulp.dest(paths.scss.dest))
     .pipe(browserSync.stream())
 }
 
 // Move the Bootstrap JavaScript files into our js/bootstrap folder.
-function move_bootstrap_js_files () {
+function move_bootstrap_js_files() {
   return gulp.src([
         paths.js.bootstrap.alert,
         paths.js.bootstrap.button,
@@ -103,5 +97,3 @@ exports.move_popper_js_files = move_popper_js_files
 exports.watch = watch
 
 exports.default = build
-
-
