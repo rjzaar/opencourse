@@ -263,17 +263,13 @@
         }
     },
     "scripts": {
-        "pre-install-cmd": ["Varbase\\composer\\ScriptHandler::checkComposerVersion"],
-        "pre-update-cmd": ["Varbase\\composer\\ScriptHandler::checkComposerVersion"],
         "post-install-cmd": [
             "Varbase\\composer\\ScriptHandler::createRequiredFiles",
-            "Varbase\\composer\\ScriptHandler::removeGitDirectories",
-            "./bin/phing push"
+            "Varbase\\composer\\ScriptHandler::removeGitDirectories"
         ],
         "post-update-cmd": [
             "Varbase\\composer\\ScriptHandler::createRequiredFiles",
-            "Varbase\\composer\\ScriptHandler::removeGitDirectories",
-            "./bin/phing push"
+            "Varbase\\composer\\ScriptHandler::removeGitDirectories"
         ],
         "post-drupal-scaffold-cmd": ["Varbase\\composer\\ScriptHandler::postDrupalScaffoldProcedure",
             "cd docroot && patch -p1 <../scripts/htaccess_favicon.patch"],
