@@ -12,10 +12,12 @@
 @import "_landing_page";
 @import "_doc_type";
 
+
+$dropdown-header-padding: 0;
 // Text is set at 18px with a max-width of 600px. This gives about 72 characters per line.
 // The aim is readability of text. So as the screen size decreases, once the text takes up the full width
 // this is the breakpoint and side navigation is moved out the way.
-$primary: #ee3159;
+$primary: #ee3159; //
 $secondary: #251b3d;
 $ocback: #171126;
 $success: $green;
@@ -41,6 +43,16 @@ $oc_background_color: #E5E5E5;
 //// container
 //////////// oc_heading oc_vinject <h1> This is the page heading.
 
+//######   NOTE    #########
+// If the left menu buttons are not working. It may be because an update removed a block
+// You need to go to Structure > Block layout. Then for the 'Top Bar' you need to place block. Search for 'test' and
+// choose test Superfish and Place block
+// Then 1) Don't display title,
+// 2) Unlimited levels to display.
+// 3) Vertical (stack) menu type.
+// 4) Style None. no Add arrows and no Drop shadows.
+// 5) Advanced settings: Superfish: Animation speed fast. 0 Mouse delay and 1 path level. and Save block.
+// It should now work!
 
 // #### These margins need to be worked on, eg oc_sequences should be turned into
 // flex boxes so format better between screen sizes.
@@ -684,7 +696,7 @@ ul {
 }
 
 .oc_group_nav_add_content {
-  color: red !important;
+  color: blueviolet !important;
 }
 
 .oc_icon_front {
