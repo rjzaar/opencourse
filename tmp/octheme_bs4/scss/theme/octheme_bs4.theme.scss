@@ -1,0 +1,1748 @@
+// oc_ less for css
+// Note adding a font family could affect the fa icons.
+// Can be useful: https://www.cheatography.com/natshah/cheat-sheets/thinking-in-bootstrap-4-theming-with-vartheme-bs4/
+
+@import "../../node_modules/bootstrap/scss/functions";
+// Bootstrap functions.
+@import "../../node_modules/bootstrap/scss/mixins";
+// Bootstrap mixins.
+@import "../variables";
+// octheme_bs4 variables.
+@import "../mixins"; // octheme_bs4 mixins.
+
+
+// Text is set at 18px with a max-width of 600px. This gives about 72 characters per line.
+// The aim is readability of text. So as the screen size decreases, once the text takes up the full width
+// this is the breakpoint and side navigation is moved out the way.
+$primary: #ee3159;
+$secondary: #251b3d;
+$ocback: #171126;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-100;
+$dark: $gray-800;
+
+// Structure of page.html.twig
+// Header: navbar, oc_navbar, oc_darken
+//// container: container
+////////// oc_logo <a>
+//////////// oc_branding_logo <img>
+////// navbar-collapse
+//////////////// nav-link <a>
+// oc_title_image_wrapper oc_darken_image
+//// oc_title_image img-fluid <img>
+// oc_header oc_darken_title oc_head_imageh
+//// container
+//////////// oc_heading oc_vinject <h1> This is the page heading.
+
+
+// #### These margins need to be worked on, eg oc_sequences should be turned into
+// flex boxes so format better between screen sizes.
+// These are the universal margins for the site.
+$oc_margin: 50px;
+$oc_margin_xs: 5px; // This is used for the left and right side all the way down.
+$oc_margin_sm: 15px;
+$oc_margin_md: 30px;
+
+// LOGO
+$oc_logo_left_padding: 60px; //Distance from left to start of logo with background color
+$oc_logo_left_margin: 0px; //Distance from left to start of background color
+$oc_logo_top_padding: 5px; //Logo top padding
+
+// More in .oc_logo
+
+// Right navigation links, eg Login and Contact Us
+$oc_navlink_color: white;
+$oc_navlink_bg_color: transparent;
+$oc_navlink_border_radius: 5px;
+$oc_navlink_gap: 20px; //gap between links, ie margin-left
+$oc_navlink_height: 30px; // this is constant
+
+$oc_nav_button_height: 42px; //This is the height of the top right nav button
+// It is used to calculate position based on other elements
+
+.btn_oc_primary {
+  color: #fff;
+  background-color: $primary;
+  border-color: $primary;
+}
+
+.oc_btn_group {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.oc_btn_group label {
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+  background-color: $primary;
+  border-color: $primary;
+}
+
+.ococomment {
+  display: block;
+}
+
+.ocosummary {
+  display: none;
+}
+
+.ocoquiz {
+  display: none;
+}
+
+// This enables the embeded video to be seen if left or right aligned.
+.media--type-remote-video.media--view-mode-small .varbase-video-player {
+  height: 225px;
+  width: 300px;
+}
+
+.media--type-video-embed.media--view-mode-small .varbase-video-player {
+  height: 225px;
+  width: 300px;
+}
+
+.vmh-container {
+  max-height: 95vh;
+  //height: 95vh;
+}
+
+
+// Central resizing breakpoints
+//small phones
+$oc_logo_top_margin_xs: 0; //Distance from top to start of logo
+$oc_logo_top_margin_sm: 10px;
+$oc_logo_top_margin_md: 20px;
+
+$oc_branding_logo_height_xs: 40px; //logo height
+$oc_branding_logo_height_sm: 40px; //logo height
+$oc_branding_logo_height_md: 50px; //logo height
+
+.oc_logo_white {
+  background-color: white;
+}
+
+.oc_logo_dark {
+  background-color: black;
+  background: rgba(0, 0, 0, .1)
+}
+
+.oc_logo {
+  margin-top: $oc_logo_top_margin_xs;
+  border-radius: 5px 5px 5px 5px;
+  width: 100px;
+  margin-left: 5px;
+  padding-left: 5px;
+  padding-top: 0;
+  padding-right: 5px;
+}
+
+.oc_branding_logo {
+  height: $oc_branding_logo_height_xs;
+  width: $oc_branding_logo_height_xs/50*205 !important;
+}
+
+.oc_vinject {
+  padding-top: 5px; //  for all xs devices.
+  font-size: 100% !important;
+}
+
+.oc_nav_links {
+  top: $oc_logo_top_margin_xs +($oc_branding_logo_height_xs - $oc_navlink_height)/2;
+  right: $oc_margin;
+}
+
+.oc_small_nav_button {
+  top: $oc_logo_top_margin_xs + ($oc_branding_logo_height_xs - $oc_nav_button_height)/2;
+}
+
+// There are two locations for the nav links, ie login and contact us.
+// Only one is possibly visible at a time with the swap at 768px.
+.oc_nav_link_button {
+  visibility: visible;
+}
+
+.oc_nav_links {
+  visibility: hidden;
+}
+
+
+.oc_nav_links_dark a {
+  color: white !important;
+}
+
+.oc_nav_links_light a {
+  color: black !important;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: map-get($grid-breakpoints, "sm")) {
+  .oc_logo {
+    margin-top: $oc_logo_top_margin_sm;
+    border-radius: 5px 5px 5px 5px;
+    width: 200px;
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-top: 0;
+    padding-right: 10px;
+  }
+  .oc_branding_logo {
+    height: $oc_branding_logo_height_sm;
+    width: $oc_branding_logo_height_sm/50*205 !important;
+  }
+  .oc_vinject {
+    padding-top: 5px; // As from sm devices,
+    font-size: 150% !important;
+  }
+  .oc_nav_links {
+    top: $oc_logo_top_margin_sm +($oc_branding_logo_height_sm - $oc_navlink_height)/2;
+    right: $oc_margin;
+  }
+  .oc_small_nav_button {
+    top: $oc_logo_top_margin_sm + ($oc_branding_logo_height_sm - $oc_nav_button_height)/2;
+  }
+  .oc_nav_link_button {
+    visibility: visible;
+  }
+  .oc_nav_links {
+    visibility: hidden;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: map-get($grid-breakpoints, "md")) {
+
+  .oc_logo {
+    margin-top: $oc_logo_top_margin_md;
+    border-radius: 0 5px 5px 0;
+    width: 300px;
+    margin-left: $oc_logo_left_margin;
+    padding-left: $oc_logo_left_padding;
+    padding-top: $oc_logo_top_padding;
+    padding-right: 10px;
+  }
+  .oc_branding_logo {
+    height: $oc_branding_logo_height_md;
+    width: $oc_branding_logo_height_md/50*205 !important;
+  }
+  .oc_vinject {
+    padding-top: 15px; //  for md devices.
+    font-size: 200% !important;
+  }
+  .oc_nav_links {
+    top: $oc_logo_top_margin_md +($oc_branding_logo_height_md - $oc_navlink_height)/2;
+    right: $oc_margin;
+  }
+  .oc_small_nav_button {
+    top: $oc_logo_top_margin_md + ($oc_branding_logo_height_md - $oc_nav_button_height)/2;
+  }
+  .oc_nav_link_button {
+    visibility: hidden;
+  }
+  .oc_nav_links {
+    visibility: visible;
+  }
+}
+
+// Small screen css: works opposite to the above system.
+.oc_small_nav_button {
+  display: none;
+  position: fixed;
+  left: 0;
+  height: $oc_nav_button_height;
+  z-index: 1600; // This needs to get checked: see https://w3codemasters.in/bootstrap-4-components-z-index-values/
+  width: 45px;
+  @media (max-width: map-get($grid-breakpoints, "md")) {
+    display: inline;
+  }
+}
+
+// This 'trick' forces the navbar to hide when making the screen smaller than 768
+// and reappear when going the other way, by forcing it to be not seen and then seen or
+// visa-versa respectively, while definitely showing the navbar when larger than 768.
+// but leaving it up to the toggle to show and hide when less than 766.
+// there is a danger with a screen size of 766.x or 767.x but that is rare......
+.collapse {
+
+  @media (min-width: 766.1px) and (max-width: 766.9px) {
+
+    display: none !important;
+  }
+  @media (min-width: 767.1px) and (max-width: 767.9px) {
+
+    display: block !important;
+  }
+  @media (min-width: 768px) {
+
+    display: block !important;
+  }
+}
+
+
+// This is used for anonymous and authenticated users who shouldn't see the left navarb
+.anoncollapse {
+
+  @media (min-width: 768px) {
+
+    display: none !important;
+  }
+}
+
+// This moves the site logo from center for <md to left for >=md
+.oc_brand {
+  -webkit-box-pack: center !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+
+
+  @media screen and (min-width: 768px) {
+    display: inline;
+  }
+
+}
+
+.oc_brand_dark {
+
+}
+
+.oc_brand_light {
+  height: 120px;
+}
+
+// Needs to use - not _ since drupal changes _ to - for view classes!
+.oc-view-spacing {
+  margin-left: $oc_margin;
+  margin-top: 40px;
+}
+
+
+// Change font size depending on device size.
+//.oc_vinject {
+//  padding-top: 5px; //  for all xs devices.
+//  font-size: 150% !important;
+//
+//  @media screen and (max-width: map-get($grid-breakpoints, "sm")) {
+//    padding-top: 5px; // As from sm devices,
+//    font-size: 200% !important;
+//  }
+//
+//  @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+//    padding-top: 15px; //  for md devices.
+//    font-size: 400% !important;
+//  }
+//
+//}
+// Superfish variables. These are for the vertical buttons on left and right.
+$superfish-1-color: #001010;
+$superfish-1-background-color-level-first: #f0f0f0;
+$superfish-1-background-color-level-second: #e0e0e0;
+$superfish-1-background-color-level-third: #d0d0d0;
+$superfish-1-background-color-level-fourth: #c0c0c0;
+
+//For page.html.twig
+// This is the container for the header.
+// Header Image
+.oc_header_vmh {
+  margin-bottom: 0 !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.oc_header_novmh {
+  padding: 0;
+  margin: 0;
+}
+
+.oc_header {
+  padding: 0;
+  margin: 0;
+}
+
+.vmh-breadcrumb {
+  display: none;
+}
+
+.vmh-content {
+  width: 100%;
+}
+
+.vmh-page-title {
+  justify-content: center !important;
+  color: #fff !important;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 66px !important;
+  padding: 0 10px !important;
+  align-items: center;
+  z-index: 1;
+  //background-color: rgba(0, 0, 0, .2);
+  border-radius: $oc_navlink_border_radius;
+  margin: auto !important;
+}
+
+// Header image height if there is an image
+.oc_head_imageh {
+  //height: 90vh;
+}
+
+// Header image height if there is no image
+.oc_head_noimageh {
+  height: 150px;
+}
+
+//just used in media-image-full
+.oc_block {
+  display: block !important;
+}
+
+//// Set up heights for different screens.
+//@media screen and (max-width: 670px) {
+//  .oc_header {
+//    height: 300px;
+//  }
+//}
+//
+//@media screen and (max-width: 460px) {
+//  .oc_header {
+//    height: 200px;
+//  }
+//}
+//
+//@media screen and (max-width: 350px) {
+//  .oc_header {
+//    height: 120px;
+//  }
+//}
+
+.container {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  width: 100%;
+  max-width: none !important;
+}
+
+//Logo and text across the top
+.oc_navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-bottom: 0 !important;
+  border-radius: 0;
+  z-index: 497; // Needs to be in front of the image after it so links work.
+}
+
+.oc_navbar_dark {
+
+}
+
+.oc_navbar_light {
+  background-color: white;
+  height: 120px;
+}
+
+.oc_nav_links {
+  position: absolute;
+}
+
+.nav-link {
+  //color: $oc_navlink_color !important;
+  //background-color: $oc_navlink_bg_color;
+  border-radius: $oc_navlink_border_radius;
+  margin-left: $oc_navlink_gap;
+  height: $oc_navlink_height;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 17px;
+  /* identical to box height */
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+// This darkens the title and image.
+.oc_darken::after {
+  background-color: rgba(87, 87, 87, .5);
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+}
+
+.oc_darken_title {
+  //  background-color: rgba(87, 87, 87, .25);
+}
+
+//navigation text, eg login and contact us
+.navbar-nav {
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 15.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1em;
+  //background-color: #0a78d1;
+}
+
+//oc_head_image
+.oc_title_image_wrapper {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0
+}
+
+.oc_title_image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  //top: -199.5px;
+  left: 0;
+  position: relative;
+  object-fit: inherit;
+  z-index: -100;
+
+}
+
+.oc_title_row {
+  width: 100%;
+  margin: 0;
+}
+
+.oc_title_plain {
+  height: 400px;
+  background-color: $secondary;
+}
+
+// Node title in the header
+.oc_heading {
+  color: #fff !important;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 66px !important;
+  padding: 0 10px !important;
+  align-items: center;
+  z-index: 1;
+  //background-color: #0a78d1;
+}
+
+.oc_heading_light {
+  margin: 90px 0 0 0 !important;
+}
+
+.oc_heading_dark {
+  background-color: rgba(0, 0, 0, .2);
+  border-radius: $oc_navlink_border_radius;
+  margin: 0 !important;
+}
+
+.site-heading {
+  color: white;
+}
+
+// used in page.html.twig and the maintenance page.
+// For the 'Header print' part.
+.page-header {
+  padding-bottom: 0;
+  border-bottom-width: 0;
+  margin-bottom: 0;
+}
+
+//the left and right vertical set of buttons uses superfish
+// The superfish css is at /docroot/libraries/superfish/css
+// This can be styled: see: https://www.drupal.org/node/1125896#s-how-to-style
+// BUT the import styles are overwritten with these classes
+ul {
+  list-style-type: none;
+  padding-left: 5px;
+  padding-top: 0px;
+}
+
+// overall wrapper. Forces buttons to be top left of content, ie below header.
+.group_nav_wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0
+}
+
+// This sets the box for the group navigation, ie left vertical buttons.
+.oc_group_nav {
+  width: 250px; /* Set a width if you like */
+  position: fixed;
+  //position:absolute;
+  left: 0;
+  bottom: 10px;
+  z-index: 1500;
+  height: 340px
+}
+
+// This sets the test.
+.oc_group_nav_text {
+  display: inline-block;
+  //float: left;
+  // width: 200px;
+  position: relative;
+  top: 0px;
+  line-height: 1;
+}
+
+.oc_group_nav_add_content {
+  color: red !important;
+}
+
+.oc_icon_front {
+  color: white !important;
+}
+
+.oc_icon_back {
+  color: darken($primary, 25%) !important;
+}
+
+// These don't work.
+//.group_nav_text a {
+//  position: relative;
+//  top: 5px;
+//  //right: 50px;
+//  background-color: rgba(0, 0, 0, 0.3);
+//  padding-top: 5px;
+//  color: white; /* Black text color */
+//  //display: block; /* Make the links appear below each other */
+//  //padding: 12px; /* Add some padding */
+//  text-decoration: none; /* Remove underline from links */
+//}
+
+//.group_nav_text a:hover {
+//  background-color: #ccc; /* Dark grey background on mouse-over */
+//}
+//
+//.group_nav_text a.active {
+//  background-color: #4CAF50; /* Add a green color to the "active/current" link */
+//  color: white;
+//}
+
+//.group_nav_icon {
+//  //display: block;
+//}
+
+
+// end vertical superfish mod for right side
+// sfr-vertical and sfr-menu is added to menu-local-tasks.html.twig
+/* adding sf-vertical class in addition to sf-menu creates a vertical menu */
+/* eg. <ul class="sf-menu sf-vertical"> ... */
+.sfr-vertical {
+  width: 75px;
+  /* If you want the width of the closed menu to expand to its
+  widest top-level menu item (like its "Supersubs" submenus do),
+  replace the width rule above with the following two rules. */
+  /*
+  min-width: 12em;
+  *width: 12em;
+  */
+}
+
+.sfr-vertical ul {
+  left: -100%; /* MY EDIT: THIS WORKS OK AT 2nd LEVEL */
+  top: 0;
+}
+
+.sfr-vertical > li {
+  float: none;
+}
+
+.sfr-vertical li {
+  width: 100%;
+}
+
+.sfr-vertical ul ul {
+  left: -100%; /* MY EDIT: THIS WORKS OK AT 3rd LEVEL BUT SHADOW IS MISPLACED */
+  top: 0;
+}
+
+/*** alter arrow directions ***/
+.sfr-vertical.sfr-arrows > li > .sfr-with-ul:after {
+  margin-top: -5px;
+  margin-right: -3px;
+  border-color: transparent;
+  //border-left-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+  //border-left-color: rgba(255,255,255,0.5);
+}
+
+.sfr-vertical.sfr-arrows li > .sfr-with-ul:focus:after,
+.sfr-vertical.sfr-arrows li:hover > .sfr-with-ul:after,
+.sfr-vertical.sfr-arrows .sfrHover > .sfr-with-ul:after {
+  //border-left-color: white;
+}
+
+// right tabs
+/*** ESSENTIAL STYLES ***/
+.sfr-menu, .sfr-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  // remove font-family so fa icons show up.
+  //font-family: sans-serif;
+  //font-size: 14px;
+  color: $primary;
+}
+
+.sfr-menu li {
+  position: relative;
+}
+
+.sfr-menu ul {
+  position: absolute;
+  display: none;
+  //top: 100%;  //This is what moved the text down.
+  left: 0;
+  z-index: 99;
+}
+
+.sfr-menu > li {
+  float: left;
+}
+
+.sfr-menu li:hover > ul, .sfr-menu li.sfrHover > ul {
+  display: block;
+}
+
+.sfr-menu a {
+  display: block;
+  position: relative;
+}
+
+.sfr-menu ul ul {
+  top: 0;
+  left: 100%;
+}
+
+/*** DEMO SKIN ***/
+.sfr-menu {
+  float: left;
+  margin-bottom: 1em;
+}
+
+.sfr-menu ul {
+  //box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  min-width: 15em; /* allow long menu items to determine submenu width */
+  *width: 15em; /* no auto sub width for IE7, see white-space comment below */
+  padding-top: 9px; /* OC move the text down a bit relative to icons */
+  padding-right: 6px;
+}
+
+.sfr-menu a {
+  /*border-left: 1px solid #fff;*/
+  //border-top: 1px solid #dFeEFF; /* fallback colour must use full shorthand */
+  //border-top: 1px solid rgba(255,255,255,0.5);
+  //padding: .75em 1em;
+  text-decoration: none;
+  zoom: 1; /* IE7 */
+}
+
+.sfr-menu a {
+  //color: #13a;
+}
+
+.sfr-menu li {
+  //background: #BDD2FF;
+  white-space: nowrap; /* no need for Supersubs plugin */
+  *white-space: normal; /* ...unless you support IE7 (let it wrap) */
+  -webkit-transition: background .2s;
+  transition: background .2s;
+}
+
+.sfr-menu ul li {
+  //background: #AABDE6;
+}
+
+.sfr-menu ul ul li {
+  //background: #9AAEDB;
+}
+
+.sfr-menu li:hover, .sfr-menu li.sfrHover {
+  //background: #CFDEFF;
+  /* only transition out, not in */
+  -webkit-transition: none;
+  transition: none;
+}
+
+
+//.oc_li_h {
+//  height: 47px;
+//}
+
+// The set of right buttons, called oc_tabs
+.oc_tabs_wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 0;
+}
+
+.oc_tabs {
+  width: 40px; /* Set a width if you like */
+  position: fixed;
+  //position: absolute;
+  right: 0;
+  bottom: 20px;
+  z-index: 498;
+}
+
+
+.oc_navbar_toggler {
+  //padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  // background-color: rgba(0, 0, 0, 0.1);
+  border: transparent;
+  //  border-radius: 0.25rem;
+  // color: rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+}
+
+.oc_navbar_toggler_icon {
+  //  color: rgba(0, 0, 0, 0.5);
+  //  border-color: rgba(0, 0, 0, 0.1);
+  // background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  //background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 1.5em;
+  height: 1em;
+  vertical-align: middle;
+  content: "";
+  background: no-repeat center center;
+  background-size: 100% 100%;
+  z-index: 499;
+}
+
+
+// **************************************************
+//
+// End of styles for page.html.twig and its subtemplates.
+//
+// **************************************************
+
+// **************************************************
+//
+// Start of styles that span mulitple pages
+//
+// **************************************************
+
+// for: ds-1col--node-oc-doc-featured.html.twig
+// for: ds-1col--node-oc-doc-full.html.twig
+// ds-1col--node-oc-doc-embeded.html.twig
+// for: ds-1col--node-oc-doc.html.twig
+// ds-1col--node-oc-book-full.html.twig
+// ds-1col--node-oc-book-teaser.html.twig
+// node-oc-image-full.html.twig
+// node-oc-sequence-full.html.twig
+.oc_inject {
+  padding-left: 5px; //  for all xs devices.
+
+  @media screen and (max-width: map-get($grid-breakpoints, "sm")) {
+    padding-left: 5px; // As from sm devices,
+  }
+
+  @media screen and (max-width: map-get($grid-breakpoints, "md")) {
+    padding-left: 15px; //  for md devices.
+  }
+
+  @media screen and (max-width: map-get($grid-breakpoints, "lg")) {
+    // padding-left: 250px; // for lg devices.
+    // width: 900px;
+  }
+}
+
+// for: ds-1col--node-oc-doc-full.html.twig
+// for: ds-1col--node-oc-doc.html.twig
+// ds-1col--node-oc-book-full.html.twig
+// ds-1col--node-oc-book-teaser.html.twig
+// node-oc-image-full.html.twig
+// node-oc-sequence-full.html.twig
+// ds-1col--node-oc-doc-featured.html.twig
+.oc_col_width {
+  max-width: 600px !important;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: map-get($grid-breakpoints, "md")) {
+    margin-left: 45px;
+  }
+}
+
+// for: ds-1col--node-oc-doc.html.twig
+// ds-1col--node-oc-book-full.html.twig
+// ds-1col--node-oc-book-teaser.html.twig
+// node-oc-image-full.html.twig
+.oc_title {
+  // padding: 15px 15px 15px 15px;
+}
+
+// for: ds-1col--node-oc-doc-featured.html.twig
+// for: ds-1col--node-oc-doc-full.html.twig
+// ds-1col--node-oc-doc-embeded.html.twig
+// ds-1col--node-oc-book-full.html.twig
+// ds-1col--node-oc-book-teaser.html.twig
+.oc_item {
+  padding: 0 0 0 0 !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
+}
+
+
+// for: ds-1col--node-oc-doc-featured.html.twig
+// for: ds-1col--node-oc-doc-full.html.twig
+// for: ds-1col--node-oc-doc.html.twig
+// ds-1col--node-oc-book-full.html.twig
+// ds-1col--node-oc-book-teaser.html.twig
+// node-oc-image-full.html.twig
+.oc_right {
+  clear: right;
+  float: right;
+  width: 100%;
+  margin-left: 20px;
+  @media screen and (max-width: map-get($grid-breakpoints, "sm")) {
+    width: 100%; // As from sm devices,
+  }
+
+  @media screen and (max-width: map-get($grid-breakpoints, "md")) {
+    width: 50%; //  for md devices.
+  }
+
+  @media screen and (max-width: map-get($grid-breakpoints, "lg")) {
+    width: 40%; // for lg devices.
+  }
+}
+
+.oc_text {
+  line-height: 1.5em;
+  color: #60616d;
+  background-color: white;
+  font-size: 18px;
+}
+
+// for: ds-1col--node-oc-doc-full.html.twig
+// for: ds-1col--node-oc-doc.html.twig
+// ds-1col--node-oc-book-full.html.twig
+// ds-1col--node-oc-book-teaser.html.twig
+// node-oc-image-full.html.twig
+.oc_teaser_text {
+  text-transform: none;
+  line-height: 1em;
+  color: #60616d;
+  font-size: 14px;
+  width: 100%;
+}
+
+.oc_floatleft {
+  float: left;
+  padding-right: 30px;
+  padding-top: 15px;
+  line-height: 1.5em;
+  color: #60616d;
+  font-size: 18px;
+}
+
+.oc_summary {
+  background-color: white;
+}
+
+// for: ds-1col--node-oc-doc-full.html.twig
+// for: ds-1col--node-oc-doc.html.twig
+// ds-1col--node-oc-book-full.html.twig
+// ds-1col--node-oc-book-teaser.html.twig
+// node-oc-image-full.html.twig
+//@oc_left: 150px;
+$oc_panel_left: 15px;
+
+// For user--full.html.twig
+.oc_user_column {
+  float: left;
+  padding: 10px;
+}
+
+.oc_user_left {
+  width: 25%;
+}
+
+.oc_user_right {
+  width: 75%;
+}
+
+// for: ds-1col--node-oc-doc-featured.html.twig
+// ds-1col--node-oc-doc-embeded.html.twig
+.oc_left_align {
+  text-align: left !important;
+}
+
+// for ds-1col--node-oc-doc-featured.html.twig
+// for ds-1col--node-oc-image-featured.html.twig
+.oc_accordian_container {
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  //display: none;
+}
+
+.oc_accordion_content a {
+  -webkit-transition: background-color .25s, color .15s, box-shadow .25s, opacity 0.25s, filter 0.25s, border 0.15s;
+  transition: background-color .25s, color .15s, box-shadow .15s, opacity .25s, filter .25s, border .15s
+}
+
+.oc_accordion_content {
+  cursor: auto;
+  display: none;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  @media screen and (min-width: map-get($grid-breakpoints, "sm")) {
+    display: block; // As from sm devices,
+  }
+
+  @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+    display: block; //  for md devices.
+  }
+
+  @media screen and (mmin-width: map-get($grid-breakpoints, "lg")) {
+    display: block; // for lg devices.
+  }
+}
+
+.oc_btn_block {
+  display: inline-block;
+
+  @media screen and (min-width: map-get($grid-breakpoints, "sm")) {
+    display: none; // As from sm devices,
+  }
+
+  @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+    display: none; //  for md devices.
+  }
+
+  @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+    display: none; // for lg devices.
+  }
+}
+
+.oc_show {
+  display: block !important;
+}
+
+.oc_btn_block {
+  border-style: solid;
+  border-bottom: 1px;
+  border-color: #e0e0e0;
+  outline: 0;
+  padding: 6px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none !important;
+  color: #fffeff;
+  background-color: #003853;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  width: 100%;
+}
+
+// for: node--oc-tasks--teaser.html.twig
+.oc_task_teaser {
+  height: 20px !important;
+}
+
+// javascript in page.html.twig
+// The pointer is changed since the 'hyperlink' is activated by code and so
+// the pointer is changed to indicate that it is an active link.
+// used in: ds-1col--node-oc-doc-featured.html.twig
+// and: ds-1col--node-oc-doc-full.html.twig
+.oc_quiz {
+  cursor: default;
+}
+
+.oc_pointer {
+  cursor: pointer;
+}
+
+// used in: ds-1col--node-oc-doc-full.html.twig
+// used in block--system-branding-block.html.twig therefore for all pages with logo.
+.oc_branding_logo {
+  width: 210px;
+  -webkit-box-pack: center !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+  z-index: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .oc_branding_logo {
+    width: 420px;
+  }
+
+  body {
+    margin-top: 0;
+  }
+}
+
+// used: ds-1col--node-oc-book-full.html.twig
+// and: ds-1col--node-oc-book-teaser.html.twig
+.oc_auth_title {
+  margin-top: 0;
+}
+
+// video-embed-iframe.html.twig
+.oc_iframe {
+  width: 400px;
+  height: 300px;
+}
+
+// ds-1col--node-oc-doc-featured.html.twig
+.oc_not_btn {
+  display: none;
+
+  .new_two {
+    float: left;
+  }
+
+  @media screen and (min-width: map-get($grid-breakpoints, "sm")) {
+    display: inherit; // As from sm devices,
+  }
+  @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+    display: inherit; //  for md devices.
+  }
+  @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+    display: inherit; // for lg devices.
+  }
+}
+
+.oc_item_title {
+  padding-top: 15px !important;
+  white-space: normal;
+  color: #fffeff;
+  text-align: center;
+}
+
+// field--node--title.html.twig
+.oc_page_title {
+  color: #ea4846;
+}
+
+// node--oc-sequence--full.html.twig
+.oc_summary_text {
+  line-height: 1.5em;
+  color: #60616d;
+  font-size: 18px;
+  width: 600px;
+}
+
+.node--view-mode-vertical-media-teaser-small {
+  width: 320px;
+}
+
+// node--oc-image--full.html.twig
+.oc_right50 {
+  clear: right;
+  float: right;
+  width: 50%;
+  margin-left: 20px;
+}
+
+// ds-1col--node-oc-image-featured.html.twig
+.oc_1 {
+  // (Featured)
+  height: 400px;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
+  background-size: 100%;
+}
+
+.oc_image_featured_box {
+  position: absolute;
+  color: black;
+  bottom: 15px;
+  right: 15px;
+  max-width: 400px;
+  height: 180px;
+  // border: 3px solid #73AD21;
+  background-color: #ffffff;
+  font-size: 14px !important;
+  padding: 10px 10px 10px 10px;
+  opacity: 0.8;
+  filter: alpha(opacity=80); /* For IE8 and earlier */
+}
+
+.oc_container {
+  position: relative;
+  height: 400px;
+}
+
+// view: oc_sequences
+.oc_sequence_image {
+  margin-left: $oc_margin;
+}
+
+// Change the text of the collapsed left navigation from 'test' to 'nav'
+// This is the easiest way to do it.
+#superfish-test-toggle span {
+  display: none;
+}
+
+// or put here whatever you like.
+#superfish-test-toggle:after {
+  content: 'nav';
+  color: white;
+  position: absolute !important;
+  top: 5px;
+  left: 0;
+  padding: 10px 10px 10px 5px;
+  background-color: $primary;
+  font-size: 20px !important;
+  border-radius: 0 5px 5px 0;
+  //filter: alpha(opacity=80); /* For IE8 and earlier */
+}
+
+.oc_footer_nav {
+  background-color: $ocback;
+  width: 100%;
+  position: relative;
+}
+
+.footer-wrapper .footer section.region-footer div[id$="-copyright"] {
+  padding: 0;
+}
+
+.oc_footer_link {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+.oc_footer_up {
+  position: relative;
+  bottom: 30px;
+}
+
+
+.oc_footer_image {
+  width: 63px;
+  height: 68px;
+  position: relative;
+  left: 30px;
+  top: 15px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.oc_footer_join {
+  position: absolute;
+  right: 30px;
+  bottom: 46px;
+  background-color: $primary;
+  border-radius: 5px;
+  height: 48px;
+  width: 106px;
+  padding-top: 16px;
+  padding-left: 20px !important;
+}
+
+.oc_footer_login {
+  position: absolute;
+  right: 150px;
+  bottom: 46px;
+}
+
+.ofi_wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.ofi_tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.ofi_tooltip .ofi_tooltip_text {
+  visibility: hidden;
+  position: absolute;
+  background: #333;
+  color: #fff;
+  width: 200px !important;
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  padding: 5px 0;
+  text-align: center;
+  z-index: 1;
+}
+
+.ofi_tooltip:hover .ofi_tooltip_text {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (min-width: map-get($grid-breakpoints, "md")) {
+  .ofi_wrapper {
+    width: 90px;
+  }
+  .ofi_tooltip {
+    width: 90px;
+  }
+  .ofi_tooltip .ofi_tooltip_text {
+    left: 105%;
+    top: -30px;
+  }
+
+  .ofi_tooltip_text::after {
+    content: "";
+    position: absolute;
+    top: 80%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #555 transparent transparent;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, "md")) {
+  .footer-wrapper .footer section.region-footer .menu--footer ul.nav {
+    -webkit-box-orient: vertical;
+    display: block;
+  }
+  .ofi_wrapper {
+    width: 100%;
+  }
+  .ofi_tooltip {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 90px;
+
+  }
+  .ofi_tooltip .ofi_tooltip_text {
+    bottom: 125%;
+    left: 50% !important;
+    margin-left: -100px;
+    height: 80px;
+  }
+  .ofi_tooltip_text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  .oc_footer_nav {
+    height: 364px;
+  }
+  .oc_footer_image {
+    width: 63px;
+    height: 68px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: -10px;
+    left: 0;
+
+  }
+
+  .oc_footer_join {
+    position: relative;
+    text-align: center;
+    bottom: 0;
+    right: -50px;
+    background-color: $primary;
+    border-radius: 5px;
+    height: 48px;
+    width: 106px;
+    padding-top: 16px;
+  }
+
+  .oc_footer_login {
+    position: relative;
+    right: 50px;
+    top: 136px;
+    text-align: center;
+  }
+  .oc_footer_link {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+
+/*
+ * Sample SCSS for adding Superfish CSS to themes.
+ *
+ * Instructions:
+ *
+ * 1. Change the #YOUR-BLOCK-ID (below) to the ID of your Superfish block.
+ *
+ * 2. Add the SCSS to your theme.
+ *
+ * 3. Note that by removing the .sf-style-none, the style will be applied to
+ *    the menu regardless of the "Style" selected in the Superfish
+ *    block configuration.
+ *
+ */
+
+//
+
+#superfish-test {
+  .sf-style-none {
+    float: left;
+    margin: 0;
+    padding: 0;
+
+    &.sf-navbar {
+      width: 100%;
+      background: $superfish-1-background-color-level-first;
+    }
+
+    ul {
+      padding-left: 0;
+
+      &.sf-multicolumn li {
+        &.sf-multicolumn-wrapper {
+          background: $superfish-1-background-color-level-fourth;
+
+          li {
+            background: transparent;
+          }
+        }
+      }
+    }
+
+    a {
+      color: $superfish-1-color;
+      padding: 0.75em 1em;
+
+      &.sf-with-ul {
+        padding-right: 2.25em;
+      }
+
+      &:focus {
+        background: $superfish-1-background-color-level-fourth;
+        outline: 0;
+      }
+
+      &:hover {
+        background: $superfish-1-background-color-level-fourth;
+        outline: 0;
+      }
+
+      &:active {
+        background: $superfish-1-background-color-level-fourth;
+        outline: 0;
+      }
+    }
+
+    span {
+      &.nolink {
+        color: $superfish-1-color;
+        padding: 0.75em 1em;
+
+        &.sf-with-ul {
+          padding-right: 2.25em;
+        }
+
+        &:hover {
+          background: $superfish-1-background-color-level-fourth;
+          outline: 0;
+        }
+      }
+
+      &.sf-description {
+        color: $superfish-1-color;
+        display: block;
+        font-size: 0.833em;
+        line-height: 1.5;
+        margin: 5px 0 0 5px;
+        padding: 0;
+      }
+    }
+
+    &.rtl {
+      span {
+        &.sf-description {
+          margin: 5px 5px 0 0;
+        }
+
+        &.nolink.sf-with-ul {
+          padding-left: 2.25em;
+          padding-right: 1em;
+        }
+      }
+
+      a.sf-with-ul {
+        padding-left: 2.25em;
+        padding-right: 1em;
+      }
+    }
+
+    li {
+      background: $superfish-1-background-color-level-first;
+
+      li {
+        background: $superfish-1-background-color-level-second;
+
+        li {
+          background: $superfish-1-background-color-level-third;
+        }
+      }
+
+      &:hover {
+        background: $superfish-1-background-color-level-fourth;
+        outline: 0;
+
+        > ul {
+          top: 40px;
+        }
+      }
+
+      &.sfHover {
+        background: $superfish-1-background-color-level-fourth;
+        outline: 0;
+
+        > ul {
+          top: 40px;
+        }
+      }
+    }
+
+    .sf-sub-indicator {
+      background-image: url('../images/dropdown-arrows.png');
+    }
+  }
+
+  div.sf-accordion-toggle {
+    &.sf-style-none a {
+      background: $superfish-1-background-color-level-first;
+      color: $superfish-1-color;
+      padding: 1em;
+
+      &.sf-expanded {
+        background: $superfish-1-background-color-level-fourth;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .sf-menu.sf-style-none {
+    &.rtl {
+      &.sf-accordion li {
+        li {
+          a {
+            padding-left: auto;
+            padding-right: 2em;
+          }
+
+          li {
+            a {
+              padding-left: auto;
+              padding-right: 3em;
+            }
+
+            li {
+              a {
+                padding-left: auto;
+                padding-right: 4em;
+              }
+
+              li {
+                a {
+                  padding-left: auto;
+                  padding-right: 5em;
+                }
+
+                span.nolink {
+                  padding-left: auto;
+                  padding-right: 5em;
+                }
+              }
+
+              span.nolink {
+                padding-left: auto;
+                padding-right: 4em;
+              }
+            }
+
+            span.nolink {
+              padding-left: auto;
+              padding-right: 3em;
+            }
+          }
+
+          span.nolink {
+            padding-left: auto;
+            padding-right: 2em;
+          }
+        }
+      }
+
+      ul.sf-multicolumn {
+        li.sf-multicolumn-wrapper {
+          ol li {
+            &.sf-multicolumn-column {
+              float: right;
+            }
+          }
+        }
+      }
+    }
+
+    &.sf-accordion li {
+      &.sf-expanded {
+        background: $superfish-1-background-color-level-fourth;
+
+        > {
+          a {
+            font-weight: bold;
+          }
+
+          span.nolink {
+            font-weight: bold;
+          }
+        }
+      }
+
+      li {
+        a {
+          padding-left: 2em;
+        }
+
+        li {
+          a {
+            padding-left: 3em;
+          }
+
+          li {
+            a {
+              padding-left: 4em;
+            }
+
+            li {
+              a {
+                padding-left: 5em;
+              }
+
+              span.nolink {
+                padding-left: 5em;
+              }
+            }
+
+            span.nolink {
+              padding-left: 4em;
+            }
+          }
+
+          span.nolink {
+            padding-left: 3em;
+          }
+        }
+
+        span.nolink {
+          padding-left: 2em;
+        }
+      }
+
+      a.sf-accordion-button {
+        font-weight: bold;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 499;
+      }
+    }
+
+    ul.sf-multicolumn {
+      li.sf-multicolumn-wrapper {
+        ol {
+          margin: 0;
+          padding: 0;
+
+          li {
+            margin: 0;
+            padding: 0;
+
+            &.sf-multicolumn-column {
+              display: inline;
+              float: left;
+            }
+          }
+        }
+
+        a.menuparent {
+          font-weight: bold;
+        }
+
+        span.nolink {
+          &.menuparent {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

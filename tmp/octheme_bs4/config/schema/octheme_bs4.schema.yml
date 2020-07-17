@@ -1,0 +1,4 @@
+# Schema for the configuration files of the octheme_bs4.
+octheme_bs4.settings:
+  type: theme_settings
+  label: 'octheme_bs4 settings'

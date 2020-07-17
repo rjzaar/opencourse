@@ -1,0 +1,210 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+
+ /**
+ * Copied from /core/modules/book/templates/book-navigation.html.twig
+ *
+ * Default theme implementation to navigate books.
+ *
+ * Presented under nodes that are a part of book outlines.
+ *
+ * Available variables:
+ * - tree: The immediate children of the current node rendered as an unordered
+ *   list.
+ * - current_depth: Depth of the current node within the book outline. Provided
+ *   for context.
+ * - prev_url: URL to the previous node.
+ * - prev_title: Title of the previous node.
+ * - parent_url: URL to the parent node.
+ * - parent_title: Title of the parent node. Not printed by default. Provided
+ *   as an option.
+ * - next_url: URL to the next node.
+ * - next_title: Title of the next node.
+ * - has_links: Flags TRUE whenever the previous, parent or next data has a
+ *   value.
+ * - book_id: The book ID of the current outline being viewed. Same as the node
+ *   ID containing the entire outline. Provided for context.
+ * - book_url: The book/node URL of the current outline being viewed. Provided
+ *   as an option. Not used by default.
+ * - book_title: The book/node title of the current outline being viewed.
+ *
+ *
+ *
+ */
+#}
+<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+<div class="oc_fixed">
+    {#{{ content.field_oc_title_image }}#}
+</div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('input[type="radio"]').click(function(){
+      var inputValue = $(this).attr("value");
+      var targetBox = $("." + inputValue);
+      $(".ocshow").not(targetBox).hide();
+      $(targetBox).show();
+    });
+  });
+</script>
+  {{ title_suffix.contextual_links }}
+{% if 1==1   %}
+ <div id="node-{{ node.id }}">
+    <div
+            {% if field_oc_background_color  %}
+                style= "background-color:#{{ content.field_oc_back_color }} "
+            {% endif %}
+            class="{{ classes }}  oc_item clearfix"{{ attributes }}>
+        <!-- <h2 class="oc_inject oc_title">
+      {{ "EXPLANATION" }}
+  </h2> -->
+
+      </head>
+      <div class="btn-group btn-group-toggle oc_btn_group" data-toggle="buttons">
+        <label class="btn btn-primary active">
+          <input type="radio" name="options" id="option1" value="ococontent" autocomplete="off" checked> Content
+        </label>
+        <label class="btn btn-primary">
+          <input type="radio" name="options" id="option2" value="ocosummary" autocomplete="off"> Summary
+        </label>
+        <label class="btn btn-primary">
+          <input type="radio" name="options" id="option3" value="ocoquiz" autocomplete="off"> Quiz
+        </label>
+      </div>
+
+<div class="content ococontent ocshow oc_inject clearfix"{{ content_attributes }}>
+
+    {#<div class="oc_right" >#}
+        {#{{ content.field_oc_video }}#}
+    {#</div>#}
+    {#<div class="oc_right" >#}
+        {#{{ content.field_oc_external_links }}#}
+    {#</div>#}
+    {#<div class="oc_right" >#}
+        {#{{ content.field_oc_internal_links }}#}
+    {#</div>#}
+    <div class="oc_col_width oc_text">
+        {{ content.body }}
+    </div>
+
+</div>
+
+
+
+    </div>
+   {% set ocroles = user.getroles %}
+   <div  class=" oc_inject ocoquiz ocshow oc_col_width oc_text oc_quiz">{#<div class="oc_col_width oc_text oc_quiz" style="display: none;">#}
+   {% if 'anonymous' in ocroles  %}
+     Please register or login to access the quizzes.
+     {{ drupal_block('user_login_block') }}
+   {%else  %}
+
+       {{ content.field_oc_interactive }}
+
+   {% endif %}
+     {#</div>#}</div>
+   <div></br></div>
+
+
+{% if node.body.summary  %}
+    <div class="oc_summary ocosummary ocshow oc_text">
+        <h2 class="oc_inject oc_title">
+            {{ "SUMMARY" }}
+        </h2>
+
+        <div class="oc_inject oc_text field-item clearfix"{{ content_attributes }}>
+{{ node.body.summary | raw }}
+        </div>
+    </div>
+
+{% endif %}
+
+        <div class="content oc_inject clearfix"{{ content_attributes }}>
+            <div>
+                <div class="oc_floatleft">
+                   {{ content.created }}
+
+                    {#" Modified: " {{ content.changed_date }}#}
+                </div>
+                <div class="oc_floatleft">
+                    {{ content.field_oc_topic }}
+                </div>
+                <div class="oc_floatleft">
+                    {{ content.field_oc_level }}
+                </div>
+                <div class="oc_floatleft">
+                    {{ content.field_oc_importance }}
+                </div>
+            </div>
+            <div class="oc_floatleft">
+                <br>
+                This page is part of a Book. You can navigate to the previous
+    page, up a level or to the next page.
+
+                {% if book == "0"  %}
+                    <a href=\"/admin/structure/book/"{{ node.id }}">Sort</a>|"
+                {% endif %}
+                {#The line below is apparently correct according to prepopulate but triggers an error. needs to be fixed. ####}
+                {#<a href="/node/add/oc_doc?edit[book][bid]={{ book_navigation['#book_link']['bid'] }}">Add childpage</a>#}
+                {{ content.book_navigation }}
+
+            </div>
+        </div>
+
+        <div class="content oc_comment clearfix"{{ content_attributes }}>
+            {{ comment_forum }}
+            {{ content.comments }}
+        </div>
+
+ </div>
+
+    {{ content.field_lp_paragraphs }}
+        {% else %}
+            <!-- This is for teasers, ie a non page render -->
+            <div id="node-{{ node.id }}">
+
+                <div
+                        {% if content.field_oc_back_color  %}
+                            style= "background-color:#{{ content.field_oc_back_color }} "
+                        {% endif %}
+                        class="{{ classes }}  oc_panel_left oc_title clearfix"{{ attributes }}>
+                    {# PHP: print "<a class=\" oc_panel_left\" href=\"".$node_url."\">".render($title)."</a>"; #}
+                    {% if is_admin  %}
+                        {# PHP:
+                        print "(<a href=\"/admin/content/book/".$nid
+                        ."?destination=admin/content/book\">Sort</a>|"
+                        ."<a href=\"/node/add/formation-doc?oa_section_ref=".$oa_section_ref['und'][0]['target_id']
+                        ."&edit[book][bid]=".$nid
+                        ."\">Add childpage</a>)";
+                        #}
+                    {% endif %}
+                    {% if content.body.summary  %}
+                        <div class="oc_summary">
+                            <div class=" oc_teaser_text oc_panel_left field-item clearfix"{{ content_attributes }}>
+{{ content.body.summary }}
+                            </div>
+                        </div>
+                    {% endif %}
+                    <div class = "oc_teaser_text">
+
+                        {{ content.book_navigation }}
+
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+
+
+
+  {#{{ ds_content }}#}
+
+</{{ ds_content_wrapper }}>
