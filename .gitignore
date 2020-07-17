@@ -1,5 +1,9 @@
 # Ignore paths that contain user-generated content.
 .DS_Store
+.prodgit
+.devgit
+.devgitignore
+.prodgitignore
 /bin
 /docroot/core
 /docroot/modules/contrib
@@ -8,6 +12,7 @@
 /docroot/profiles/varbase
 vendor/
 /docroot/themes/custom/oc_theme/node_modules/
+/docroot/themes/custom/octheme_bs4/node_modules/
 bower_components/
 .sass-cache/
 /themes/vartheme/css/variables.css
@@ -32,6 +37,8 @@ docroot/sites/*/files
 docroot/sites/*/private
 docroot/sites/*/settings.local.php
 docroot/*/settings.local.php
+docroot/*/settings.php
+docroot/sites/default/settings.php
 acquia-file
 /log
 
