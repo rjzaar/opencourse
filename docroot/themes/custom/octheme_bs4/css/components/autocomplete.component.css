@@ -1,7 +1,6 @@
 .ui-autocomplete {
   background: #fff;
-  -webkit-background-clip: padding-box;
-          background-clip: padding-box;
+  background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
@@ -38,6 +37,6 @@
 }
 
 .ui-autocomplete .ui-menu-item.ui-state-active, .ui-autocomplete .ui-menu-item.ui-state-focus {
-  background: #ee3159;
+  background: #007bff;
   color: #fff;
 }

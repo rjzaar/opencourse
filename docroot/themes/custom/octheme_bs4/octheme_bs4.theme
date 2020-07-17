@@ -13,8 +13,7 @@ use Drupal\image\Entity\ImageStyle;
 /**
  * Implements hook_theme_registry_alter().
  */
-function octheme_bs4_theme_registry_alter(&$theme_registry)
-{
+function octheme_bs4_theme_registry_alter(&$theme_registry) {
   // octheme_bs4 path.
   $octheme_bs4_path = Drupal::service('theme_handler')->getTheme('octheme_bs4')->getPath();
   $theme_registry['entity_embed_container']['path'] = $octheme_bs4_path . '/templates/entity-embed';
@@ -34,8 +33,7 @@ function octheme_bs4_theme_registry_alter(&$theme_registry)
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function octheme_bs4_theme_suggestions_page_alter(array &$suggestions, array $variables)
-{
+function octheme_bs4_theme_suggestions_page_alter(array &$suggestions, array $variables) {
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     if (is_numeric($node)) {
       $node = Node::load($node);
@@ -47,10 +45,9 @@ function octheme_bs4_theme_suggestions_page_alter(array &$suggestions, array $va
 }
 
 /**
- *
+ * Implements hook_preprocess_html().
  */
-function octheme_bs4_preprocess_html(&$variables)
-{
+function octheme_bs4_preprocess_html(&$variables) {
   // Add information about the number of sidebars.
   if (theme_get_setting('bootstrap_barrio_navbar_position')) {
     $variables['navbar_position'] = theme_get_setting('bootstrap_barrio_navbar_position');
@@ -60,8 +57,8 @@ function octheme_bs4_preprocess_html(&$variables)
 /**
  * Implements hook_preprocess_page().
  */
-function octheme_bs4_preprocess_page(&$variables)
-{
+function octheme_bs4_preprocess_page(&$variables) {
+  // Add the pring logo.
   $variables['logo_print'] = \Drupal::request()->getBaseUrl() . '/' . drupal_get_path('theme', 'octheme_bs4') . '/logo-print.png';
 
   //
@@ -311,8 +308,7 @@ function octheme_bs4_preprocess_page(&$variables)
 /**
  * Implements hook_preprocess_paragraph().
  */
-function octheme_bs4_preprocess_paragraph(&$variables)
-{
+function octheme_bs4_preprocess_paragraph(&$variables) {
   $file_path = NULL;
   if (isset($variables['paragraph']->bp_image_field)
     && isset($variables['paragraph']->bp_image_field->target_id)) {
@@ -356,19 +352,19 @@ function octheme_bs4_preprocess_paragraph(&$variables)
 
   $custom_paragraph_classes_value = NULL;
   if (isset($variables['paragraph']->bp_classes)
-    && isset($variables['paragraph']->bp_classes->value)) {
+      && isset($variables['paragraph']->bp_classes->value)) {
     $custom_paragraph_classes_value = $variables['paragraph']->bp_classes->value;
   }
 
   $gutter_value = FALSE;
   if (isset($variables['paragraph']->bp_gutter)
-    && isset($variables['paragraph']->bp_gutter->value)) {
+      && isset($variables['paragraph']->bp_gutter->value)) {
     $gutter_value = $variables['paragraph']->bp_gutter->value;
   }
 
   $title_status = FALSE;
   if (isset($variables['paragraph']->bp_title_status)
-    && isset($variables['paragraph']->bp_title_status->value)) {
+      && isset($variables['paragraph']->bp_title_status->value)) {
     $title_status = $variables['paragraph']->bp_title_status->value;
   }
 
@@ -407,8 +403,7 @@ function octheme_bs4_preprocess_paragraph(&$variables)
  *   - view: A ViewExecutable object.
  *   - rows: The raw row data.
  */
-function octheme_bs4_preprocess_views_bootstrap_grid(array &$vars)
-{
+function octheme_bs4_preprocess_views_bootstrap_grid(array &$vars) {
 
   if (isset($vars['options']) && isset($vars['options']["col_xs"])) {
     $vars['options']["col_xs"] = str_replace("xs-", "", $vars['options']["col_xs"]);
@@ -733,4 +728,37 @@ function octheme_bs4_preprocess_ds_1col(&$variables)
 //}
 
 
+/**
+ * Implements hook_library_info_alter().
+ */
+function octheme_bs4_library_info_alter(&$libraries, $extension) {
 
+  // In Drupal ^8.8.0
+  // Popper.js added to Drupal core to replace jQuery UI Position.
+  // https://www.drupal.org/node/3086643
+  // ---------------------------------------------------------------------
+  // Issue #3074267: Replace jQuery UI position() with PopperJS.
+  // https://www.drupal.org/project/drupal/issues/3074267
+  // ---------------------------------------------------------------------
+  // Issue #3108402: Update to Popper.js to 2.0.0 Drupal core 9.
+  // https://www.drupal.org/project/drupal/issues/3108402
+  // ---------------------------------------------------------------------
+  // Issue #3115895: Provide support for Popper.js ^2.0.0 core/popperjs
+  // library and Drupal 9.
+  // ---------------------------------------------------------------------
+  // This fix will make it work for old and new Drupal sites.
+  // It will be removed when we branch for 9.x-1.x core branch.
+  // ---------------------------------------------------------------------.
+  // Only for older versions of Drupal.
+  // Less than 8.8.0.
+  if (version_compare(Drupal::VERSION, '8.8.0', 'lt')) {
+    if ($extension == 'octheme_bs4' && isset($libraries['bootstrap-scripts'])) {
+      $libraries['bootstrap-scripts']['js']['js/popper/popper.min.js'] = [];
+      foreach ($libraries['bootstrap-scripts']['dependencies'] as $dependency_index => $dependency) {
+        if ($dependency == 'core/popperjs') {
+          unset($libraries['bootstrap-scripts']['dependencies'][$dependency_index]);
+        }
+      }
+    }
+  }
+}
