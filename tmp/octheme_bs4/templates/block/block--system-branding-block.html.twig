@@ -1,0 +1,33 @@
+{% extends "block--bare.html.twig" %}
+{#
+/**
+ * @file
+ * Default theme implementation for a branding block.
+ *
+ * Each branding element variable (logo, name, slogan) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ *
+ * @ingroup templates
+ */
+#}
+{% block content %}
+  {% if site_logo %}
+    <a class="logo oc_logo navbar-btn pull-left" href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
+
+      <img src="{% if oc_tm %}/themes/custom/octheme_bs4/logodark.png{% else %}/themes/custom/octheme_bs4/logo.png{% endif %}"
+           alt="{{ 'Home'|t }}" class="oc_branding_logo {% if oc_tm %}oc_logo_dark{% else %}oc_logo_white{% endif %}"/>
+    </a>
+  {% endif %}
+  {% if site_name %}
+    <a class="name navbar-brand" href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
+  {% endif %}
+  {% if site_slogan %}
+    <p class="navbar-text">{{ site_slogan }}</p>
+  {% endif %}
+{% endblock %}
+

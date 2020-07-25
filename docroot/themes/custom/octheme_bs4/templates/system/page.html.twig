@@ -63,24 +63,24 @@
 {% if page.navigation or page.navigation_collapsible %}
   {% block navbar %}
     {% if oc_vmh %}     {% set navbar_classes = [
-    'mb-4',
-    'oc_darken',
-    'oc_header_vmh',
-  ] %}
-    {% else %}
-    {% if oc_tm %}     {% set navbar_classes = [
-    'mb-4',
-    'oc_darken',
-    'oc_header',
-  ] %}
-    {% else %}
-    {% set navbar_classes = [
       'mb-4',
-      'oc_header',
-      'oc_header_novmh',
+      'oc_darken',
+      'oc_header_vmh',
     ] %}
-    {% endif %}{% endif %}
-     {#       'border-bottom', removed from above#}
+    {% else %}
+      {% if oc_tm %}     {% set navbar_classes = [
+        'mb-4',
+        'oc_darken',
+        'oc_header',
+      ] %}
+      {% else %}
+        {% set navbar_classes = [
+          'mb-4',
+          'oc_header',
+          'oc_header_novmh',
+        ] %}
+      {% endif %}{% endif %}
+    {#       'border-bottom', removed from above#}
     {# octheme start 1 | These divs will create the header space. The other header elements fit in this space using position: absolute. #}
     <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner"
       {% if oc_head_image and not oc_vmh %}style="background: url({{ oc_head_image }}) no-repeat center center fixed;
@@ -97,29 +97,29 @@
       </div>
 
       {% endif %}
-{% if not oc_vmh %}
-      <div class="row {% if oc_tm %}h-100{% else %}oc_title_plain{% endif %} justify-content-center align-items-center oc_title_row">
-        {% if node %}
-          {#          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">#}
-          {#                  <div class="post-heading oc_heading">#}
-          <h1 class="{% if oc_tm %}oc_heading_dark{% else %}oc_heading_light{% endif %} oc_heading">{{ node.label }}</h1>
-          {#                  </div>#}
-          {#          </div>#}
-        {% else %}
-          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="site-heading">
-              <h1>{% if node.label %} {{ node.label }} {% else %} {{ site_name }} {% endif %}</h1>
-              {% if site_slogan %}
-                <hr class="small">
-                <span class="subheading">
+      {% if not oc_vmh %}
+        <div class="row {% if oc_tm %}h-100{% else %}oc_title_plain{% endif %} justify-content-center align-items-center oc_title_row">
+          {% if node %}
+            {#          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">#}
+            {#                  <div class="post-heading oc_heading">#}
+            <h1 class="{% if oc_tm %}oc_heading_dark{% else %}oc_heading_light{% endif %} oc_heading">{{ node.label }}</h1>
+            {#                  </div>#}
+            {#          </div>#}
+          {% else %}
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="site-heading">
+                <h1>{% if node.label %} {{ node.label }} {% else %} {{ site_name }} {% endif %}</h1>
+                {% if site_slogan %}
+                  <hr class="small">
+                  <span class="subheading">
                 {{ site_slogan }}
               </span>
-              {% endif %}
+                {% endif %}
+              </div>
             </div>
-          </div>
-        {% endif %}
-      </div>
-{%  endif %}
+          {% endif %}
+        </div>
+      {%  endif %}
     </header>
   {% endblock %}
 {% endif %}
@@ -128,8 +128,10 @@
 <div class="oc_small_nav_button  ">
   <button class="oc_navbar_toggler fa-stack fa-lg collapsed hello" type="button" data-toggle="collapse" data-target="#oc_nav_collapse"
           aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="oc_navbar_toggler_icon fas fa-square fa-stack-2x oc_icon_back"></span>
-    <span class="oc_navbar_toggler_icon fas fa-stack-1x fa-inverse fa-bars "></span>
+    <span id='nav-red-box' class="oc_navbar_toggler_icon fas fa-square fa-stack-2x oc_icon_back">
+      <span id='nav-triple-dash' class="oc_navbar_toggler_icon fas fa-stack-1x fa-inverse fa-bars ">
+      </span>
+    </span>
   </button>
 
 </div>

@@ -35,6 +35,7 @@ $vbp_color_02: #2c3e50; // Madison
 $vbp_color_03: #a4a4a4; // Dark Gray
 $vbp_color_04: #d3d3d3; // Light Gray
 $vbp_color_05: #cc3c2d; // Red
+$vbp_color_06: #E5E5E5; // OC Back
 
 // Foreground colours:
 // -----------------------------------------------------------------------------
@@ -49,6 +50,7 @@ $vbp_foreground_color_02: #ffffff; // White
 $vbp_foreground_color_03: #ffffff; // White
 $vbp_foreground_color_04: #000000; // Black
 $vbp_foreground_color_05: #ffffff; // White
+$vbp_foreground_color_06: #000000; // Black
 
 // Varbase Bootstrap Paragraphs color default template for the vbp_color_{NUM}
 // we could copy this mixin and change it for other type of styling options.
@@ -83,6 +85,7 @@ $vbp_foreground_color_05: #ffffff; // White
   @include vbp_color(".vbp_color_03", $vbp_color_03, $vbp_foreground_color_03);
   @include vbp_color(".vbp_color_04", $vbp_color_04, $vbp_foreground_color_04);
   @include vbp_color(".vbp_color_05", $vbp_color_05, $vbp_foreground_color_05);
+  @include vbp_color(".vbp_color_06", $vbp_color_06, $vbp_foreground_color_06);
 
 }
 

@@ -76,6 +76,19 @@
   color: #ffffff;
 }
 
+.vbp_color_06 {
+  background-color: #E5E5E5;
+  color: #000000;
+}
+
+.vbp_color_06 a {
+  color: #000000;
+}
+
+.vbp_color_06 a:hover, .vbp_color_06 a:focus, .vbp_color_06 a:active, .vbp_color_06 a.is-active, .vbp_color_06 a.active {
+  color: #000000;
+}
+
 #drupal-off-canvas .vbp_color_01 {
   background-color: #338ec7;
   color: #ffffff;
@@ -139,4 +152,17 @@
 
 #drupal-off-canvas .vbp_color_05 a:hover, #drupal-off-canvas .vbp_color_05 a:focus, #drupal-off-canvas .vbp_color_05 a:active, #drupal-off-canvas .vbp_color_05 a.is-active, #drupal-off-canvas .vbp_color_05 a.active {
   color: #ffffff;
+}
+
+#drupal-off-canvas .vbp_color_06 {
+  background-color: #E5E5E5;
+  color: #000000;
+}
+
+#drupal-off-canvas .vbp_color_06 a {
+  color: #000000;
+}
+
+#drupal-off-canvas .vbp_color_06 a:hover, #drupal-off-canvas .vbp_color_06 a:focus, #drupal-off-canvas .vbp_color_06 a:active, #drupal-off-canvas .vbp_color_06 a.is-active, #drupal-off-canvas .vbp_color_06 a.active {
+  color: #000000;
 }

@@ -9,7 +9,8 @@
 @import "../variables";
 // octheme_bs4 variables.
 @import "../mixins"; // octheme_bs4 mixins.
-
+@import "_landing_page";
+@import "_doc_type.scss";
 
 // Text is set at 18px with a max-width of 600px. This gives about 72 characters per line.
 // The aim is readability of text. So as the screen size decreases, once the text takes up the full width
@@ -23,6 +24,9 @@ $warning: $yellow;
 $danger: $red;
 $light: $gray-100;
 $dark: $gray-800;
+
+$oc_background_color: #E5E5E5;
+// background colour added to vbp-colors.theme.scss: $vbp_color_06: #E5E5E5; // OC Back
 
 // Structure of page.html.twig
 // Header: navbar, oc_navbar, oc_darken
@@ -62,6 +66,11 @@ $oc_navlink_height: 30px; // this is constant
 
 $oc_nav_button_height: 42px; //This is the height of the top right nav button
 // It is used to calculate position based on other elements
+
+// Set background colour
+.main-container {
+  background: $oc_background_color;
+}
 
 .btn_oc_primary {
   color: #fff;
@@ -110,10 +119,15 @@ $oc_nav_button_height: 42px; //This is the height of the top right nav button
 }
 
 .vmh-container {
-  max-height: 95vh;
-  //height: 95vh;
+  background-color: #261C3F; //#261C3F;
+  height: 375px;
+  max-height: none !important;
 }
 
+.img-fluid {
+  background-color: black; //#261C3F; //#261C3F;
+  opacity: 0.2;
+}
 
 // Central resizing breakpoints
 //small phones
@@ -135,13 +149,13 @@ $oc_branding_logo_height_md: 50px; //logo height
 }
 
 .oc_logo {
-  margin-top: $oc_logo_top_margin_xs;
+  margin-top: $oc_logo_top_margin_sm;
   border-radius: 5px 5px 5px 5px;
-  width: 100px;
-  margin-left: 5px;
-  padding-left: 5px;
+  width: 200px;
+  margin-left: 10px;
+  padding-left: 10px;
   padding-top: 0;
-  padding-right: 5px;
+  padding-right: 10px;
 }
 
 .oc_branding_logo {
@@ -173,7 +187,6 @@ $oc_branding_logo_height_md: 50px; //logo height
   visibility: hidden;
 }
 
-
 .oc_nav_links_dark a {
   color: white !important;
 }
@@ -182,8 +195,41 @@ $oc_branding_logo_height_md: 50px; //logo height
   color: black !important;
 }
 
+.block-page-title-block h1, .viewsreference--view-title {
+  max-width: 706px;
+  padding: 0 20px;
+  text-align: center;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 150%;
+  /* or 42px */
+  text-align: center;
+
+  color: #000000;
+}
+
+#nav-triple-dash {
+
+}
+
+#nav-red-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: map-get($grid-breakpoints, "sm")) {
+  .vmh-container {
+    //max-height: 280px;
+    height: 375px;
+  }
+  .block-page-title-block h1, .viewsreference--view-title {
+    margin: 40px auto;
+  }
+
   .oc_logo {
     margin-top: $oc_logo_top_margin_sm;
     border-radius: 5px 5px 5px 5px;
@@ -193,6 +239,7 @@ $oc_branding_logo_height_md: 50px; //logo height
     padding-top: 0;
     padding-right: 10px;
   }
+
   .oc_branding_logo {
     height: $oc_branding_logo_height_sm;
     width: $oc_branding_logo_height_sm/50*205 !important;
@@ -218,7 +265,10 @@ $oc_branding_logo_height_md: 50px; //logo height
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: map-get($grid-breakpoints, "md")) {
-
+  .vmh-container {
+    height: 280px;
+    //height: 95vh;
+  }
   .oc_logo {
     margin-top: $oc_logo_top_margin_md;
     border-radius: 0 5px 5px 0;
@@ -331,7 +381,6 @@ $oc_branding_logo_height_md: 50px; //logo height
   margin-top: 40px;
 }
 
-
 // Change font size depending on device size.
 //.oc_vinject {
 //  padding-top: 5px; //  for all xs devices.
@@ -367,15 +416,23 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
 }
 
 .oc_header_novmh {
+  margin-bottom: 0 !important;
   padding: 0;
   margin: 0;
 }
 
 .oc_header {
+  margin-bottom: 0 !important;
   padding: 0;
   margin: 0;
 }
-
+.oc_header_join {
+  background-color: $primary;
+  border-radius: 5px;
+  height: 48px;
+  width: 106px;
+  text-align: center;
+}
 .vmh-breadcrumb {
   display: none;
 }
@@ -569,6 +626,13 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
 
 .site-heading {
   color: white;
+  text-align: center;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 66px;
+  line-height: 150%;
 }
 
 // used in page.html.twig and the maintenance page.
@@ -631,6 +695,21 @@ ul {
   color: darken($primary, 25%) !important;
 }
 
+.view-oc-sequencecards {
+  margin-bottom: 80px;
+}
+
+.view-oc-sequencecards .view-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 10%;
+}
+
+.view-oc-sequencecards .view-content article {
+  margin: 24px;
+}
 // These don't work.
 //.group_nav_text a {
 //  position: relative;
@@ -1042,7 +1121,7 @@ $oc_panel_left: 15px;
     display: block; //  for md devices.
   }
 
-  @media screen and (mmin-width: map-get($grid-breakpoints, "lg")) {
+  @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
     display: block; // for lg devices.
   }
 }
@@ -1119,6 +1198,7 @@ $oc_panel_left: 15px;
   -ms-flex-align: center !important;
   align-items: center !important;
   z-index: 1;
+  max-width: none !important;
 }
 
 @media screen and (min-width: 768px) {
@@ -1182,6 +1262,54 @@ $oc_panel_left: 15px;
   width: 600px;
 }
 
+.node--view-mode-vertical-media-teaser-small {
+  width: 320px;
+  height: 450px;
+  background: #FFFFFF;
+  box-shadow: 0px 25px 60px rgba(0, 0, 0, 0.1);
+
+}
+
+.node--type-oc-sequence.node--view-mode-vertical-media-teaser-small .field--type-text-with-summary {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+
+  /* or 24px */
+
+  /* Blue */
+  color: #261C3F;
+
+  position: absolute;
+  height: 150.47px;
+  left: 7.5%;
+  right: 7.5%;
+  top: 275.53px;
+}
+
+.node--type-oc-sequence.node--view-mode-vertical-media-teaser-small .field--name-node-title {
+  position: absolute;
+  height: 33px;
+  left: 7.5%;
+  right: 7.5%;
+  top: 226.86px;
+}
+
+.node--type-oc-sequence.node--view-mode-vertical-media-teaser-small .field--name-node-title a {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 150%;
+
+  /* identical to box height, or 33px */
+
+  /* Blue */
+  color: #261C3F;
+}
+
 // node--oc-image--full.html.twig
 .oc_right50 {
   clear: right;
@@ -1243,6 +1371,9 @@ $oc_panel_left: 15px;
   font-size: 20px !important;
   border-radius: 0 5px 5px 0;
   //filter: alpha(opacity=80); /* For IE8 and earlier */
+}
+footer {
+margin-top: 0 !important;
 }
 
 .oc_footer_nav {
