@@ -249,11 +249,9 @@ anoncollapse
 {% block main %}
   <div role="main" class="main-container js-quickedit-main-content">
     <div class="row">
-
-      {# Header #}
       {% if page.header %}
         {% block header %}
-          <div class="col-sm-12" role="heading">
+          <div class="subtitle" role="heading">
             {{ page.header }}
           </div>
         {% endblock %}
