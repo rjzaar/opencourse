@@ -176,6 +176,18 @@
   color: #261C3F;
 }
 
+.region-navigation {
+  padding: 20px;
+}
+
+.region-navigation-collapsible {
+  margin-top: 10px;
+}
+
+#navbar-main {
+  background-color: #261C3F !important;
+}
+
 * {
   font-family: "Montserrat", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
 }
@@ -251,6 +263,7 @@
   background-color: #261C3F;
   height: 375px;
   max-height: none !important;
+  margin-bottom: 0;
   margin-right: 0 !important;
 }
 
@@ -269,10 +282,23 @@
 }
 
 .oc_logo {
-  margin-top: 10px;
   margin-left: 10px;
   border-radius: 0px 5px 5px 0px;
   width: 300px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .oc_logo {
+    display: block;
+  }
 }
 
 .oc_branding_logo {
@@ -346,13 +372,7 @@
           align-items: center;
 }
 
-.vmh-container {
-  height: 375px;
-  margin-right: 0 !important;
-}
-
 .oc_logo {
-  margin-top: 10px;
   margin-left: 10px;
   border-radius: 0 5px 5px 0;
   width: 300px;
@@ -380,10 +400,8 @@
 @media (min-width: 576px) {
   .vmh-container {
     height: 375px;
-    margin-right: 0 !important;
   }
   .oc_logo {
-    margin-top: 10px;
     margin-left: 10px;
     border-radius: 0px 5px 5px 0px;
     width: 300px;
@@ -414,10 +432,8 @@
 @media (min-width: 768px) {
   .vmh-container {
     height: 375px;
-    margin-right: 0 !important;
   }
   .oc_logo {
-    margin-top: 10px;
     margin-left: 10px;
     border-radius: 0 5px 5px 0;
     width: 300px;
@@ -592,7 +608,7 @@
 
 .oc_navbar {
   display: inline-block;
-  width: 100%;
+  width: 100vw;
   margin-bottom: 0 !important;
   border-radius: 0;
   z-index: 497;
@@ -600,7 +616,7 @@
 
 .oc_navbar_light {
   background-color: white;
-  height: 120px;
+  padding: 0.5rem 1rem;
 }
 
 .oc_nav_links {
@@ -619,17 +635,6 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   z-index: 1;
-}
-
-.oc_darken::after {
-  background-color: rgba(87, 87, 87, 0.5);
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: block;
 }
 
 .navbar-nav {
@@ -1031,7 +1036,7 @@ ul {
 .oc_accordian_container {
   width: 100%;
   cursor: pointer;
-  position: relative;
+  margin: auto 0;
 }
 
 .oc_accordion_content a {
@@ -1045,29 +1050,17 @@ ul {
 
 .oc_accordion_content {
   cursor: auto;
-  display: none;
-  position: relative;
-  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
   margin: 0;
   padding: 0;
-}
-
-@media screen and (min-width: 576px) {
-  .oc_accordion_content {
-    display: block;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .oc_accordion_content {
-    display: block;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .oc_accordion_content {
-    display: block;
-  }
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .oc_btn_block {
@@ -1242,28 +1235,28 @@ ul {
   background-repeat: no-repeat !important;
   background-position: center center !important;
   background-attachment: fixed !important;
-  -webkit-background-size: 100% 100%;
-          background-size: 100%;
+  -webkit-background-size: cover;
+          background-size: cover;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .oc_image_featured_box {
-  position: absolute;
   color: black;
-  bottom: 15px;
-  right: 15px;
+  margin: auto 0;
   max-width: 400px;
-  height: 180px;
   background-color: #ffffff;
   font-size: 14px !important;
   padding: 10px 10px 10px 10px;
   opacity: 0.8;
   filter: alpha(opacity=80);
   /* For IE8 and earlier */
-}
-
-.oc_container {
-  position: relative;
-  height: 400px;
 }
 
 .oc_sequence_image {
@@ -1320,7 +1313,6 @@ footer {
 }
 
 .oc_footer_image {
-  width: 63px;
   height: 68px;
   position: relative;
   left: 30px;
@@ -1435,7 +1427,6 @@ footer {
     height: 364px;
   }
   .oc_footer_image {
-    width: 63px;
     height: 68px;
     display: block;
     margin-left: auto;

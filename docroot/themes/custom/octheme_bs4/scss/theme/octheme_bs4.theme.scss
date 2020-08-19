@@ -67,6 +67,7 @@ $oc_nav_button_height: 42px; //This is the height of the top right nav button
 @import "_landing_page";
 @import "_doc_type.scss";
 @import "_oc_cards.scss";
+@import "_header.scss";
 
 * {
   font-family: "Montserrat", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
@@ -136,6 +137,7 @@ $oc_nav_button_height: 42px; //This is the height of the top right nav button
   background-color: $secondary;
   height: 375px;
   max-height: none !important;
+  margin-bottom: 0;
   //bg-edge2edge from varbase is exceedingly buggy.
   //Many things from varbase is quite buggy and tough to work with
   //margin-right:0 is a necessary option to fix the ever breaking
@@ -168,10 +170,14 @@ $oc_branding_logo_height_md: 50px; //logo height
 }
 
 .oc_logo {
-  margin-top: $oc_logo_top_margin_sm;
   margin-left: 10px;
   border-radius: 0px 5px 5px 0px;
   width: 300px;
+  display: flex;
+  justify-content: center;
+  @media (min-width: 768px){
+    display: block;
+  }
 }
 
 .oc_branding_logo {
@@ -244,18 +250,7 @@ $oc_branding_logo_height_md: 50px; //logo height
   align-items: center;
 }
 
-//////// Testing why the varbase media header breaks at 575px
-.vmh-container {
-  height: 375px;
-  //height: 95vh;
-  //bg-edge2edge from varbase is exceedingly buggy.
-  //Many things from varbase is quite buggy and tough to work with
-  //margin-right:0 is a necessary option to fix the ever breaking
-  //varbase media header :/
-  margin-right: 0 !important;
-}
 .oc_logo {
-  margin-top: $oc_logo_top_margin_md;
   margin-left: $oc_logo_left_margin;
   border-radius: 0 5px 5px 0;
   width: 300px;
@@ -284,15 +279,9 @@ $oc_branding_logo_height_md: 50px; //logo height
   .vmh-container {
     //max-height: 280px;
     height: 375px;
-    //bg-edge2edge from varbase is exceedingly buggy.
-    //Many things from varbase is quite buggy and tough to work with
-    //margin-right:0 is a necessary option to fix the ever breaking
-    //varbase media header :/
-    margin-right: 0 !important;
   }
 
   .oc_logo {
-    margin-top: $oc_logo_top_margin_sm;
     margin-left: $oc_logo_left_margin;
     border-radius: 0px 5px 5px 0px;
     width: 300px;
@@ -326,14 +315,8 @@ $oc_branding_logo_height_md: 50px; //logo height
   .vmh-container {
     height: 375px;
     //height: 95vh;
-    //bg-edge2edge from varbase is exceedingly buggy.
-    //Many things from varbase is quite buggy and tough to work with
-    //margin-right:0 is a necessary option to fix the ever breaking
-    //varbase media header :/
-    margin-right: 0 !important;
   }
   .oc_logo {
-    margin-top: $oc_logo_top_margin_md;
     margin-left: $oc_logo_left_margin;
     border-radius: 0 5px 5px 0;
     width: 300px;
@@ -558,19 +541,19 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
 //Logo and text across the top
 .oc_navbar {
   display: inline-block;
-  width: 100%;
+  width: 100vw;
   margin-bottom: 0 !important;
   border-radius: 0;
   z-index: 497; // Needs to be in front of the image after it so links work.
 }
 
 .oc_navbar_dark {
-
+  //padding: 0.5rem 1rem;
 }
 
 .oc_navbar_light {
   background-color: white;
-  height: 120px;
+  padding: 0.5rem 1rem;
 }
 
 .oc_nav_links {
@@ -592,22 +575,6 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   z-index: 1;
-}
-
-// This darkens the title and image.
-.oc_darken::after {
-  background-color: rgba(87, 87, 87, .5);
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: block;
-}
-
-.oc_darken_title {
-  //  background-color: rgba(87, 87, 87, .25);
 }
 
 //navigation text, eg login and contact us
@@ -1150,7 +1117,7 @@ $oc_panel_left: 15px;
 .oc_accordian_container {
   width: 100%;
   cursor: pointer;
-  position: relative;
+  margin: auto 0;
   //display: none;
 }
 
@@ -1161,22 +1128,11 @@ $oc_panel_left: 15px;
 
 .oc_accordion_content {
   cursor: auto;
-  display: none;
-  position: relative;
-  width: 100%;
+  display: flex;
+  width: 100vw;
   margin: 0;
   padding: 0;
-  @media screen and (min-width: map-get($grid-breakpoints, "sm")) {
-    display: block; // As from sm devices,
-  }
-
-  @media screen and (min-width: map-get($grid-breakpoints, "md")) {
-    display: block; //  for md devices.
-  }
-
-  @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
-    display: block; // for lg devices.
-  }
+  justify-content: center;
 }
 
 .oc_btn_block {
@@ -1348,16 +1304,15 @@ $oc_panel_left: 15px;
   background-repeat: no-repeat !important;
   background-position: center center !important;
   background-attachment: fixed !important;
-  background-size: 100%;
+  background-size: cover;
+  display: flex;
+  align-items: center;
 }
 
 .oc_image_featured_box {
-  position: absolute;
   color: black;
-  bottom: 15px;
-  right: 15px;
+  margin: auto 0;
   max-width: 400px;
-  height: 180px;
   // border: 3px solid #73AD21;
   background-color: #ffffff;
   font-size: 14px !important;
@@ -1366,10 +1321,10 @@ $oc_panel_left: 15px;
   filter: alpha(opacity=80); /* For IE8 and earlier */
 }
 
-.oc_container {
-  position: relative;
-  height: 400px;
-}
+//.oc_container {
+//  position: relative;
+//  height: 400px;
+//}
 
 // view: oc_sequences
 .oc_sequence_image {
@@ -1430,7 +1385,6 @@ margin-top: 0 !important;
 
 
 .oc_footer_image {
-  width: 63px;
   height: 68px;
   position: relative;
   left: 30px;
@@ -1545,7 +1499,6 @@ margin-top: 0 !important;
     height: 364px;
   }
   .oc_footer_image {
-    width: 63px;
     height: 68px;
     display: block;
     margin-left: auto;
