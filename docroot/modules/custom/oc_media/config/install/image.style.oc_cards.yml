@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: oc_cards
+label: 'OC Cards'
+effects:
+  28208e05-8543-47eb-91fb-78a4c55bbe43:
+    uuid: 28208e05-8543-47eb-91fb-78a4c55bbe43
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 320
+      height: 213
+      crop_type: focal_point
+pipeline: ''

@@ -1,0 +1,139 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.oc_doc_image
+    - field.field.media.image.body
+    - field.field.media.image.field_content_visibility
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_media_in_library
+    - field.field.media.image.field_meta_tags
+    - field.field.media.image.field_oc_author_s_
+    - field.field.media.image.field_oc_back_color
+    - field.field.media.image.field_oc_level
+    - field.field.media.image.field_oc_licence
+    - field.field.media.image.field_oc_link
+    - field.field.media.image.field_oc_old
+    - field.field.media.image.field_oc_publisher
+    - field.field.media.image.field_oc_topic
+    - field.field.media.image.field_oc_year
+    - field.field.media.image.field_yoast_seo
+    - image.style.d10_standard
+    - media.type.image
+    - responsive_image.styles.d10_standard
+  module:
+    - blazy
+    - ds
+    - layout_builder
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_media_image
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: media.image.oc_doc_image
+targetEntityType: media
+bundle: image
+mode: oc_doc_image
+content:
+  field_media_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: d10_standard
+      responsive_image_style: d10_standard
+      media_switch: content
+      thumbnail_style: ''
+      ratio: '16:9'
+      current_view_mode: oc_doc_image
+      background: false
+      caption:
+        title: '0'
+        alt: '0'
+      icon: ''
+      layout: ''
+      view_mode: ''
+      cache: 0
+      skin: ''
+      fx: ''
+      style: ''
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      box_style: ''
+      _uri: ''
+      breakpoints: {  }
+      sizes: ''
+      grid_header: ''
+      grid: 0
+      grid_medium: 0
+      grid_small: 0
+    third_party_settings:
+      ds:
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
+            ow-el: ''
+            ow-cl: ''
+            ow-at: ''
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fi: true
+            fi-el: ''
+            fi-cl: oc_doc_image
+            fi-at: ''
+            suffix: ''
+            lbw: false
+            lb-col: false
+            ow: false
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
+            fis-def-at: false
+            fi-def-at: false
+    type: blazy
+    region: ds_content
+hidden:
+  body: true
+  created: true
+  field_content_visibility: true
+  field_media_in_library: true
+  field_meta_tags: true
+  field_oc_author_s_: true
+  field_oc_back_color: true
+  field_oc_level: true
+  field_oc_licence: true
+  field_oc_link: true
+  field_oc_old: true
+  field_oc_publisher: true
+  field_oc_topic: true
+  field_oc_year: true
+  field_yoast_seo: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

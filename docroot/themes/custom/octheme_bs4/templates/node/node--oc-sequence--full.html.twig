@@ -84,20 +84,17 @@
     {% endif %}
     {{ title_suffix }}
 
-  <div class="oc_inject oc_summary_text">
-    <p><a href="/node/{{ node.id }}/summary"> Go to Summary View</a>
-    </p>
-  </div>
+{#  <div class="oc_inject oc_summary_text">#}
+{#    <p><a href="/node/{{ node.id }}/summary"> Go to Summary View</a>#}
+{#    </p>#}
+{#  </div>#}
 
   <div class="content clearfix"{{ content_attributes }}>
-
-    <div class="oc_inject">
-      <div class="oc_col_width oc_summary_text " >
-
-
-      </div>
+    <div class="oc_inject oc_seq_width">
+      <h3 class="oc_seq_text">
+          {{ content.body[0]['#text']|striptags }}
+        </h3>
     </div>
-
     <div>
         {{ content.field_oc_sequence_items }}
     </div>

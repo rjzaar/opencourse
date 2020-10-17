@@ -1,4 +1,47 @@
+$doc-width: clamp(300px, 70%, 700px);
+
 .menu {
   text-align: center;
-
+  columns: 200px 3;
+  width: $doc-width;
+  margin: 0 auto;
 }
+
+.field--name-comment-forum {
+  width: $doc-width;
+  margin: 0 auto 20px;
+}
+
+.book-pager {
+  display: grid;
+  grid-template: 1fr / auto;
+  //having to need to use important make me very sad :(
+  margin: 20px 0 !important;
+  width: 100%;
+  background: $secondary;
+  a {
+    font-size: 28px;
+    line-height: 150%;
+    font-weight: 500;
+    color: #FFFFFF;
+  }
+  li {
+    padding: 20px;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+  }
+  .book-pager__item--previous {
+    justify-self: start;
+    width: 100%;
+  }
+  .book-pager__item--next {
+    justify-self: end;
+    width: 100%;
+  }
+  .book-pager__item--center {
+    order: 1;
+    justify-self: center;
+    width: 100%;
+  }
+}
+
+

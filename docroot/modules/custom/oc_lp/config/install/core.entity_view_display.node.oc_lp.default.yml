@@ -4,36 +4,42 @@ dependencies:
   config:
     - field.field.node.oc_lp.field_description
     - field.field.node.oc_lp.field_lp_paragraphs
+    - field.field.node.oc_lp.field_media
     - field.field.node.oc_lp.field_meta_tags
+    - field.field.node.oc_lp.field_page_header_style
     - field.field.node.oc_lp.field_yoast_seo
     - node.type.oc_lp
   module:
     - entity_reference_revisions
+    - metatag
     - user
 id: node.oc_lp.default
 targetEntityType: node
 bundle: oc_lp
 mode: default
 content:
-  content_moderation_control:
-    weight: -20
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   field_lp_paragraphs:
     type: entity_reference_revisions_entity_view
-    weight: 0
+    weight: 1
     region: content
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+  field_meta_tags:
+    type: metatag_empty_formatter
+    weight: 0
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
 hidden:
+  content_moderation_control: true
   field_description: true
-  field_meta_tags: true
+  field_media: true
+  field_page_header_style: true
   field_yoast_seo: true
   langcode: true
   links: true
-  field_media: true
-  field_page_header_style: true
+  search_api_excerpt: true

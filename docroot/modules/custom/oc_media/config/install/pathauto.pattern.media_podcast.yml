@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - media
+id: media_podcast
+label: 'media podcast'
+type: 'canonical_entities:media'
+pattern: 'podcast/[media:name]'
+selection_criteria:
+  f449056e-d340-428b-b1d9-09743c4ec5ce:
+    id: 'entity_bundle:media'
+    bundles:
+      audio: audio
+    negate: false
+    context_mapping:
+      media: media
+    uuid: f449056e-d340-428b-b1d9-09743c4ec5ce
+selection_logic: and
+weight: -5
+relationships: {  }

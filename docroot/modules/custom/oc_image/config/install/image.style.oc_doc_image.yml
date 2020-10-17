@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: oc_doc_image
+label: 'OC Doc Image'
+effects: {  }
+pipeline: __default__

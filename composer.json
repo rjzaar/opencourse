@@ -254,6 +254,9 @@
             },
             "drupal/image_resize_filter": {
                 "2955937-filter-schema-5.patch": "https://www.drupal.org/files/issues/2018-05-03/2955937-filter-schema-5.patch"
+            },
+            "drupal/smart_trim": {
+                "2815981-8.patch": "https://www.drupal.org/files/issues/2020-10-13/2815981-8.patch"
             }
         },
         "merge-plugin": {

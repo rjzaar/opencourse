@@ -3,14 +3,18 @@ description: 'Provides Remote media type'
 type: module
 core: 8.x
 dependencies:
+  - blazy
   - color_field
   - comment
+  - ctools
   - ds
   - entity_access_by_field
   - entity_browser
   - entity_browser_entity_form
   - field
+  - focal_point
   - h5p
+  - image
   - language
   - layout_builder
   - link
@@ -18,8 +22,11 @@ dependencies:
   - metatag
   - oc_fields
   - oc_taxonomy
+  - oc_works
   - options
+  - pathauto
   - responsive_image
+  - smart_trim
   - taxonomy
   - text
   - user

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - media
+id: media_video
+label: 'media video'
+type: 'canonical_entities:media'
+pattern: 'video/[media:name]'
+selection_criteria:
+  b7520501-fec1-43a2-82ff-fd90f648e3cc:
+    id: 'entity_bundle:media'
+    bundles:
+      remote_video: remote_video
+    negate: false
+    context_mapping:
+      media: media
+    uuid: b7520501-fec1-43a2-82ff-fd90f648e3cc
+selection_logic: and
+weight: -5
+relationships: {  }

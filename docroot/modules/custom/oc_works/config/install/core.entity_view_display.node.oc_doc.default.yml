@@ -52,6 +52,8 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
+        - node_title
+        - field_media
         - content_moderation_control
         - langcode
         - field_lp_paragraphs
@@ -63,13 +65,18 @@ third_party_settings:
         - field_oc_level
         - field_oc_linked_image
         - field_content_visibility
-        - field_oc_video
         - field_oc_back_color
         - field_oc_head_back_color
         - field_oc_importance
         - field_meta_tags
         - field_yoast_seo
         - comment_forum
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
 id: node.oc_doc.default
 targetEntityType: node
 bundle: oc_doc
@@ -78,7 +85,7 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 4
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     region: ds_content
@@ -92,12 +99,12 @@ content:
     type: comment_default
     region: ds_content
   content_moderation_control:
-    weight: 0
+    weight: 2
     region: ds_content
     settings: {  }
     third_party_settings: {  }
   field_content_visibility:
-    weight: 10
+    weight: 12
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -105,10 +112,19 @@ content:
     region: ds_content
   field_lp_paragraphs:
     type: paragraph_summary
-    weight: 2
+    weight: 4
     region: ds_content
     label: above
     settings: {  }
+    third_party_settings: {  }
+  field_media:
+    type: entity_reference_entity_view
+    weight: 1
+    region: ds_content
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
     third_party_settings: {  }
   field_meta_tags:
     weight: 16
@@ -122,12 +138,12 @@ content:
     label: above
     settings:
       format: hex
-      opacity: '1'
+      opacity: true
     third_party_settings: {  }
     type: color_field_formatter_text
     region: ds_content
   field_oc_external_links:
-    weight: 5
+    weight: 7
     label: above
     settings:
       link: true
@@ -139,7 +155,7 @@ content:
     label: above
     settings:
       format: hex
-      opacity: '1'
+      opacity: true
     third_party_settings: {  }
     type: color_field_formatter_text
     region: ds_content
@@ -153,7 +169,7 @@ content:
     type: number_integer
     region: ds_content
   field_oc_internal_links:
-    weight: 6
+    weight: 8
     label: above
     settings:
       link: true
@@ -161,14 +177,14 @@ content:
     type: entity_reference_label
     region: ds_content
   field_oc_level:
-    weight: 8
+    weight: 10
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: ds_content
   field_oc_linked_image:
-    weight: 9
+    weight: 11
     label: above
     settings:
       link: true
@@ -176,7 +192,7 @@ content:
     type: entity_reference_label
     region: ds_content
   field_oc_topic:
-    weight: 7
+    weight: 9
     label: above
     settings:
       link: true
@@ -195,7 +211,7 @@ content:
     region: content
   langcode:
     type: language
-    weight: 1
+    weight: 3
     region: ds_content
     label: above
     settings:
@@ -203,12 +219,11 @@ content:
       native_language: false
     third_party_settings: {  }
   links:
-    weight: 3
+    weight: 5
     region: ds_content
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_media: true
   field_oc_interactive: true
   field_oc_lmedia: true
   field_oc_title_image: true

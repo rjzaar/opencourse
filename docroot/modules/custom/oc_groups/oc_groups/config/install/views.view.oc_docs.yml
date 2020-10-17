@@ -884,13 +884,13 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        1: 'languages:language_content'
-        2: 'languages:language_interface'
-        3: url
-        4: url.query_args
-        5: 'user.node_grants:view'
-        6: route.group
-        7: user.group_permissions
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - route.group
+        - url
+        - url.query_args
+        - user.group_permissions
+        - 'user.node_grants:view'
       tags:
         - 'config:field.storage.node.body'
   block_1:
@@ -944,13 +944,13 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        1: 'languages:language_content'
-        2: 'languages:language_interface'
-        3: url
-        4: url.query_args
-        5: 'user.node_grants:view'
-        6: route.group
-        7: user.group_permissions
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - route.group
+        - url
+        - url.query_args
+        - user.group_permissions
+        - 'user.node_grants:view'
       tags:
         - 'config:field.storage.node.body'
   oc_docs:
@@ -978,15 +978,19 @@ display:
           group_permission: 'view group_node:oc_sequence entity'
       defaults:
         access: false
+        pager: false
+      pager:
+        type: none
+        options:
+          offset: 0
     cache_metadata:
       max-age: -1
       contexts:
-        1: 'languages:language_content'
-        2: 'languages:language_interface'
-        3: url
-        4: url.query_args
-        5: 'user.node_grants:view'
-        6: route.group
-        7: user.group_permissions
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - route.group
+        - url
+        - user.group_permissions
+        - 'user.node_grants:view'
       tags:
         - 'config:field.storage.node.body'

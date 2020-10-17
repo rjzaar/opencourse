@@ -62,20 +62,23 @@
 {# Navbar #}
 {% if page.navigation or page.navigation_collapsible %}
   {% block navbar %}
-    {% if oc_vmh %}     {% set navbar_classes = [
-      'mb-4',
-      'oc_darken',
+    {% if oc_vmh and not lightnav %}     {% set navbar_classes = [
+
       'oc_header_vmh',
     ] %}
+      {% elseif oc_vmh and lightnav %}
+        {% set navbar_classes = [
+          'oc_header',
+          'oc_header_vmh',
+        ] %}
     {% else %}
       {% if oc_tm %}     {% set navbar_classes = [
-        'mb-4',
-        'oc_darken',
+
         'oc_header',
       ] %}
       {% else %}
         {% set navbar_classes = [
-          'mb-4',
+
           'oc_header',
           'oc_header_novmh',
         ] %}
@@ -108,7 +111,7 @@
           {% else %}
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
               <div class="site-heading">
-                <h1>{% if node.label %} {{ node.label }} {% else %} {{ site_name }} {% endif %}</h1>
+                <h1>{% if node.label %} {{ node.label }} {% elseif page['#title'] %} {{ page['#title']}} {%  else %} {{ site_name }} {% endif %}</h1>
                 {% if site_slogan %}
                   <hr class="small">
                   <span class="subheading">
@@ -123,7 +126,6 @@
     </header>
   {% endblock %}
 {% endif %}
-
 {# Start of small screen setup#}
 <div class="oc_small_nav_button  ">
   <button class="oc_navbar_toggler fa-stack fa-lg collapsed hello" type="button" data-toggle="collapse" data-target="#oc_nav_collapse"
@@ -249,11 +251,9 @@ anoncollapse
 {% block main %}
   <div role="main" class="main-container js-quickedit-main-content">
     <div class="row">
-
-      {# Header #}
       {% if page.header %}
         {% block header %}
-          <div class="col-sm-12" role="heading">
+          <div class="subtitle" role="heading">
             {{ page.header }}
           </div>
         {% endblock %}

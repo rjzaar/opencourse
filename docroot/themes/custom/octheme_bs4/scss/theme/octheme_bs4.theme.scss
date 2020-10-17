@@ -9,14 +9,12 @@
 @import "../variables";
 // octheme_bs4 variables.
 @import "../mixins"; // octheme_bs4 mixins.
-@import "_landing_page";
-@import "_doc_type.scss";
 
 // Text is set at 18px with a max-width of 600px. This gives about 72 characters per line.
 // The aim is readability of text. So as the screen size decreases, once the text takes up the full width
 // this is the breakpoint and side navigation is moved out the way.
 $primary: #ee3159;
-$secondary: #251b3d;
+$secondary: #261C3F;
 $ocback: #171126;
 $success: $green;
 $info: $cyan;
@@ -51,8 +49,7 @@ $oc_margin_sm: 15px;
 $oc_margin_md: 30px;
 
 // LOGO
-$oc_logo_left_padding: 60px; //Distance from left to start of logo with background color
-$oc_logo_left_margin: 0px; //Distance from left to start of background color
+$oc_logo_left_margin: 10px; //Distance from left to start of background color
 $oc_logo_top_padding: 5px; //Logo top padding
 
 // More in .oc_logo
@@ -67,6 +64,19 @@ $oc_navlink_height: 30px; // this is constant
 $oc_nav_button_height: 42px; //This is the height of the top right nav button
 // It is used to calculate position based on other elements
 
+@import "_landing_page";
+@import "_doc_type.scss";
+@import "_oc_cards.scss";
+@import "_header.scss";
+
+* {
+  font-family: "Montserrat", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+}
+
+.media--view-mode-oc-cards {
+  height: 213px;
+}
+
 // Set background colour
 .main-container {
   background: $oc_background_color;
@@ -79,20 +89,53 @@ $oc_nav_button_height: 42px; //This is the height of the top right nav button
 }
 
 .oc_btn_group {
-  width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto 30px;
+  font-size: 14px;
+  justify-content: center;
+  background-color: $secondary;
+  .btn {
+    border-radius: 0;
+    padding: 20px 0;
+    flex-basis: 150px !important;
+  }
+  label {
+    //font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+
+    /* identical to box height */
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px;
+    color: #fff;
+    background-color: $secondary;
+    //important again :'(
+    border: 2px solid $secondary !important;
+  }
+  .active {
+    //another important D:
+    background-color: $secondary !important;
+    border-bottom: 4px solid !important;
+    border-bottom-color: #ee3159 !important;
+  }
+}
+.btn-group > .btn,
+.btn-group-vertical > .btn {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: 0 auto;
+  //-ms-flex: 1 1 auto;
+  //flex: 1 1 auto;
 }
 
-.oc_btn_group label {
-  font-size: 30px;
-  font-weight: 700;
-  color: #fff;
-  background-color: $primary;
-  border-color: $primary;
+.btn-primary:focus, .btn-primary.focus {
+  -webkit-box-shadow: 0 0 0 0;
+  box-shadow: 0 0 0 0;
 }
 
 .ococomment {
@@ -119,24 +162,31 @@ $oc_nav_button_height: 42px; //This is the height of the top right nav button
 }
 
 .vmh-container {
-  background-color: #261C3F; //#261C3F;
+  background-color: $secondary;
   height: 375px;
   max-height: none !important;
+  margin-bottom: 0;
+  //bg-edge2edge from varbase is exceedingly buggy.
+  //Many things from varbase is quite buggy and tough to work with
+  //margin-right:0 is a necessary option to fix the ever breaking
+  //varbase media header :/
+  margin-right: 0 !important;
 }
 
-.img-fluid {
-  background-color: black; //#261C3F; //#261C3F;
+// Make sure it's only the vmh image that is made fairly opaque.
+.vmh-background .contextual-region .field .img-fluid {
+  background-color: black; //#261C3F;
   opacity: 0.2;
 }
 
 // Central resizing breakpoints
 //small phones
-$oc_logo_top_margin_xs: 0; //Distance from top to start of logo
+$oc_logo_top_margin_xs: 10px; //Distance from top to start of logo
 $oc_logo_top_margin_sm: 10px;
-$oc_logo_top_margin_md: 20px;
+$oc_logo_top_margin_md: 10px;
 
-$oc_branding_logo_height_xs: 40px; //logo height
-$oc_branding_logo_height_sm: 40px; //logo height
+$oc_branding_logo_height_xs: 50px; //logo height
+$oc_branding_logo_height_sm: 50px; //logo height
 $oc_branding_logo_height_md: 50px; //logo height
 
 .oc_logo_white {
@@ -149,13 +199,14 @@ $oc_branding_logo_height_md: 50px; //logo height
 }
 
 .oc_logo {
-  margin-top: $oc_logo_top_margin_sm;
-  border-radius: 5px 5px 5px 5px;
-  width: 200px;
   margin-left: 10px;
-  padding-left: 10px;
-  padding-top: 0;
-  padding-right: 10px;
+  border-radius: 0px 5px 5px 0px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  @media (min-width: 768px){
+    display: block;
+  }
 }
 
 .oc_branding_logo {
@@ -194,22 +245,33 @@ $oc_branding_logo_height_md: 50px; //logo height
 .oc_nav_links_light a {
   color: black !important;
 }
+nav.tabs {
+  margin-bottom: 0;
+}
 
 .block-page-title-block h1, .viewsreference--view-title {
   max-width: 706px;
   padding: 0 20px;
-  text-align: center;
-  font-family: Montserrat;
+  margin: 0 auto;
+  // Bootstrap overrides this
   font-style: normal;
   font-weight: 500;
   font-size: 28px;
   line-height: 150%;
   /* or 42px */
   text-align: center;
-
   color: #000000;
 }
 
+.subtitle {
+  margin: 0 auto;
+}
+
+.subtitle h1 {
+  margin: 40px 0;
+}
+
+// triple dash is not fitting properly into the nav
 #nav-triple-dash {
 
 }
@@ -220,24 +282,41 @@ $oc_branding_logo_height_md: 50px; //logo height
   align-items: center;
 }
 
+.oc_logo {
+  margin-left: $oc_logo_left_margin;
+  border-radius: 0 5px 5px 0;
+  width: 300px;
+}
+.oc_branding_logo {
+  height: $oc_branding_logo_height_md;
+  width: $oc_branding_logo_height_md/50*205 !important;
+}
+.oc_vinject {
+  padding-top: 15px; //  for md devices.
+  font-size: 200% !important;
+}
+.oc_nav_links {
+  top: $oc_logo_top_margin_md +($oc_branding_logo_height_md - $oc_navlink_height)/2;
+  right: $oc_margin;
+}
+.oc_small_nav_button {
+  top: $oc_logo_top_margin_md + ($oc_branding_logo_height_md - $oc_nav_button_height)/2;
+}
+/////////
+
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: map-get($grid-breakpoints, "sm")) {
+//@media (min-width: 0px) {
   .vmh-container {
     //max-height: 280px;
     height: 375px;
   }
-  .block-page-title-block h1, .viewsreference--view-title {
-    margin: 40px auto;
-  }
 
   .oc_logo {
-    margin-top: $oc_logo_top_margin_sm;
-    border-radius: 5px 5px 5px 5px;
-    width: 200px;
-    margin-left: 10px;
-    padding-left: 10px;
-    padding-top: 0;
-    padding-right: 10px;
+    margin-left: $oc_logo_left_margin;
+    border-radius: 0px 5px 5px 0px;
+    width: 300px;
   }
 
   .oc_branding_logo {
@@ -266,17 +345,13 @@ $oc_branding_logo_height_md: 50px; //logo height
 // Medium devices (tablets, 768px and up)
 @media (min-width: map-get($grid-breakpoints, "md")) {
   .vmh-container {
-    height: 280px;
+    height: 375px;
     //height: 95vh;
   }
   .oc_logo {
-    margin-top: $oc_logo_top_margin_md;
+    margin-left: $oc_logo_left_margin;
     border-radius: 0 5px 5px 0;
     width: 300px;
-    margin-left: $oc_logo_left_margin;
-    padding-left: $oc_logo_left_padding;
-    padding-top: $oc_logo_top_padding;
-    padding-right: 10px;
   }
   .oc_branding_logo {
     height: $oc_branding_logo_height_md;
@@ -367,10 +442,6 @@ $oc_branding_logo_height_md: 50px; //logo height
 
 }
 
-.oc_brand_dark {
-
-}
-
 .oc_brand_light {
   height: 120px;
 }
@@ -408,15 +479,10 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
 // This is the container for the header.
 // Header Image
 .oc_header_vmh {
-  margin-bottom: 0 !important;
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
 }
 
 .oc_header_novmh {
-  margin-bottom: 0 !important;
   padding: 0;
   margin: 0;
 }
@@ -425,6 +491,7 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
   margin-bottom: 0 !important;
   padding: 0;
   margin: 0;
+  flex-flow: column wrap;
 }
 .oc_header_join {
   background-color: $primary;
@@ -501,22 +568,20 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
 
 //Logo and text across the top
 .oc_navbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  display: inline-block;
+  width: 100vw;
   margin-bottom: 0 !important;
   border-radius: 0;
   z-index: 497; // Needs to be in front of the image after it so links work.
 }
 
 .oc_navbar_dark {
-
+  //padding: 0.5rem 1rem;
 }
 
 .oc_navbar_light {
   background-color: white;
-  height: 120px;
+  padding: 0.5rem 1rem;
 }
 
 .oc_nav_links {
@@ -540,22 +605,6 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
   z-index: 1;
 }
 
-// This darkens the title and image.
-.oc_darken::after {
-  background-color: rgba(87, 87, 87, .5);
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: block;
-}
-
-.oc_darken_title {
-  //  background-color: rgba(87, 87, 87, .25);
-}
-
 //navigation text, eg login and contact us
 .navbar-nav {
   font-family: Montserrat, sans-serif;
@@ -575,7 +624,7 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0
+  left: 0;
 }
 
 .oc_title_image {
@@ -587,17 +636,19 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
   position: relative;
   object-fit: inherit;
   z-index: -100;
-
 }
 
 .oc_title_row {
   width: 100%;
   margin: 0;
 }
-
+.testme {
+  height: 5px;
+}
 .oc_title_plain {
-  height: 400px;
   background-color: $secondary;
+  padding: 0 25px;
+  height: 280px;
 }
 
 // Node title in the header
@@ -607,7 +658,7 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   font-style: normal;
-  font-size: 66px !important;
+  font-size: 43px !important;
   padding: 0 10px !important;
   align-items: center;
   z-index: 1;
@@ -615,7 +666,7 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
 }
 
 .oc_heading_light {
-  margin: 90px 0 0 0 !important;
+  margin: 90px 0;
 }
 
 .oc_heading_dark {
@@ -704,7 +755,8 @@ ul {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0 10%;
+  margin: 0 auto;
+  width: clamp(400px, 80%, 1200px);
 }
 
 .view-oc-sequencecards .view-content article {
@@ -952,22 +1004,24 @@ ul {
 // ds-1col--node-oc-book-teaser.html.twig
 // node-oc-image-full.html.twig
 // node-oc-sequence-full.html.twig
-.oc_inject {
-  padding-left: 5px; //  for all xs devices.
 
-  @media screen and (max-width: map-get($grid-breakpoints, "sm")) {
-    padding-left: 5px; // As from sm devices,
-  }
-
-  @media screen and (max-width: map-get($grid-breakpoints, "md")) {
-    padding-left: 15px; //  for md devices.
-  }
-
-  @media screen and (max-width: map-get($grid-breakpoints, "lg")) {
-    // padding-left: 250px; // for lg devices.
-    // width: 900px;
-  }
-}
+/*TODO: Delete this chunk if unnecessary*/
+//.oc_inject {
+//  padding-left: 5px; //  for all xs devices.
+//
+//  @media screen and (max-width: map-get($grid-breakpoints, "sm")) {
+//    padding-left: 5px; // As from sm devices,
+//  }
+//
+//  @media screen and (max-width: map-get($grid-breakpoints, "md")) {
+//    padding-left: 15px; //  for md devices.
+//  }
+//
+//  @media screen and (max-width: map-get($grid-breakpoints, "lg")) {
+//    // padding-left: 250px; // for lg devices.
+//    // width: 900px;
+//  }
+//}
 
 // for: ds-1col--node-oc-doc-full.html.twig
 // for: ds-1col--node-oc-doc.html.twig
@@ -977,7 +1031,6 @@ ul {
 // node-oc-sequence-full.html.twig
 // ds-1col--node-oc-doc-featured.html.twig
 .oc_col_width {
-  max-width: 600px !important;
   margin-left: auto;
   margin-right: auto;
 
@@ -1034,8 +1087,9 @@ ul {
 .oc_text {
   line-height: 1.5em;
   color: #60616d;
-  background-color: white;
   font-size: 18px;
+  width: clamp(300px, 75%, 800px);
+  margin: 0 auto;
 }
 
 // for: ds-1col--node-oc-doc-full.html.twig
@@ -1058,10 +1112,6 @@ ul {
   line-height: 1.5em;
   color: #60616d;
   font-size: 18px;
-}
-
-.oc_summary {
-  background-color: white;
 }
 
 // for: ds-1col--node-oc-doc-full.html.twig
@@ -1097,7 +1147,7 @@ $oc_panel_left: 15px;
 .oc_accordian_container {
   width: 100%;
   cursor: pointer;
-  position: relative;
+  margin: auto 0;
   //display: none;
 }
 
@@ -1108,22 +1158,11 @@ $oc_panel_left: 15px;
 
 .oc_accordion_content {
   cursor: auto;
-  display: none;
-  position: relative;
-  width: 100%;
+  display: flex;
+  width: 100vw;
   margin: 0;
   padding: 0;
-  @media screen and (min-width: map-get($grid-breakpoints, "sm")) {
-    display: block; // As from sm devices,
-  }
-
-  @media screen and (min-width: map-get($grid-breakpoints, "md")) {
-    display: block; //  for md devices.
-  }
-
-  @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
-    display: block; // for lg devices.
-  }
+  justify-content: center;
 }
 
 .oc_btn_block {
@@ -1183,6 +1222,29 @@ $oc_panel_left: 15px;
 
 // used in: ds-1col--node-oc-doc-full.html.twig
 // used in block--system-branding-block.html.twig therefore for all pages with logo.
+.oc_doc_title_text {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 66px;
+  line-height: 150%;
+
+  /* identical to box height, or 99px */
+  //display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* Blue */
+  color: #261C3F;
+}
+
+.oc_doc_image {
+  margin: auto;
+  min-width: 75%;
+  opacity: 1;
+  margin-bottom: 2em;
+  margin-top: 1em;
+}
+
 .oc_branding_logo {
   width: 210px;
   -webkit-box-pack: center !important;
@@ -1211,6 +1273,18 @@ $oc_panel_left: 15px;
   }
 }
 
+.book-pager {
+  margin-bottom: 0 !important;
+  border-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.book-pager li {
+  padding: 20px;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 0 !important;
+}
 // used: ds-1col--node-oc-book-full.html.twig
 // and: ds-1col--node-oc-book-teaser.html.twig
 .oc_auth_title {
@@ -1255,6 +1329,81 @@ $oc_panel_left: 15px;
 }
 
 // node--oc-sequence--full.html.twig
+// node--oc-doc--teaser.html.twig
+.node--type-oc-doc.node--view-mode-teaser {
+  width: 706px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid rgba(38, 28, 63, 0.2);
+}
+
+.nobottomborder {
+  border-bottom: 0 !important;
+}
+.oc_seq_doc_width {
+  margin-left: auto;
+  margin-right: auto;
+  width: 613px;
+}
+
+.oc_seq_doc_width a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
+.oc_seq_width {
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 706px;
+  margin-bottom: 80px;
+}
+.oc_seq_text {
+  /* H3 */
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 150%;
+
+  /* or 42px */
+  //text-align: center;
+
+  color: #000000;
+}
+.oc_seq_doc_title {
+  /* H3 */
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 150%;
+  color: #261C3F;
+}
+
+.oc_seq_doc_teaser {
+  margin-top: 20px;
+  margin-bottom: 35px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  color: #261C3F;
+  opacity: 0.8;
+}
+
+.oc_seq_doc_more a {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  color: #EE3159 !important;
+}
+.oc_seq_doc_more a:hover {
+  text-decoration: underline;
+}
+
 .oc_summary_text {
   line-height: 1.5em;
   color: #60616d;
@@ -1267,47 +1416,17 @@ $oc_panel_left: 15px;
   height: 450px;
   background: #FFFFFF;
   box-shadow: 0px 25px 60px rgba(0, 0, 0, 0.1);
-
 }
 
-.node--type-oc-sequence.node--view-mode-vertical-media-teaser-small .field--type-text-with-summary {
+.field--type-text-with-summary {
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 150%;
-
-  /* or 24px */
-
-  /* Blue */
-  color: #261C3F;
-
-  position: absolute;
-  height: 150.47px;
-  left: 7.5%;
-  right: 7.5%;
-  top: 275.53px;
-}
-
-.node--type-oc-sequence.node--view-mode-vertical-media-teaser-small .field--name-node-title {
-  position: absolute;
-  height: 33px;
-  left: 7.5%;
-  right: 7.5%;
-  top: 226.86px;
-}
-
-.node--type-oc-sequence.node--view-mode-vertical-media-teaser-small .field--name-node-title a {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 22px;
-  line-height: 150%;
-
-  /* identical to box height, or 33px */
-
-  /* Blue */
-  color: #261C3F;
+  color: $secondary;
+  margin: 0 20px;
+  order: -1;
 }
 
 // node--oc-image--full.html.twig
@@ -1325,16 +1444,15 @@ $oc_panel_left: 15px;
   background-repeat: no-repeat !important;
   background-position: center center !important;
   background-attachment: fixed !important;
-  background-size: 100%;
+  background-size: cover;
+  display: flex;
+  align-items: center;
 }
 
 .oc_image_featured_box {
-  position: absolute;
   color: black;
-  bottom: 15px;
-  right: 15px;
+  margin: auto 0;
   max-width: 400px;
-  height: 180px;
   // border: 3px solid #73AD21;
   background-color: #ffffff;
   font-size: 14px !important;
@@ -1343,10 +1461,10 @@ $oc_panel_left: 15px;
   filter: alpha(opacity=80); /* For IE8 and earlier */
 }
 
-.oc_container {
-  position: relative;
-  height: 400px;
-}
+//.oc_container {
+//  position: relative;
+//  height: 400px;
+//}
 
 // view: oc_sequences
 .oc_sequence_image {
@@ -1394,6 +1512,7 @@ margin-top: 0 !important;
   line-height: 17px;
   letter-spacing: .1em;
   text-transform: uppercase;
+  text-align: center;
   padding: 0;
   margin: 0;
   color: white;
@@ -1406,7 +1525,6 @@ margin-top: 0 !important;
 
 
 .oc_footer_image {
-  width: 63px;
   height: 68px;
   position: relative;
   left: 30px;
@@ -1424,7 +1542,6 @@ margin-top: 0 !important;
   height: 48px;
   width: 106px;
   padding-top: 16px;
-  padding-left: 20px !important;
 }
 
 .oc_footer_login {
@@ -1522,7 +1639,6 @@ margin-top: 0 !important;
     height: 364px;
   }
   .oc_footer_image {
-    width: 63px;
     height: 68px;
     display: block;
     margin-left: auto;
@@ -1553,9 +1669,7 @@ margin-top: 0 !important;
   }
   .oc_footer_link {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+    margin: 0 auto;
   }
 }
 

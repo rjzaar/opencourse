@@ -1,0 +1,159 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.vertical_media_teaser_small
+    - field.field.node.oc_sequence.body
+    - field.field.node.oc_sequence.field_content_visibility
+    - field.field.node.oc_sequence.field_media
+    - field.field.node.oc_sequence.field_meta_tags
+    - field.field.node.oc_sequence.field_oc_importance
+    - field.field.node.oc_sequence.field_oc_level
+    - field.field.node.oc_sequence.field_oc_linked_image
+    - field.field.node.oc_sequence.field_oc_lmedia
+    - field.field.node.oc_sequence.field_oc_sequence_items
+    - field.field.node.oc_sequence.field_oc_topic
+    - field.field.node.oc_sequence.field_page_header_style
+    - field.field.node.oc_sequence.field_yoast_seo
+    - node.type.oc_sequence
+  module:
+    - ds
+    - smart_trim
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: vertical_media_teaser_small
+      library: vmi/vertical_media_teaser_small
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          main: div
+        outer_wrapper: article
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      main:
+        - content_moderation_control
+        - node_title
+        - body
+        - field_media
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h3
+          class: ''
+id: node.oc_sequence.vertical_media_teaser_small
+targetEntityType: node
+bundle: oc_sequence
+mode: vertical_media_teaser_small
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 2
+    settings:
+      trim_length: 20
+      trim_type: words
+      trim_suffix: ...
+      more_link: false
+      more_text: More
+      summary_handler: full
+      trim_options:
+        text: true
+      more_class: more-link
+      wrap_output: false
+      wrap_class: trimmed
+    third_party_settings: {  }
+    region: main
+  content_moderation_control:
+    weight: 0
+    region: main
+    settings: {  }
+    third_party_settings: {  }
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: s03_standard
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
+            ow: true
+            ow-el: a
+            ow-cl: ''
+            ow-at: 'href="[node:url]"'
+            ow-def-at: true
+            ow-def-cl: true
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fis-def-at: true
+            fi-el: ''
+            fi-cl: ''
+            fi-at: ''
+            fi-def-at: true
+            suffix: ''
+            lbw: false
+            lb-col: false
+            fis: false
+            fi: false
+    type: entity_reference_entity_view
+    region: main
+  field_media:
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: oc_cards
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view
+    region: main
+  field_video:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: s03_standard
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: main
+hidden:
+  field_content_visibility: true
+  field_meta_tags: true
+  field_oc_importance: true
+  field_oc_level: true
+  field_oc_linked_image: true
+  field_oc_lmedia: true
+  field_oc_sequence_items: true
+  field_oc_topic: true
+  field_page_header_style: true
+  field_yoast_seo: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

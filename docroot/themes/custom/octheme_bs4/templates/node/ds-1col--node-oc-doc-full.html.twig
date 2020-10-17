@@ -67,18 +67,30 @@
       {{ "EXPLANATION" }}
   </h2> -->
 
-      </head>
+
       <div class="btn-group btn-group-toggle oc_btn_group" data-toggle="buttons">
         <label class="btn btn-primary active">
-          <input type="radio" name="options" id="option1" value="ococontent" autocomplete="off" checked> Content
+          <input type="radio" name="options" id="option1" value="ococontent" autocomplete="off" checked> FULL ARTICLE
         </label>
         <label class="btn btn-primary">
-          <input type="radio" name="options" id="option2" value="ocosummary" autocomplete="off"> Summary
+          <input type="radio" name="options" id="option2" value="ocosummary" autocomplete="off"> STUDY NOTES
         </label>
         <label class="btn btn-primary">
-          <input type="radio" name="options" id="option3" value="ocoquiz" autocomplete="off"> Quiz
+          <input type="radio" name="options" id="option3" value="ocoquiz" autocomplete="off"> QUIZ
         </label>
       </div>
+
+      <div class="oc_doc_title_text">
+        {{ node_title}}
+{#        {{ content.body[0]['#text']|striptags }}#}
+      </div>
+
+      <div>
+        {{ content.field_media }}
+
+      </div>
+
+{#      {{ block_output }}#}
 
 <div class="content ococontent ocshow oc_inject clearfix"{{ content_attributes }}>
 
@@ -91,6 +103,7 @@
     {#<div class="oc_right" >#}
         {#{{ content.field_oc_internal_links }}#}
     {#</div>#}
+
     <div class="oc_col_width oc_text">
         {{ content.body }}
     </div>

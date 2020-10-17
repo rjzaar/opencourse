@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.oc_doc_image
+label: 'OC Doc Image'
+targetEntityType: media
+cache: true

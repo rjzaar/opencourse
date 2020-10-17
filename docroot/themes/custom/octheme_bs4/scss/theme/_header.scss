@@ -1,0 +1,13 @@
+//padding for nav bar and logo
+.region-navigation {
+  padding: 20px;
+}
+
+// hack to get header to be aligned
+.region-navigation-collapsible {
+  margin-top: 10px;
+}
+
+#navbar-main{
+  background-color: $secondary !important;
+}

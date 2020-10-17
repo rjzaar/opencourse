@@ -24,8 +24,44 @@ dependencies:
     - field.field.node.oc_doc.field_yoast_seo
     - node.type.oc_doc
   module:
-    - text
+    - ds
+    - metatag
+    - smart_trim
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - node_title
+        - body
+        - node_link
+        - field_meta_tags
+    fields:
+      node_link:
+        plugin_id: node_link
+        weight: 2
+        label: hidden
+        formatter: default
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
 id: node.oc_doc.teaser
 targetEntityType: node
 bundle: oc_doc
@@ -33,31 +69,47 @@ mode: teaser
 content:
   body:
     label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
+    type: smart_trim
+    weight: 1
     settings:
-      trim_length: 600
-    third_party_settings: {  }
-    region: content
-  content_moderation_control:
-    weight: -20
+      trim_length: 40
+      trim_type: words
+      trim_sentence: '1'
+      trim_suffix: ''
+      wrap_class: trimmed
+      more_text: More
+      more_class: more-link
+      summary_handler: trim
+      wrap_output: false
+      more_link: false
+      trim_options:
+        text: false
+        trim_zero: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: ds_content
+  field_meta_tags:
+    type: metatag_empty_formatter
+    weight: 3
+    region: ds_content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    region: content
   flag_follow_content:
     weight: 10
     region: content
-  links:
-    weight: 100
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   comment_forum: true
+  content_moderation_control: true
   field_content_visibility: true
   field_lp_paragraphs: true
   field_media: true
-  field_meta_tags: true
   field_oc_back_color: true
   field_oc_external_links: true
   field_oc_head_back_color: true
@@ -72,4 +124,5 @@ hidden:
   field_page_header_style: true
   field_yoast_seo: true
   langcode: true
+  links: true
   search_api_excerpt: true
