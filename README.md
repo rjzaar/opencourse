@@ -2,7 +2,7 @@
 
 # Opencourse
 
-[![Build Status](https://travis-ci.com/rjzaar/opencourse.svg?branch=master)](https://travis-ci.com/rjzaar/opencourse)
+[![Build Status](https://travis-ci.com/rjzaar/opencourse.svg?branch=8.8.x)](https://travis-ci.com/rjzaar/opencourse)
 
 This is the opencourse project
 
