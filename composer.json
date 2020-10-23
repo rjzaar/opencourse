@@ -66,7 +66,8 @@
         "drupal/vartheme": "~6.0",
         "drupal/vartheme_bs4": "~6.0",
         "drupal/vartheme_admin": "~6.0",
-        "drupal/vartheme_claro": "~2.0"
+        "drupal/vartheme_claro": "~2.0",
+        "drupal/config_inspector": "^1.1"
     },
     "conflict": {
         "drupal/drupal": "*"

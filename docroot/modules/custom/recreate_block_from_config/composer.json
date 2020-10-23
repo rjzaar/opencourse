@@ -1,0 +1,8 @@
+{
+  "name": "drupal/recreate_block_from_config",
+  "type": "drupal-module",
+  "description": "This will recreate block(s) from config on drush cr or install",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "require": { }
+}
