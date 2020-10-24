@@ -67,7 +67,8 @@
         "drupal/vartheme_bs4": "~6.0",
         "drupal/vartheme_admin": "~6.0",
         "drupal/vartheme_claro": "~2.0",
-        "drupal/config_inspector": "^1.1"
+        "drupal/config_inspector": "^1.1",
+        "rjzaar/recreate_block_from_config": "~0.2"
     },
     "conflict": {
         "drupal/drupal": "*"
