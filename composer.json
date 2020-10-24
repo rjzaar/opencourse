@@ -68,7 +68,7 @@
         "drupal/vartheme_admin": "~6.0",
         "drupal/vartheme_claro": "~2.0",
         "drupal/config_inspector": "^1.1",
-        "rjzaar/recreate_block_from_config": "~0.2"
+        "rjzaar/recreate_block_from_config": "~0.3"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -236,7 +236,6 @@
             },
             "drupal/core": {
                 "node-revisions-missing-local-tasks-2885278-11.patch": "https://www.drupal.org/files/issues/2018-04-19/node-revisions-missing-local-tasks-2885278-11.patch",
-                "drupal-views-comment-count-2801929-12.patch": "https://www.drupal.org/files/issues/2018-07-10/drupal-views-comment-count-2801929-12.patch",
                 "comment-action_exist-2915728-13.patch": "https://www.drupal.org/files/issues/comment-action_exist-2915728-13.patch"
             },
             "drupal/legal": {
