@@ -299,6 +299,11 @@
   opacity: 0.2;
 }
 
+.vmh-background .field .img-fluid {
+  background-color: black;
+  opacity: 0.2;
+}
+
 .oc_logo_white {
   background-color: white;
 }

@@ -178,7 +178,11 @@ $oc_nav_button_height: 42px; //This is the height of the top right nav button
   background-color: black; //#261C3F;
   opacity: 0.2;
 }
-
+// Repeat for when not logged in.
+.vmh-background .field .img-fluid {
+  background-color: black; //#261C3F;
+  opacity: 0.2;
+}
 // Central resizing breakpoints
 //small phones
 $oc_logo_top_margin_xs: 10px; //Distance from top to start of logo

@@ -1,0 +1,24 @@
+{
+  "name": "varbase",
+  "description": "Varbase: The Ultimate Drupal 8 CMS Starter Kit (Bootstrap Ready)",
+  "main": "index.js",
+  "authors": [
+    "Vardot"
+  ],
+  "license": "GPL-2.0",
+  "keywords": [
+    "Drupal",
+    "Varbase",
+    "Drupal",
+    "profile",
+    "Bootstrap"
+  ],
+  "homepage": "https://github.com/rjzaar/ocorg",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

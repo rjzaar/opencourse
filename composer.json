@@ -68,7 +68,8 @@
         "drupal/vartheme_admin": "~6.0",
         "drupal/vartheme_claro": "~2.0",
         "drupal/config_inspector": "^1.1",
-        "rjzaar/recreate_block_from_config": "~0.3"
+        "rjzaar/recreate_block_from_config": "~0.3",
+        "drupal/config_split": "^1.7"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -271,13 +272,11 @@
         "pre-update-cmd": ["Varbase\\composer\\ScriptHandler::checkComposerVersion"],
         "post-install-cmd": [
             "Varbase\\composer\\ScriptHandler::createRequiredFiles",
-            "Varbase\\composer\\ScriptHandler::removeGitDirectories",
-            "./bin/phing push"
+            "Varbase\\composer\\ScriptHandler::removeGitDirectories"
         ],
         "post-update-cmd": [
             "Varbase\\composer\\ScriptHandler::createRequiredFiles",
-            "Varbase\\composer\\ScriptHandler::removeGitDirectories",
-            "./bin/phing push"
+            "Varbase\\composer\\ScriptHandler::removeGitDirectories"
         ],
         "post-drupal-scaffold-cmd": ["Varbase\\composer\\ScriptHandler::postDrupalScaffoldProcedure",
             "cd docroot && patch -p1 <../scripts/htaccess_favicon.patch"],

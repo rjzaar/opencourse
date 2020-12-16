@@ -1,4 +1,4 @@
-var page = "http://pleasy.loc/node/890";
+var page = "pleasy.loc";
 let gulp = require('gulp'),
   sass = require('gulp-sass'),
   postcss = require('gulp-postcss'),
