@@ -83,26 +83,26 @@ view_mode ? view_mode|clean_class,
     {#{% if page  %} Not sure what the D8 equivalent is for page #}
 
     <div id="node-{{ node.id }}">
-        <h2 class="oc_inject oc_auth_title oc_title">
+        <h2 class="oc_inject oc_auth_title oc_text">
            BY {{ auth }}
         </h2>
         {% if body  %}
 
 
 
-            <div class="oc_summary oc_text">
-                <h2 class="oc_inject oc_title">
+            <div class="oc_summary ">
+                <h2 class="oc_inject oc_title oc_text oc_title_space">
                   BOOK DESCRIPTION
                 </h2>
 
-                <div class="oc_inject oc_col_width clearfix"{{ content_attributes }}>
+                <div class="oc_inject oc_text clearfix"{{ content_attributes }}>
 {{ body }}
                 </div>
             </div>
         {% endif %}
         <div class="oc_item clearfix"{{ attributes }}>
             {{ title_prefix }}
-            <h2 class="oc_inject oc_title">
+            <h2 class="oc_inject oc_text oc_title_space">
                 {{ "BOOK SUMMARY" }}
             </h2>
 
@@ -111,16 +111,16 @@ view_mode ? view_mode|clean_class,
 
             <div class="content oc_inject clearfix"{{ content_attributes }}>
 
-                <div class="oc_right" >
-                    {{ field_oc_book_image  }}
-                </div>
+{#                Remove image for now <div class="oc_right" >#}
+{#                    {{ field_oc_book_image  }}#}
+{#                </div>#}
                 <div class="oc_right" >
                     {{ field_oc_external_links }}
                 </div>
                 <div class="oc_right" >
                     {{ field_oc_internal_links }}
                 </div>
-                <div class="oc_col_width">
+                <div class="oc_text oc_title_space">
                     {{ node.body.summary | raw }}
                     {% if content.book_navigation %}
 
@@ -147,27 +147,27 @@ view_mode ? view_mode|clean_class,
 
 
 
-            <div class="content oc_inject clearfix"{{ content_attributes }}>
-                <h2 class=" oc_title">
-                    {{ "METADATA" }}
-                </h2>
-                <div class="oc_floatleft">
+{#     remove for now. add with roles later.       <div class="content oc_inject clearfix"{{ content_attributes }}>#}
+{#                <h2 class="oc_text oc_title_space">#}
+{#                    {{ "METADATA" }}#}
+{#                </h2>#}
+{#                <div class="oc_floatleft oc_text">#}
 
-                     Posted: {{ uid}} :  {{ content.created }}
-                                  </br>
+{#                     Posted: {{ uid}} :  {{ content.created }}#}
+{#                                  </br>#}
 
-                  Modified: {{ modified }}
-                </div>
-                <div class="oc_floatleft">
-                    {{ content.field_oc_topic }}
-                </div>
-                <div class="oc_floatleft">
-                    {{ content.field_oc_level }}
-                </div>
+{#                  Modified: {{ modified }}#}
+{#                </div>#}
+{#                <div class="oc_floatleft">#}
+{#                    {{ content.field_oc_topic }}#}
+{#                </div>#}
+{#                <div class="oc_floatleft">#}
+{#                    {{ content.field_oc_level }}#}
+{#                </div>#}
 
-            </div>
+{#            </div>#}
             <div>
-                <h2 class="oc_inject oc_title">
+                <h2 class="oc_inject oc_text oc_title_space">
                     BIBLIOGRAPHIC REFERENCE
                 </h2>
                 <p class="oc_inject oc_text ">
@@ -180,7 +180,7 @@ view_mode ? view_mode|clean_class,
                 </p>
             </div>
             <div>
-                <h2 class="oc_inject oc_title">
+                <h2 class="oc_inject oc_text oc_title_space">
                     ISBN
                 </h2>
                 <p class="oc_inject oc_text ">

@@ -766,6 +766,21 @@ ul {
 .view-oc-sequencecards .view-content article {
   margin: 24px;
 }
+.view-oc-book-cards {
+  margin-bottom: 80px;
+}
+.view-oc-book-cards .view-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  width: clamp(400px, 80%, 1200px);
+}
+
+.view-oc-book-cards .view-content article {
+  margin: 24px;
+}
 // These don't work.
 //.group_nav_text a {
 //  position: relative;
@@ -1292,9 +1307,12 @@ $oc_panel_left: 15px;
 // used: ds-1col--node-oc-book-full.html.twig
 // and: ds-1col--node-oc-book-teaser.html.twig
 .oc_auth_title {
-  margin-top: 0;
-}
+  padding-bottom: 2rem;
 
+}
+.oc_title_space {
+  padding-top: 1rem;
+}
 // video-embed-iframe.html.twig
 .oc_iframe {
   width: 400px;
@@ -1408,6 +1426,10 @@ $oc_panel_left: 15px;
   text-decoration: underline;
 }
 
+.oc_summary {
+  background-color: white;
+}
+
 .oc_summary_text {
   line-height: 1.5em;
   color: #60616d;
@@ -1429,7 +1451,8 @@ $oc_panel_left: 15px;
   font-size: 18px;
   line-height: 150%;
   color: $secondary;
-  margin: 0 20px;
+  //remove margin so it lines up with title, etc.
+  //margin: 0 20px;
   order: -1;
 }
 

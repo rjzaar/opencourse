@@ -176,6 +176,16 @@
   color: #261C3F;
 }
 
+.node--type-oc-book.node--view-mode-vertical-media-teaser-small .field--name-node-title a {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 150%;
+  padding: 0 20px;
+  color: #261C3F;
+}
+
 .region-navigation {
   padding: 20px;
 }
@@ -831,6 +841,35 @@ ul {
   margin: 24px;
 }
 
+.view-oc-book-cards {
+  margin-bottom: 80px;
+}
+
+.view-oc-book-cards .view-content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  width: clamp(400px, 80%, 1200px);
+}
+
+.view-oc-book-cards .view-content article {
+  margin: 24px;
+}
+
 /* adding sf-vertical class in addition to sf-menu creates a vertical menu */
 /* eg. <ul class="sf-menu sf-vertical"> ... */
 .sfr-vertical {
@@ -1226,7 +1265,11 @@ ul {
 }
 
 .oc_auth_title {
-  margin-top: 0;
+  padding-bottom: 2rem;
+}
+
+.oc_title_space {
+  padding-top: 1rem;
 }
 
 .oc_iframe {
@@ -1346,6 +1389,10 @@ ul {
   text-decoration: underline;
 }
 
+.oc_summary {
+  background-color: white;
+}
+
 .oc_summary_text {
   line-height: 1.5em;
   color: #60616d;
@@ -1368,7 +1415,6 @@ ul {
   font-size: 18px;
   line-height: 150%;
   color: #261C3F;
-  margin: 0 20px;
   -webkit-box-ordinal-group: 0;
   -webkit-order: -1;
       -ms-flex-order: -1;

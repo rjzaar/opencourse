@@ -40,6 +40,6 @@ dependencies:
   - comment
   - forum
   - varbase_media_header
-  - recreate_block_from_config
+ # - recreate_block_from_config
 
 
