@@ -22,6 +22,7 @@ dependencies:
   - oc_fields
   - oc_image
   - oc_link
+  - oc_media
   - oc_taxonomy
   - oc_works
   - options

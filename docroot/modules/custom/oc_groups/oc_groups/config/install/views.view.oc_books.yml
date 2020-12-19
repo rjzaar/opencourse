@@ -897,14 +897,14 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        1: 'languages:language_content'
-        2: 'languages:language_interface'
-        3: url
-        4: url.query_args
-        5: user
-        6: 'user.node_grants:view'
-        7: route.group
-        8: user.group_permissions
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - route.group
+        - url
+        - url.query_args
+        - user
+        - user.group_permissions
+        - 'user.node_grants:view'
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_oc_author_s_'
@@ -919,14 +919,14 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        1: 'languages:language_content'
-        2: 'languages:language_interface'
-        3: url
-        4: url.query_args
-        5: user
-        6: 'user.node_grants:view'
-        7: route.group
-        8: user.group_permissions
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - route.group
+        - url
+        - url.query_args
+        - user
+        - user.group_permissions
+        - 'user.node_grants:view'
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_oc_author_s_'
@@ -939,7 +939,7 @@ display:
     display_options:
       display_extenders:
         metatag_display_extender: {  }
-      path: group/%group/books
+      path: group/%group/books_old
       menu:
         type: none
         title: Nodes
@@ -953,14 +953,14 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        1: 'languages:language_content'
-        2: 'languages:language_interface'
-        3: url
-        4: url.query_args
-        5: user
-        6: 'user.node_grants:view'
-        7: route.group
-        8: user.group_permissions
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - route.group
+        - url
+        - url.query_args
+        - user
+        - user.group_permissions
+        - 'user.node_grants:view'
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_oc_author_s_'

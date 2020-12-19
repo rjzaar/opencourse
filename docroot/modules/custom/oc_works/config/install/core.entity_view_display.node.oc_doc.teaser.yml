@@ -74,7 +74,7 @@ content:
     settings:
       trim_length: 40
       trim_type: words
-      trim_sentence: '1'
+      trim_sentence: true
       trim_suffix: ''
       wrap_class: trimmed
       more_text: More

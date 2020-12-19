@@ -197,6 +197,11 @@ anoncollapse
           {%- block oc_type -%}sequences{%- endblock -%}
           {%- block oc_name -%}Courses{%- endblock -%}
         {% endembed %}
+        {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
+          {%- block oc_icon -%}book{%- endblock -%}
+          {%- block oc_type -%}books{%- endblock -%}
+          {%- block oc_name -%}Books{%- endblock -%}
+        {% endembed %}
         {% if 'producer' in ocroles or 'seo_admin' in ocroles or 'leader' in ocroles or 'content_admin' in ocroles or
           'editor' in ocroles or 'site_admin' in ocroles or 'administrator' in ocroles  %}
           {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
@@ -205,16 +210,10 @@ anoncollapse
             {%- block oc_name -%}Docs{%- endblock -%}
           {% endembed %}
           {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
-            {%- block oc_icon -%}book{%- endblock -%}
-            {%- block oc_type -%}books{%- endblock -%}
-            {%- block oc_name -%}Books{%- endblock -%}
-          {% endembed %}
-          {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
             {%- block oc_icon -%}link{%- endblock -%}
             {%- block oc_type -%}links{%- endblock -%}
             {%- block oc_name -%}Links{%- endblock -%}
           {% endembed %}
-
           {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
             {%- block oc_icon -%}image{%- endblock -%}
             {%- block oc_type -%}images{%- endblock -%}
