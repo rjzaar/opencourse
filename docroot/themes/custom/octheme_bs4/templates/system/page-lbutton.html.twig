@@ -6,7 +6,8 @@
         </span></a>
     <ul class="sf-hidden oc_group_nav_text">
         <li class="sf-depth-2 sf-no-children">
-            <a class=" is-active sf-depth-2" target="_self" href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/{{ block('oc_type') }}" >{% block oc_name %}oc_name{% endblock %}</a>
+{#          group/{{ oc_group }}#}
+            <a class=" is-active sf-depth-2" target="_self" href="{{ url('<front>')['#markup'] }}{{ block('oc_type') }}" >{% block oc_name %}oc_name{% endblock %}</a>
           {% if is_admin %}
         <a class="is-active sf-depth-2 oc_group_nav_add_content" target="_self" href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/content/create/group_node%3Aoc_{{ block('oc_type')|trim('s', 'right') }}" >(Add)</a>
       {% endif %}
