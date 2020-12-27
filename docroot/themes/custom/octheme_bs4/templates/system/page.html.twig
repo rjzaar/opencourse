@@ -127,17 +127,25 @@
   {% endblock %}
 {% endif %}
 {# Start of small screen setup#}
-<div class="oc_small_nav_button  ">
-  <button class="oc_navbar_toggler fa-stack fa-lg collapsed hello" type="button" data-toggle="collapse" data-target="#oc_nav_collapse"
+{% set ocroles = user.getroles %}
+    {% if 'producer' in ocroles or 'seo_admin' in ocroles or 'leader' in ocroles or 'content_admin' in ocroles or
+      'editor' in ocroles or 'site_admin' in ocroles or 'administrator' in ocroles  %}
+      {% set ockeyrole = 1 %}
+    {%  else %}
+      {% set ockeyrole = 0 %}
+    {% endif %}
+{% if ockeyrole  %}
+<div class="oc_small_nav_button">
+  <button class="oc_navbar_toggler fa-stack fa-lg collapsed" type="button" data-toggle="collapse" data-target="#oc_nav_collapse"
           aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-    <span id='nav-red-box' class="oc_navbar_toggler_icon fas fa-square fa-stack-2x oc_icon_back">
-      <span id='nav-triple-dash' class="oc_navbar_toggler_icon fas fa-stack-1x fa-inverse fa-bars ">
+{#    <span id='nav-red-box' class="oc_navbar_toggler_icon fas fa-square fa-stack-2x oc_icon_back">#}
+      <span id='nav-triple-dash' class="oc_icon_back oc_navbar_toggler_icon fas fa-stack-1x fa-inverse fa-bars ">
       </span>
-    </span>
+{#    </span>#}
   </button>
 
 </div>
-
+{%  endif %}
 
 {# octheme end 1#}
 
@@ -157,13 +165,18 @@
 
 {# octheme start 2 #}
 {# group navigation #}
-{% set ocroles = user.getroles %}
+
+
 {% if oc_group %}
+
   <script>
+    {% if ockeyrole  %}
     window.onload = function() {
       document.getElementById('oc_nav_collapse').classList.add('collapse');
 
     };
+    {% endif %}
+
     function ocexpand(x) {
       x.style.width = "250px";
     }
@@ -174,15 +187,21 @@
 
 
   <div class="block-superfish block-superfishtest
-{% if 'producer' in ocroles or 'seo_admin' in ocroles or 'leader' in ocroles or 'content_admin' in ocroles or
-    'editor' in ocroles or 'site_admin' in ocroles or 'administrator' in ocroles  %}
+{% if ockeyrole %}
 collapse
-{%else  %}
+{% else  %}
 anoncollapse
 {% endif %}
 " id="oc_nav_collapse">
-    <div onmouseover="ocexpand(this)" onmouseout="occontract(this)" class="oc_group_nav">
-      {{ oc_contents }}
+    <div onmouseover="ocexpand(this)" onmouseout="occontract(this)" class="
+      {% if ockeyrole %}
+         oc_group_nav
+      {%else  %}
+         oc_group_nav_anon
+    {% endif %}
+    ">
+
+{#      {{ oc_contents }}#}
       <ul id="superfish-test" class="sf-vertical sf-test sf-style-white sf-js-enabled sf-shadow">
         {#{% for id in content.oc_items|slice(0, 5) %}#}
         {#<li>{{ id['id'] }} {{ id['type'] }} </li>#}

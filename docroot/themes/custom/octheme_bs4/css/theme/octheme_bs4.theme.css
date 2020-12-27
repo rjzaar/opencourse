@@ -793,6 +793,16 @@ ul {
   height: 340px;
 }
 
+.oc_group_nav_anon {
+  width: 250px;
+  /* Set a width if you like */
+  position: fixed;
+  left: 0;
+  top: 10px;
+  z-index: 1500;
+  height: 340px;
+}
+
 .oc_group_nav_text {
   display: inline-block;
   position: relative;
@@ -1465,16 +1475,25 @@ ul {
   display: none;
 }
 
-#superfish-test-toggle:after {
-  content: 'nav';
-  color: white;
-  position: absolute !important;
-  top: 5px;
-  left: 0;
-  padding: 10px 10px 10px 5px;
-  background-color: #ee3159;
-  font-size: 20px !important;
-  border-radius: 0 5px 5px 0;
+#superfish-test-toggle {
+  background-color: #261C3F;
+  position: relative;
+  width: 3em;
+  height: 3em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 1.5em;
+}
+
+div.sf-accordion-toggle.sf-style-white a {
+  padding: 0;
+  color: #ee3159;
+  right: 0 !important;
+}
+
+div.sf-accordion-toggle.sf-style-white > a::after {
+  right: 0;
+  font-size: 3em;
 }
 
 footer {

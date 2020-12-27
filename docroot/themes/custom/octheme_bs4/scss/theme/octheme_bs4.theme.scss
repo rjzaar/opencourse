@@ -728,6 +728,16 @@ ul {
   height: 340px
 }
 
+.oc_group_nav_anon {
+  width: 250px; /* Set a width if you like */
+  position: fixed;
+  //position:absolute;
+  left: 0;
+  top: 10px;
+  z-index: 1500;
+  height: 340px
+}
+
 // This sets the test.
 .oc_group_nav_text {
   display: inline-block;
@@ -1505,18 +1515,64 @@ $oc_panel_left: 15px;
 }
 
 // or put here whatever you like.
-#superfish-test-toggle:after {
-  content: 'nav';
-  color: white;
-  position: absolute !important;
-  top: 5px;
-  left: 0;
-  padding: 10px 10px 10px 5px;
-  background-color: $primary;
-  font-size: 20px !important;
-  border-radius: 0 5px 5px 0;
-  //filter: alpha(opacity=80); /* For IE8 and earlier */
+#superfish-test-toggle {
+  background-color: $secondary;
+  //background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><linearGradient id='gradient'><stop offset='10%' stop-color='%23F00'/><stop offset='90%' stop-color='%23fcc'/> </linearGradient><rect fill='url(%23gradient)' x='0' y='0' width='100%' height='100%'/></svg>");
+  position: relative;
+  width: 3em;
+  height: 3em;
+  box-sizing: border-box;
+  //margin-left: 2em;
+  margin-top: 1.5em;
+
 }
+//
+//#superfish-test-toggle:before {
+//  background-color: $primary;
+//  position: absolute;
+//  top: -8px;
+//  width: 20px;
+//  height: 3px;
+//  content: "";
+//  transition: all 0.2s;
+//  margin-left: 20px;
+//}
+//
+//
+//#superfish-test-toggle:after {
+//  //content: 'nav';
+//  color: $primary;
+//  position: absolute;
+//  top: auto;
+//  bottom: -8px;
+//  width: 20px;
+//  height: 3px;
+//  content: "";
+//  transition: all 0.2s;
+//  margin-left: 20px;
+//
+//  //position: absolute !important;
+//  //top: 5px;
+//  //left: 0;
+//  //padding: 10px 10px 10px 5px;
+//  ////background-color: $primary;
+//  //font-size: 20px !important;
+//  //border-radius: 0 5px 5px 0;
+//  //filter: alpha(opacity=80); /* For IE8 and earlier */
+//}
+
+div.sf-accordion-toggle.sf-style-white a {
+  padding: 0;
+  color: $primary;
+  right: 0 !important;
+
+}
+
+div.sf-accordion-toggle.sf-style-white > a::after {
+  right: 0;
+  font-size: 3em;
+}
+
 footer {
 margin-top: 0 !important;
 }
