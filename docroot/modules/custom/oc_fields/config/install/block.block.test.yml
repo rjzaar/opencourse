@@ -51,7 +51,7 @@ settings:
   smallicm: ''
   smallich: ''
   smallamt: ''
-  smallabt: '1'
+  smallabt: '2'
   supersubs: 1
   minwidth: '12'
   maxwidth: '27'
