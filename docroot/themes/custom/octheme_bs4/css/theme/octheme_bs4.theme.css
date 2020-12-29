@@ -522,6 +522,23 @@ nav.tabs {
   }
 }
 
+@media (min-width: 576px) {
+  .oc_smallscreen {
+    display: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .oc_smallscreen {
+    display: block;
+  }
+}
+
+.oc_nav_text {
+  color: #ee3159;
+  font-weight: 700;
+}
+
 @media (min-width: 766.1px) and (max-width: 766.9px) {
   .collapse {
     display: none !important;
@@ -819,7 +836,7 @@ ul {
 }
 
 .oc_icon_back {
-  color: #930c29 !important;
+  color: #ee3159;
 }
 
 .view-oc-sequencecards {
@@ -1476,13 +1493,16 @@ ul {
 }
 
 #superfish-test-toggle {
-  background-color: #261C3F;
+  background-color: transparent;
   position: relative;
   width: 3em;
   height: 3em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  border: 0;
   margin-top: 1.5em;
+}
+
+.sf-clone-parent {
+  display: none;
 }
 
 div.sf-accordion-toggle.sf-style-white a {

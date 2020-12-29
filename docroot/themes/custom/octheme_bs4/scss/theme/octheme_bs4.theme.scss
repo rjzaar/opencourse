@@ -393,6 +393,21 @@ nav.tabs {
   }
 }
 
+.oc_smallscreen {
+  @media (min-width: 576px) {
+
+    display: none;
+  }
+  @media (max-width: 575px) {
+    display: block;
+  }
+}
+
+.oc_nav_text {
+  color: $primary;
+  font-weight: 700;
+}
+
 // This 'trick' forces the navbar to hide when making the screen smaller than 768
 // and reappear when going the other way, by forcing it to be not seen and then seen or
 // visa-versa respectively, while definitely showing the navbar when larger than 768.
@@ -757,7 +772,8 @@ ul {
 }
 
 .oc_icon_back {
-  color: darken($primary, 25%) !important;
+  //color: darken($primary, 25%) !important;
+  color: $primary;
 }
 
 .view-oc-sequencecards {
@@ -1516,14 +1532,22 @@ $oc_panel_left: 15px;
 
 // or put here whatever you like.
 #superfish-test-toggle {
-  background-color: $secondary;
+  background-color: transparent;
   //background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><linearGradient id='gradient'><stop offset='10%' stop-color='%23F00'/><stop offset='90%' stop-color='%23fcc'/> </linearGradient><rect fill='url(%23gradient)' x='0' y='0' width='100%' height='100%'/></svg>");
   position: relative;
   width: 3em;
   height: 3em;
-  box-sizing: border-box;
+  border: 0;
   //margin-left: 2em;
   margin-top: 1.5em;
+
+}
+
+.sf-clone-parent {
+  display:none;
+}
+
+.oc_group_nav_text.sf-has-clone-parent {
 
 }
 //

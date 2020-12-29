@@ -167,23 +167,24 @@
 {# group navigation #}
 
 
-{% if oc_group %}
+{#{% if oc_group %}#}
 
-  <script>
-    {% if ockeyrole  %}
-    window.onload = function() {
-      document.getElementById('oc_nav_collapse').classList.add('collapse');
+{#  <script>#}
 
-    };
-    {% endif %}
+{#    {% if ockeyrole  %}#}
+{#    window.onload = function() {#}
+{#      document.getElementById('oc_nav_collapse').classList.add('collapse');#}
 
-    function ocexpand(x) {
-      x.style.width = "250px";
-    }
+{#    };#}
+{#    {% endif %}#}
 
-    function occontract(x) {
-      x.style.width = "45px";
-    }</script>
+{#    function ocexpand(x) {#}
+{#      x.style.width = "250px";#}
+{#    }#}
+
+{#    function occontract(x) {#}
+{#      x.style.width = "45px";#}
+{#    }</script>#}
 
 
   <div class="block-superfish block-superfishtest
@@ -209,17 +210,20 @@ anoncollapse
           {%- block oc_icon -%}th-list{%- endblock -%}
           {%- block oc_type -%}topics{%- endblock -%}
           {%- block oc_name -%}Topics{%- endblock -%}
+          {%- block oc_name2 -%}Topics{%- endblock -%}
         {% endembed %}
         {#{% endfor %}#}
         {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
           {%- block oc_icon -%}graduation-cap{%- endblock -%}
           {%- block oc_type -%}courses{%- endblock -%}
           {%- block oc_name -%}Courses{%- endblock -%}
+          {%- block oc_name2 -%}Courses{%- endblock -%}
         {% endembed %}
         {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
           {%- block oc_icon -%}book{%- endblock -%}
           {%- block oc_type -%}books{%- endblock -%}
           {%- block oc_name -%}Books{%- endblock -%}
+          {%- block oc_name2 -%}Books{%- endblock -%}
         {% endembed %}
         {% if 'producer' in ocroles or 'seo_admin' in ocroles or 'leader' in ocroles or 'content_admin' in ocroles or
           'editor' in ocroles or 'site_admin' in ocroles or 'administrator' in ocroles  %}
@@ -227,32 +231,37 @@ anoncollapse
             {%- block oc_icon -%}file{%- endblock -%}
             {%- block oc_type -%}docs{%- endblock -%}
             {%- block oc_name -%}Docs{%- endblock -%}
+            {%- block oc_name2 -%}Docs{%- endblock -%}
           {% endembed %}
           {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
             {%- block oc_icon -%}link{%- endblock -%}
             {%- block oc_type -%}links{%- endblock -%}
             {%- block oc_name -%}Links{%- endblock -%}
+            {%- block oc_name2 -%}Links{%- endblock -%}
           {% endembed %}
           {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
             {%- block oc_icon -%}image{%- endblock -%}
             {%- block oc_type -%}images{%- endblock -%}
             {%- block oc_name -%}Images{%- endblock -%}
+            {%- block oc_name2 -%}Images{%- endblock -%}
           {% endembed %}
         {% endif %}
         {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
           {%- block oc_icon -%}sign-in-alt{%- endblock -%}
-          {%- block oc_link -%}user/login{%- endblock -%}
+          {%- block oc_type -%}user/login{%- endblock -%}
           {%- block oc_name -%}Login{%- endblock -%}
+          {%- block oc_name2 -%}Login{%- endblock -%}
         {% endembed %}
         {% embed directory ~ '/templates/system/page-lbutton.html.twig' %}
           {%- block oc_icon -%}envelope{%- endblock -%}
-          {%- block oc_link -%}form/contact{%- endblock -%}
+          {%- block oc_type -%}form/contact{%- endblock -%}
           {%- block oc_name -%}Contact Us{%- endblock -%}
+          {%- block oc_name2 -%}Contact Us{%- endblock -%}
         {% endembed %}
       </ul>
     </div>
   </div>
-{% endif %}
+{#{% endif %}#}
 
 {# octheme end 2 #}
 
@@ -351,3 +360,10 @@ anoncollapse
     </div>
   {% endblock %}
 {% endif %}
+<script defer>
+  window.onload = function() {
+    if (window.screen.availWidth < 576) {
+      document.getElementsByClassName('oc_group_nav_text').classlist.removeClass('sf-hidden');
+    };
+  };
+</script>
