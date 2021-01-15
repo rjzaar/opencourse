@@ -897,6 +897,16 @@ ul {
   margin: 24px;
 }
 
+.oc-book-desc {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.oc-book-title a {
+  display: inline-block;
+}
+
 /* adding sf-vertical class in addition to sf-menu creates a vertical menu */
 /* eg. <ul class="sf-menu sf-vertical"> ... */
 .sfr-vertical {

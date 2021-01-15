@@ -52,7 +52,13 @@ third_party_settings:
         settings:
           link: true
           wrapper: h3
-          class: ''
+          class: oc-book-title
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
 id: node.oc_sequence.vertical_media_teaser_small
 targetEntityType: node
 bundle: oc_sequence
@@ -66,15 +72,45 @@ content:
       trim_length: 20
       trim_type: words
       trim_suffix: ...
-      more_link: false
+      wrap_class: trimmed
       more_text: More
+      more_class: more-link
       summary_handler: full
       trim_options:
         text: true
-      more_class: more-link
+        trim_zero: false
+      trim_sentence: false
       wrap_output: false
-      wrap_class: trimmed
-    third_party_settings: {  }
+      more_link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
+            ow: true
+            ow-el: ''
+            ow-cl: 'clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item oc-book-desc'
+            ow-at: ''
+            fis: true
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fi: true
+            fi-el: ''
+            fi-cl: ''
+            fi-at: ''
+            suffix: ''
+            lbw: false
+            lb-col: false
+            ow-def-at: false
+            ow-def-cl: false
+            fis-def-at: false
+            fi-def-at: false
     region: main
   content_moderation_control:
     weight: 0

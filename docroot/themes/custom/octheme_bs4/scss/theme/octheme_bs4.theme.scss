@@ -807,6 +807,16 @@ ul {
 .view-oc-book-cards .view-content article {
   margin: 24px;
 }
+
+.oc-book-desc {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.oc-book-title a {
+  display: inline-block;
+}
 // These don't work.
 //.group_nav_text a {
 //  position: relative;
