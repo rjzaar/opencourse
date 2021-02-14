@@ -92,7 +92,8 @@
         "webflo/drupal-finder": "~1.0",
         "webmozart/path-util": "~2.0",
         "wikimedia/composer-merge-plugin": "^1.4",
-        "drupal/upgrade_status": "^3.0"
+        "drupal/upgrade_status": "^3.0",
+        "drupal/devel_entity_updates": "^3.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -110,7 +111,6 @@
         "drupal/coder": "8.2.12",
         "drupal/default_content": "^1.0@alpha",
         "drupal/devel": "~3.0",
-        "drupal/devel_entity_updates": "^1.0",
         "drupal/drupal-extension": "3.3.1",
         "drupal/search_kint": "^1.0",
         "drupal/twig_xdebug": "^1.0",
