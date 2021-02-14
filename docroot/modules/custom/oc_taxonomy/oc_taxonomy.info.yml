@@ -1,22 +1,22 @@
 name: 'Opencourse Taxonomy'
 description: 'Taxonomies for Opencourses, ie topics and authors.'
 type: module
-core: 8.x
 version: 8.x-0.3
 package: oc
 dependencies:
-  - block
-  - ds
-  - field
-  - language
-  - node
-  - oc_fields
-  - oc_media
-  - path
-  - rabbit_hole
-  - taxonomy
-  - text
-  - user
-  - views
-  - viewsreference
+  - ':oc_fields'
+  - ':oc_media'
+  - 'drupal:block'
+  - 'drupal:field'
+  - 'drupal:language'
+  - 'drupal:node'
+  - 'drupal:path'
+  - 'drupal:taxonomy'
+  - 'drupal:text'
+  - 'drupal:user'
+  - 'drupal:views'
+  - 'ds:ds'
+  - 'rabbit_hole:rabbit_hole'
+  - 'viewsreference:viewsreference'
 core_incompatible: false
+core_version_requirement: '^8.9 || ^9'

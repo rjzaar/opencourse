@@ -1,8 +1,0 @@
-{
-  "name": "drupal/oc_block",
-  "type": "drupal-module",
-  "description": "OC group nav block",
-  "keywords": ["Drupal"],
-  "license": "GPL-2.0+",
-  "require": { }
-}

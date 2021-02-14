@@ -1,23 +1,23 @@
-<li >
+<li class="oc_menuparent">
 {#  class="sf-depth-1 menuparent sf-expanded"#}
-    <a  href="{{ url('<front>')['#markup'] }}{% block oc_type %}oc_type{% endblock %}" target="_self" class="is-active sf-depth-1 menuparent ">
+    <a  href="{{ url('<front>')['#markup'] }}{% block oc_type %}oc_type{% endblock %}" target="_self">
         <span class="fa-stack fa-lg ">
   <i class="fas fa-square fa-stack-2x oc_icon_back"></i>
   <i class="fas fa-{% block oc_icon %}oc_icon{% endblock %} fa-stack-1x fa-inverse"></i>
         </span></a>
-  <a class=" is-active sf-depth-2 oc_nav_text" target="_self" href="{{ url('<front>')['#markup'] }}{{ block('oc_type') }}" >{% block oc_name2 %}oc_name{% endblock %}</a>
+  <a class="oc_nav_text" target="_self" href="{{ url('<front>')['#markup'] }}{{ block('oc_type') }}" >{% block oc_name2 %}oc_name{% endblock %}</a>
   {% if is_admin %}
-    <a class="is-active sf-depth-2 oc_group_nav_add_content" target="_self" href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/content/create/group_node%3Aoc_{{ block('oc_type')|trim('s', 'right') }}" >(Add)</a>
+    <a class="oc_nav_text oc_group_nav_add_content" target="_self" href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/content/create/group_node%3Aoc_{{ block('oc_type')|trim('s', 'right') }}" >(Add)</a>
   {% endif %}
-    <ul class="oc_group_nav_text">
-        <li class="sf-depth-2 sf-no-children">
+{#    <ul class="oc_group_nav_text">#}
+{#        <li class="">#}
 {#          group/{{ oc_group }}#}
-            <a class=" is-active sf-depth-2" target="_self" href="{{ url('<front>')['#markup'] }}{{ block('oc_type') }}" >{% block oc_name %}oc_name{% endblock %}</a>
-          {% if is_admin %}
-        <a class="is-active sf-depth-2 oc_group_nav_add_content" target="_self" href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/content/create/group_node%3Aoc_{{ block('oc_type')|trim('s', 'right') }}" >(Add)</a>
-      {% endif %}
-        </li>
-    </ul>
+{#            <a class="  " target="_self" href="{{ url('<front>')['#markup'] }}{{ block('oc_type') }}" >{% block oc_name %}oc_name{% endblock %}</a>#}
+{#          {% if is_admin %}#}
+{#        <a class=" oc_group_nav_add_content" target="_self" href="{{ url('<front>')['#markup'] }}group/{{ oc_group }}/content/create/group_node%3Aoc_{{ block('oc_type')|trim('s', 'right') }}" >(Add)</a>#}
+{#      {% endif %}#}
+{#        </li>#}
+{#    </ul>#}
 
       {#          group/{{ oc_group }}#}
 

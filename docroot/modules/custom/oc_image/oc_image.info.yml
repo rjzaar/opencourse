@@ -1,39 +1,40 @@
 name: 'Opencourse Image'
 description: 'Provides Opencourse Image content type and related configuration. A course image is a image that will be used within a book or other location.'
 type: module
-core: 8.x
 dependencies:
-  - advanced_text_formatter
-  - color_field
-  - comment
-  - content_moderation
-  - ds
-  - entity_access_by_field
-  - field
-  - focal_point
-  - gnode
-  - group
-  - h5p
-  - h5peditor
-  - image
-  - layout_builder
-  - link
-  - maxlength
-  - media
-  - menu_ui
-  - metatag
-  - node
-  - oc_fields
-  - oc_taxonomy
-  - options
-  - path
-  - responsive_image
-  - smart_trim
-  - text
-  - user
-  - varbase_media
-  - views
-  - yoast_seo
+  - ':entity_access_by_field'
+  - ':oc_fields'
+  - ':oc_taxonomy'
+  - ':oc_works'
+  - ':varbase_media'
+  - 'advanced_text_formatter:advanced_text_formatter'
+  - 'color_field:color_field'
+  - 'drupal:comment'
+  - 'drupal:content_moderation'
+  - 'drupal:field'
+  - 'drupal:image'
+  - 'drupal:layout_builder'
+  - 'drupal:link'
+  - 'drupal:media'
+  - 'drupal:menu_ui'
+  - 'drupal:node'
+  - 'drupal:options'
+  - 'drupal:path'
+  - 'drupal:responsive_image'
+  - 'drupal:text'
+  - 'drupal:user'
+  - 'drupal:views'
+  - 'ds:ds'
+  - 'focal_point:focal_point'
+  - 'group:gnode'
+  - 'group:group'
+  - 'h5p:h5p'
+  - 'h5p:h5peditor'
+  - 'maxlength:maxlength'
+  - 'metatag:metatag'
+  - 'smart_trim:smart_trim'
+  - 'yoast_seo:yoast_seo'
 version: 8.x-0.5
 package: oc
 core_incompatible: false
+core_version_requirement: '^8.9 || ^9'

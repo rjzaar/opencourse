@@ -403,9 +403,35 @@ nav.tabs {
   }
 }
 
+.oc_menuparent {
+  font-weight: bold;
+
+}
+
 .oc_nav_text {
+  display: inline;
   color: $primary;
-  font-weight: 700;
+  font-weight: 800;
+
+
+  @media (min-width: 766.1px) and (max-width: 766.9px) {
+
+    display: inline !important;
+  }
+  @media (min-width: 767.1px) and (max-width: 767.9px) {
+
+    display: none !important;
+  }
+  @media (min-width: 768px) {
+
+    display: none;
+  }
+}
+
+
+.oc_menuparent:hover .oc_nav_text {
+  display: inline !important;
+  width: 250px;
 }
 
 // This 'trick' forces the navbar to hide when making the screen smaller than 768
@@ -713,10 +739,7 @@ $superfish-1-background-color-level-fourth: #c0c0c0;
   margin-bottom: 0;
 }
 
-//the left and right vertical set of buttons uses superfish
-// The superfish css is at /docroot/libraries/superfish/css
-// This can be styled: see: https://www.drupal.org/node/1125896#s-how-to-style
-// BUT the import styles are overwritten with these classes
+// the import styles are overwritten with these classes
 ul {
   list-style-type: none;
   padding-left: 5px;
@@ -739,6 +762,7 @@ ul {
   //position:absolute;
   left: 0;
   bottom: 10px;
+  //top: 10px;
   z-index: 1500;
   height: 340px
 }
@@ -748,7 +772,7 @@ ul {
   position: fixed;
   //position:absolute;
   left: 0;
-  top: 10px;
+  top: 20px;
   z-index: 1500;
   height: 340px
 }
@@ -1790,317 +1814,3 @@ margin-top: 0 !important;
   }
 }
 
-/*
- * Sample SCSS for adding Superfish CSS to themes.
- *
- * Instructions:
- *
- * 1. Change the #YOUR-BLOCK-ID (below) to the ID of your Superfish block.
- *
- * 2. Add the SCSS to your theme.
- *
- * 3. Note that by removing the .sf-style-none, the style will be applied to
- *    the menu regardless of the "Style" selected in the Superfish
- *    block configuration.
- *
- */
-
-//
-
-#superfish-test {
-  .sf-style-none {
-    float: left;
-    margin: 0;
-    padding: 0;
-
-    &.sf-navbar {
-      width: 100%;
-      background: $superfish-1-background-color-level-first;
-    }
-
-    ul {
-      padding-left: 0;
-
-      &.sf-multicolumn li {
-        &.sf-multicolumn-wrapper {
-          background: $superfish-1-background-color-level-fourth;
-
-          li {
-            background: transparent;
-          }
-        }
-      }
-    }
-
-    a {
-      color: $superfish-1-color;
-      padding: 0.75em 1em;
-
-      &.sf-with-ul {
-        padding-right: 2.25em;
-      }
-
-      &:focus {
-        background: $superfish-1-background-color-level-fourth;
-        outline: 0;
-      }
-
-      &:hover {
-        background: $superfish-1-background-color-level-fourth;
-        outline: 0;
-      }
-
-      &:active {
-        background: $superfish-1-background-color-level-fourth;
-        outline: 0;
-      }
-    }
-
-    span {
-      &.nolink {
-        color: $superfish-1-color;
-        padding: 0.75em 1em;
-
-        &.sf-with-ul {
-          padding-right: 2.25em;
-        }
-
-        &:hover {
-          background: $superfish-1-background-color-level-fourth;
-          outline: 0;
-        }
-      }
-
-      &.sf-description {
-        color: $superfish-1-color;
-        display: block;
-        font-size: 0.833em;
-        line-height: 1.5;
-        margin: 5px 0 0 5px;
-        padding: 0;
-      }
-    }
-
-    &.rtl {
-      span {
-        &.sf-description {
-          margin: 5px 5px 0 0;
-        }
-
-        &.nolink.sf-with-ul {
-          padding-left: 2.25em;
-          padding-right: 1em;
-        }
-      }
-
-      a.sf-with-ul {
-        padding-left: 2.25em;
-        padding-right: 1em;
-      }
-    }
-
-    li {
-      background: $superfish-1-background-color-level-first;
-
-      li {
-        background: $superfish-1-background-color-level-second;
-
-        li {
-          background: $superfish-1-background-color-level-third;
-        }
-      }
-
-      &:hover {
-        background: $superfish-1-background-color-level-fourth;
-        outline: 0;
-
-        > ul {
-          top: 40px;
-        }
-      }
-
-      &.sfHover {
-        background: $superfish-1-background-color-level-fourth;
-        outline: 0;
-
-        > ul {
-          top: 40px;
-        }
-      }
-    }
-
-    .sf-sub-indicator {
-      background-image: url('../images/dropdown-arrows.png');
-    }
-  }
-
-  div.sf-accordion-toggle {
-    &.sf-style-none a {
-      background: $superfish-1-background-color-level-first;
-      color: $superfish-1-color;
-      padding: 1em;
-
-      &.sf-expanded {
-        background: $superfish-1-background-color-level-fourth;
-        font-weight: bold;
-      }
-    }
-  }
-
-  .sf-menu.sf-style-none {
-    &.rtl {
-      &.sf-accordion li {
-        li {
-          a {
-            padding-left: auto;
-            padding-right: 2em;
-          }
-
-          li {
-            a {
-              padding-left: auto;
-              padding-right: 3em;
-            }
-
-            li {
-              a {
-                padding-left: auto;
-                padding-right: 4em;
-              }
-
-              li {
-                a {
-                  padding-left: auto;
-                  padding-right: 5em;
-                }
-
-                span.nolink {
-                  padding-left: auto;
-                  padding-right: 5em;
-                }
-              }
-
-              span.nolink {
-                padding-left: auto;
-                padding-right: 4em;
-              }
-            }
-
-            span.nolink {
-              padding-left: auto;
-              padding-right: 3em;
-            }
-          }
-
-          span.nolink {
-            padding-left: auto;
-            padding-right: 2em;
-          }
-        }
-      }
-
-      ul.sf-multicolumn {
-        li.sf-multicolumn-wrapper {
-          ol li {
-            &.sf-multicolumn-column {
-              float: right;
-            }
-          }
-        }
-      }
-    }
-
-    &.sf-accordion li {
-      &.sf-expanded {
-        background: $superfish-1-background-color-level-fourth;
-
-        > {
-          a {
-            font-weight: bold;
-          }
-
-          span.nolink {
-            font-weight: bold;
-          }
-        }
-      }
-
-      li {
-        a {
-          padding-left: 2em;
-        }
-
-        li {
-          a {
-            padding-left: 3em;
-          }
-
-          li {
-            a {
-              padding-left: 4em;
-            }
-
-            li {
-              a {
-                padding-left: 5em;
-              }
-
-              span.nolink {
-                padding-left: 5em;
-              }
-            }
-
-            span.nolink {
-              padding-left: 4em;
-            }
-          }
-
-          span.nolink {
-            padding-left: 3em;
-          }
-        }
-
-        span.nolink {
-          padding-left: 2em;
-        }
-      }
-
-      a.sf-accordion-button {
-        font-weight: bold;
-        position: absolute;
-        right: 0;
-        top: 0;
-        z-index: 499;
-      }
-    }
-
-    ul.sf-multicolumn {
-      li.sf-multicolumn-wrapper {
-        ol {
-          margin: 0;
-          padding: 0;
-
-          li {
-            margin: 0;
-            padding: 0;
-
-            &.sf-multicolumn-column {
-              display: inline;
-              float: left;
-            }
-          }
-        }
-
-        a.menuparent {
-          font-weight: bold;
-        }
-
-        span.nolink {
-          &.menuparent {
-            font-weight: bold;
-          }
-        }
-      }
-    }
-  }
-}

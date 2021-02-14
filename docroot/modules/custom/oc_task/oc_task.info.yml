@@ -1,27 +1,27 @@
 name: 'Opencourse Task'
 description: 'Provides Opencourse Task content type and related configuration. A task to be completed on Opencourse'
 type: module
-core: 8.x
 dependencies:
-  - content_moderation
-  - ds
-  - field
-  - language
-  - menu_ui
-  - node
-  - oc_book
-  - oc_fields
-  - oc_image
-  - oc_link
-  - oc_lp
-  - oc_works
-  - options
-  - path
-  - rabbit_hole
-  - taxonomy
-  - text
-  - user
-  - views
+  - ':oc_book'
+  - ':oc_fields'
+  - ':oc_image'
+  - ':oc_link'
+  - ':oc_lp'
+  - ':oc_works'
+  - 'drupal:content_moderation'
+  - 'drupal:field'
+  - 'drupal:language'
+  - 'drupal:menu_ui'
+  - 'drupal:node'
+  - 'drupal:options'
+  - 'drupal:path'
+  - 'drupal:taxonomy'
+  - 'drupal:text'
+  - 'drupal:user'
+  - 'drupal:views'
+  - 'ds:ds'
+  - 'rabbit_hole:rabbit_hole'
 version: 8.x-0.5
 package: oc
 core_incompatible: false
+core_version_requirement: '^8.9 || ^9'

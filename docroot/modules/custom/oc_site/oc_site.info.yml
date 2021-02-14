@@ -1,22 +1,22 @@
 name: 'Opencourse Site'
 description: 'Provides site components.'
 type: module
-core: 8.x
 dependencies:
-  - block
-  - block_content
-  - content_translation
-  - ctools
-  - field
-  - language
-  - media
-  - site_settings
-  - system
-  - text
-  - tour
-  - tour_ui
-  - user
-  - varbase_media
+  - ':tour_ui'
+  - ':varbase_media'
+  - 'ctools:ctools'
+  - 'drupal:block'
+  - 'drupal:block_content'
+  - 'drupal:content_translation'
+  - 'drupal:field'
+  - 'drupal:language'
+  - 'drupal:media'
+  - 'drupal:system'
+  - 'drupal:text'
+  - 'drupal:tour'
+  - 'drupal:user'
+  - 'site_settings:site_settings'
 version: 8.x-0.6
 package: oc
 core_incompatible: false
+core_version_requirement: '^8.9 || ^9'

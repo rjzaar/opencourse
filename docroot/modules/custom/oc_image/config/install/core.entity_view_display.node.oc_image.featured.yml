@@ -226,3 +226,4 @@ hidden:
   field_meta_tags: true
   field_oc_back_color: true
   field_yoast_seo: true
+  search_api_excerpt: true

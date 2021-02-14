@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_oc_topic
+    - field.storage.media.field_oc_topic
     - media.type.image
     - taxonomy.vocabulary.oc_topics
 id: media.image.field_oc_topic

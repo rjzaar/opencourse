@@ -1,27 +1,27 @@
 name: 'Opencourse link'
 description: 'Provides Opencourse link content type and related configuration. A Opencourse Link is a link  to an resource that is connected to the current topic.'
 type: module
-core: 8.x
 dependencies:
-  - ace_editor
-  - content_moderation
-  - ds
-  - entity_access_by_field
-  - field
-  - gnode
-  - group
-  - link
-  - menu_ui
-  - node
-  - oc_fields
-  - oc_taxonomy
-  - oc_works
-  - options
-  - path
-  - taxonomy
-  - text
-  - user
-  - views
+  - ':entity_access_by_field'
+  - ':oc_fields'
+  - ':oc_taxonomy'
+  - ':oc_works'
+  - 'ace_editor:ace_editor'
+  - 'drupal:content_moderation'
+  - 'drupal:field'
+  - 'drupal:link'
+  - 'drupal:menu_ui'
+  - 'drupal:node'
+  - 'drupal:options'
+  - 'drupal:path'
+  - 'drupal:taxonomy'
+  - 'drupal:text'
+  - 'drupal:user'
+  - 'drupal:views'
+  - 'ds:ds'
+  - 'group:gnode'
+  - 'group:group'
 version: 8.x-0.3
 package: oc
 core_incompatible: false
+core_version_requirement: '^8.9 || ^9'

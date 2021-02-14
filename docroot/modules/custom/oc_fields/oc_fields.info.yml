@@ -1,24 +1,23 @@
 name: 'Opencourse Setup'
 description: 'Only the storage fields for all oc content types.'
 type: module
-core: 8.x
 dependencies:
-  - block
-  - color_field
-  - entity_access_by_field
-  - field
-  - file
-  - focal_point
-  - h5p
-  - image
-  - link
-  - media
-  - node
-  - options
-  - superfish
-  - system
-  - taxonomy
-  - user
+  - ':entity_access_by_field'
+  - 'color_field:color_field'
+  - 'drupal:block'
+  - 'drupal:field'
+  - 'drupal:file'
+  - 'drupal:image'
+  - 'drupal:link'
+  - 'drupal:media'
+  - 'drupal:node'
+  - 'drupal:options'
+  - 'drupal:system'
+  - 'drupal:taxonomy'
+  - 'drupal:user'
+  - 'focal_point:focal_point'
+  - 'h5p:h5p'
 version: 8.x-0.6
 package: oc
 core_incompatible: false
+core_version_requirement: '^8.9 || ^9'

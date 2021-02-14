@@ -146,6 +146,12 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
       advanced_text_formatter:
         show_token_tree: 0
+      length_indicator:
+        indicator: true
+        indicator_opt:
+          optimin: 15
+          optimax: 50
+          tolerance: 10
     region: content
   translation:
     weight: 7

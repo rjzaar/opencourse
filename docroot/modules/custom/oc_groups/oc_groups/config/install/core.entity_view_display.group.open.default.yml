@@ -52,4 +52,5 @@ hidden:
   created: true
   field_oc_seo: true
   langcode: true
+  search_api_excerpt: true
   uid: true

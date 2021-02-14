@@ -534,9 +534,37 @@ nav.tabs {
   }
 }
 
+.oc_menuparent {
+  font-weight: bold;
+}
+
 .oc_nav_text {
+  display: inline;
   color: #ee3159;
-  font-weight: 700;
+  font-weight: 800;
+}
+
+@media (min-width: 766.1px) and (max-width: 766.9px) {
+  .oc_nav_text {
+    display: inline !important;
+  }
+}
+
+@media (min-width: 767.1px) and (max-width: 767.9px) {
+  .oc_nav_text {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .oc_nav_text {
+    display: none;
+  }
+}
+
+.oc_menuparent:hover .oc_nav_text {
+  display: inline !important;
+  width: 250px;
 }
 
 @media (min-width: 766.1px) and (max-width: 766.9px) {
@@ -815,7 +843,7 @@ ul {
   /* Set a width if you like */
   position: fixed;
   left: 0;
-  top: 10px;
+  top: 20px;
   z-index: 1500;
   height: 340px;
 }
@@ -1703,266 +1731,4 @@ footer {
     display: block;
     margin: 0 auto;
   }
-}
-
-/*
- * Sample SCSS for adding Superfish CSS to themes.
- *
- * Instructions:
- *
- * 1. Change the #YOUR-BLOCK-ID (below) to the ID of your Superfish block.
- *
- * 2. Add the SCSS to your theme.
- *
- * 3. Note that by removing the .sf-style-none, the style will be applied to
- *    the menu regardless of the "Style" selected in the Superfish
- *    block configuration.
- *
- */
-#superfish-test .sf-style-none {
-  float: left;
-  margin: 0;
-  padding: 0;
-}
-
-#superfish-test .sf-style-none.sf-navbar {
-  width: 100%;
-  background: #f0f0f0;
-}
-
-#superfish-test .sf-style-none ul {
-  padding-left: 0;
-}
-
-#superfish-test .sf-style-none ul.sf-multicolumn li.sf-multicolumn-wrapper {
-  background: #c0c0c0;
-}
-
-#superfish-test .sf-style-none ul.sf-multicolumn li.sf-multicolumn-wrapper li {
-  background: transparent;
-}
-
-#superfish-test .sf-style-none a {
-  color: #001010;
-  padding: 0.75em 1em;
-}
-
-#superfish-test .sf-style-none a.sf-with-ul {
-  padding-right: 2.25em;
-}
-
-#superfish-test .sf-style-none a:focus {
-  background: #c0c0c0;
-  outline: 0;
-}
-
-#superfish-test .sf-style-none a:hover {
-  background: #c0c0c0;
-  outline: 0;
-}
-
-#superfish-test .sf-style-none a:active {
-  background: #c0c0c0;
-  outline: 0;
-}
-
-#superfish-test .sf-style-none span.nolink {
-  color: #001010;
-  padding: 0.75em 1em;
-}
-
-#superfish-test .sf-style-none span.nolink.sf-with-ul {
-  padding-right: 2.25em;
-}
-
-#superfish-test .sf-style-none span.nolink:hover {
-  background: #c0c0c0;
-  outline: 0;
-}
-
-#superfish-test .sf-style-none span.sf-description {
-  color: #001010;
-  display: block;
-  font-size: 0.833em;
-  line-height: 1.5;
-  margin: 5px 0 0 5px;
-  padding: 0;
-}
-
-#superfish-test .sf-style-none.rtl span.sf-description {
-  margin: 5px 5px 0 0;
-}
-
-#superfish-test .sf-style-none.rtl span.nolink.sf-with-ul {
-  padding-left: 2.25em;
-  padding-right: 1em;
-}
-
-#superfish-test .sf-style-none.rtl a.sf-with-ul {
-  padding-left: 2.25em;
-  padding-right: 1em;
-}
-
-#superfish-test .sf-style-none li {
-  background: #f0f0f0;
-}
-
-#superfish-test .sf-style-none li li {
-  background: #e0e0e0;
-}
-
-#superfish-test .sf-style-none li li li {
-  background: #d0d0d0;
-}
-
-#superfish-test .sf-style-none li:hover {
-  background: #c0c0c0;
-  outline: 0;
-}
-
-#superfish-test .sf-style-none li:hover > ul {
-  top: 40px;
-}
-
-#superfish-test .sf-style-none li.sfHover {
-  background: #c0c0c0;
-  outline: 0;
-}
-
-#superfish-test .sf-style-none li.sfHover > ul {
-  top: 40px;
-}
-
-#superfish-test .sf-style-none .sf-sub-indicator {
-  background-image: url("../images/dropdown-arrows.png");
-}
-
-#superfish-test div.sf-accordion-toggle.sf-style-none a {
-  background: #f0f0f0;
-  color: #001010;
-  padding: 1em;
-}
-
-#superfish-test div.sf-accordion-toggle.sf-style-none a.sf-expanded {
-  background: #c0c0c0;
-  font-weight: bold;
-}
-
-#superfish-test .sf-menu.sf-style-none.rtl.sf-accordion li li a {
-  padding-left: auto;
-  padding-right: 2em;
-}
-
-#superfish-test .sf-menu.sf-style-none.rtl.sf-accordion li li li a {
-  padding-left: auto;
-  padding-right: 3em;
-}
-
-#superfish-test .sf-menu.sf-style-none.rtl.sf-accordion li li li li a {
-  padding-left: auto;
-  padding-right: 4em;
-}
-
-#superfish-test .sf-menu.sf-style-none.rtl.sf-accordion li li li li li a {
-  padding-left: auto;
-  padding-right: 5em;
-}
-
-#superfish-test .sf-menu.sf-style-none.rtl.sf-accordion li li li li li span.nolink {
-  padding-left: auto;
-  padding-right: 5em;
-}
-
-#superfish-test .sf-menu.sf-style-none.rtl.sf-accordion li li li li span.nolink {
-  padding-left: auto;
-  padding-right: 4em;
-}
-
-#superfish-test .sf-menu.sf-style-none.rtl.sf-accordion li li li span.nolink {
-  padding-left: auto;
-  padding-right: 3em;
-}
-
-#superfish-test .sf-menu.sf-style-none.rtl.sf-accordion li li span.nolink {
-  padding-left: auto;
-  padding-right: 2em;
-}
-
-#superfish-test .sf-menu.sf-style-none.rtl ul.sf-multicolumn li.sf-multicolumn-wrapper ol li.sf-multicolumn-column {
-  float: right;
-}
-
-#superfish-test .sf-menu.sf-style-none.sf-accordion li.sf-expanded {
-  background: #c0c0c0;
-}
-
-#superfish-test .sf-menu.sf-style-none.sf-accordion li.sf-expanded > a {
-  font-weight: bold;
-}
-
-#superfish-test .sf-menu.sf-style-none.sf-accordion li.sf-expanded > span.nolink {
-  font-weight: bold;
-}
-
-#superfish-test .sf-menu.sf-style-none.sf-accordion li li a {
-  padding-left: 2em;
-}
-
-#superfish-test .sf-menu.sf-style-none.sf-accordion li li li a {
-  padding-left: 3em;
-}
-
-#superfish-test .sf-menu.sf-style-none.sf-accordion li li li li a {
-  padding-left: 4em;
-}
-
-#superfish-test .sf-menu.sf-style-none.sf-accordion li li li li li a {
-  padding-left: 5em;
-}
-
-#superfish-test .sf-menu.sf-style-none.sf-accordion li li li li li span.nolink {
-  padding-left: 5em;
-}
-
-#superfish-test .sf-menu.sf-style-none.sf-accordion li li li li span.nolink {
-  padding-left: 4em;
-}
-
-#superfish-test .sf-menu.sf-style-none.sf-accordion li li li span.nolink {
-  padding-left: 3em;
-}
-
-#superfish-test .sf-menu.sf-style-none.sf-accordion li li span.nolink {
-  padding-left: 2em;
-}
-
-#superfish-test .sf-menu.sf-style-none.sf-accordion li a.sf-accordion-button {
-  font-weight: bold;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 499;
-}
-
-#superfish-test .sf-menu.sf-style-none ul.sf-multicolumn li.sf-multicolumn-wrapper ol {
-  margin: 0;
-  padding: 0;
-}
-
-#superfish-test .sf-menu.sf-style-none ul.sf-multicolumn li.sf-multicolumn-wrapper ol li {
-  margin: 0;
-  padding: 0;
-}
-
-#superfish-test .sf-menu.sf-style-none ul.sf-multicolumn li.sf-multicolumn-wrapper ol li.sf-multicolumn-column {
-  display: inline;
-  float: left;
-}
-
-#superfish-test .sf-menu.sf-style-none ul.sf-multicolumn li.sf-multicolumn-wrapper a.menuparent {
-  font-weight: bold;
-}
-
-#superfish-test .sf-menu.sf-style-none ul.sf-multicolumn li.sf-multicolumn-wrapper span.nolink.menuparent {
-  font-weight: bold;
 }

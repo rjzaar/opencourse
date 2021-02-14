@@ -16,7 +16,6 @@ dependencies:
   - oc_works
   - oc_groups
   - oc_lp
-  - oc_blocks
   - entity_access_by_field
   - group
   - book
@@ -24,7 +23,6 @@ dependencies:
   - twig_tweak
   - twig_field_value
   - color_field
-  - superfish
   - field_ui
   - layout_discovery
   - views_field_view
